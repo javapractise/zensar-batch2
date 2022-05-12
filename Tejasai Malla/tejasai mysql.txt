@@ -1,0 +1,60 @@
+CREATE TABLE
+-------------
+
+create table emp(
+empid int,
+ename varchar(100),
+esalary varchar(100),
+eaddress varchar(100)
+);
+
+INSERTING VALUES INTO TABLE
+----------------------------
+
+INSERT INTO emp (empid,ename,esalary,eaddress)
+VALUES (101,'teja','20000','anakapalli');
+
+
+INSERT INTO emp (empid,ename,esalary,eaddress)
+VALUES (102,'laxman','10000','hyderabad');
+
+
+INSERT INTO emp (empid,ename,esalary,eaddress)
+VALUES (103,'ram','30000','visakhapatnam');
+
+OUTPUT:
+-------
+
+empid	ename	esalary	eaddress
+101	teja	20000	anakapalli
+102	laxman	10000	hyderabad
+103	ram	30000	visakhapatnam
+
+UPDATING VALUES 
+---------------
+UPDATE emp
+SET ename = 'Gopal', eaddress= 'kolkata'
+WHERE empid = 102;
+
+
+empid	ename	esalary	eaddress
+101	teja	20000	anakapalli
+102	Gopal	10000	kolkata
+103	ram	30000	visakhapatnam
+
+
+deleting the values
+---------------------
+DELETE FROM emp WHERE empid='102';
+
+
+empid	ename	esalary	eaddress
+101	teja	20000	anakapalli
+103	ram	30000	visakhapatnam
+
+DROP TABLE
+-----------
+
+DROP TABLE emp;
+
+
