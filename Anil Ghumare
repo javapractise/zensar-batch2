@@ -1,0 +1,8 @@
+create database customer;
+use customer;
+create table customerInfo(ID int, Name Varchar(50), Salary int);
+insert into customerInfo values(1, 'Anil Ghumare', 10);
+update customerInfo set Name= 'Amol Ghumare' where ID=1;
+update customerInfo set Department = 'Mech' where ID=1;
+Delete from customerInfo where ID = 1;
+drop table customerInfo;
