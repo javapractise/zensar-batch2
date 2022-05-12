@@ -24,4 +24,4 @@ FROM
 ORDER  BY
   dept DESC
 
---Will keep updating the queries
+--Will keep updating the queries when required
