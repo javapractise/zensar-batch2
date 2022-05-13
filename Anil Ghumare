@@ -1,8 +1,27 @@
-create database customer;
-use customer;
-create table customerInfo(ID int, Name Varchar(50), Salary int);
-insert into customerInfo values(1, 'Anil Ghumare', 10);
-update customerInfo set Name= 'Amol Ghumare' where ID=1;
-update customerInfo set Department = 'Mech' where ID=1;
-Delete from customerInfo where ID = 1;
-drop table customerInfo;
+create database demo2;
+
+use demo2;
+
+create table test(
+Name varchar(15),
+Age int,
+Sex varchar(15));
+
+insert into test values("Anil" , "22" , "M");
+insert into test values("Rahul" , "23" , "M");
+insert into test values("Vikas" , "24" , "F");
+insert into test values("Mayur" , "35" , "F");
+
+select * from test
+
+SET SQL_SAFE_UPDATES = 0;
+
+update test 
+set Age = "14"
+where Name = "Anil";
+
+select * from test
+
+delete from test where Name = "Anil";
+
+select * from test
