@@ -1,0 +1,14 @@
+#Binary
+
+public class Binary {
+	public static void main(String[] args) {
+
+		int b1 = 0b1000;
+		int b2 = 0b1111; 
+
+		int result = b1 + b2;
+
+		System.out.printf(Integer.toBinaryString(result));
+
+	}
+}
