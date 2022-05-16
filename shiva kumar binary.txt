@@ -1,0 +1,14 @@
+
+
+public class Binary {
+public static void main(String[] args) {
+int b1 = 0b100;int b2 = 0b111;
+int result = b1 + b2;
+System.out.printf(Integer.toBinaryString(result));
+}}
+
+
+
+0ut put
+
+1011
