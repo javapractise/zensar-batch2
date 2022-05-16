@@ -1,0 +1,54 @@
+*Addition 
+
+package Anil;
+
+public class Addition {
+  public static void main(String[] args) {
+     int x = 129;
+       int y = 71;
+         int z = x + y;
+       System.out.println(z);
+       }
+       }
+
+
+*Substraction
+
+package Anil;
+
+public class Substractoin {
+ public static void main(String[] args) {
+  int x = 350;
+   int y = 50;
+    int z = x - y;
+   System.out.println(z);
+   }
+   }
+
+
+*Multiplication
+
+package Anil;
+
+public class Multiplication {
+ public static void main(String[] args) {
+  int x = 12;
+   int y = 13;
+    int z = x * y;
+   System.out.println(z);
+     }
+     }
+
+
+*Division
+
+package Anil;
+
+pulblic class Division {
+ public static void main(String[] args) {
+  int x = 25;
+   int y = 5;
+    int z = x / y;
+   System.out.println(z);
+   }
+   }
