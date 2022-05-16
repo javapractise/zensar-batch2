@@ -9,7 +9,7 @@ public class Calculator {
 		int sub = a-b;
 		int mul = a*b;
 		int div = a/b;
-		int mod = a%b;
+		float mod = (float)a%b;
 		System.out.println("Addition of two numbers :" +add);
 		System.out.println("Subtraction of two numbers :" +sub);
 		System.out.println("Multiplication of two numbers :" +mul);
