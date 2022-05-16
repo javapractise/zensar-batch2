@@ -1,0 +1,29 @@
+///////////Java Basic Program//////////
+
+package demo1;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int a =10;
+		
+		int b =30;
+		
+		int c =a+b;
+		
+		System.out.println("Hello World : Today is Monday");
+		System.out.println("Addition value : " +c);
+	}
+
+}
+
+
+---------
+
+output:
+Hello World : Today is Monday
+Addition value : 40
+
+
