@@ -1,0 +1,30 @@
+package com.first;
+
+public class FirstDemo {
+	public static void main(String [] args) {
+System.out.println("Hello World");
+	}
+}
+
+OUTPUT :Hello World
+
+package com.first;
+
+public class FirstDemo {
+	public static void main(String [] args) {
+		int a =10;
+		int b = 20;
+		int c = a+b;
+		int d = a-b;
+		int f = a*b;
+		System.out.println("Subraction is "+ d);
+		System.out.print("addition is "+ c);
+		System.out.print("multiplication is "+ f);
+	}
+}
+
+
+OUTPUT : 
+Subraction is -10
+addition is 30
+multiplication is 200
