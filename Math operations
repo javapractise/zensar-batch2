@@ -1,0 +1,21 @@
+public class Operations {
+
+	public static void main(String[] args) {
+	
+		
+	int a = 56;
+	int b = 98;
+	int c = 100;
+	int x = a+b;  // Addition
+	int y = b-a;  // Subtraction
+	int z = c*a;  // Multiplication 
+	double Z = c/a; // Division
+		
+		System.out.println("Addition values:- " + x);
+		System.out.println("Subtraction Values:- " + y);
+		System.out.println("Multiplaction Values:- " + z);
+		System.out.println("Division Values:- " + Z);
+		
+	}
+
+}
