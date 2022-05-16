@@ -1,0 +1,12 @@
+public class santhoshkatika
+{
+    public static void main(String []args){
+        int s=3;
+         int r=100;
+        int n=s*r;
+    System.out.println(n);
+}
+}
+
+
+output:300

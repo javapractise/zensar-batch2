@@ -1,0 +1,12 @@
+public class santhoshkatika
+{
+    public static void main(String []args){
+        float s=3.14f;
+         int r=100;
+        float A=s*r;
+    System.out.println("A" +A);
+}
+}
+
+
+output:A314.0
