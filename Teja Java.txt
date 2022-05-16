@@ -1,0 +1,94 @@
+ Assignment Programs : 
+======================
+
+	import java.util.Scanner;
+
+public class Calculator {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		int a = 120;
+		int b = 60;
+		int add = a+b;
+		int sub = a-b;
+		int mul = a*b;
+		int div = a/b;
+		int mod = a%b;
+		System.out.println("Addition of two numbers :" +add);
+		System.out.println("Subtraction of two numbers :" +sub);
+		System.out.println("Multiplication of two numbers :" +mul);
+		System.out.println("Division of two numbers :" +div);
+		System.out.println("Remainder of two numbers :" +mod);
+		sc.close();
+	}
+}
+Output  :-
+==========
+
+Addition of two numbers :180
+Subtraction of two numbers :60
+Multiplication of two numbers :7200
+Division of two numbers :2
+Remainder of two numbers :0
+
+Basic Program :
+---------------
+public class Tej {
+    public static void main(String [] args){
+        System.out.println("Hello Teja : Good Afternoon");
+    }
+}
+Output : -
+---------
+Hello Teja : Good Afternoon
+
+
+Process Finished.
+Assignment Operator :-
+---------------------
+public class Tej {
+    public static void main(String [] args){
+        int a = 10;
+        int b = 20;
+        int c = a + b;
+    System.out.println("The Sum of Two Numbers is = " + c);
+    }
+}
+Output :-
+---------
+The Sum of Two Numbers is = 30
+
+
+Process Finished.
+
+Product of Numbers :-
+-------------------
+public class Tej {
+    public static void main(String [] args){
+        int a = 15;
+        int b = 20;
+        int c = a * b;
+    System.out.println("The Product of Two Numbers is = " + c);
+    }
+}
+output : 
+--------
+The Product of Two Numbers is = 300.
+
+Subtraction : -
+===============
+public class Tej {
+    public static void main(String [] args){
+        int a = 15;
+        int b = 5;
+        int c = a - b;
+    System.out.println("The Subtraction of Two Numbers is = " + c);
+    }
+}
+
+Output : -
+=========
+The Subtraction of Two Numbers is = 10.
+
+
+Process Finished.
+
