@@ -1,0 +1,61 @@
+Basic Program :
+---------------
+public class Tej {
+    public static void main(String [] args){
+        System.out.println("Hello Teja : Good Afternoon");
+    }
+}
+Output : -
+---------
+Hello Teja : Good Afternoon
+
+
+Process Finished.
+Assignment Operator :-
+---------------------
+public class Tej {
+    public static void main(String [] args){
+        int a = 10;
+        int b = 20;
+        int c = a + b;
+    System.out.println("The Sum of Two Numbers is = " + c);
+    }
+}
+Output :-
+---------
+The Sum of Two Numbers is = 30
+
+
+Process Finished.
+
+Product of Numbers :-
+-------------------
+public class Tej {
+    public static void main(String [] args){
+        int a = 15;
+        int b = 20;
+        int c = a * b;
+    System.out.println("The Product of Two Numbers is = " + c);
+    }
+}
+output : 
+--------
+The Product of Two Numbers is = 300.
+
+Subtraction : -
+===============
+public class Tej {
+    public static void main(String [] args){
+        int a = 15;
+        int b = 5;
+        int c = a - b;
+    System.out.println("The Subtraction of Two Numbers is = " + c);
+    }
+}
+
+Output : -
+=========
+The Subtraction of Two Numbers is = 10.
+
+
+Process Finished.
