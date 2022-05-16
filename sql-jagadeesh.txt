@@ -1,0 +1,32 @@
+mysql> create database firstdatabase;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use firstdatabase;
+Database changed
+mysql> create table customer(cust_id int,cust_name varchar(50),items int,bill int);
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> describe customer;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| cust_id   | int         | YES  |     | NULL    |       |
+| cust_name | varchar(50) | YES  |     | NULL    |       |
+| items     | int         | YES  |     | NULL    |       |
+| bill      | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> insert into customer (cust_id,cust_name,items,bill)values (101,'vijay',4,500),(102,'vamsi',6,750),(103,'ramesh',3,450);
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from customer;
++---------+-----------+-------+------+
+| cust_id | cust_name | items | bill |
++---------+-----------+-------+------+
+|     101 | vijay     |     4 |  500 |
+|     102 | vamsi     |     6 |  750 |
+|     103 | ramesh    |     3 |  450 |
++---------+-----------+-------+------+
+3 rows in set (0.00 sec)
