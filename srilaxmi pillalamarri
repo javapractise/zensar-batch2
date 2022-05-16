@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Calculator1 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int addition = a+b;
+		int substractin = a-b;
+		int multiplication = a*b;
+		int division = a/b;
+		int module = a%b;
+		System.out.println("Addition of two numbers :" +addition);
+		System.out.println("Subtraction of two numbers :" +substraction);
+		System.out.println("Multiplication of two numbers :" +multiplication);
+		System.out.println("Division of two numbers :" +division);
+		System.out.println("Remainder of two numbers :" +module);
+		sc.close();
+
+
+
+	}
+}

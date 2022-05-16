@@ -1,0 +1,41 @@
+*Addition Programme:
+
+public class Main {
+public static void main(String[] args) {
+int x = 67;
+int y = 7;
+int sum = x + y;
+System.out.println(z);
+}
+}
+
+ *Substraction Programme :
+
+public class Main {
+public static void Main(String[] args) {
+int X = 60;
+int Y = 7;
+int z = x - y;
+System.out.println(z)
+}
+}
+
+ *Multiplication Programme:
+
+public class Main {
+public static void Main(String[] args) {
+int x = 43;
+int y = 20;
+int z = x * y;
+system.out.println(z)
+}
+}
+ *Divsion Programme:
+public class main {
+public static void Main(String[] args) {
+int x = 14;
+int y = 2;
+int z = x / y;
+system.out.println(z)
+}
+}

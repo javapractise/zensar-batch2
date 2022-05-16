@@ -2,7 +2,7 @@
 
 package zensar;
 
-public class addition {
+public class Addition {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -19,7 +19,7 @@ public class addition {
 
 package zensar;
 
-public class substraction {
+public class Substraction {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -40,7 +40,7 @@ public class substraction {
 
 package zensar;
 
-public class division {
+public class Division {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -64,7 +64,7 @@ public class division {
 
 package zensar;
 
-public class multiplication {
+public class Multiplication {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
