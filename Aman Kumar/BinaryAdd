@@ -1,0 +1,14 @@
+public class BinaryAdd {
+
+	public static void main(String[] args) {
+  
+		int Num1= 0b111001; //57 in decimal
+		int Num2= 0b101100; //44 in decimal
+    
+		System.out.println("Num1 in Decimal: " + Num1);
+		System.out.println("Num2 in Decimal: " + Num2);
+    
+		int Num= Num1+ Num2;
+		System.out.println("Num in Decimal: " + Num + " and Result in Binary: " + Integer.toBinaryString(Num));
+	}
+}
