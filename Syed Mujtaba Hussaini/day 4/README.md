@@ -1,9 +1,9 @@
 ## To run the Program, follow these steps
 
-> javac Main.java
+> javac <Classname>.java
 
 Compile the file first to check for any errors
 
-> java Main.java
+> java <Classname>.java
 
 Run the program
