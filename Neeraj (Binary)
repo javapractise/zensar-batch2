@@ -1,0 +1,13 @@
+public class Add_binary {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int b1 = 0b0110;
+		int b2 = 0b0101;
+		int result = b1 + b2; // Addition of two binary
+		
+		System.out.println(Integer.toBinaryString(result));
+		
+	}
+
+}
