@@ -1,45 +1,56 @@
-package demo;
-
-public class demo2 
 {
-	void meth1()
-	{
-		int a=10;
-	    int b=20;
-	    int c=a+b;
-	    System.out.println("additional value===>"+c);
-	}
-	void meth2()
-	{
-		int a=100;
-		System.out.println("subraction value===>"+(a-50));
-		demo2 obj = new demo2();
-		obj.meth3();
-		obj.meth4();
-	}
-	void meth3()
-	{
-		int a=2;
-		int b=8;
-		int c=a*b;
-		System.out.println("multiplication value===>"+c);
-	}
-	void meth4()
-	{
-		int a=2;
-		int b=2;
-		int c=a%b;
-		System.out.println("division value===>"+c);
-	}
-	public static void main(String[] args)
-	{
-		demo2 obj=new demo2();
-		obj.meth1();
-		obj.meth2();
-	
+  "_id": {
+    "$oid": "627e6e72932a2b1b2d7d2ef1"
+  }
+}
+----------------------
+{
+  "_id": {
+    "id": "71",
+    "name": "vishnu",
+    "age": "22",
+    "address": "Ongole"
+  }
+}
 
-	}
+--------------------------------------
+
+{
+  "_id": {
+    "id": "67971",
+    "name": "vishnuvardhan",
+    "address": "ongole",
+    "phone": "9182536775",
+    "agr": "22"
+  }
+}
+
+------------------------------------------
 
 
+[{
+  "SKILLS": {
+  "couseid": "62",
+    "name"  :"nikhil",
+    "language":"c",
+    "percentage":"50"  
+  }
+},
 
+{
+  "skill2": {
+  "couseid": "62",
+    "name"  :"nikhil",
+    "language":"c++",
+    "percentage":"58"  
+  }
+},
+
+{
+  "SKILLS": {
+  "couseid": "62",
+    "name"  :"nikhil",
+    "language":"c#",
+    "percentage":"65"    
+  }
 }
