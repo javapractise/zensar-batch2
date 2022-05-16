@@ -1,0 +1,56 @@
+{
+  "_id": {
+    "$oid": "627e6e72932a2b1b2d7d2ef1"
+  }
+}
+----------------------
+{
+  "_id": {
+    "id": "71",
+    "name": "vishnu",
+    "age": "22",
+    "address": "Ongole"
+  }
+}
+
+--------------------------------------
+
+{
+  "_id": {
+    "id": "67971",
+    "name": "vishnuvardhan",
+    "address": "ongole",
+    "phone": "9182536775",
+    "agr": "22"
+  }
+}
+
+------------------------------------------
+
+
+[{
+  "SKILLS": {
+  "couseid": "62",
+    "name"  :"nikhil",
+    "language":"c",
+    "percentage":"50"  
+  }
+},
+
+{
+  "skill2": {
+  "couseid": "62",
+    "name"  :"nikhil",
+    "language":"c++",
+    "percentage":"58"  
+  }
+},
+
+{
+  "SKILLS": {
+  "couseid": "62",
+    "name"  :"nikhil",
+    "language":"c#",
+    "percentage":"65"    
+  }
+}
