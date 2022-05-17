@@ -1,0 +1,26 @@
+package Group;
+class Team1 {
+
+  void fun() {
+
+     System.out.println("Team1");
+  }
+}
+
+class Team2 {
+
+  void fun() {
+
+    System.out.println("Team2");
+  }
+}
+
+class Test extends Team1, Team2 {
+
+ public static void main(String args[]) {
+
+    Test t = new Test();
+
+     t.fun();
+  }
+}
