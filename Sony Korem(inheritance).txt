@@ -1,0 +1,56 @@
+multiple inheritance
+---------------------
+class A{  
+void msg(){System.out.println("Hello");}  
+}  
+class B{  
+void msg(){System.out.println("Welcome");}  
+}  
+class C extends A,B{
+   
+ public static void main(String args[]){  
+   C obj=new C();  
+   obj.msg();
+}  
+}
+
+Hybrid Inheritance 
+--------------------
+
+class C
+{
+   public void disp()
+   {
+	System.out.println("C");
+   }
+}
+
+class A extends C
+{
+   public void disp()
+   {
+	System.out.println("A");
+   }
+}
+
+class B extends C
+{
+   public void disp()
+   {
+	System.out.println("B");
+   }
+	
+}
+
+class D extends A
+{
+   public void disp()
+   {
+	System.out.println("D");
+   }
+   public static void main(String args[]){
+
+	D obj = new D();
+	obj.disp();
+   }
+}  
