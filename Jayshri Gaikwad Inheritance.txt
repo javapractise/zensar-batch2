@@ -82,3 +82,42 @@ c.eat();
 
 }
 }  
+## Hybrid Inheritance
+package Jayshri;
+public class Animal
+{
+   public void disp()
+   {
+	System.out.println("eating");
+   }
+}
+
+class Dog extends Animal
+{
+   public void disp()
+   {
+	System.out.println("Barking");
+   }
+}
+
+class cat extends Animal
+{
+   public void disp()
+   {
+	System.out.println("Meow");
+   }
+	
+}
+
+class D extends Dog
+{
+   public void disp()
+   {
+	System.out.println("D");
+   }
+   public static void main(String args[]){
+
+	D obj = new D();
+	obj.disp();
+   }
+}
