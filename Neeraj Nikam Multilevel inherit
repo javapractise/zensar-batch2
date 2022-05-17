@@ -1,0 +1,31 @@
+// Multilevel Inheritance
+
+package solo;  
+class Birds{  
+public void eat()
+{
+System.out.println("eating...");
+}  
+}  
+class Sparrow extends Birds
+{  
+public void fly()
+{
+System.out.println("flying...");
+}  
+}  
+class BabySparrow extends Sparrow
+{  
+public void swing()
+{
+System.out.println("swinging...");
+}  
+}  
+public class TestInheritance2{  
+public static void main(String args[]){  
+BabySparrow d=new BabySparrow();  
+d.swing();  
+d.fly();  
+d.eat();  
+}
+}
