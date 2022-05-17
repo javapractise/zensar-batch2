@@ -1,0 +1,43 @@
+/////////////////Hierarchical Inheritance///////////////////
+
+
+package vinod;
+
+
+class Bird
+{  
+		void sing()
+		{
+			System.out.println("singing...");
+		}  
+}  
+class BabbyBird extends Bird
+{  
+		void babybird()
+		{
+			System.out.println("crying...");
+		}  
+}  
+class Cat extends Bird
+{  
+		void meow()
+		{
+			System.out.println("meowing...");
+		}  
+}  
+public class Inheritance 
+		{  
+			public static void main(String args[]){  
+			Cat c=new Cat();  
+			c.meow();  
+			c.sing();    
+		}
+}  
+
+
+------------------
+
+output:
+
+meowing...
+singing...

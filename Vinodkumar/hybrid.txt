@@ -1,0 +1,57 @@
+/////////////////////hybrid////////////////////
+
+package vinod;
+
+class A 
+{
+    public void dispA()
+    {
+        System.out.println(" method of A");
+    }
+}
+class B extends A 
+{
+    public void show()
+    {
+        System.out.println(" method of B");
+    }
+    public void dispB()
+    {
+        System.out.println(" method of B");
+    }
+}
+class C extends A
+{
+    public void show()
+    {
+        System.out.println(" method of C");
+    }
+    public void dispC()
+    {
+        System.out.println(" method of C");
+    }
+}
+class D extends B,C //we cannot inherit 2 classes at time
+{
+    public void dispDS()
+    {
+        System.out.println(" method of D");
+    }
+    public class Hbrid {
+    public static void main(String args[])
+    {
+          D d = new D();
+          d.dispDS();
+          d.show();
+    }
+
+
+
+}
+
+
+----------------
+
+output:
+
+error
