@@ -1,0 +1,154 @@
+Single level Inheritance :-
+===========================
+	class Teacher {
+ void teach() {
+  System.out.println("Teaching subjects");
+ }
+}
+class Students extends Teacher {
+ void listen() {
+  System.out.println("Listening to teacher");
+ }
+}
+class CheckForInheritance {
+ public static void main(String args[]) {
+  Students s1 = new Students();
+  s1.teach();
+  s1.listen();
+ }
+}
+
+Output :-
+========
+	Teaching subjects
+	please Listen to teacher.
+
+Multilevel Inheritance : -
+===========================
+	class Teacher {
+ void teach() {
+  System.out.println("Teaching subjects");
+ }
+}
+class Student extends Teacher {
+ void listen() {
+  System.out.println("please Listen to teacher");
+ }
+}
+class assignment extends Student {
+ void explains() {
+  System.out.println("Does homework");
+ }
+}
+class Teja {
+ public static void main(String args[]) {
+   assignment a = new assignment();
+  a.explains();
+  a.teach();
+  a.listen();
+ }
+ }
+	
+  Output :-
+===========
+	Does homework
+	Teaching subjects
+	please Listen to teacher
+	
+	Hierarchical Interface :-
+	========================
+	class Teacher {
+ void teach() {
+  System.out.println("Teaching subject");
+ }
+}
+class Student extends Teacher {
+ void listen() {
+  System.out.println("Listening");
+ }
+}
+class Principal extends Teacher {
+ void evaluate() {
+  System.out.println("Evaluating");
+ }
+}
+class Teja {
+ public static void main(String argu[]) {
+  Principal p = new Principal();
+  p.evaluate();
+  p.teach();
+ }
+}
+	Output :-
+	========
+	Evaluating
+	Teaching subject
+
+Hybrid Inheritance :-
+=====================
+	interface B {
+    int x = 20;
+}
+
+interface C extends B {
+    int y = 30;
+}
+
+class A {
+    int z = 10;
+}
+
+class Main extends A implements C {
+
+    void display() {
+        System.out.println("The x value is :" + x);
+        System.out.println("The y value is :" + y);
+        System.out.println("The z value is :" + z);
+    }
+
+    public static void main(String args[]) {
+        Main t = new Main();
+        t.display();
+    }
+}
+	Output :-
+	=========
+	The x value is :20
+	The y value is :30
+	The z value is :10
+
+Multi-Level Inheritance :-
+--------------------------
+interface Backend {
+
+  public void connectServer();
+}
+
+class Frontend {
+
+  public void responsive(String str) {
+    System.out.println(str + " can also be used as frontend.");
+  }
+}
+
+class Language extends Frontend implements Backend {
+
+  String language = "Java";
+  public void connectServer() {
+    System.out.println(language + " can be used as backend language.");
+  }
+
+  public static void main(String[] args) {
+
+    Language java = new Language();
+
+    java.connectServer();
+
+    java.responsive(java.language);
+  }
+
+}
+Output :-
+---------
+	Java can be used as backend language.
+	Java can also be used as frontend.
