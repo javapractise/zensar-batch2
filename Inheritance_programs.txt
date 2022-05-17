@@ -1,0 +1,152 @@
+## SINGLE INHERITANCE ##
+
+class Employee{
+ float salary=40000;
+}
+
+class Programmer extends Employee{
+ int bonus=10000;
+ public static void main(String args[]){
+   Programmer p=new Programmer();
+   System.out.println("Programmer salary is:"+p.salary);
+   System.out.println("Bonus of Programmer is:"+p.bonus);
+}
+}
+
+
+
+
+output:
+
+Programmer salary is:40000.0
+Bonus of Programmer is:10000
+
+## Multilevel Inheritance ##
+
+class Animal{  
+void eat(){System.out.println("eating");}  
+}  
+class Dog extends Animal{  
+void bark(){System.out.println("barking");}  
+}  
+class BabyDog extends Dog{  
+void weep(){System.out.println("weeping");}  
+}  
+class TestInheritance2{  
+public static void main(String args[]){  
+BabyDog d=new BabyDog();  
+d.weep();  
+d.bark();  
+d.eat();  
+}} 
+ 
+Output:
+
+weeping
+barking
+eating
+
+## Hierarchical Inheritance ##
+
+class Student {  
+public void methodStudent()  
+{  
+System.out.println("The method of the class Student invoked.");  
+}  
+}  
+class Science extends Student {  
+public void methodScience()  
+{  
+System.out.println("The method of the class Science invoked.");  
+}  
+}  
+class Commerce extends Student {  
+public void methodCommerce()  
+{  
+System.out.println("The method of the class Commerce invoked.");  
+}  
+}  
+class Arts extends Student {  
+public void methodArts()  
+{  
+System.out.println("The method of the class Arts invoked.");  
+}  
+}  
+public class HierarchicalInheritanceExample {  
+public static void main(String args[])  
+{  
+Science sci = new Science();  
+Commerce comm = new Commerce();  
+Arts art = new Arts();  
+sci.methodStudent();  
+comm.methodStudent();  
+art.methodStudent();  
+}  
+}
+   
+Output:
+
+The method of the class Student invoked.
+The method of the class Student invoked.
+The method of the class Student invoked.
+
+## Multiple Inheritance ##
+
+class Wishes {  
+void message()  
+{  
+System.out.println("Best of Luck!!");  
+}  
+}  
+class Birthday 
+{  
+void message()  
+{  
+System.out.println("Happy Birthday!!");  
+}  
+}  
+public class Demo extends Wishes, Birthday  
+{  
+public static void main(String args[])  
+{    
+Demo obj=new Demo();    
+obj.message();   
+}    
+}
+
+## Hybrid Inheritance ##
+
+class GrandFather{  
+public void show()  
+{  
+System.out.println("I am grandfather.");  
+}  
+} 
+class Father extends GrandFather{  
+public void show()  
+{  
+System.out.println("I am father.");  
+}  
+}   
+class Son extends Father{  
+public void show()  
+{  
+System.out.println("I am son.");  
+}  
+}  
+public class Daughter extends Father{  
+public void show()  
+{  
+System.out.println("I am a daughter.");  
+}  
+public static void main(String args[])  
+{  
+Daughter obj = new Daughter();  
+obj.show();  
+}  
+} 
+ 
+Output:
+
+I am daughter.
+    
