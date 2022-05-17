@@ -1,0 +1,19 @@
+package binarynumbers1;
+
+public class binary {
+    
+    public static void main(String[] args) {
+        int dec=25;
+        string Sondu=Integer.toBinaryString(dec);
+        
+        System.out.println("Sondu"); 
+    }
+}
+
+
+
+
+
+output:
+
+11001
