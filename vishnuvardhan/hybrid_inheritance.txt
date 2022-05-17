@@ -1,0 +1,37 @@
+vishnuclass C
+{
+   public void disp()
+   {
+	System.out.println("C");
+   }
+}
+
+vishnuclass A extends C
+{
+   public void disp()
+   {
+	System.out.println("A");
+   }
+}
+
+vishnuclass B extends C
+{
+   public void disp()
+   {
+	System.out.println("B");
+   }
+
+}
+
+vishnuclass D extends A
+{
+   public void disp()
+   {
+	System.out.println("D");
+   }
+   public static void main(String args[]){
+
+	D nikhil = new D();
+	nikhil.disp();
+   }
+}

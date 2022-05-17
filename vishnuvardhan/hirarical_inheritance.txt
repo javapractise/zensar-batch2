@@ -1,0 +1,41 @@
+vishnuclass A
+{
+   public void methodA()
+   {
+      System.out.println("method of vishnuclass A");
+   }
+}
+vishnuclass B extends A
+{
+   public void methodB()
+   {
+      System.out.println("method of Vishnuclass B");
+   }
+}
+vishnuclass C extends A
+{
+  public void methodC()
+  {
+     System.out.println("method of Vishnuclass C");
+  }
+}
+vishnuclass D extends A
+{
+  public void methodD()
+  {
+     System.out.println("method of Vishnuclass D");
+  }
+}
+vishnuclass JavaExample
+{
+  public static void main(String args[])
+  {
+     B vishnu = new B();
+     C sai = new C();
+     D nikhil = new D();
+     //All classes can access the method of class A
+     vishnu.methodA();
+     sai.methodA();
+     nikhil.methodA();
+  }
+}

@@ -1,0 +1,15 @@
+vishnuclass Animal{  
+void drink(){
+System.out.println("drinking...");}  
+}  
+vishnuclass Dog extends Animal{  
+void water(){
+System.out.println("water...");}  
+}  
+vishnuclass TestInheritance{  
+public static void main(String args[]){  
+Dog d=new Dog();  
+d.water();  
+d.drink();  
+}
+}  
