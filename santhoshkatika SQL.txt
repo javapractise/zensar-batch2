@@ -1,0 +1,9 @@
+@@ -12,4 +12,7 @@ update  customer set phonenumber = 8309038479 WHERE cust_id = 101;
+update  customer set phonenumber = 8667760876 WHERE cust_id = 102;
+update  customer set phonenumber = 6734754788 WHERE cust_id = 103;
+select * from customer;
+SET SQL_SAFE_UPDATES = 2;
+delete from customer where cust_id = 101;
+select * from customer;
+drop table customer;
+SET SQL_SAFE_UPDATES = 2;
