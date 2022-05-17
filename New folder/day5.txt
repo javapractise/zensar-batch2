@@ -1,0 +1,84 @@
+SINGLE INHERITANCE:-
+
+public class Vinay {
+    void study()
+    {
+        System.out.println("studying");
+    }
+}
+class Vicky extends Vinay{
+    void play()
+    {
+        System.out.println("playing");
+    }
+        }
+        class Single{
+    public static void main(String[] args) {
+        Vicky p=new Vicky();
+        p.study();
+        p.play();
+
+    }
+}
+
+multi level inheritance:-
+
+
+public class Vinay {
+    void study()
+    {
+        System.out.println("studying");
+    }
+}
+class Vicky extends Vinay{
+    void play()
+    {
+        System.out.println("playing");
+    }
+        }
+        class Vamsi extends Vicky{
+        void sleep(){
+            System.out.println("sleeping");
+        }
+        }
+        class Single{
+    public static void main(String[] args) {
+        Vamsi p=new Vamsi();
+        p.study();
+        p.play();
+        p.sleep();
+
+    }
+}
+
+
+Hierarchical inheritance:-
+
+
+public class Vinay {
+    void study()
+    {
+        System.out.println("studying");
+    }
+}
+class Vicky extends Vinay{
+    void play()
+    {
+        System.out.println("playing");
+    }
+        }
+        class Vamsi extends Vinay{
+        void sleep(){
+            System.out.println("sleeping");
+        }
+        }
+        class Single{
+    public static void main(String[] args) {
+        Vamsi p=new Vamsi();
+        p.study();
+        p.sleep();
+
+    }
+}
+
+
