@@ -17,5 +17,7 @@ c.walk();
 }}
 
 
-
+out put;
+meowing...
+walking...
 
