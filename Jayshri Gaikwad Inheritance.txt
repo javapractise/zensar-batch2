@@ -1,0 +1,84 @@
+##Single Inheritance
+package Jayshri;
+class Animal{  
+public void eat()
+{
+System.out.println("eating...");
+}  
+}  
+class Dog extends Animal{  
+ public void bark()
+{
+System.out.println("barking...");
+}  
+}  
+public class TestInheritance{  
+public static void main(String args[]){  
+Dog d=new Dog();  
+d.bark();  
+d.eat();  
+}
+}  
+
+##Multilevel Inheritance
+package Jayshri;
+class Animal{  
+public void eat()
+{
+System.out.println("eating...");
+}  
+}  
+class Dog extends Animal
+{  
+public void bark()
+{
+System.out.println("barking...");
+}  
+}  
+class BabyDog extends Dog
+{  
+public void weep()
+{
+System.out.println("weeping...");
+}  
+}  
+public class TestInheritance2{  
+public static void main(String args[]){  
+BabyDog d=new BabyDog();  
+d.weep();  
+d.bark();  
+d.eat();  
+}
+}   
+
+##Hierarchical Inheritance
+package Jayshri;
+class Animal
+{  
+public void eat()
+{
+System.out.println("eating...");}  
+}  
+class Dog extends Animal{  
+public void bark()
+{
+System.out.println("barking...");
+}  
+}  
+class Cat extends Animal
+{  
+publc void meow()
+{
+System.out.println("meowing...");
+}  
+}  
+publc class TestInheritance3
+{  
+public static void main(String args[])
+{  
+Cat c=new Cat();  
+c.meow();  
+c.eat();  
+
+}
+}  
