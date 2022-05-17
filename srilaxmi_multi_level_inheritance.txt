@@ -1,42 +1,30 @@
-class Lorry{
-   public Lorry()
-   {
-	System.out.println("Class Lorry");
-   }
-   public void vehicleType()
-   {
-	System.out.println("Vehicle Type: Lorry");
-   }
+class Teacher {
+ void teach() {
+  System.out.println("Teaching subjects");
+ }
 }
-class Maruti extends Lorry{
-   public Maruti()
-   {
-	System.out.println("Class Maruti");
-   }
-   public void brand()
-   {
-	System.out.println("Brand: Maruti");
-   }
-     public void speed()
-   {
-	System.out.println("Max: 90Kmph");
-   }
+class Student extends Teacher {
+ void listen() {
+  System.out.println("please Listen to teacher");
+ }
 }
-public class Maruti800 extends Maruti{
+class assignment extends Student {
+ void explains() {
+  System.out.println("Does homework");
+ }
+}
+class Teja {
+ public static void main(String args[]) {
+   assignment a = new assignment();
+  a.explains();
+  a.teach();
+  a.listen();
+ }
+ }
+	
+  Output :-
+===========
+	Does homework
+	Teaching subjects
+	please Listen to teacher
 
-   public Maruti800()
-   {
-	System.out.println("Maruti Model: 800");
-   }
-   public void speed()
-   {
-	System.out.println("Max: 80Kmph");
-   }
-   public static void main(String args[])
-   {
-	 Maruti800 obj=new Maruti800();
-	 obj.vehicleType();
-	 obj.brand();
-	 obj.speed();
-   }
-}
