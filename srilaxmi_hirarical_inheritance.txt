@@ -1,41 +1,29 @@
-class A
-{
-   public void methodA()
-   {
-      System.out.println("method of Class A");
-   }
+Hierarchical Interface :-
+	========================
+	class Teacher {
+ void teach() {
+  System.out.println("Teaching subject");
+ }
 }
-class B extends A
-{
-   public void methodB()
-   {
-      System.out.println("method of Class B");
-   }
+class Student extends Teacher {
+ void listen() {
+  System.out.println("Listening");
+ }
 }
-class C extends A
-{
-  public void methodC()
-  {
-     System.out.println("method of Class C");
-  }
+class Principal extends Teacher {
+ void evaluate() {
+  System.out.println("Evaluating");
+ }
 }
-class D extends A
-{
-  public void methodD()
-  {
-     System.out.println("method of Class D");
-  }
+class Teja {
+ public static void main(String argu[]) {
+  Principal p = new Principal();
+  p.evaluate();
+  p.teach();
+ }
 }
-class JavaExample
-{
-  public static void main(String args[])
-  {
-     B obj1 = new B();
-     C obj2 = new C();
-     D obj3 = new D();
-     //All classes can access the method of class A
-     obj1.methodA();
-     obj2.methodA();
-     obj3.methodA();
-  }
-}
+	Output :-
+	========
+	Evaluating
+	Teaching subject
+
