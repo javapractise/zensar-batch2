@@ -1,0 +1,67 @@
+create database customer;
+
+use customer;
+
+create table customerinfo(id int(10),name varchar(20),salary varchar(20));
+
+customerinfo
+id	name	salary
+empty
+
+
+insert into customerinfo values(1,"Vishnu",10000);
+insert into customerinfo values(2,"Sai",20000);
+insert into customerinfo values(3,"Nikhil",30000);
+insert into customerinfo values(2,"Navane",40000);
+insert into customerinfo values(2,"Aakash",20000);
+
+
+customerinfo
+id	name	           salary
+1	Vishnu        10000
+2	Sai	          20000
+3	Nikhil	30000
+2	Navane	40000
+2	Aakash	20000
+
+
+
+
+UPDATE Customerinfo
+SET name='Nikhil'
+WHERE id=3;
+
+
+customerinfo
+id	name	           salary
+1	Vishnu         10000
+2	Sai	           20000
+3	Nikhil	30000
+2	Navane	40000
+2	Aakash	20000
+
+
+alter table customerinfo add 'dept' varchar(20);
+
+
+customerinfo
+id	name	          salary	        dept
+1	vishnu          10000	
+2	sai                20000	
+3	Nikhil          30000	
+2	Navane	          40000	
+2	Aakash	          20000	
+
+
+
+delete from customerinfo where id=2;
+
+
+customerinfo
+id	name	            salary	     dept
+1	vishnu	            10000	
+3	nikhil                    	30000	
+
+drop table customerinfo;
+
+16:30:06	drop table customerinfo	0 row(s) affected	0.031 sec
