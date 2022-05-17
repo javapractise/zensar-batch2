@@ -13,3 +13,8 @@ d.water();
 d.drink();  
 }
 }  
+
+
+output:
+water...
+drinking...
