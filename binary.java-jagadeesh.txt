@@ -1,0 +1,18 @@
+package binarynumbers1;
+
+public class binary {
+
+	public static void main(String[] args) {
+		
+		int dec = 25;
+		
+		String vijay = Integer.toBinaryString(dec);
+		System.out.println(vijay);
+	}
+
+}
+
+
+
+
+output:-11001
