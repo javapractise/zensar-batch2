@@ -1,0 +1,104 @@
+#simpleInheritance
+public class singleInheritance {
+	int roll,marks;
+	String name;
+	void input() {
+		System.out.println("Enter roll and marks  :");
+}
+}
+class subclassex extends singleInheritance{
+	void display() {
+		roll = 10;
+		marks = 99;
+		name = "Shivani";
+		System.out.print(roll +" " +  marks+" "+name);
+	}
+	public static void main(String[] args) {
+		subclassex s1 =new subclassex();
+		s1.input();
+		s1.display();
+	}
+}
+#Multilevel
+public class Multilevel {
+	int a,b,c;
+	void add() {
+		a =10;
+		b =20;
+		c = a+b;
+		System.out.println("Sum = "+ c);
+	}
+	void sub() {
+		a =200;
+		b= 100;
+		c = a-b;
+		System.out.println("Sub = "+c);
+	}
+
+}
+class subclasss extends Multilevel{
+	void multi() {
+		a= 10;b=20;
+		c = a*b;
+		System.out.println("Multi = "+ c);
+	}
+}
+class subclasss2 extends subclasss {
+	void div() {
+		a = 20;b= 2;
+		c = a/b;
+		System.out.println("Div = "+ c);
+	}
+	public static void main(String[] args) {
+		subclasss2 c = new subclasss2();
+		c.add();
+		c.div();
+		c.multi();
+	}
+}
+#Hierarchical Inheritance
+package oop;
+
+public class HierarchicalInheritance {
+ void input() {
+	 System.out.println("Enter name :");
+ }
+}
+class B extends HierarchicalInheritance {
+	void show() {
+		System.out.println("My name is mane");
+	}
+}
+class c extends HierarchicalInheritance {
+void display() {
+	System.out.println("My name is shivani");
+
+}
+}
+class Demo{
+	public static void main(String[] args) {
+		B r1 = new B();
+		c r2 = new c();
+		r1.input();r1.show();
+		r2.display();r2.input();
+	}
+}
+#MULTPLE INHERITANCE SING INTRFACE
+
+interface A{
+	void show();
+	
+}
+interface B{
+	void show(); 
+}
+public class MultipleInheritance implements A,B{
+  public void show() {
+		System.out.println("This is class A");
+	}
+	
+	public static void main(String[] args) {
+		MultipleInheritance r = new MultipleInheritance();
+		r.show();
+	}
+}
