@@ -1,37 +1,32 @@
-class C
-{
-   public void disp()
-   {
-	System.out.println("C");
-   }
+Hybrid Inheritance :-
+=====================
+	interface B {
+    int x = 20;
 }
 
-class A extends C
-{
-   public void disp()
-   {
-	System.out.println("A");
-   }
+interface C extends B {
+    int y = 30;
 }
 
-class B extends C
-{
-   public void disp()
-   {
-	System.out.println("B");
-   }
-
+class A {
+    int z = 10;
 }
 
-class D extends A
-{
-   public void disp()
-   {
-	System.out.println("D");
-   }
-   public static void main(String args[]){
+class Main extends A implements C {
 
-	D obj = new D();
-	obj.disp();
-   }
+    void display() {
+        System.out.println("The x value is :" + x);
+        System.out.println("The y value is :" + y);
+        System.out.println("The z value is :" + z);
+    }
+
+    public static void main(String args[]) {
+        Main t = new Main();
+        t.display();
+    }
 }
+	Output :-
+	=========
+	The x value is :20
+	The y value is :30
+	The z value is :10
