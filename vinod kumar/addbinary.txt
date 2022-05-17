@@ -1,0 +1,32 @@
+///////addition of 2 binary numbers/////////
+
+package Demo1;
+import java.util.Scanner;
+public class Binary { 
+	
+    public static void main(String[] args) 
+    {
+        String b1,b2;
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter 1st binary number. : ") ;
+        b1=sc.next();
+        System.out.println("Enter 2nd binary number. : ") ;
+        b2=sc.next();
+        int num1=Integer.parseInt(b1,2);
+        int num2=Integer.parseInt(b2,2);
+        int sum=num1+num2;
+        System.out.println("Additon of two binary numbers is : "+Integer.toBinaryString(sum));
+    }
+
+}
+
+
+---------------
+
+output:
+
+Enter 1st binary number. : 
+1001
+Enter 2nd binary number. : 
+1000
+Additon of two binary numbers is : 10001
