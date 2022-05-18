@@ -1,0 +1,30 @@
+interface MyInterface{
+    public static final int x = 5;
+    public abstract void m1();
+}
+interface MyInterface1{
+    public static final int y = 19;
+    public abstract void m2();
+    
+}
+class InterfaceTeja implements MyInterface, MyInterface1{
+    public void m1() {
+        System.out.println("Training is going to be on");
+    }
+    public void m2() {
+        System.out.println("Come soon");
+    }
+    public static void main(String[] args){
+        InterfaceVishnu id = new InterfaceVishnu();
+        id.m1();
+        System.out.println(x);
+        id.m2();
+        System.out.println(y);
+    }
+}
+Output : -
+----------
+Training is going on
+5
+Join immediately
+19

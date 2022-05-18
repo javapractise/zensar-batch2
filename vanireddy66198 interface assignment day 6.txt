@@ -1,0 +1,118 @@
+SYNTAX:
+interface MyInterface
+{
+   /* All the methods are public abstract by default
+    * As you see they have no body
+    */
+   public void method1();
+   public void method2();
+}
+//PROGRAMS//
+////////ONE///////////
+interface MyInterface
+{
+   public void method1();
+   public void method2();
+}
+class Demo implements MyInterface
+{
+   public void method1()
+   {
+	System.out.println("implementation of method1");
+   }
+   public void method2()
+   {
+	System.out.println("implementation of method2");
+   }
+   public static void main(String arg[])
+   {
+	MyInterface obj = new Demo();
+	obj.method1();
+   }
+}
+
+
+///////TWO///////
+
+interface Inf1{
+   public void method1();
+}
+interface Inf2 extends Inf1 {
+   public void method2();
+}
+public class Demo implements Inf2{
+    public void method1(){
+	System.out.println("method1");
+    }
+    public void method2(){
+	System.out.println("method2");
+    }
+    public static void main(String args[]){
+	Inf2 obj = new Demo();
+	obj.method2();
+    }
+}
+
+
+//////THREE//////
+
+interface A
+{
+   public void aaa();
+}
+interface B
+{
+   public int aaa();
+}
+
+class Central implements A,B
+{
+
+   public void aaa() // error
+   {
+   }
+   public int aaa() // error
+   {
+   }
+   public static void main(String args[])
+   {
+
+   }
+}
+
+
+//////FOUR//////
+
+interface A
+{
+    int x=10;
+}
+interface B
+{
+    int x=100;
+}
+class Hello implements A,B
+{
+    public static void Main(String args[])
+    {
+       System.out.println(x); 
+       System.out.println(A.x);
+       System.out.println(B.x);
+    }
+}
+
+
+/////FIVE/////
+
+interface Pet{
+ public void test();
+}
+class Dog implements Pet{
+  public void test(){
+     System.out.println("Interface Method Implemented");
+  }
+  public static void main(String args[]){
+  Pet p = new Dog();
+  p.test();
+  }
+}

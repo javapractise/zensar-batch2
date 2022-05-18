@@ -1,0 +1,183 @@
+///////////// multiple Interface/////////
+
+interface Bank{  
+	void money();  
+}  
+interface Loan{  
+	void interest();  
+}  
+  
+class Interface5 implements Bank,Loan{  
+	public void money(){
+		System.out.println("Money method");
+	}
+	public void interest(){
+		System.out.println("Interest method");
+	}
+	public static void main(String args[]){  
+		Interface5 ob = new Interface5();  
+		ob.money();
+		ob.interest();
+	 }  
+}
+
+---------------
+
+output:
+
+Money method
+Interest method
+
+
+---------------------------
+2.
+
+interface Railways{  
+	void platform();  
+}  
+interface Train{  
+	void ticket();  
+}  
+class VSP implements Railways,Train{  
+	public void platform(){
+		System.out.println("VSP Platform");
+	}  
+	public void ticket(){
+		System.out.println("Ticket to VSP");
+	}
+}
+class VZM implements Railways{  
+	public void platform(){
+		System.out.println("VZM Platform");
+	} 
+}
+
+	/*
+	 * class v{ public void run() { System.out.println("fucgy"); } }
+	 */
+class Interface2{
+	public static void main(String args[]){  
+		VSP obj = new VSP();  
+		obj.platform();  
+		obj.ticket(); 
+		/*
+		 * v ob=new v(); ob.run();
+		 */
+	}	 
+}  
+ 
+----------
+
+output:
+VSP Platform
+Ticket to VSP
+
+--------------
+
+3.
+
+interface Visakha{  
+	void platform();  
+}  
+interface Tirumala extends Visakha{  
+	void ticket();  
+}  
+
+class Village implements Tirumala{  
+	public void ticket(){
+		System.out.println("Ticket method invoked");
+	}
+	 public void platform(){
+		 System.out.println("Platform has arrived");
+	}	 
+}
+
+class Interface3{
+	public static void main(String args[]){  
+		Tirumala obj = new Village();  
+		obj.platform();  
+		obj.ticket(); 
+	}	 
+}  
+
+
+------------
+output:
+
+Platform has arrived
+Ticket method invoked
+
+
+
+-------------
+
+4.
+interface Visakhapatnam{  
+	void platform();  
+}  
+interface Vizianagaram extends Visakhapatnam{  
+	void ticket();  
+	default void message() {
+		System.out.println("Default method invoked");
+	}
+}  
+
+class Test implements Vizianagaram{  
+	public void ticket(){
+		System.out.println("Ticket method invoked");
+	}
+	public void platform(){ 
+		System.out.println("Platform has arrived");
+	}
+}
+
+class Interface4{
+	public static void main(String args[]){  
+		Vizianagaram obj = new Test();  
+		obj.platform();  
+		obj.ticket();
+		obj.message();
+	}	 
+}  
+
+-----
+output:
+
+Platform has arrived
+Ticket method invoked
+Default method invoked
+
+------------
+
+5.
+
+
+interface Bank{  
+	void money();  
+}  
+interface Loan{  
+	void interest();  
+}  
+  
+class Interface5 implements Bank,Loan{  
+	public void money(){
+		System.out.println("Money method");
+	}
+	public void interest(){
+		System.out.println("Interest method");
+	}
+	public static void main(String args[]){  
+		Interface5 ob = new Interface5();  
+		ob.money();
+		ob.interest();
+	 }  
+}
+
+
+--------------
+output:
+
+Money method
+Interest method
+
+
