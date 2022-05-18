@@ -1,0 +1,30 @@
+  
+            Assignment2
+
+       
+class Parent{
+    public void print1(){
+        System.out.println("This is Parent class");
+    }
+}
+class Child extends Parent{
+    public void print(){
+        System.out.println("This is Child class");
+    }
+}
+class Main{
+    public static void main(String[] args){
+        Parent p = new Parent();
+        Child c = new Child();
+        p.print1();
+        c.print();
+        c.print1();
+    }
+}
+
+
+ output:
+       
+       This is Parent class
+       This is Child class
+       This is Parent class
