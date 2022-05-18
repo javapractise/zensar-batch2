@@ -1,0 +1,60 @@
+
+class Birds{  
+void eat(){System.out.println("eating...");}  
+}  
+class Cat extends Animal{  
+void bark(){System.out.println("barking...");}  
+}  
+class BabyCat extends Cat{  
+void weep(){System.out.println("weeping...");}  
+}  
+class TestInheritance2{  
+public static void main(String args[]){  
+BabyCat d=new BabyCat
+}} 
+class Animals{
+	void eat(){System.out.println("drinking");}
+}
+class Lion extends Animal{
+	void roar() {System.out.println("roaring");}
+	
+}
+
+class Eagle extends Animal{
+	void fly() {System.out.println("flying");}
+}
+
+public class TestInheritance3 {
+	public static void main(String[] args) {
+		Eagle e =new Eagle();
+		e.eat();
+		e.fly();
+		
+	}
+
+}
+class Animal{
+
+void eat(){System.out.println("eating..");}
+}
+
+class Dog extends Animal{
+void bark(){System.out.println("barking...");}
+}
+class TestInheritance{
+public static void main(String args[]){
+
+Dog d=new Dog();
+d.bark();
+d.eat();
+}
+}
+
+
+
+
+
+
+
+
+
