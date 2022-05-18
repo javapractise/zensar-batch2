@@ -1,0 +1,15 @@
+interface MyInterface{
+   public abstract void m1();
+}
+class InterfaceDemo implements MyInterface{
+    public void m1() {
+        System.out.println("Welcome to zensar");
+    }
+    public static void main(String[] args) {
+        InterfaceDemo id = new InterfaceDemo();
+        id.m1();
+    }
+}
+Output :-
+---------
+	Welcome to zensar.
