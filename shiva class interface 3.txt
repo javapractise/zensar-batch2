@@ -1,0 +1,26 @@
+interface Friend{
+
+public void frnd();
+
+}
+
+class frndgrp implements Friend{
+
+public void frnd(){
+
+System.out.println("siddu,shiva");
+
+}
+
+public static void main(String args[]){
+
+Friend f = new frndgrp();
+
+f.frnd();
+
+}
+
+}
+ 
+out put;
+siddu,shiva
