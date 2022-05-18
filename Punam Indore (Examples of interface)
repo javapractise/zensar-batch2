@@ -1,0 +1,100 @@
+// 1.
+interface printable{
+void print();
+}
+
+class A6 implements printable{
+public void print(){System.out.println("Car");}
+
+public static void main(String args[]){
+A6 obj = new A6();
+obj.print();
+ }
+}
+
+// 2.
+
+interface Flower {
+  public void flowerColour(); 
+  public void print(); 
+}
+class Rose implements Flower {
+  public void flowerColour() {
+    System.out.println("Red");
+  }
+  public void print() {
+    System.out.println("yellow");
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    Rose myRose = new Rose();
+    myRose.flowerColour();
+    myRose.print();
+  }
+}
+
+ // 3.
+
+interface FirstInterface {
+  public void myMethod(); 
+}
+
+interface SecondInterface {
+  public void myOtherMethod(); 
+}
+
+
+class DemoClass implements FirstInterface, SecondInterface {
+  public void myMethod() {
+    System.out.println("My new car..");
+  }
+  public void myOtherMethod() {
+    System.out.println("My other new car...");
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    DemoClass myObj = new DemoClass();
+    myObj.myMethod();
+    myObj.myOtherMethod();
+  }
+}
+
+// 4.
+
+interface Car {
+  public void carColour(); 
+  public void print(); 
+}
+class Tata implements Car {
+  public void carColour() {
+    System.out.println("Black");
+  }
+  public void print() {
+    System.out.println("White");
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    Tata myTata = new Tata();
+    myTata.carColour();
+    myTata.print();
+  }
+}
+ // 5.
+interface Pet{
+ public void test();
+}
+class Dog implements Pet{
+  public void test(){
+     System.out.println("Interface Method Implemented");
+  }
+  public static void main(String args[]){
+  Pet p = new Dog();
+  p.test();
+  }
+}
