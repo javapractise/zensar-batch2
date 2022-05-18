@@ -1,0 +1,17 @@
+class Parent{
+    System.out.println("This is a parent class");
+}
+
+class Sub{
+    System.out.println("This is a child class")
+}
+
+class Main{
+    public static void main(String[] args){
+            
+        Play p = new Play();
+        p.games();
+        p.videogames();
+
+    }
+}
