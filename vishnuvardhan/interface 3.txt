@@ -1,0 +1,39 @@
+interface APSRTC{  
+	void depoit();  
+}  
+interface Bus{  
+	void ticket();  
+}  
+class HYD implements RTC,BUS{  
+	public void depoit(){
+		System.out.println("HYD depoit");
+	}  
+	public void ticket(){
+		System.out.println("Ticket to HYD");
+	}
+}
+class ONG implements RTC{  
+	public void depoit(){
+		System.out.println("ONG depoit");
+	} 
+}
+
+	/*
+	 * class v{ public void run() { System.out.println("fucgy"); } }
+	 */
+class Interface2{
+	public static void main(String args[]){  
+		HYD obj = new HYD();  
+		obj.depoit();  
+		obj.ticket(); 
+		/*
+		 * v ob=new v(); ob.run();
+		 */
+	}	 
+}  
+ 
+----------
+
+output:
+HYD depoit
+Ticket to HYD
