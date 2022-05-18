@@ -1,0 +1,155 @@
+1.Interfaces :-
+==============
+interface MyInterface{
+   public abstract void m1();
+}
+class InterfaceDemo implements MyInterface{
+    public void m1() {
+        System.out.println("Welcome to zensar");
+    }
+    public static void main(String[] args) {
+        InterfaceDemo id = new InterfaceDemo();
+        id.m1();
+    }
+}
+Output :-
+---------
+	Welcome to zensar.
+
+2. Interface using final method :-
+--------------------------------
+interface MyInterface{
+    public static final int x = 15;
+   public abstract void m1();
+}
+class InterfaceDemo implements MyInterface{
+    public void m1() {
+        System.out.println("Welcome to zensar");
+    }
+    public static void main(String[] args) {
+        InterfaceDemo id = new InterfaceDemo();
+        id.m1();
+        System.out.println(x);
+    }
+}
+Output :-
+----------
+Welcome to zensar
+15
+
+3.Multiple Interface :-
+---------------------
+interface MyInterface{
+    public static final int x = 5;
+    public abstract void m1();
+}
+interface MyInterface1{
+    public static final int y = 19;
+    public abstract void m2();
+    
+}
+class InterfaceTeja implements MyInterface, MyInterface1{
+    public void m1() {
+        System.out.println("Training is going on");
+    }
+    public void m2() {
+        System.out.println("Join immediately");
+    }
+    public static void main(String[] args){
+        InterfaceTeja id = new InterfaceTeja();
+        id.m1();
+        System.out.println(x);
+        id.m2();
+        System.out.println(y);
+    }
+}
+Output : -
+----------
+Training is going on
+5
+Join immediately
+19
+
+4.Marker Interface :-
+===================
+
+import java.util.Scanner;
+public class Student implements Cloneable {
+   int age;
+   String name;
+    String address;
+   public Student (String name, int age, String address){
+      this.age = age;
+      this.name = name;
+       this.address = address;
+   }
+   public void display() {
+      System.out.println("Name of the student is: "+name);
+      System.out.println("Age of the student is: "+age);
+      System.out.println("Address of the student is: "+address);
+   }
+   public static void main (String args[]) throws CloneNotSupportedException {
+      Scanner sc = new Scanner(System.in);
+      System.out.println("Enter your name: ");
+      String name = sc.next();
+      System.out.println("Enter your age: ");
+      int age = sc.nextInt();
+        System.out.println("Enter your Address: ");
+      String add = sc.next();
+      Student obj = new Student(name, age, add);
+      Student obj2 = (Student) obj.clone();
+      obj2.display();
+   }
+}
+	Output :-
+	-----------
+Enter your name: 
+>>>Teja
+Enter your age: 
+>>>23
+Enter your Address: 
+>>>Anakapalli
+Name of the student is: Teja
+Age of the student is: 23
+Address of the student is: Anakapalli
+
+5.Functional Interface :-
+-----------------------
+
+1.class Test {
+	public static void main(String args[])
+	{
+		new Thread(new Runnable() {
+			 public void run()
+			{
+				System.out.println("New thread created");
+			}
+		}).start();
+	}
+}
+	output :-
+	=========
+New thread created.
+
+======>
+2.
+	By using lambda expression
+
+interface Square {
+	int calculate(int x);
+}
+class Test {
+	public static void main(String args[])
+	{
+		int a = 15;
+		Square s = (int x) -> x * x;
+		int ans = s.calculate(a);
+		System.out.println("Square of a given number is " +ans);
+	}
+}
+	output:-
+	--------
+	Square of given number is 225
+
+
+
