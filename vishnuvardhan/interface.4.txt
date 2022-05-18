@@ -1,0 +1,26 @@
+interface Bank{  
+	void money();  
+}  
+interface Loan{  
+	void interest();  
+}  
+  
+class Interface5 implements Bank,Loan{  
+	public void money(){
+		System.out.println("Money method");
+	}
+	public void interest(){
+		System.out.println("Interest method");
+	}
+	public static void main(String args[]){  
+		Interface5 ob = new Interface5();  
+		ob.money();
+		ob.interest();
+	 }  
+}
+
+
+output:
+
+Money method
+Interest method
