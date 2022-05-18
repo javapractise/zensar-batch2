@@ -1,0 +1,168 @@
+
+
+
+interface Main{
+	void implement();
+}
+class sub implements Main{
+	public void implement() {
+		System.out.println("Interface main implemented");
+	}
+}
+public class InterfaceOne {
+	public static void main(String args[]) {
+		sub obj = new sub();
+		obj.implement();
+	}
+
+}
+
+
+Output:
+	Interface main implemented
+
+
+-----------------------------------------------------------------------------------------
+
+
+
+interface Tree {
+	void nature();
+}
+interface Wood extends Tree {
+	void material();
+}
+class Table implements Wood {
+	Table() {
+		System.out.println("Implements both Tree and wood");
+	}
+	public void nature() {
+		System.out.println("This is tree interface extended by wood interface");
+	}
+	public void material() {
+		System.out.println("This is wood interface implemnted by table class");
+	}
+}
+public class InterfaceTwo {
+	public static void main(String args[]) {
+		Table t = new Table();
+		t.nature();
+		t.material();
+	}
+}
+
+
+
+Output:
+	Implements both Tree and wood
+	This is tree interface extended by wood interface
+	This is wood interface implemnted by table class
+
+-----------------------------------------------------------------------------------------
+
+
+interface ExDefault {
+	void run();
+	default void example() {
+		System.out.println("This is default method in interface");
+	}
+}
+class code implements ExDefault {
+	public void run() {
+		System.out.println("Implements ExDefault interface");
+	}
+}
+public class InterfaceThree {
+	public static void main(String args[]) {
+		code obj = new code();
+		obj.run();
+		obj.example();
+	}
+
+}
+
+
+
+Output:
+	Implements ExDefault interface
+	This is default method in interface
+
+
+-----------------------------------------------------------------------------------------
+
+
+interface Tree{
+	void branch();
+	
+}
+interface Plant{
+	void stem();
+}
+class Human implements Tree,Plant {
+	Human() {
+		System.out.println("This is Human class");
+	}
+	public void branch() {
+		System.out.println("This is Tree interface");
+	}
+	public void stem() {
+		System.out.println("This is Plant interface");
+	}
+}
+class Earth extends Human {
+	Earth() {
+		System.out.println("This is Earth class ");
+	}
+	
+}
+public class InterfaceFour {
+	public static void main(String args[]) {
+		Earth e = new Earth();
+		e.branch();
+		e.stem();
+		
+	}
+}
+
+
+
+Output: 
+This is Human class
+This is Earth class 
+This is Tree interface
+This is Plant interface
+
+
+
+-----------------------------------------------------------------------------------------
+
+interface Runnable {
+	void run();
+	interface Printable{
+		void print();
+	}
+}
+class Nested implements Runnable.Printable{
+	Nested() {
+		System.out.println("Implementing nested interfaces ");
+	}
+	public void run() {
+		System.out.println("This is Runnable interface");
+	}
+	public void print() {
+		System.out.println("This is Printable interface");
+	}
+}
+public class InterfaceFive {
+	public static void main(String args[]) {
+		Nested obj = new Nested();
+		obj.run();
+		obj.print();
+	}
+}
+
+
+Output : 
+	Implementing nested interfaces 
+	This is Runnable interface
+	This is Printable interface
