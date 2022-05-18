@@ -1,0 +1,25 @@
+class parentclass{
+  public void pmethod(){
+    System.out.println("This is parent class");
+  }
+}
+
+class Childclass extends Parentclass{
+  public void cmethod(){
+    System.out.println("This is child class");
+  }
+}
+
+class Ans{
+  public static void main(String[] args){
+    Parentclass m = new Parentclass();
+    Childclass n = new Childclass();
+    m.parentmethod();
+    n.childmethod();
+    n.parentmethod();
+  }
+}
+
+output: This is parent class
+        This is child class
+        This is parent class				
