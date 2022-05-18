@@ -1,0 +1,13 @@
+interface santu{  
+void print();  
+}  
+class chinna implements santu{  
+public void print(){System.out.println("RRR");}  
+  
+public static void main(String args[]){  
+chinna obj = new chinna();  
+obj.print();  
+ }  
+}  
+
+Output: RRR
