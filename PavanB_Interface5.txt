@@ -1,0 +1,29 @@
+//interface 5 PavanButke
+
+package Interface;
+
+interface Painting {
+  void paint();
+}
+
+class Rectangle implements Painting {
+  public void paint() {
+    System.out.println("Painting Rectangle");
+  }
+}
+class Hexagon implements Painting {
+  public void paint() {
+    System.out.println("Painting Hexagon");
+  }
+}
+class Test {
+  public static void main(String args[]) {
+    Painting p = new Hexagon();
+    p.paint();
+
+    System.out.println();
+
+    Painting p1 = new Rectangle();
+    p1.paint();
+  }
+}

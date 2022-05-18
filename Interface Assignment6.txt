@@ -1,0 +1,169 @@
+
+          Interface programes
+1.
+interface Shop1
+{  
+	void items();  
+}  
+interface Shop2{  
+	void products();  
+}  
+  
+class Main implements Shop1,Shop2{  
+	public void items (){
+		System.out.println("chocolate");
+	}
+	public void products(){
+		System.out.println("cycle");
+	}
+	public static void main(String args[]){  
+		Main s = new Main();  
+		s.items();
+		s.products();
+	 }  
+}
+
+
+output :
+    chocolate 
+    cycle
+
+
+
+2
+   interface Multiplex
+{  
+	void movietheater ();  
+}  
+interface Games
+{  
+	void cricket ();  
+}  
+class Theater implements Multiplex , Games{  
+	public void movietheater (){
+		System.out.println("movie is good");
+	}  
+	public void cricket(){
+		System.out.println("virat hit a six");
+	}
+}
+class Sports implements Games{  
+	public void cricket(){
+		System.out.println("virat hit a six");
+	} 
+}
+
+class Main{
+	public static void main(String args[]){  
+		Theater T = new Theater();  
+		T.movietheater();  
+		T.cricket(); 
+	
+	}	 
+}  
+
+output:
+       movie is good 
+       virat hit a six
+
+
+ 3.
+
+    interface Foodcourt{  
+	void menu();  
+}  
+interface VegAndNonveg extends Foodcourt{  
+	void items();  
+}  
+
+class nonveg implements VegAndNonveg {  
+	public void items(){
+		System.out.println("chicken biryani ordered");
+	}
+	 public void menu (){
+		 System.out.println("veg item");
+	}	 
+}
+
+class Main {
+	public static void main(String args[]){  
+		VegAndNonveg N = new nonveg();  
+		N.menu();  
+		N.items(); 
+	}	 
+}  
+
+
+output:
+      veg item
+      chicken biryani ordered
+
+
+  4.
+    
+
+    interface Chirala
+{  
+	void platform();  
+}  
+interface Ongole extends Chirala {  
+	void ticket();  
+	default void message() {
+		System.out.println("Default method invoked");
+	}
+}  
+
+class Test implements Ongole{  
+	public void ticket(){
+		System.out.println("Ticket method invoked");
+	}
+	public void platform(){ 
+		System.out.println("Platform has arrived");
+	}
+}
+
+class Main {
+	public static void main(String args[]){  
+           Ongole O = new Test();  
+		O.platform();  
+		O.ticket();
+		O.message();
+	}	 
+}  
+   
+output:
+
+Platform has arrived
+Ticket method invoked
+Default method invoked
+
+
+5.
+    
+
+    interface Bank{  
+	void money();  
+}  
+interface Loan{  
+	void interest();  
+}  
+  
+class Main implements Bank,Loan{  
+	public void money(){
+		System.out.println("Money method");
+	}
+	public void interest(){
+		System.out.println("Interest method");
+	}
+	public static void main(String args[]){  
+		Main M = new Main();  
+		M.money();
+		M.interest();
+	 }  
+}
+
+
+  output:
+
+     Money method
+     Interest method

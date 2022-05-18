@@ -1,0 +1,19 @@
+interface riding {
+    void ride();
+}
+
+interface racing {
+    void race();
+}
+class pulsar implements riding{
+    public void ride(){System.out.println("riding pulsar");}
+}
+class duke implements racing{
+    public void race(){System.out.println("racing duke");}
+}
+class TestInterface1{
+    public static void main(String[]args){
+        riding r=new pulsar();
+        r.ride();
+    }
+}

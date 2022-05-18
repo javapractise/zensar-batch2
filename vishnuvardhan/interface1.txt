@@ -1,0 +1,35 @@
+public class Interface1
+{
+	interface Runnable {
+		void run();
+		interface Printable{
+			void print();
+		}
+	}
+	class vishnu implements Runnable.Printable{
+		vishnu() {
+			System.out.println("Implementing nested interfaces ");
+		}
+		public void run() {
+			System.out.println("This is Runnable interface");
+		}
+		public void print() {
+			System.out.println("This is Printable interface");
+		}
+	}
+	public class InterfaceFive {
+		public static void main(String args[]) {
+			vishnu obj = new vishnu();
+			obj.run();
+			obj.print();
+		}
+	}
+
+}
+
+/*
+Output : 
+	Implementing nested interfaces 
+	This is Runnable interface
+	This is Printable interface
+*/

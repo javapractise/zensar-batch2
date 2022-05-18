@@ -1,0 +1,14 @@
+interface in{
+void print();
+}
+class testcase implements in{
+public void print(){System.out.println("hello");}
+
+public static void main(String args[]){
+testcase obj = new testcase();
+obj.print();
+}
+}
+
+
+output:hello
