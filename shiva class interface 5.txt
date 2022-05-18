@@ -1,0 +1,18 @@
+interface A
+{
+    int x=5;
+}
+interface B
+{
+    int x=8;
+}
+class Hello implements A,B
+{
+    public static void Main(String args[])
+    {
+       System.out.println(x); 
+       System.out.println(A.x);
+       System.out.println(B.x);
+    }
+}
+
