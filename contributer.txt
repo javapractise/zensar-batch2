@@ -1,0 +1,19 @@
+
+public class Bandi Kameswarao
+{
+    public static void main(String []args){
+        float s=5.14f;
+         int r=100;
+        float A=s*r;
+    System.out.println("A" +A);
+}
+}
+
+
+output:A514.0
+
+
+
+
+
+
