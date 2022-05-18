@@ -1,0 +1,26 @@
+interface Games{  
+    void games();  
+    interface VideoGames{
+        void videogames();
+    }  
+}
+
+class Play implements Games{  
+    public void games(){
+        System.out.println(" I like to play games in general");
+    }
+    
+    public void videogames(){
+        System.out.println(" I like to play video games to be specific");
+    }
+}
+
+class Main{
+    public static void main(String[] args){
+            
+        Play p = new Play();
+        p.games();
+        p.videogames();
+
+    }
+}
