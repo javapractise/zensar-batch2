@@ -1,14 +1,13 @@
-public class LengthExample{  
+public class Length{  
 public static void main(String args[]){  
-String s1="javatpoint";  
-String s2="python";  
-System.out.println("string length is: "+s1.length());//10 is the length of javatpoint string  
-System.out.println("string length is: "+s2.length());//6 is the length of python string  
+	String str ="The escape character is used to escape some of the characters present inside a string.";
+	int a = str.length();
+	System.out.println(" String Length is: "+ a);  
+
 }
 }
 
 
 ==============================
 output:
-string length is: 10
-string length is: 6  
+String Length is: 86
