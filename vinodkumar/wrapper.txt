@@ -1,0 +1,194 @@
+/////////////////convertion of primitive to wrapper class////////////////
+
+package WrapperClasses;
+
+public class Wrapper1 {
+
+	public static void main(String[] args)
+	{
+		
+		//creation of primitive types//
+		int a=20; 
+		double b=1.23;
+		
+		//coversion into wrapper objects//
+		
+		Integer  i=Integer.valueOf(a);
+		Double  c=Double.valueOf(b);
+		
+		System.out.println( "the value of  INTEGER is : " +i);
+		System.out.println( "the value of  DOUBLE is : " +c);
+		
+
+	}
+
+}
+
+-------------
+
+output:
+
+the value of  INTEGER is : 20
+the value of  DOUBLE is : 1.23
+
+
+
+-----------------------------------------------------------------------------
+
+
+////////////////////conversion of wrapper to primitives////////////
+
+package WrapperClasses;
+
+public class Wrapper2 {
+
+	public static void main(String[] args) {
+
+		//creation of wrapper objects//
+		Integer  k=Integer.valueOf(30);
+		Double  l=Double.valueOf(2.43);
+		
+		//coversion into primitive type//
+		
+		int a = k.intValue(); 
+		double b = l.doubleValue();
+		
+		
+		System.out.println( "the value of  int is : " +a);
+		System.out.println( "the value of  double is : " +b);
+
+	}
+
+}
+
+
+------------------
+output:
+
+the value of  int is : 30
+the value of  double is : 2.43
+
+--------------------------------------------------------------------------
+
+//////////////////////Autoboxing/////////////////////
+
+package WrapperClasses;
+
+public class Wrapper3 
+		{
+		public static void main(String args[])
+		{  
+			
+			
+			//creation of primitive types//
+			
+				byte b=10;  
+				short s=20;  
+				int i=30;  
+				long l=40;  
+				float f=50.0F;  
+				double d=60.0D;  
+				char c='a';  
+				boolean b2=true; 
+				
+				//converting to wrapper objects//
+				Byte o = Byte.valueOf(b);
+				Short p = Short.valueOf(s);
+				Integer q = Integer.valueOf(i);
+				Long r = Long.valueOf(l);
+				Float a = Float.valueOf(f);
+				Double t = Double.valueOf(d);
+				Character u = Character.valueOf(c);
+				Boolean v = Boolean.valueOf(b2);
+				
+				
+				
+				System.out.println( "the value of  BYTE is : " +o);
+				System.out.println( "the value of  SHORT is : " +p);
+				System.out.println( "the value of  INTEGER is : " +q);
+				System.out.println( "the value of  LONG is : " +r);
+				System.out.println( "the value of  FLOAT is : " +a);
+				System.out.println( "the value of  DOUBLE is : " +t);
+				System.out.println( "the value of  CHARACTER is : " +u);
+				System.out.println( "the value of  BOOLEAN is : " +v);
+
+	}
+
+}
+
+----------------------
+
+output:
+
+the value of  BYTE is : 10
+the value of  SHORT is : 20
+the value of  INTEGER is : 30
+the value of  LONG is : 40
+the value of  FLOAT is : 50.0
+the value of  DOUBLE is : 60.0
+the value of  CHARACTER is : a
+the value of  BOOLEAN is : true
+
+
+--------------------------------------------------------------------------
+
+/////////////////UNBOXING///////////////////////
+
+package WrapperClasses;
+
+public class Wrapper4 {
+
+	public static void main(String[] args) {
+		
+		//creation of wrapper objects//
+		Byte o = Byte.valueOf((byte)100);
+		Short p = Short.valueOf((short)200);
+		Integer q = Integer.valueOf(300);
+		Long r = Long.valueOf(400);
+		Float a = Float.valueOf(60.0F);
+		Double t = Double.valueOf(70.0D);
+		Character u = Character.valueOf('a');
+		Boolean v = Boolean.valueOf("true");
+		
+		//creation of primitive types//
+		
+				byte b=100;  
+				short s=200;  
+				int i=300;  
+				long l=400;  
+				float f=60.0F;  
+				double d=70.0D;  
+				char c='a';  
+				boolean b2=true; 
+		
+		
+		
+		System.out.println( "the value of  byte is : " +o);
+		System.out.println( "the value of  short is : " +p);
+		System.out.println( "the value of  integer is : " +q);
+		System.out.println( "the value of  long is : " +r);
+		System.out.println( "the value of  folat is : " +a);
+		System.out.println( "the value of  double is : " +t);
+		System.out.println( "the value of  character is : " +u);
+		System.out.println( "the value of  boolean is : " +v);
+
+
+	}
+
+}
+
+
+----------------------
+
+output:
+
+the value of  byte is : 100
+the value of  short is : 200
+the value of  integer is : 300
+the value of  long is : 400
+the value of  folat is : 60.0
+the value of  double is : 70.0
+the value of  character is : a
+the value of  boolean is : true
+
+
