@@ -1,0 +1,29 @@
+package Wrapper;
+
+
+ class wrapper {
+	private int i;
+	Wrapper(){}
+	Wrapper(int a) {
+		i = a;
+	}
+	public int getValue() {
+		return i;
+	}
+	public void setValue(int a) {
+		i =a;
+	}
+	public String toString() {
+		return Integer.toString(i);
+	}
+	
+}
+public class Custom {
+	public static void main(String args[]) {
+		Wrapper nikhil = new Wrapper(100);
+		System.out.println("The value of object is "+nikhil);
+	}
+}
+
+Output:
+	The value of object is 100
