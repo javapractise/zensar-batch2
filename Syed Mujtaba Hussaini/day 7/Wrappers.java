@@ -38,6 +38,7 @@ public class Main
 		 Double dobj = 1234.1234;
 		 Character cobj = 'c';
 		 
+		 System.out.println("Autoboxing");
 		 //Autoboxing
 		 System.out.println(Byte.valueOf(b));
 		 System.out.println(Integer.valueOf(i));
@@ -47,6 +48,8 @@ public class Main
 		 System.out.println(Double.valueOf(d));
 		 System.out.println(Character.valueOf(c));
 		 
+		 System.out.println();
+		 System.out.println("Unboxing");
 		 //Unboxing
 		 System.out.println(bobj.intValue());
 		 System.out.println(iobj.intValue());
@@ -55,6 +58,8 @@ public class Main
 		 System.out.println(fobj.intValue());
 		 System.out.println(dobj.intValue());
 		 System.out.println(cobj.charValue());
+		
+		 System.out.println();
 		 
 		 //CustomWrapper
 		 
@@ -63,3 +68,24 @@ public class Main
     }  
 	
 }
+
+/** Autoboxing
+123
+123
+12
+1234
+234.23
+1234.1234
+c
+
+Unboxing
+123
+123
+12
+1234
+234
+1234
+c
+
+The value from integer to float is: 12.0 
+**/
