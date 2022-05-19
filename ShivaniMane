@@ -15,10 +15,10 @@ output:
 
 
 ##Creating the custom wrapper class
-class Javatpoint{
+class Javatt{
 private int i;
-Javatpoint(){}
-Javatpoint(int i){
+Javatt(){}
+Javatt(int i){
 this.i=i;
 }
 public int getValue(){
@@ -33,9 +33,9 @@ return Integer.toString(i);
 }
 }
 //Testing the custom wrapper class
-public class TestJavatpoint{
+public class TestJavatt{
 public static void main(String[] args){
-Javatpoint j=new Javatpoint(1020);
+Javatt j=new Javatt(1020);
 System.out.println(j);
 }}
 
