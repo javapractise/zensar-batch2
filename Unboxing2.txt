@@ -1,0 +1,16 @@
+package zensar;
+
+public class UnBoxing {
+
+
+	  public static void main(String[] args) {
+	      
+	        Integer intVal = 10;
+
+	        
+	        int num = intVal;
+	        System.out.println("converting wrapper class object into int primitive type "+num);
+	    }
+
+
+}
