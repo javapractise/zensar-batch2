@@ -1,0 +1,102 @@
+Wrapper class :-
+---------------
+class WrapperClassDemo{
+    public static void main(String[] args)
+    {
+        int x = 25;
+        Integer y = x;
+        System.out.println(y);
+    }
+}
+output :-
+=======
+	25
+2. using AutoBoxing :-
+---------------------
+class WrapperClassDemo{
+    public static void main(String[] args)
+    {
+        int x = 25;
+        int j = x;
+        Integer y = x;
+        System.out.println(y+" "+x+" "+y);
+    }
+}
+Output :-
+-----------
+	25 25 25
+3. String Concatination by Operator :-
+----------------------------------------
+	class TestStringConcatination{
+    public static void main(String[] args){
+        String s = " Zensar " + "Technologies";
+        System.out.println(s);
+    }
+}
+	output :-
+	=========
+	Zensar Technologies
+3.String Concatination by concat() method :-
+==========================================
+class TestStringConcatination1{
+    public static void main(String[] args){
+        String s1 = "Training is ";
+        String s2 = "Going on";
+        String s3 = s1.concat(s2);
+        System.out.println(s3);
+    }
+}
+Output :-
+=========
+	Training is Going on
+
+4.String Buffer & String Builder :-
+===============================
+1.
+public class StringBufferTeja{
+    public static void main(String[] args){
+        StringBuffer sb = new StringBuffer("Welcome to java micro services");
+        System.out.println(sb);
+    }
+}
+	output :-
+	---------
+	Welcome to java micro services
+2.
+	public class StringBufferTeja{
+    public static void main(String[] args){
+        StringBuffer sb = new StringBuffer("Welcome to java ");
+        System.out.println(sb);
+        System.out.println(sb.append("micro services"));
+    }
+}
+	output :-
+	---------
+	Welcome to java 
+	Welcome to java micro services
+3.
+	public class StringBufferTeja{
+    public static void main(String[] args){
+        StringBuffer sb = new StringBuffer("Welcome to java ");
+        System.out.println(sb);
+        System.out.println(sb.replace(0,7, "Training"));
+    }
+}
+	output :-
+	--------
+	Welcome to java 
+	Training to java
+
+StringBuilder :-
+================
+	class StringBuilderMain {
+    public static void main(String[] args){
+        StringBuilder sb = new StringBuilder("Temperature is very high");
+        System.out.println(sb);
+    }
+}
+	output :-
+	--------
+	Temperature is very high.
+
+

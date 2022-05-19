@@ -1,0 +1,26 @@
+ Custom wrapper class
+  
+class katika{  
+private int i;  
+katika(){}  
+katika(int i){  
+this.i=i;  
+}  
+public int getValue(){  
+return i;  
+}  
+public void setValue(int i){  
+this.i=i;  
+}  
+@Override  
+public String toString() {  
+  return Integer.toString(i);  
+}  
+}  
+//Testing the custom wrapper class  
+public class Testkatika{  
+public static void main(String[] args){  
+katika k=new katika(10);  
+System.out.println(j);  
+}}  
+Output:  10

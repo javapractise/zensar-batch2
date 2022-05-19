@@ -1,0 +1,57 @@
+public class WrapperExample{    
+public static void main(String args[]){    
+   
+Integer a=new Integer(3);    
+int i=a.intValue(); 
+int j=a;   
+    
+System.out.println(a+" "+i+" "+j);    
+}}    
+
+
+output: 3 3 3
+
+
+
+-------------------------------------------
+
+
+// Unboxing
+
+public class WrapperExample{    
+public static void main(String args[]){    
+  
+Integer a=new Integer(3);    
+int i=a.intValue();
+int j=a;   
+    
+System.out.println(a+" "+i+" "+j);    
+}}    
+
+
+
+output:20 20 20
+
+
+---------------------------------------
+
+
+// Autoboxing
+
+import java.util.ArrayList;
+class Autoboxing
+{
+    public static void main(String[] args)
+    {
+        char ch = 'a';
+        Character a = ch;
+  
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+  
+       
+        arrayList.add(25);
+  
+        
+        System.out.println(arrayList.get(0));
+    }
+}

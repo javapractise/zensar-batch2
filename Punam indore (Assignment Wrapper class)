@@ -1,0 +1,73 @@
+## Class Wrapper 
+
+public class Main { 
+  public static void main(String[] args) { 
+    Integer myInt = 6; 
+    Double myDouble = 6.77; 
+    Character myChar = 'P'; 
+    System.out.println(myInt.intValue());
+    System.out.println(myDouble.doubleValue());
+    System.out.println(myChar.charValue());
+  }
+}
+output 6
+       6.77
+        P
+## Autoboxing
+
+
+public class WrapperExample1{  
+public static void main(String args[]){   
+int a=30;  
+Integer i=Integer.valueOf(a);  
+Integer j=a;
+System.out.println(a+" "+i+" "+j);  
+}
+}  
+Output 
+ 30 30 30
+
+ ##Unboxing
+
+public class WrapperExample2{    
+public static void main(String args[]){       
+Integer a=new Integer(6);    
+int i=a.intValue();
+int j=a;
+System.out.println(a+" "+i+" "+j);    
+}
+}    
+Output 
+6 6 6
+
+ ## Custom Wrapper class
+class Wrapper{
+  private int it;
+
+  Wrapper(int i){
+    this.it = i;
+  }
+
+  public int getValue() {
+    return it;
+  }
+
+  public void setValue(int i) {
+    this.it = i;
+  }
+
+  public String toString() {
+    return Integer.toString(it);
+  }
+}
+public class CustomWrapperDemo {
+  public static void main(String[] args) {
+    Wrapper w = new Wrapper(20);
+    w.setValue(60);
+    System.out.println(w.getValue());
+    System.out.println(w);
+  }
+}
+
+output 20
+       60

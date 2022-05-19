@@ -1,0 +1,20 @@
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+package Wrapper;
+
+public class Autoboxing {
+	public static void main(String args[]) {
+		int v = 100;
+		Integer vishnu =Integer.valueOf(v);
+		Integer nikhil = v;
+		System.out.println("The requried score : "+v);
+		System.out.println("patnership :"+vishnu);
+		System.out.println("patnership :"+nikhil);
+
+
+	}
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+output:
+The requried score : 100
+patnership :100
+patnership :100
