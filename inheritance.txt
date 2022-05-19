@@ -1,0 +1,181 @@
+
+Single 
+
+Class A
+{
+   public void methodA()
+   {
+     System.out.println("Base class method");
+   }
+}
+
+Class B extends A
+{
+   public void methodB()
+   {
+     System.out.println("Child class method");
+   }
+   public static void main(String args[])
+   {
+     B obj = new B();
+     obj.methodA(); 
+     obj.methodB(); 
+  }
+
+
+multi level
+Class X
+{
+   public void methodX()
+   {
+     System.out.println("Class X method");
+   }
+}
+Class Y extends X
+{
+public void methodY()
+{
+System.out.println("class Y method");
+}
+}
+Class Z extends Y
+{
+   public void methodZ()
+   {
+     System.out.println("class Z method");
+   }
+   public static void main(String args[])
+   {
+     Z obj = new Z();
+     obj.methodX(); 
+     obj.methodY(); 
+     obj.methodZ(); 
+  }
+}
+
+hierachical
+
+lass A
+{
+   public void methodA()
+   {
+      System.out.println("method of Class A");
+   }
+}
+class B extends A
+{
+   public void methodB()
+   {
+      System.out.println("method of Class B");
+   }
+}
+class C extends A
+{
+  public void methodC()
+  {
+     System.out.println("method of Class C");
+  }
+}
+class D extends A
+{
+  public void methodD()
+  {
+     System.out.println("method of Class D");
+  }
+}
+class JavaExample
+{
+  public static void main(String args[])
+  {
+     B obj1 = new B();
+     C obj2 = new C();
+     D obj3 = new D();
+     
+     obj1.methodA();
+     obj2.methodA();
+     obj3.methodA();
+  }
+}
+
+Hybrid
+class C
+{
+   public void disp()
+   {
+	System.out.println("C");
+   }
+}
+
+class A extends C
+{
+   public void disp()
+   {
+	System.out.println("A");
+   }
+}
+
+class B extends C
+{
+   public void disp()
+   {
+	System.out.println("B");
+   }
+	
+}
+
+class D extends A
+{
+   public void disp()
+   {
+	System.out.println("D");
+   }
+   public static void main(String args[]){
+
+	D obj = new D();
+	obj.disp();
+   }
+}
+
+multilevel
+class Car{
+   public Car()
+   {
+	System.out.println("Class Car");
+   }
+   public void vehicleType()
+   {
+	System.out.println("Vehicle Type: Car");
+   }
+}
+class Maruti extends Car{
+   public Maruti()
+   {
+	System.out.println("Class Maruti");
+   }
+   public void brand()
+   {
+	System.out.println("Brand: Maruti");
+   }
+   public void speed()
+   {
+	System.out.println("Max: 90Kmph");
+   }
+}
+public class Maruti800 extends Maruti{
+
+   public Maruti800()
+   {
+	System.out.println("Maruti Model: 800");
+   }
+   public void speed()
+   {
+	System.out.println("Max: 80Kmph");
+   }
+   public static void main(String args[])
+   {
+	 Maruti800 obj=new Maruti800();
+	 obj.vehicleType();
+	 obj.brand();
+	 obj.speed();
+   }
+}
