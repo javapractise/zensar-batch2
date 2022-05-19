@@ -1,0 +1,78 @@
+##wrapper class example
+public class WrapperExample1{  
+public static void main(String args[]){  
+//Converting int into Integer  
+int a=20;  
+Integer i=Integer.valueOf(a);//converting int into Integer explicitly  
+Integer j=a;//autoboxing, now compiler will write Integer.valueOf(a) internally  
+  
+System.out.println(a+" "+i+" "+j);  
+}}  
+
+output:
+20 20 20
+
+
+
+##Creating the custom wrapper class
+class Javatpoint{
+private int i;
+Javatpoint(){}
+Javatpoint(int i){
+this.i=i;
+}
+public int getValue(){
+return i;
+}
+public void setValue(int i){
+this.i=i;
+}
+@Override
+public String toString() {
+return Integer.toString(i);
+}
+}
+//Testing the custom wrapper class
+public class TestJavatpoint{
+public static void main(String[] args){
+Javatpoint j=new Javatpoint(1020);
+System.out.println(j);
+}}
+
+out put;
+1020
+
+
+
+//Java program to convert primitive into objects
+##Autoboxing example of int to Integer
+public class WrapperExample1{
+public static void main(String args[]){
+//Converting int into Integer
+int a=100;
+Integer i=Integer.valueOf(a);//converting int into Integer explicitly
+Integer j=a;//autoboxing, now compiler will write Integer.valueOf(a) internally
+
+System.out.println(a+" "+i+" "+j);
+}}
+
+out put;
+100 100 100
+
+
+
+
+##//Java program to convert object into primitives  
+##Unboxing example of Integer to int  
+public class WrapperExample2{    
+public static void main(String args[]){    
+//Converting Integer to int    
+Integer a=new Integer(6);    
+int i=a.intValue();//converting Integer to int explicitly  
+int j=a;//unboxing, now compiler will write a.intValue() internally    
+System.out.println(a+" "+i+" "+j);    
+}}    
+
+out put;
+
+6 6 6
