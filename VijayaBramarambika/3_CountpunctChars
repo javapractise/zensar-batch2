@@ -19,5 +19,5 @@ public class CountPunctChars {
 
 /*
 Output:
-	Total no. of characters in combined string : 3
+	Total no. of punctuated characters in  string : 3
 */
