@@ -1,0 +1,6 @@
+class StringLength {
+    public static void main(String[] args) {
+        String x = "This is the string";
+        System.out.println(x.lenght()); 
+    }
+}
