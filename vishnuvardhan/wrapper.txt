@@ -1,0 +1,42 @@
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+package Wrapper;
+
+public class vishnuclass {
+	public static void main(String args[]) {
+		int a = 10;
+		float b = 8.5f;
+		char c = 'a';
+		long d = 50;
+		double e = 47.63d;
+		boolean f = true;
+		Integer intobj = a;
+		Float floatobj = b;
+		Character charobj = c;
+		Long longobj = d;
+		Double doubleobj = e;
+		Boolean boolobj = f;
+		System.out.println("Measurements of the object");
+		System.out.println("height of the object: " +intobj);
+		System.out.println("width of the object: " +floatobj);
+		System.out.println("name of the object: " +charobj);
+		System.out.println("length of the object: " +longobj);
+		System.out.println("Diameter of the object :" +doubleobj);
+		System.out.println("is the object measuerments are correct: " +boolobj);
+		
+		
+		
+	}
+
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////
+output:
+Measurements of the object
+height of the object: 10
+width of the object: 8.5
+name of the object: a
+length of the object: 50
+Diameter of the object :47.63
+is the object measuerments are correct: true
+
+
+	
