@@ -1,0 +1,54 @@
+//simple autoboxing example by Pavan Butke
+
+package zensar;
+
+public class AutoBoxing2 {
+
+	
+	
+
+	    public static void main(String[] args) {
+	   
+	        int intVal = 10;
+
+	        
+	        Integer int2Obj = intVal;
+	        System.out.println("Conversion of Primitive to Object of "+int2Obj);
+	    }
+	
+}
+
+
+//autboxing with arraylist -- Pavan Butke
+
+package zensar;
+
+import java.util.*;
+
+public class AutoBoxing {
+
+	
+
+
+    public static void main(String[] args) {
+	    int a = 32;
+        int s = 23;
+        char myChar = 'X';
+
+       
+        Integer myObject = new Integer(s);
+
+        Character myCharacter = new Character(myChar);
+        char charRec = myCharacter.charValue();
+        int intRec = myObject.intValue();
+
+	   
+	    ArrayList<Integer> myArray = new ArrayList<>();
+	    myArray.add(a);
+
+	    int myItem = myArray.get(0);
+
+	    System.out.println("Value of myItem "+myItem);
+	    
+    }
+}

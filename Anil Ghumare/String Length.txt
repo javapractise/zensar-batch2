@@ -1,0 +1,6 @@
+public class StringLength {  
+  public static void main(String[] args) {
+    String text = "SNSJNUFIHUIHUJDHJIO";
+      System.out.println("The length of the text String is: " + text.length());
+    }
+    }

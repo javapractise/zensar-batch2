@@ -1,0 +1,21 @@
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+package Wrapper;
+
+public class Unboxing {
+	public static void main(String args[])
+	{
+		Character obj = 'b';
+		char y = obj.charValue();
+		char x = obj;
+		System.out.println("The Wrapperclass object Character value "+obj);
+		System.out.println("Explicit conversion : "+y);
+		System.out.println("Unboxing : "+x);
+	}
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+output:
+The Wrapperclass object Character value b
+Explicit conversion : b
+Unboxing : b

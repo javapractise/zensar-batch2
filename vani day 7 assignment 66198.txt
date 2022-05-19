@@ -1,0 +1,94 @@
+WRAPPER CLASS
+
+public class Vanireddy{  
+   public static void main(String args[]){  
+	//Converting int primitive into Integer object  
+	int num=100;  
+	Integer obj=Integer.valueOf(num);  
+
+	System.out.println(num+ " "+ obj);  
+   }
+
+}
+
+output:100 100
+
+AUTOBOXING
+
+import java.util.ArrayList;
+class Autoboxing
+{
+    public static void main(String[] args)
+    {
+        char ch = 'a';
+ 
+        Character a = ch;
+  
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+  
+        arrayList.add(60);
+  
+        System.out.println(arrayList.get(0));
+    }
+}
+
+output: 60
+
+
+UNBOXING
+
+import java.util.ArrayList;
+  
+class Unboxing
+{
+    public static void main(String[] args)
+    {
+        Character ch = 'a';
+  
+        char a = ch;
+  
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+        arrayList.add(24);
+ 
+        int num = arrayList.get(0);
+  
+        System.out.println(num);
+    }
+}
+
+output: 24
+
+
+CUSTOM WRAPPER
+
+class Wrapper{
+  private int it;
+  
+  Wrapper(int i){
+    this.it = i;
+  }
+  
+  public int getValue() {
+    return it;
+  }
+  
+  public void setValue(int i) {
+    this.it = i;
+  }
+  
+  public String toString() {
+    return Integer.toString(it);
+  }
+}
+public class CustomWrapperDemo {
+  public static void main(String[] args) {
+    Wrapper w = new Wrapper(30);
+    w.setValue(50);
+    System.out.println(w.getValue());
+    System.out.println(w);
+  }
+}
+
+output: 
+30
+50

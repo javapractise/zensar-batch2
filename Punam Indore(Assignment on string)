@@ -1,0 +1,11 @@
+public class StringLength{  
+public static void main(String args[]){  
+String p1="welcome";  
+String p2="hello";  
+System.out.println("string length is: "+p1.length());
+System.out.println("string length is: "+p2.length());
+}
+}  
+output 
+Length of the String is 7
+Length of the String is 5

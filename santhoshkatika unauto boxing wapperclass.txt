@@ -1,0 +1,10 @@
+unautobox wapper class
+
+public class sanntosh2{    
+public static void main(String args[]){      
+Integer a=new Integer(7);    
+int i=a.intValue(); 
+int j=a;
+System.out.println(a+" "+i+" "+j);    
+}}    
+Output:  7 7 7

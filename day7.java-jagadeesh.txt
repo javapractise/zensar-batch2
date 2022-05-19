@@ -1,0 +1,143 @@
+WRAPPER:
+
+public class Wrapper {
+	public static void main(String args[]) {
+		int a = 10;
+		float b = 8.5f;
+		char c = 'a';
+		long d = 50;
+		double e = 47.63d;
+		boolean f = true;
+		Integer intobj = a;
+		Float floatobj = b;
+		Character charobj = c;
+		Long longobj = d;
+		Double doubleobj = e;
+		Boolean boolobj = f;
+		System.out.println("Conversion of primitive to objects");
+		System.out.println("Integer object " +intobj);
+		System.out.println("Float object " +floatobj);
+		System.out.println("Character object " +charobj);
+		System.out.println("Long object " +longobj);
+		System.out.println("Double object " +doubleobj);
+		System.out.println("Boolean object " +boolobj);
+		int intval = intobj;
+		float floatval = floatobj;
+		char charval = charobj;
+		long longval = longobj;
+		double doubleval = doubleobj;
+		boolean boolval = boolobj;
+		System.out.println("Conversion of objects to primitives");
+		System.out.println("Integer value " +intval);
+		System.out.println("Float value " +floatval);
+		System.out.println("Character value " +charval);
+		System.out.println("Long value " +longval);
+		System.out.println("Double value " +doubleval);
+		System.out.println("Boolean value " +boolval);
+		
+		
+		
+	}
+
+}
+
+
+
+Output:
+	Conversion of primitive to objects
+	Integer object 10
+	Float object 8.5
+	Character object a
+	Long object 50
+	Double object 47.63
+	Boolean object true
+	Conversion of objects to primitives
+	Integer value 10
+	Float value 8.5
+	Character value a
+	Long value 50
+	Double value 47.63
+	Boolean value true
+
+
+-----------------------------------------------------------------------------------------
+UNBOXING:
+
+public class UnBoxing {
+	public static void main(String args[]) {
+		Character obj = 'c';
+		char a = obj.charValue();
+		char b = obj;
+		System.out.println("The Wrapperclass object Character value "+obj);
+		System.out.println("Explicit conversion : "+a);
+		System.out.println("Unboxing : "+b);
+	}
+}
+
+
+
+Output:
+	The Wrapperclass object Character value c
+	Explicit conversion : c
+	Unboxing : c
+
+
+--------------------------------------------------------------------------------------------
+CUSTOM
+
+
+
+class Wrapper{
+	private int i;
+	Wrapper(){}
+	Wrapper(int a) {
+		i = a;
+	}
+	public int getValue() {
+		return i;
+	}
+	public void setValue(int a) {
+		i =a;
+	}
+	public String toString() {
+		return Integer.toString(i);
+	}
+	
+}
+public class Custom {
+	public static void main(String args[]) {
+		Wrapper obj = new Wrapper(50);
+		System.out.println("The value of object is "+obj);
+	}
+}
+
+
+
+Output:
+	The value of object is 50
+
+
+-----------------------------------------------------------------------------------------
+AUTOBOXING:
+
+
+public class AutoBoxing {
+	public static void main(String args[]) {
+		int a = 10;
+		Integer obj1 =Integer.valueOf(a);
+		Integer obj2 = a;
+		System.out.println("The primitive int value : "+a);
+		System.out.println("Explicit coversion :"+obj1);
+		System.out.println("Autoboxing :"+obj2);
+		
+		
+	}
+}
+
+
+
+Output:
+	The primitive int value : 10
+	Explicit coversion :10
+	Autoboxing :10
+
