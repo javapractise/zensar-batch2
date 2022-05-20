@@ -1,0 +1,17 @@
+@supperWarning
+
+
+import java.util.*;
+class TestAnnotation2{
+@suppressWarning("unchecked")
+public static void main(String args[]){
+Arraylist list = nw Arraylist();
+list.add("sonoo");
+list.add("sonoo");
+list.add("sonoo");
+
+
+for(object obj: list) 
+ System.out.prinln(obj);
+
+}}
