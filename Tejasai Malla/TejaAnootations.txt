@@ -1,0 +1,220 @@
+Depricated Annotation :-
+------------------------
+1.
+public class DeprecatedTest
+{
+    public void Display()
+    {
+        System.out.println("Depricatedtest display()");
+    }
+    public static void main(String[] args)
+    {
+        DeprecatedTest d1 = new DeprecatedTest();
+        d1.Display();
+    }
+}
+	Output :-
+	----------
+	Depricatedtest display()
+2.
+
+public class Employee{
+ 
+  public void emplSalary() {
+    System.out.println("This is MySalary method");
+  }
+  
+  public void emplSalaryNew() {
+    System.out.println("This is My NewSalary method");
+  }
+}
+public class Test {
+  public static void main(String[] args) {
+    Employee emp = new Employee();
+    emp.emplSalary();
+  }
+}
+	Output :-
+	---------
+	This is MySalary method
+
+Override Annotation :-
+----------------------
+abstract class Heat {
+	public abstract void method();
+}
+class Overheat extends Heat {
+	public void method()
+	{
+		System.out.println("This is Overheat");
+	}
+}
+class Cool extends Heat {
+	public void method()
+	{
+		System.out.println("This is Cool");
+	}
+}
+public class Tej {
+	public static void main(String[] args)
+	{
+		Overheat Overheatobj = new Overheat();
+		Overheatobj.method();
+
+		Cool Coolobj = new Cool();
+		Coolobj.method();
+	}
+}
+	Output :-
+	--------
+	This is Overheat
+	This is Cool
+SuppressWarningsnAnnotation :-
+==============================
+
+class DeprecatedTest {
+    public void Display()
+    {
+        System.out.println("Deprecatedtest Display()");
+    }
+}
+    public class SuppressWarningTest
+    {
+        public static void main(String[] args)
+        {
+            DeprecatedTest d1 = new DeprecatedTest();
+            d1.Display();
+        }
+    }
+	Output :-
+	--------
+	Deprecatedtest Display()
+
+Enum Classes :-
+===============
+1.
+enum Time {
+    PM,
+    AM,
+    NOON,  
+}
+public class Tej{
+    public static void main(String[] args)
+    {
+        Time T1 = Time.PM;
+        System.out.println(T1);
+        Time T2 = Time.AM;
+        System.out.println(T2);
+    }
+}
+
+	Output :-
+	-------
+	PM
+	AM
+2.BY SWITCH STATEMENT :-
+  ======================
+import java.util.Scanner;
+enum Day {
+	SUNDAY,
+	MONDAY,
+	TUESDAY,
+	WEDNESDAY,
+	THURSDAY,
+	FRIDAY,
+	SATURDAY;
+}
+public class Test {
+	Day day;
+	public Test(Day day) { this.day = day; }
+	public void prepared()
+	{
+		switch (day) {
+		case MONDAY:
+			System.out.println("Mondays are bad.");
+			break;
+		case FRIDAY:
+			System.out.println("Fridays are better.");
+			break;
+		case SATURDAY:
+		case SUNDAY:
+			System.out.println("Weekends are best.");
+			break;
+		default:
+			System.out.println("Midweek days are so-so.");
+			break;
+		}
+	}
+	public static void main(String[] args)
+	{
+		String str = "SATURDAY";
+		Test t1 = new Test(Day.valueOf(str));
+		t1.prepared();
+	}
+}
+
+	OUTPUT :-
+	---------
+	Weekends are best.
+
+Intializing specific values to ENUM Constants :-
+===============================================
+
+class EnumTej {
+    enum Banks{
+        STATEBANKOFINDIA(3), PNB(4), BANKOFBORODA(10);
+        private int value;
+        private Banks(int value){
+            this.value = value;
+        }
+    }
+    public static void main(String[] args){
+        for(Banks b : Banks.values())
+            System.out.println(b+" "+b.value);
+    }
+}
+	Output :-
+	--------
+	STATEBANKOFINDIA 3
+	PNB 4
+	BANKOFBORODA 10
+
+DEFINED OUTSIDE CLASS :
+======================
+enum Season{
+    WINTER,
+    SUMMER,
+    SPRING,
+}
+class EnumTemperature{
+    public static void main(String[] args){
+        Season s =Season.SUMMER;
+        System.out.println(s);
+    }
+}
+	Output :-
+	---------
+	SUMMER
+===>
+	 Nested class with Instance Method :-
+	=====================================
+
+class TestNested {
+    static int data = 45;
+    static class Inner{
+        void msg()
+        {
+            System.out.println("data is "+data);
+        }
+        public static void main(String[] args)
+        {
+            TestNested.Inner obj = new TestNested.Inner();
+            obj.msg();
+        }
+    }
+}
+
+	Output :-
+	---------
+	data is 45
+S

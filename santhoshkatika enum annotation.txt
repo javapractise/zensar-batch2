@@ -1,0 +1,13 @@
+SIMPLE ENUM EG:
+
+class Enum1{
+
+public enum season{apple,banana,ronge,grapes}
+
+public static voidmain (string[] args){
+
+for (season s: Season.values())
+system.out.println(s);
+}}
+
+output: apple banana ronge grapes
