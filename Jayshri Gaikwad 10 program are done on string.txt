@@ -1,0 +1,380 @@
+1.Java Program to count the total number of characters in a string
+
+package String;
+
+public class StringLength {
+
+	public static void main(String[] args) {
+		
+		String t1="Jayshri Gaikwad";
+		String t2="I am Jayshri";
+		
+		System.out.println("THE LENGHT OD THE STRING S1 IS:" + t1.length());
+		
+		System.out.println("THE LENGHT OD THE STRING S2 IS:" + t2.length());
+		
+		//System.out.println(t1.length());
+		//System.out.println(t2.length());
+	}
+
+}
+
+output:
+THE LENGHT OD THE STRING S1 IS:15
+THE LENGHT OD THE STRING S2 IS:12
+
+
+
+
+---------------------------------------------------------------------------
+2,Java Program to count the total number of characters in a string
+
+package String;
+
+public class String1 {
+
+	public static void main(String[] args) {
+		   
+		        String s1 = "Jayshri";    
+		        int count = 0;
+		        
+		        System.out.println("The entered string is: "+s1);    
+		            
+		        for(int i = 0; i < s1.length(); i++) 
+		        {    
+		            if(s1.charAt(i) != ' ')    
+		                count++;    
+		        }                
+		        //Displays the total number of characters in the string    
+		        System.out.println("Total number of characters in the string: " + count);    
+		    }      
+		
+
+	}
+
+	}
+
+--------------------
+output:
+
+The entered string is: Jayshri
+Total number of characters in the string: 7
+
+
+
+3)Java Program to count the total number of punctuation characters exists in a String///
+
+package String;
+
+public class String3 {
+
+	public static void main(String[] args) 
+		{
+		
+int PuncMarks = 0;  
+String v = "Good Evening!! Jayshri Gaikwad. How are you?";  
+ for (int i = 0; i < v.length(); i++) {  
+		                 
+if(v.charAt(i) == '!' || v.charAt(i) == ',' || v.charAt(i) == ';' || v.charAt(i) == '.' ||        v.charAt(i) == '?' || v.charAt(i) == '-' ||  
+v.charAt(i) == '\'' || v.charAt(i) == '\"' || v.charAt(i) == ':') {  
+ PuncMarks++;  
+ }  
+ }  
+ System.out.println("Total number of punctuation characters exists in string: " +  PuncMarks);  
+ }  
+ 
+}
+
+
+output:
+
+Total number of punctuation characters exists in string: 4
+
+
+
+
+##4) Java Program to count the total number of vowels and consonants in a string
+
+package String;
+
+public class String1{
+
+public static void main(String[] args) {
+String s4 = "Hello This Is Jayshri Gaiwad How are you.";
+
+int vowels = 0, consonants = 0;
+
+s4 = s4.toLowerCase();
+
+for (int i = 0; i < s4.length(); ++i) {
+char ch = s4.charAt(i);
+
+			// a, e, i, o, u
+if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+++vowels;
+}
+else if ((ch >= 'a' && ch <= 'z')) 
+{
+++consonants; 
+}
+System.out.println("Vowels: " + vowels);
+System.out.println("Consonants: " + consonants);
+
+}
+}
+}
+
+
+output:Consonants: 17
+Vowels: 10
+Consonants: 17
+Vowels: 11
+Consonants: 17
+Vowels: 11
+Consonants: 18
+Vowels: 12
+Consonants: 18
+Vowels: 12
+Consonants: 18
+Vowels: 12
+Consonants: 19
+Vowels: 13
+Consonants: 19
+Vowels: 14
+Consonants: 19
+Vowels: 14
+Consonants: 19
+
+
+
+-------------------------------------------------------
+5)Java Program to determine whether two strings are the anagram
+package String;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class String5 {
+
+ public static void main(String[] args) 
+{
+
+ Scanner input = new Scanner(System.in);
+
+System.out.print("Enter first String: ");
+	    
+String str1 = input.nextLine();
+	    
+System.out.print("Enter second String: ");
+	    
+String str2 = input.nextLine();
+
+ if(str1.length() == str2.length()) 
+{
+ char[] charArray1 = str1.toCharArray();
+char[] charArray2 = str2.toCharArray();
+Arrays.sort(charArray1);
+ Arrays.sort(charArray2);
+boolean result = Arrays.equals(charArray1, charArray2);
+if(result) 
+	      {
+	        System.out.println(str1 + " and " + str2 + " are anagram.");
+	      }
+	      else 
+	      {
+ System.out.println(str1 + " and " + str2 + " are not anagram.");
+	      }
+	    }
+else 
+	   {
+ System.out.println(str1 + " and " + str2 + " are not anagram.");
+	    }
+
+ input.close();
+	  
+	}
+}
+
+---------------------
+
+output:
+
+Enter first String: cat
+Enter second String: tac
+cat and tac are anagram.
+
+
+
+
+6.Java Program to divide a string in 'N' equal parts.
+
+
+
+public class DivideString {
+public static void main(String[] args) {
+String str = "vvvvaaaannnn";
+
+int len = str.length();
+
+int n = 3;
+int temp = 0, chars = len/n;
+String[] equalStr = new String [n];
+if(len % n != 0) {
+System.out.println("Sorry this string cannot be divided into "+ n +" equal parts.");
+}
+else {
+for(int i = 0; i < len; i = i+chars) {
+String part = str.substring(i, i+chars);
+equalStr[temp] = part;
+temp++;
+}
+System.out.println(n + " equal parts of given string are ");
+for(int i = 0; i < equalStr.length; i++) {
+System.out.println(equalStr[i]);
+}
+}
+}
+}
+Output:
+
+
+
+3 equal parts of given string are
+vvvv
+aaaa
+nnnn
+--------------------------------------------------------------------------------------------------------------------------
+7. Java Program to find all subsets of a string
+
+
+
+public class AllSubsets {
+public static void main(String[] args) {
+
+String str = "VAN";
+int len = str.length();
+int temp = 0;
+
+String arr[] = new String[len*(len+1)/2];
+
+for(int i = 0; i < len; i++) {
+
+for(int j = i; j < len; j++) {
+arr[temp] = str.substring(i, j+1);
+temp++;
+}
+}
+
+System.out.println("All subsets for given string are: ");
+for(int i = 0; i < arr.length; i++) {
+System.out.println(arr[i]);
+}
+}
+}
+Output:
+
+
+
+All subsets for given string are:
+V
+VA
+VAN
+A
+AN
+N
+-----------------------------------------------------------------------------------------------------------------------------------
+8.Java Program to find the longest repeating sequence in a string
+
+
+
+public class LongestRepeatingSequence {
+
+public static String lcp(String s, String t){
+int n = Math.min(s.length(),t.length());
+for(int i = 0; i < n; i++){
+if(s.charAt(i) != t.charAt(i)){
+return s.substring(0,i);
+}
+}
+return s.substring(0,n);
+}
+
+public static void main(String[] args) {
+String str = "acbdfghybdf";
+String lrs="";
+int n = str.length();
+for(int i = 0; i < n; i++){
+for(int j = i+1; j < n; j++){
+
+String x = lcp(str.substring(i,n),str.substring(j,n));
+
+if(x.length() > lrs.length()) lrs=x;
+}
+}
+System.out.println("Longest repeating sequence: "+lrs);
+}
+}
+Output:
+Longest repeating sequence: bdf
+-----------------------------------------------------------------------------------------------------------------------
+9.Java Program to find all the permutations of a string
+
+
+
+using namespace std;
+void permute(string a, int l, int r)
+{
+
+if (l == r)
+cout<<a<<endl;
+else
+{
+// Permutations made
+for (int i = l; i <= r; i++)
+{
+swap(a[l], a[i]);
+permute(a, l+1, r);
+swap(a[l], a[i]);
+}
+}
+}
+int main()
+{
+string str = "ABC";
+int n = str.size();
+permute(str, 0, n-1);
+return 0;
+}
+
+Output:
+ABC
+ACB
+BAC
+BCA
+CBA
+CAB
+---------------------------------------------------------------------------------------------------------------------------------
+10.We have to practice the programs which were discussed in morning and upload it into github
+public class RemoveAllSpace {
+public static void main(String[] args) {
+String str = "I love my father";
+
+String noSpaceStr = str.replaceAll("\\s", "");
+System.out.println(noSpaceStr);
+
+char[] strArray = str.toCharArray();
+StringBuffer stringBuffer = new StringBuffer();
+for (int i = 0; i < strArray.length; i++) {
+if ((strArray[i] != ' ') && (strArray[i] != '\t')) {
+stringBuffer.append(strArray[i]);
+}
+}
+String noSpaceStr2 = stringBuffer.toString();
+System.out.println(noSpaceStr2);
+}
+}
+Output:
+
+
+
+IlovemyfatherIlovemyfather
+
