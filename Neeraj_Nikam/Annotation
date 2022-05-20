@@ -1,0 +1,16 @@
+class Animal{
+void eatsomething(){System.out.println("eating something");}
+
+ClassDog extends animal{
+@Overider
+void eatsomething(){System.out.println("eating foods");}//should be something
+}
+
+class TestAnnotation1[
+public static void main(String args[]){
+Animal a = newDog();
+a.eat something();
+}}
+-------------------------------------------------------------------------------------
+
+output: compile time error
