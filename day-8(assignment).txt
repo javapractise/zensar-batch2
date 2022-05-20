@@ -1,0 +1,141 @@
+import java.util.*;  
+public class AnnotationSupress {
+@SuppressWarnings("unchecked")  
+public static void main(String args[]){  
+ArrayList list=new ArrayList();  
+list.add("mango");  
+list.add("apple");  
+list.add("banana");  
+for(Object obj:list)  
+System.out.println(obj);  
+}
+}
+
+
+output:
+mango
+apple
+banana
+--------------------------------------------------------------------------------------------------------------
+
+class A{  
+void m(){System.out.println("hii sony");}  
+
+@Deprecated  
+void n(){System.out.println("hello sony");}  
+}  
+public class AnnoDeprecated {
+public static void main(String args[]){  
+A a=new A();  
+a.n();  
+}
+}
+
+Output:
+hello sony
+--------------------------------------------------------------------------------------------------------------------
+public class EnumEx {
+public enum season {WINTER,SPRING,SUMMER}  // defining enum
+public static void main(String args[]) {
+//traversing
+for(season s:season.values()) 
+System.out.println(s);
+}    
+}
+
+
+Output:
+WINTER
+SPRING
+SUMMER
+---------------------------------------------------------------------------------------------------------------------
+interface Eatable{  
+void eat();  
+}  
+public class InnerInterface {
+public static void main(String args[]){  
+Eatable e=new Eatable(){  
+public void eat(){
+System.out.println("Biryani");
+}  
+};  
+e.eat();  
+}
+}
+
+
+Output:
+Biryani
+-----------------------------------------------------------------------------------------------------------------------
+public class LocalInner {
+private int data=60;//instance variable  
+void display(){  
+class Local{  
+void msg(){System.out.println(data);}  
+}  
+Local l=new Local();  
+l.msg();  
+}  
+public static void main(String args[]){  
+LocalInner obj=new LocalInner();  
+obj.display();  
+}  
+}
+
+
+Output:
+60
+---------------------------------------------------------------------------------------------------------------------
+interface Showable{  
+void show();  
+interface Message{  
+void msg();  
+}  
+}  
+public class NestedInterface implements Showable.Message{
+public void msg(){
+System.out.println("Hello nested interface");
+}  
+public static void main(String args[]){  
+Showable.Message message=new NestedInterface();//upcasting here  
+message.msg();  
+}
+
+
+output:
+Hello nested interface
+---------------------------------------------------------------------------------------------------------------------------
+abstract class Person{  
+abstract void eat();  
+}  
+public class TestAnonymousinner {
+public static void main(String args[]){  
+Person p=new Person(){  
+void eat(){
+System.out.println("fruits");
+}  
+}; 
+p.eat();  
+}
+Output:
+fruits
+----------------------------------------------------------------------------------------------------------------------------
+class Animal{  
+void eatSomething(){	
+System.out.println("eating something");
+}  
+}  
+class Dog extends Animal{  
+@Override  
+void eatsomething(){
+System.out.println("eating foods");	
+}//should be eatSomething  
+}  
+public class AnnotationOverride{  
+public static void main(String args[]){  
+Animal a=new Dog();  
+a.eatSomething();  
+}
+}  
+}
+
