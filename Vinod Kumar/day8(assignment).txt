@@ -1,0 +1,119 @@
+1.program for static inner class
+
+package NestedClasses;
+
+public class Static {
+	  
+		  static int data=379;  
+		  static class Inner
+		  {  
+		   static void msg()
+		   {
+			   System.out.println("data is "+data);
+			   }  
+		  }  
+		  public static void main(String args[])
+		  {  
+		  Static.Inner.msg();  
+		  }  
+		}  
+
+------------
+
+output:data is 379
+
+
+--------------------------------------------------------------------
+
+2. program for private inner class
+
+
+package NestedClasses;
+
+
+	class OuterDemo {
+		   int num;
+		   
+		   
+		   private class InnerDemo
+		   {
+		      public void print() 
+		      {
+		         System.out.println("This is an inner class");
+		      }
+		   }
+		   
+		   void displayInner()
+		   {
+		      InnerDemo inner = new InnerDemo();
+		      inner.print();
+		   }
+		}
+		   
+	public class Private {
+
+		   public static void main(String args[]) {
+		      
+		      OuterDemo outer = new OuterDemo();
+		      
+		      outer.displayInner();
+		   }
+}
+
+-----------------------------
+
+output:
+This is an inner class
+
+
+-----------------------------------------------------------------------------
+ 
+3.program to Access out from inner class method
+
+package NestedClasses;
+
+	class Outer1
+	{
+	    class Inner
+	    {
+	       public void show()
+	        {
+	            System.out.println("In a nested class method");
+	        }
+	    }
+	}
+	 
+	public class Outer {
+	 
+	    public static void main(String[] args)
+	    {
+	 
+	        Outer1.Inner in = new Outer1().new Inner();
+	 
+	        in.show();
+	    }
+	}
+
+-----------------
+
+output:
+In a nested class method
+
+---------------------------------------------------------------
+ 
+4.Define inside class by using Enum
+
+package NestedClasses;
+
+public class Enuminside {  
+		enum Season { WINTER, SPRING, SUMMER, FALL; } 
+		public static void main(String[] args) 
+		{  
+		Season s=Season.FALL; 
+		System.out.println("The season is:" +s);  
+		}
+		} 
+
+---------------------------
+output:
+The season is:FALL

@@ -1,0 +1,116 @@
+TestAnonymousinner:
+
+abstract class Person{  
+	  abstract void eat();  
+}  
+public class TestAnonymousinner {
+	public static void main(String args[]){  
+		  Person p=new Person(){  
+			  void eat(){
+				  System.out.println("nice fruits");
+			  }  
+		  };  
+		  p.eat();  
+	}  
+}
+
+
+
+
+Output:
+	nice fruits
+
+
+-----------------------------------------------------------------------------------------
+NestedInterface:
+
+interface Showable{  
+	void show();  
+		interface Message{  
+		void msg();  
+	 }  
+}  
+public class NestedInterface implements Showable.Message{
+	public void msg(){
+		System.out.println("Hello nested interface");
+	}  
+	public static void main(String args[]){  
+		Showable.Message message=new NestedInterface();//upcasting here  
+		message.msg();  
+	 }  
+}
+
+
+Output:
+	Hello nested interface
+
+
+-----------------------------------------------------------------------------------------
+LocalInner:
+
+public class LocalInner {
+	private int data=30;//instance variable  
+	 void display(){  
+	  class Local{  
+	   void msg(){System.out.println(data);}  
+	  }  
+	  Local l=new Local();  
+	  l.msg();  
+	 }  
+	 public static void main(String args[]){  
+		 LocalInner obj=new LocalInner();  
+		 obj.display();  
+	 }  
+}
+
+
+
+Output:
+	30
+
+
+-----------------------------------------------------------------------------------------
+AnnoDeprecated:
+
+
+
+class A{  
+void m(){System.out.println("hello m");}  
+  
+@Deprecated  
+void n(){System.out.println("hello n");}  
+}  
+public class AnnoDeprecated {
+	public static void main(String args[]){  
+		  
+		A a=new A();  
+		a.n();  
+	}
+}
+
+
+
+Output:
+	hello n
+
+
+-----------------------------------------------------------------------------------------
+EnumEx:
+
+public class EnumEx {
+	public enum season {WINTER,SPRING,SUMMER,FALL}  // defining enum
+	public static void main(String args[]) {
+		//traversing
+		for(season s:season.values()) 
+			System.out.println(s);
+	}
+
+}
+
+
+
+Output:
+	WINTER
+	SPRING
+	SUMMER
+	FALL
