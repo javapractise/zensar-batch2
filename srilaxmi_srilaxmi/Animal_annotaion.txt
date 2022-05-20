@@ -15,4 +15,4 @@ a.eatSomething();
 
 ===========
 output:
-Output:Comple Time Error
+Comple Time Error
