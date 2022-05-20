@@ -1,0 +1,31 @@
+.multi-value Annotation: more than one  method
+@interface myAnnotation{
+int value1();
+string value2();
+string value3();
+}
+}
+	
+default method:
+@interface MyAnnotation{
+int value1()default 1;
+string value2() default "";
+string value3() default"xyz";
+}
+	code for the multi value:
+@myAnnotation(value1=10,value2="Neeharika",value3="Hyd)
+
+
+@target: it is used to specify at which type ,the annotation is used 
+@retention:it is used to specify to wht level annotation will be available
+advantages of java generic
+ther are the 3types:
+*type-safety:we can hold any single type of object in generic
+List list=new Arraylist();
+list.add(10);
+list.add("10");
+with Generics,it is requried to specify the type of we need to store.
+list<integer>list=new ArrayList,<integer>();
+list.add(10);
+list.add("10");//complier-time error
+
