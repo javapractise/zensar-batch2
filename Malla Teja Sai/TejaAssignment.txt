@@ -1,0 +1,175 @@
+To find No.of Charecters ina string :-
+-------------------------------------
+public class Main {
+    public static void main(String[] args){
+        String learn = "Welcome to Training";
+        int count = 0;
+        for(int i = 0; i < learn.length(); i++)
+        {
+            if(learn.charAt(i) != ' ')
+                count++;
+        }
+        System.out.println("Total Number of charecters in a learn is : " + count);
+    }
+}
+Output :-
+--------
+	Total Number of charecters in a learn is : 17
+====>
+	Punchuations :-
+	---------------
+public class punctuation {  
+    public static void main (String [] args) {  
+        int countPunchMarks = 0;  
+        String str = "Good Morning! Mr. Teja. Had your breakfast?";  
+        for (int i = 0; i < str.length(); i++) 
+        {  
+            if(str.charAt(i) == '!' || str.charAt(i) == ',' || str.charAt(i) == ';' || str.charAt(i) == '.' ||        str.charAt(i) == '?' || str.charAt(i) == '-' ||  
+                    str.charAt(i) == '\'' || str.charAt(i) == '\"' || str.charAt(i) == ':') {  
+                countPunchMarks++;  
+            }  
+        }  
+        System.out.println("Total number of punctuation characters exists in string: " + countPunchMarks);  
+    }  
+}  
+
+Output :-
+--------
+Total number of punctuation characters exists in string: 4
+
+=====>
+	VOWELS :-
+	---------
+public class vowel {
+	public static void main(String[] args)
+	{
+		String str = "Education is Divine";
+		str = str.toLowerCase();
+		int count = 0;
+		for (int i = 0; i < str.length(); i++) {
+			if (str.charAt(i) == 'a'
+                || str.charAt(i) == 'e'
+				|| str.charAt(i) == 'i'
+				|| str.charAt(i) == 'o'
+				|| str.charAt(i) == 'u') {
+				count++;
+			}
+		}
+		System.out.println(
+			"Total number of vowels in string are: " + count);
+	}
+}
+
+	Output :- 
+	--------
+	Total number of vowels in string are: 9
+========>
+	CONSONANTS :-
+	------------
+	import java.util.Scanner;
+public class CountingConsonants {
+   public static void main(String args[]){
+      int count = 0;
+      System.out.println("Enter a sentence :");
+      Scanner sc = new Scanner(System.in);
+      String sentence = sc.nextLine();
+
+      for (int i=0 ; i<sentence.length(); i++){
+         char ch = sentence.charAt(i);
+         if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ){
+            System.out.print("");
+         }else if(ch != ' '){
+            count++;
+         }
+      }
+      System.out.println("Number of consonants in the given sentence is "+count);
+   }
+}
+
+	Output :-
+	--------
+	Enter a sentence :
+	Hello Teja sai malla
+	Number of consonants in the given sentence is 9
+===========>
+	Anagram :-
+	----------
+
+import java.util.Arrays;  
+public class Anagram {  
+    public static void main (String [] args) {  
+        String str1="Karthik";  
+        String str2="Krthaki";    
+        str1 = str1.toLowerCase();  
+        str2 = str2.toLowerCase();  
+  
+        if (str1.length() != str2.length()) {  
+            System.out.println(" The Given strings are not anagram");  
+        }  
+        else {    
+            char[] string1 = str1.toCharArray();  
+            char[] string2 = str2.toCharArray();  
+  
+              
+            Arrays.sort(string1);  
+            Arrays.sort(string2);  
+  
+         
+            if(Arrays.equals(string1, string2) == true) {  
+                System.out.println("The Given strings are anagram");  
+            }  
+            else {  
+                System.out.println("The Given strings are not anagram");  
+            }  
+        }  
+    }  
+}   
+
+	Output :-
+	--------
+	The Given strings are anagram.
+
+=============>
+	Divide String into N equal Parts :-
+	------------------------------------
+import java.util.*;
+
+class Tej {
+
+	static void divide(String str, int n) {
+
+		if (str.length() % n != 0) {
+			System.out.print("Invalid Input: String size");
+			System.out.print(" is not divisible by n");
+			return;
+		}
+
+		int parts = str.length() / n;
+		int start = 0;
+		int t = parts;
+		while (start < str.length()) {
+			String temp = new String(str);
+
+			System.out.print(temp.substring(start, parts) + "\n");
+			start = parts;
+			parts += t;
+		}
+	}
+
+	public static void main(String[] args) {
+		String str = "The_Great_Love_Story";
+		divide(str, 4);
+	}
+}
+
+
+	Output :-
+	----------
+	The_G
+	reat_
+	Love_
+	Story
+
+
+
+
