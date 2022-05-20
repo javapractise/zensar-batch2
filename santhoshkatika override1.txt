@@ -1,0 +1,21 @@
+class Animal {
+  public void displayInfo() {
+    System.out.println("I am an animal.");
+  }
+}
+
+class lion extends Animal {
+  @Override
+  public void displayInfo() {
+    System.out.println("I am a lion.");
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    lion l1 = new lion();
+    l1.displayInfo();
+  }
+}
+
+Output:  I am a lion.
