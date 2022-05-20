@@ -1,0 +1,140 @@
+package Day8;
+
+
+	class Buss
+	{  
+		void DrivesFast()
+		{
+			System.out.println("Driving the buss....");
+		}  
+	}  
+		  
+		class Access extends Buss
+		{  
+		@Override  
+		void Drivesfast()
+		{
+			System.out.println("driving access 125.....");
+		}  
+		}  
+		  
+		public class Annotation
+		{ 
+		public static void main(String args[])
+		{  
+		Buss d=new Access();  
+		d.DrivesFast();  
+		}
+		}  
+
+--------------------------
+
+output:Comple Time Error
+
+
+-----------------------------------------------------------------------------------
+
+package Day8;
+import java.util.*;
+
+public class Supresswarning {
+	  
+	class TestAnnotation{  
+	@SuppressWarnings("unchecked")  
+	public static void main(String args[])
+	{  
+	ArrayList list=new ArrayList();  
+	list.add("vinod");  
+	list.add("vinu");  
+	list.add("kumar");  
+	  
+	for(Object l:list)  
+	System.out.println(l);  
+	  
+	}}  
+}
+
+-------------------
+
+output:
+
+vinod
+vinu
+kumar
+
+-------------------------------------------------------
+
+package Day8;
+
+
+	class Hi
+	{  
+		void m1()
+		{
+			System.out.println("hello hi i am m1");
+		}  
+		  
+		@Deprecated  
+		void m2()
+		{
+			System.out.println("hello hi i am m2");
+		}  
+	}  
+		  
+	public class Annotation3 
+	{ 
+		public static void main(String args[])
+		{  
+		  
+		Hi a=new Hi();  
+		a.m2();  
+		}
+	}
+
+-----------------
+
+output:
+
+hello hi i am m2
+
+
+---------------------------------------------
+
+package Day8;
+
+import java.lang.annotation.*;  
+import java.lang.reflect.*;  
+	  
+	@Retention(RetentionPolicy.RUNTIME)  
+	@Target(ElementType.METHOD)  
+	@interface MyAnnotation
+	{  
+	int value();  
+	}  
+	   
+	class Hello
+	{  
+	@MyAnnotation(value=10)  
+	public void sayHello()
+	{
+		System.out.println("hello annotation");
+	}  
+	}  
+	   
+	public class CreationAnnotation {
+	public static void main(String args[])throws Exception{  
+	  
+	Hello h=new Hello();  
+	Method m=h.getClass().getMethod("sayHello");  
+	  
+	MyAnnotation manno=m.getAnnotation(MyAnnotation.class);  
+	System.out.println("value is: "+manno.value());  
+	}
+}
+
+
+------------------------
+
+output:
+value is :10  
+
