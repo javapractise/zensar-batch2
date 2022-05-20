@@ -1,0 +1,12 @@
+public class raghav{
+@Deprecated
+int number = 1000;
+final int newnumber = 1000;
+public static void main(String a[])
+{
+raghav obj = new raghav();
+System.out.println(obj.number);
+}
+}
+
+output:1000
