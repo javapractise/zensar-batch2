@@ -1,0 +1,22 @@
+// Progrm to access outer class from Inner classs
+   
+package zensar;
+
+class Outer {
+	private int intVal=05;
+	class Inner {
+		void print() {
+			System.out.println("Inside a Inner Class");
+			System.out.println("The value of Variable in  outerclass"+intVal);
+		}
+	}
+}
+public class AccessOuterFrmInner {
+	public static void main(String args[]) {
+		Outer obj = new Outer();
+		Outer.Inner in = obj.new Inner();
+		in.print();
+		
+	}
+
+}
