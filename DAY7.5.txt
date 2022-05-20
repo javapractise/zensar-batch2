@@ -1,0 +1,30 @@
+import java.util.Arrays;
+   public class Main {
+      public static void main(String[] args) {
+         System.out.println("Required packages have been imported");
+         String my_string_1, my_string_2;
+         my_string_1 = "Race";
+         my_string_2 = "Care";
+         System.out.println("The two strings are defined as " +my_string_1 +" and " + my_string_2);
+         my_string_1 = my_string_1.toLowerCase();
+         my_string_2 = my_string_2.toLowerCase();
+         if(my_string_1.length() == my_string_2.length()) {
+            char[] my_array_1 = my_string_1.toCharArray();
+            char[] my_array_2 = my_string_2.toCharArray();
+            Arrays.sort(my_array_1);
+            Arrays.sort(my_array_2);
+            boolean my_result = Arrays.equals(my_array_1, my_array_2);
+            if(my_result) {
+               System.out.println("The strings "+my_string_1 + " and " + my_string_2 + " are anagram.");
+            } else {
+               System.out.println("The strings "+my_string_1 + " and " + my_string_2 + " are not anagram.");
+            }
+         } else {
+         System.out.println("The strings "+my_string_1 + " and " + my_string_2 + " are not anagram.");
+      }
+   }
+}
+Output
+Required packages have been imported
+The two strings are defined as Race and Care
+The strings race and care are anagram.
