@@ -1,5 +1,11 @@
- 
-        //////////// Adding of two binary numbers//////
+ ////////// Binary Number ////////
+         
+
+Package Adding
+public class Main {
+
+ public static void main(String[] args) {
+
   // two binary numbers in string format
   String binaryNumber1 = "10101", binaryNumber2 = "10001";
 
@@ -16,7 +22,8 @@
  }
 
 }
- 
-output:
- 100110
+
+
+Output: 
+100110
 
