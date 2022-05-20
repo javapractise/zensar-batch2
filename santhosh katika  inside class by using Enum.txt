@@ -1,0 +1,18 @@
+public class EnumerationExample{
+   enum Enum {
+      Mango, Banana, Orange, Grapes,
+   }
+   public static void main(String args[]) {
+      Enum constants[] = Enum.values();
+      System.out.println("Value of constants: ");  
+      for(Enum d: constants) {
+         System.out.println(d);
+      }
+   }
+}
+Output
+Value of constants:
+Mango
+Banana
+Orange
+Grapes
