@@ -5,7 +5,7 @@ class LenghtOfString{
 	 public static void main(String args[]){
 	 
 	  String myString="I am Learning Core ";
-	  System.out.println("length of helloWorld string :"+strLen(myString));
+	  System.out.println("length of strLen string :"+strLen(myString));
 	  }
 	 
 	public static int strLen(String str)
