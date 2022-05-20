@@ -1,0 +1,22 @@
+//assign1
+
+
+create database data101;
+show databases;
+
+use data101;
+
+create table games( game_id int , nameofgame varchar(250), genere varchar(15) , price_in_dollars int);
+
+insert into games values( '101' , 'Call of duty' , 'VideoGame' , '99');
+insert into games values( '102' , 'Brit Lee' , 'Cricket' , '110');
+insert into games values( '103' , 'Fifa' , 'Soccer' , '120');
+
+update games SET genere='Action' where game_id='101';
+
+alter table games  add release_year int;
+
+delete from games where price_in_dollars='110';
+
+drop table games;
+select * from game
