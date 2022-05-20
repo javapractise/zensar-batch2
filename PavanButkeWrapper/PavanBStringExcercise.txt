@@ -1,0 +1,59 @@
+//Other Programs --Pavan Butke
+
+//Q--> COunting char in string
+public class NoOfChar {
+	public static void main(String args[]) {
+		String str = "Java Microservices";
+		int length = str.length();
+		int count =0;
+		for(int i=0;i<length;i++) {
+			if(str.charAt(i)!= ' ') {
+				count++;
+			}
+		}
+		System.out.println("Total  characters in given String ="+count);
+		
+	}
+}
+
+
+
+//Q--> Two Concated strings
+
+
+public class CountfromTwoStr {
+        public static void main(String args[]) {
+                String str = "I'm Pavan ";
+                String str1 = "Create a new Project";
+                String str2 = str+str1;
+                int len = str2.length();
+                int count =0;
+                for(int i=0;i<len;i++) {
+                        if(str2.charAt(i)!= ' ') {
+                                count++;
+                        }
+                }
+                System.out.println("Total characters in Concanated String : "+count);
+
+        }
+}
+
+
+//Q--> 
+
+
+
+public class CountPun{
+        public static void main(String args[]) {
+                String str = "Hey, Bro ! What's up?";
+                int len = str.length();
+                int count =0;
+                for(int i=0;i<len;i++) {
+                        if(str.charAt(i)== '!' ||str.charAt(i)==','||str.charAt(i)== '.' ||str.charAt(i)== '\''||str.charAt(i)== '-'|| str.charAt(i) == '\"' ||str.charAt(i)== '?'||str.charAt(i)==';') {
+                                count++;
+                        }
+                }
+                System.out.println("Total no. of punctuated characters in  String : "+count);
+
+        }
+}
