@@ -13,4 +13,6 @@ System.out.println(obj);
 }}  
 =================
 output:
-Now no warning at compile time.
+  sonoo
+	vimal
+	ratan
