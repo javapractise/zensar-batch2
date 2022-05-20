@@ -1,0 +1,8 @@
+package Vani;
+public class explicite {
+public static void main(String[] args){
+String escStr = "Hi, I Am \"Vani\" ?";
+System.out.println(escStr);
+System.out.println(escStr.length());
+}
+}

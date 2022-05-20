@@ -1,0 +1,25 @@
+public class EscapeCharaterExample 
+{ 
+public static void main(String args[]) 
+{ 
+String str = "Andrew\tGarfield"; 
+System.out.println(str); 
+String str1 = "the best way\nto communicate \nan idea \nis to act it out"; 
+System.out.println(str1); 
+String str2 = "And\\Or"; 
+System.out.println(str2); 
+String str3 = "Carriage\rReturn"; 
+System.out.println(str3); 
+String str4 = "Wall Street\'s"; 
+System.out.println(str4); 
+String str5 = "'santhosh'"; 
+System.out.println(str5); 
+} 
+} 
+
+output:  Andrew\tGarfield
+         the best way\nto communicate \nan idea \nis to act it out
+         And\\Or 
+         Carriage\rReturn  
+         Wall Street\'s
+         santhosh

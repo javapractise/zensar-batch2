@@ -11,3 +11,8 @@ public class Main
 		System.out.println("The length of string with length function is: " + s.length());
 	}
 }
+
+/**
+The length of string without length function is: 4
+The length of string with length function is: 4
+**/

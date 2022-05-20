@@ -1,47 +1,49 @@
-1.converting primitive into wrapper object 
 
 public class Main
  {  
    public static void main(String args[])
    {  
-	int num=100;  
+	int num=56;  
 	Integer S =Integer.valueOf(num);  
 
 	System.out.println(num+ " "+ S);  
    }
 }
 
-Output:
 
-100 100
+OutPut
+56 56
 
 
-2.Converting wrapper class object into primitive 
+
+
 
 
 public class Main
  {  
    public static void main(String args[])
    {  
-	Integer I = new Integer(77);  
+	Integer I = new Integer(110);  
 	int num = I.intValue();
 
 	System.out.println(num+ " "+ I);  
    }
-}
+ }
 
 
-Output:
-  77 77
 
 
-3.custom wrapper class 
+
+Output
+
+110 110
 
 
-class Wrapper3
+
+class Wrapper5
 {  
 private int i;  
-Wrapper3(int i)
+Wrapper5(int i)
 {  
 this.i=i;  
 }  
@@ -59,40 +61,39 @@ public class Main
 {  
 public static void main(String[] args)
 {  
-Wrapper3 j=new Wrapper3(21);  
+Wrapper5 j=new Wrapper5(17);  
 System.out.println(j);  
 }
-}  
+} 
 
 
-output:
- 21
+OutPut
 
+17 17
 
-4.Wrapper classes
 
 
 public class Main{  
 public static void main(String args[]){  
-byte b=11;  
-short s=21;  
-int i=35;  
-long l=47;  
-float f=55.0F;  
-double d=67.0D;  
-char c='s';  
+byte a=100;  
+short b=256;  
+int c=512;  
+long e=712;  
+float f=128.0F;  
+double d=52.0D;  
+char g='s';  
 boolean b2=false;  
-
+  
 //Autoboxing: Converting primitives into objects  
-Byte byteobj=b;  
-Short shortobj=s;  
-Integer intobj=i;  
-Long longobj=l;  
+Byte byteobj=a;  
+Short shortobj=b;  
+Integer intobj=c;  
+Long longobj=e;  
 Float floatobj=f;  
 Double doubleobj=d;  
-Character charobj=c;  
+Character charobj=g;  
 Boolean boolobj=b2;  
-
+  
 //Printing objects  
 System.out.println("---Printing object values---");  
 System.out.println("Byte object: "+byteobj);  
@@ -103,7 +104,7 @@ System.out.println("Float object: "+floatobj);
 System.out.println("Double object: "+doubleobj);  
 System.out.println("Character object: "+charobj);  
 System.out.println("Boolean object: "+boolobj);  
-
+  
 //Unboxing: Converting Objects to Primitives  
 byte bytevalue=byteobj;  
 short shortvalue=shortobj;  
@@ -113,7 +114,7 @@ float floatvalue=floatobj;
 double doublevalue=doubleobj;  
 char charvalue=charobj;  
 boolean boolvalue=boolobj;  
-
+  
 //Printing primitives  
 System.out.println("---Printing primitive values---");  
 System.out.println("byte value: "+bytevalue);  
@@ -125,3 +126,35 @@ System.out.println("double value: "+doublevalue);
 System.out.println("char value: "+charvalue);  
 System.out.println("boolean value: "+boolvalue);  
 }} 
+
+Output
+
+---Printing object values---
+Byte object: 100
+Short object: 256
+Integer object: 512
+Long object: 712
+Float object: 128.0
+Double object: 52.0
+Character object: s
+Boolean object: false
+---Printing primitive values---
+byte value: 100
+short value: 256
+int value: 512
+long value: 712
+float value: 128.0
+double value: 52.0
+char value: s
+boolean value: false
+
+
+
+
+
+
+
+
+
+
+

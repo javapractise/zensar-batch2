@@ -1,0 +1,16 @@
+Santhosh Kumar Katika
+Length of string
+----------------
+
+
+public class Length{
+public static void main(String args[]){
+String s1="santhoshkatika";
+String s2="katika";
+System.out.println("string length is: "+s1.length());
+System.out.println("string length is: "+s2.length());
+}}
+output: string length is: 14
+        string length is: 6
+
+

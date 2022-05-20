@@ -1,0 +1,21 @@
+package zensar;
+
+class LenghtOfString{
+	 
+	 public static void main(String args[]){
+	 
+	  String myString="I am Learning Core ";
+	  System.out.println("length of strLen string :"+strLen(myString));
+	  }
+	 
+	public static int strLen(String str)
+	 {
+	  int length=0;
+	  char[] strCharArray=str.toCharArray();
+	  for(char c:strCharArray)
+	  {
+	   length++;
+	  }
+	  return length;
+	 }
+}

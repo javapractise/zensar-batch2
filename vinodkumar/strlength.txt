@@ -1,0 +1,28 @@
+///////////////string length///////////
+
+package String;
+
+public class StringLength {
+
+	public static void main(String[] args) {
+		
+		String t1="vinod kumar";
+		String t2="muvvala vinod kumar";
+		
+		System.out.println("THE LENGHT OD THE STRING S1 IS:" + t1.length());
+		
+		System.out.println("THE LENGHT OD THE STRING S2 IS:" + t2.length());
+		
+		//System.out.println(t1.length());
+		//System.out.println(t2.length());
+	}
+
+}
+
+
+--------------------
+
+output:
+
+THE LENGHT OD THE STRING S1 IS:11
+THE LENGHT OD THE STRING S2 IS:19
