@@ -1,0 +1,13 @@
+Deprecated annotation:
+
+public class katika {
+    @Deprecated
+    int number = 100;
+    final int newnumber = 100;
+    public static void main(String a[])
+    {
+       katika obj = new katika();
+        System.out.println(obj.number);
+    }
+}
+Output: 100

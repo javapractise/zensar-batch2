@@ -1,0 +1,17 @@
+1.Marker Annotation:
+===========
+@interface MyAnnotation{}  
+
+2.Single-Value Annotation:
+================
+@interface MyAnnotation{  
+int value() default 0;  
+}  
+
+3.Multi-Value Annotation:
+====================
+@interface MyAnnotation{  
+int value1() default 1;  
+String value2() default "";  
+String value3() default "xyz";  
+}  
