@@ -1,0 +1,30 @@
+
+import java.util.Arrays;
+public class AnagramString {
+	public static void main(String args[]) {
+ 	   String str1 = "secure";
+ 	   String str2 = "rescue";
+        int len1 = str1.length();
+        int len2 = str2.length();
+        if(len1!=len2) {
+             	System.out.println("The two strings are not anagram");
+             	return;
+        }
+        char[] s1 = str1.toCharArray();
+        char[] s2 = str2.toCharArray();
+        Arrays.sort(s1);
+        Arrays.sort(s2);
+        if(Arrays.equals(s1,s2)) {
+             	System.out.println("The two strings are  anagram");
+        }
+        else {
+            	System.out.println("The two strings are not anagram");
+        }      
+
+     }
+}
+
+/*
+Output:
+	The two strings are  anagram
+	*/
