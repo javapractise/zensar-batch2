@@ -1,0 +1,21 @@
+ANNOTATION: built-in
+ 	@override : assure that the subclass method overriding the parent cls method
+
+	 class Animal{
+ void eatsomething(){system.out.println("eating something");}
+}
+
+classDog extends animals{
+@override
+void eatsomething(){system.out.println("eating foods");}//should be something
+}
+
+
+class TestAnnotation1[
+public static void main(string args[]){
+Animal a= newDog();
+a.eat something();
+}}
+ 
+
+output: comple time Error
