@@ -1,0 +1,156 @@
+1.Java Program to count the total number of characters in a string
+
+public class StringLength {
+	public static void main(String[] args) {
+		String t1="santhosh";
+		String t2="katika";
+		System.out.println("THE LENGHT OD THE STRING S1 IS:" + t1.length());
+		System.out.println("THE LENGHT OD THE STRING S2 IS:" + t2.length());
+		//System.out.println(t1.length());
+		//System.out.println(t2.length());
+	}
+
+}
+output:
+THE LENGHT OD THE STRING S1 IS:8
+THE LENGHT OD THE STRING S2 IS:6
+
+2.Java Program to count the total number of characters in a string
+
+public class String1 {
+	public static void main(String[] args) {
+		        String s1 = "katika";    
+		        int count = 0;
+
+		        System.out.println("The entered string is: "+s1);    
+
+		        for(int i = 0; i < s1.length(); i++) 
+		        {    
+		            if(s1.charAt(i) != ' ')    
+		                count++;    
+		        }            
+		        System.out.println("Total number of characters in the string: " + count);    
+		    }      
+	}
+
+	}
+output:
+The entered string is: katika
+Total number of characters in the string: 6
+
+3.Java Program to count the total number of punctuation characters exists in a String
+
+public class String3 {
+
+	public static void main(String[] args) 
+		{
+
+int PuncMarks = 0;  
+String v = "Good morning!!santhosh kumar. How are you?";  
+ for (int i = 0; i < v.length(); i++) {  
+
+if(v.charAt(i) == '!' || v.charAt(i) == ',' || v.charAt(i) == ';' || v.charAt(i) == '.' ||        v.charAt(i) == '?' || v.charAt(i) == '-' ||  
+v.charAt(i) == '\'' || v.charAt(i) == '\"' || v.charAt(i) == ':') {  
+ PuncMarks++;  
+ }  
+ }  
+ System.out.println("Total number of punctuation characters exists in string: " +  PuncMarks);  
+ }  
+}
+output:Total number of punctuation characters exists in string: 4
+
+
+4. Java Program to count the total number of vowels and consonants in a string
+
+public class CountVowelConsonant {    
+    public static void main(String[] args) {    
+        int vCount = 0, cCount = 0;    
+        String str = "This is a really simple sentence";     
+        str = str.toLowerCase();    
+            
+        for(int i = 0; i < str.length(); i++) {    
+              
+            if(str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u') {    
+                    
+                vCount++;    
+            }    
+                
+            else if(str.charAt(i) >= 'a' && str.charAt(i)<='z') {      
+                   
+                cCount++;    
+            }    
+        }    
+        System.out.println("Number of vowels: " + vCount);    
+        System.out.println("Number of consonants: " + cCount);    
+    }    
+}   
+Output:
+Number of vowels: 10
+Number of consonants: 17
+
+
+-
+5)Java Program to determine whether two strings are the anagram
+
+public class Anagram {  
+    public static void main (String [] args) {  
+        String str1="cool";  
+        String str2="look";    
+        str1 = str1.toLowerCase();  
+        str2 = str2.toLowerCase();  
+        if (str1.length() != str2.length()) {  
+            System.out.println("Both the strings are not anagram");  
+        }  
+        else {  
+            char[] string1 = str1.toCharArray();  
+            char[] string2 = str2.toCharArray();  
+            Arrays.sort(string1);  
+            Arrays.sort(string2);    
+            if(Arrays.equals(string1, string2) == true) {  
+                System.out.println("Both the strings are anagram");  
+            }  
+            else {  
+                System.out.println("Both the strings are not anagram");  
+            }  
+        }  
+    }  
+}   
+Output:
+Both the strings are anagram
+
+
+6.Java Program to divide a string in 'N' equal parts.
+
+
+
+public class DivideString {
+public static void main(String[] args) {
+String str = "ssssttttrrrr";
+
+int len = str.length();
+
+int n = 3;
+int temp = 0, chars = len/n;
+String[] equalStr = new String [n];
+if(len % n != 0) {
+System.out.println("Sorry this string cannot be divided into "+ n +" equal parts.");
+}
+else {
+for(int i = 0; i < len; i = i+chars) {
+String part = str.substring(i, i+chars);
+equalStr[temp] = part;
+temp++;
+}
+System.out.println(n + " equal parts of given string are ");
+for(int i = 0; i < equalStr.length; i++) {
+System.out.println(equalStr[i]);
+}
+}
+}
+}
+Output:
+3 equal parts of given string are
+ssss
+tttt
+rrrr
+

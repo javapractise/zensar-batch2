@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Count_WordOfString{
+public static void main(String args[]){
+String str; //variable declaration
+int count=0;
+
+ Scanner scan=new Scanner(System.in); 
+    //create a scanner object for input
+    
+System.out.print("Enter the String for count characters \n ");
+str=scan.nextLine();
+
+//count each character without space
+for(int i=0; i<str.length(); i++){
+    if(str.charAt(i)!='\0'){
+        count++;
+    }
+}
+//display the total number of characters in te given string
+System.out.print("Total number of character in a string: "+count);
+}
+}

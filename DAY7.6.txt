@@ -1,0 +1,24 @@
+Public class Demo {
+   public static void main(String[] args) {
+      String input_string = "Java Program is fun!";
+      System.out.println("The string is defined as: " +input_string);
+      int string_length = input_string.length();
+      System.out.println("The length of the string is: " +string_length);
+      int N = 4;
+      int temp = 0, string_parts = string_length/N;
+      String[] equalStr = new String [N];
+      if(string_length % N != 0) {
+      System.out.println("The string cannot be divided int "+ N +" parts.");
+      } else {
+         for(int i = 0; i < string_length; i = i+string_parts) {
+            String part = input_string.substring(i, i+string_parts);
+            equalStr[temp] = part;
+            temp++;
+         }
+         System.out.println(N + " equal parts of given string are ");
+         for(int i = 0; i < equalStr.length; i++) {
+            System.out.println(equalStr[i]);
+         }
+      }
+   }
+}
