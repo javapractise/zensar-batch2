@@ -1,0 +1,111 @@
+
+            //////// Annotations /////////////
+1.@overrider
+
+package programs; 
+
+class Animal{  
+    void eatSomething(){
+        System.out.println("eating something");
+    }  
+}  
+class Main extends Animal{  
+    @Override  
+    void eatsomething(){
+        System.out.println("eating foods");
+    }
+    public static void main(String args[]){  
+        Animal a=new Main();  
+        a.eatSomething();  
+    }
+}  
+
+
+Output:
+      Comple Time Error
+
+
+2.@suppressWarnings
+
+package programes;{
+
+import java.util.*;  
+class Main
+{  
+@SuppressWarnings("unchecked")  
+public static void main(String args[])
+{  
+ArrayList list=new ArrayList();  
+list.add("Jyothi");  
+list.add("Hima");  
+list.add("mayank");  
+  
+for(Object obj:list)  
+System.out.println(obj);  
+  
+}
+}  
+}
+
+
+Output:
+       Jyothi
+       Hima
+       mayank
+
+
+3.@ Deprecated
+
+class A{  
+void m(){System.out.println("hello m");}  
+  
+@Deprecated  
+void n(){System.out.println("hello n");}  
+}  
+  
+class TestAnnotation3{  
+public static void main(String args[]){  
+  
+A a=new A();  
+a.n();  
+}
+}  
+
+Output:
+     hello n
+
+
+4.
+
+package programs;
+
+import java.lang.annotation.*;  
+import java.lang.reflect.*;  
+  
+@Retention(RetentionPolicy.RUNTIME)  
+@Target(ElementType.METHOD)  
+@interface MyAnnotation{  
+int value();  
+}  
+  
+//Applying annotation  
+class Hello{  
+@MyAnnotation(value=10)  
+public void sayHello(){System.out.println("hello annotation");}  
+}  
+  
+//Accessing annotation  
+class Main{  
+public static void main(String args[])throws Exception{  
+  
+Hello h=new Hello();  
+Method m=h.getClass().getMethod("sayHello");  
+  
+MyAnnotation manno=m.getAnnotation(MyAnnotation.class);  
+System.out.println("value is: "+manno.value());  
+}}  
+
+
+Output:
+     value is: 10
+
