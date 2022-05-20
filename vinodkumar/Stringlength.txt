@@ -1,0 +1,648 @@
+///////////////string length///////////
+
+package String;
+
+public class StringLength {
+
+	public static void main(String[] args) {
+		
+		String t1="vinod kumar";
+		String t2="muvvala vinod kumar";
+		
+		System.out.println("THE LENGHT OD THE STRING S1 IS:" + t1.length());
+		
+		System.out.println("THE LENGHT OD THE STRING S2 IS:" + t2.length());
+		
+		//System.out.println(t1.length());
+		//System.out.println(t2.length());
+	}
+
+}
+
+
+--------------------
+
+output:
+
+THE LENGHT OD THE STRING S1 IS:11
+THE LENGHT OD THE STRING S2 IS:19
+
+
+---------------------------------------------------------------------------
+//////Java Program to count the total number of characters in a string
+
+package String;
+
+public class String1 {
+
+	public static void main(String[] args) {
+		   
+		        String s1 = "Vinod Kumar";    
+		        int count = 0;
+		        
+		        System.out.println("The entered string is: "+s1);    
+		            
+		        for(int i = 0; i < s1.length(); i++) 
+		        {    
+		            if(s1.charAt(i) != ' ')    
+		                count++;    
+		        }                
+		        //Displays the total number of characters in the string    
+		        System.out.println("Total number of characters in the string: " + count);    
+		    }      
+		
+
+	}
+
+	}
+
+--------------------
+output:
+
+The entered string is: Vinod Kumar
+Total number of characters in the string: 11
+
+-----------------------------------------------------------------------
+//////Java Program to count the total number of characters in a string2
+
+package String;
+
+public class String1 {
+
+	public static void main(String[] args) {
+		   
+		        String s1 = "Vinod Kumar"; 
+		        String s2 = "Muvvala Vinod Kumar";
+		        int count = 0;
+		        
+		        System.out.println("The entered string is: "+s1);    
+		            
+		        for(int i = 0; i < s2.length(); i++) 
+		        {    
+		            if(s2.charAt(i) != ' ')    
+		                count++;    
+		        }                
+		        //Displays the total number of characters in the string    
+		        System.out.println("Total number of characters in the string: " + count);    
+		    }      
+		
+
+	}
+
+
+----------------------
+
+output:
+
+The entered string is: Vinod Kumar
+Total number of characters in the string: 17
+
+
+-----------------------------------------------------------------
+
+
+///////////Java Program to count the total number of punctuation characters exists in a String///
+
+package String;
+
+public class String3 {
+
+	public static void main(String[] args) 
+		{
+		
+		    int PuncMarks = 0;  
+		    String v = "Good Evening!!!!!!! Mr. Vinod Kumar. How are you?";  
+		        for (int i = 0; i < v.length(); i++) {  
+		                 
+		           
+					if(v.charAt(i) == '!' || v.charAt(i) == ',' || v.charAt(i) == ';' || v.charAt(i) == '.' ||        v.charAt(i) == '?' || v.charAt(i) == '-' ||  
+		                    v.charAt(i) == '\'' || v.charAt(i) == '\"' || v.charAt(i) == ':') {  
+		                PuncMarks++;  
+		            }  
+		        }  
+		        System.out.println("Total number of punctuation characters exists in string: " +  PuncMarks);  
+		    }   
+	}
+
+
+---------------------------------
+
+output:
+
+Total number of punctuation characters exists in string: 10
+
+
+-----------------------------------------------------------------
+
+///////////4) Java Program to count the total number of vowels and consonants in a string///////
+
+package String;
+
+public class String4 {
+
+	public static void main(String[] args) {
+		String s4 = "Hello This Is Vinod Kumar How are you.";
+
+		int vowels = 0, consonants = 0;
+
+		s4 = s4.toLowerCase();
+
+		for (int i = 0; i < s4.length(); ++i) {
+			char ch = s4.charAt(i);
+
+			// a, e, i, o, u
+			if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+				++vowels;
+			}
+
+			
+			  // check if character is in between a to z
+			  
+			  else if ((ch >= 'a' && ch <= 'z')) 
+			  {
+				  	++consonants; 
+				  	}
+			 
+
+			System.out.println("Vowels: " + vowels);
+			System.out.println("Consonants: " + consonants);
+
+		}
+	}
+}
+
+
+------------------
+
+output:
+
+Consonants: 17
+Vowels: 13
+
+-------------------------------------------------------
+
+////////////////Java Program to determine whether two strings are the anagram////////////
+
+package String;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class String5 {
+
+	  public static void main(String[] args) 
+	  {
+
+		  Scanner input = new Scanner(System.in);
+
+		  System.out.print("Enter first String: ");
+	    
+		  String str1 = input.nextLine();
+	    
+		  System.out.print("Enter second String: ");
+	    
+		  String str2 = input.nextLine();
+
+	    
+	    if(str1.length() == str2.length()) 
+	    {
+
+	     
+			      char[] charArray1 = str1.toCharArray();
+			      char[] charArray2 = str2.toCharArray();
+
+	      
+			      Arrays.sort(charArray1);
+			      Arrays.sort(charArray2);
+
+	      
+	      boolean result = Arrays.equals(charArray1, charArray2);
+
+	      if(result) 
+	      {
+	        System.out.println(str1 + " and " + str2 + " are anagram.");
+	      }
+	      else 
+	      {
+	        System.out.println(str1 + " and " + str2 + " are not anagram.");
+	      }
+	    }
+	    else 
+	   {
+	      System.out.println(str1 + " and " + str2 + " are not anagram.");
+	    }
+
+	    input.close();
+	  
+	}
+}
+
+---------------------
+
+output:
+
+Enter first String: siva
+Enter second String: visa
+siva and visa are anagram.
+
+
+output:
+
+Enter first String: raju
+Enter second String: kumar
+raju and kumar are not anagram.
+
+-----------------------------------------------------------
+
+////// Java Program to divide a string in 'N' equal parts.////
+
+package String;
+
+public class String6 
+{  
+    public static void main(String[] args) {  
+          String str = "aaaabbbbccccddddeeeeffffgggghhhh";  
+    
+        int len = str.length();   
+        int n = 4;  
+        int temp = 0, chars = len/n;  
+        String[] equalStr = new String [n];  
+        if(len % n != 0) 
+        {  
+            System.out.println("Sorry this string cannot be divided into "+ n +" equal parts.");  
+        }  
+        else
+        {  
+            for(int i = 0; i < len; i = i+chars)
+            {  
+                //Dividing string in n equal part using substring()  
+                String part = str.substring(i, i+chars);  
+                equalStr[temp] = part;  
+                temp++;  
+            }  
+    System.out.println(n + " equal parts of given string are ");  
+            for(int i = 0; i < equalStr.length; i++)
+            {  
+                System.out.println(equalStr[i]);  
+                }  
+            }  
+        }  
+}
+
+
+------------------------
+
+output:
+
+4 equal parts of given string are 
+aaaabbbb
+ccccdddd
+eeeeffff
+gggghhhh
+
+
+2 equal parts of given string are 
+aaaabbbbccccdddd
+eeeeffffgggghhhh
+
+
+------------------------------------------------------------
+
+///Java Program to find all subsets of a string////
+
+package String;
+
+public class String7 {
+ 
+	    public static void main(String[] args) {  
+	  
+	        String str = "vinodkumar";  
+	        int len = str.length();  
+	        int temp = 0;  
+	        // n*(n+1)/2  
+	        String arr[] = new String[len*(len+1)/2];  
+	  
+	         
+	        for(int i = 0; i < len; i++)
+	        {    
+	            for(int j = i; j < len; j++) 
+	            {  
+	                arr[temp] = str.substring(i, j+1);  
+	                temp++;  
+	            }  
+	        }  
+	  
+	        
+	        System.out.println("All subsets for given string are: ");  
+	        for(int i = 0; i < arr.length; i++)
+	        {  
+	            System.out.println(arr[i]);  
+	        }  
+	    }  
+	} 
+
+---------------------
+
+output:
+
+All subsets for given string are: 
+v
+vi
+vin
+vino
+vinod
+vinodk
+vinodku
+vinodkum
+vinodkuma
+vinodkumar
+i
+in
+ino
+inod
+inodk
+inodku
+inodkum
+inodkuma
+inodkumar
+n
+no
+nod
+nodk
+nodku
+nodkum
+nodkuma
+nodkumar
+o
+od
+odk
+odku
+odkum
+odkuma
+odkumar
+d
+dk
+dku
+dkum
+dkuma
+dkumar
+k
+ku
+kum
+kuma
+kumar
+u
+um
+uma
+umar
+m
+ma
+mar
+a
+ar
+r
+
+
+-------------------------------------------------------
+
+//Java Program to find the longest repeating sequence in a string//
+
+package String;
+
+public class String8 {
+   
+	    public static String lcp(String s, String t)
+	    {  
+	        int n = Math.min(s.length(),t.length());  
+	        for(int i = 0; i < n; i++)
+	        {  
+	            if(s.charAt(i) != t.charAt(i))
+	            {  
+	                return s.substring(0,i);  
+	            }  
+	        }  
+	        return s.substring(0,n);  
+	    }  
+	  
+	    public static void main(String[] args) {  
+	        String str = "adcwscedc";  
+	        String lrs="";  
+	        int n = str.length();  
+	        for(int i = 0; i < n; i++)
+	        {  
+	            for(int j = i+1; j < n; j++)
+	            {  
+	                  
+	                String x = lcp(str.substring(i,n),str.substring(j,n));  
+	                 
+	                if(x.length() > lrs.length()) lrs=x;  
+	            }  
+	        }  
+	        System.out.println("Longest repeating sequence: "+lrs);  
+	    }  
+	}  
+	
+---------------------
+
+output:
+
+Longest repeating sequence: dc
+
+
+---------------------------------------------------------------
+
+
+///Java Program to find all the permutations of a string////
+
+package String;
+
+public class String9 
+{
+	        
+	    public static String swapString(String a, int i, int j) 
+	    {    
+	        char[] b =a.toCharArray();    
+	        char ch;    
+	        ch = b[i];    
+	        b[i] = b[j];    
+	        b[j] = ch;    
+	        return String.valueOf(b);    
+	    }      
+	    public static void main(String[] args)    
+	    {    
+	        String str = "VINOD";    
+	        int len = str.length();    
+	        System.out.println("All the permutations of the string are: ");    
+	        generatePermutation(str, 0, len);    
+	    }    
+	          
+	    public static void generatePermutation(String str, int start, int end)    
+	    {      
+	        if (start == end-1)    
+	            System.out.println(str);    
+	        else    
+	        {    
+	            for (int i = start; i < end; i++)    
+	            {    
+	                str = swapString(str,start,i);         
+	                generatePermutation(str,start+1,end);        
+	                str = swapString(str,start,i);    
+	            }    
+	        }    
+	    }    
+	}  
+
+-------------------------------
+
+output:
+
+All the permutations of the string are: 
+VINOD
+VINDO
+VIOND
+VIODN
+VIDON
+VIDNO
+VNIOD
+VNIDO
+VNOID
+VNODI
+VNDOI
+VNDIO
+VONID
+VONDI
+VOIND
+VOIDN
+VODIN
+VODNI
+VDNOI
+VDNIO
+VDONI
+VDOIN
+VDION
+VDINO
+IVNOD
+IVNDO
+IVOND
+IVODN
+IVDON
+IVDNO
+INVOD
+INVDO
+INOVD
+INODV
+INDOV
+INDVO
+IONVD
+IONDV
+IOVND
+IOVDN
+IODVN
+IODNV
+IDNOV
+IDNVO
+IDONV
+IDOVN
+IDVON
+IDVNO
+NIVOD
+NIVDO
+NIOVD
+NIODV
+NIDOV
+NIDVO
+NVIOD
+NVIDO
+NVOID
+NVODI
+NVDOI
+NVDIO
+NOVID
+NOVDI
+NOIVD
+NOIDV
+NODIV
+NODVI
+NDVOI
+NDVIO
+NDOVI
+NDOIV
+NDIOV
+NDIVO
+OINVD
+OINDV
+OIVND
+OIVDN
+OIDVN
+OIDNV
+ONIVD
+ONIDV
+ONVID
+ONVDI
+ONDVI
+ONDIV
+OVNID
+OVNDI
+OVIND
+OVIDN
+OVDIN
+OVDNI
+ODNVI
+ODNIV
+ODVNI
+ODVIN
+ODIVN
+ODINV
+DINOV
+DINVO
+DIONV
+DIOVN
+DIVON
+DIVNO
+DNIOV
+DNIVO
+DNOIV
+DNOVI
+DNVOI
+DNVIO
+DONIV
+DONVI
+DOINV
+DOIVN
+DOVIN
+DOVNI
+DVNOI
+DVNIO
+DVONI
+DVOIN
+DVION
+DVINO
+---------------------------------------------------
+
+///Java Program to remove all the white spaces//////
+
+package String;
+import java.util.*;
+
+public class String10 {
+	
+	     public static void main(String []args)
+	     {
+	        Scanner sc=new Scanner(System.in);
+	        System.out.println("Enter the String :");
+	        String str=sc.nextLine();   
+	        
+	        str = str.replaceAll("\\s", ""); 
+	       
+	        System.out.println("After Removing Whitespaces the entered string is:"+str); 
+	     }
+	}
+
+-------------------------
+
+output:
+
+Enter the String :
+vinod kumar ljefgkedfg dkgnwlhte hrtgjneh rtoinhwrht
+After Removing Whitespaces the entered string is:vinodkumarljefgkedfgdkgnwlhtehrtgjnehrtoinhwrht
+
+
