@@ -1,0 +1,71 @@
+public class LocalInner {
+private int data=60;//instance variable  
+void display(){  
+class Local{  
+void msg(){System.out.println(data);}  
+}  
+Local l=new Local();  
+l.msg();  
+}  
+public static void main(String args[]){  
+LocalInner obj=new LocalInner();  
+obj.display();  
+}  
+}
+
+Output:
+60
+------------------------------------------------------------------------------------------------------------------
+class Outer_Demo {
+private int num = 175;  
+public class Inner_Demo {
+public int getNum() {
+System.out.println("This is the get num method of the inner class");
+return num;
+}
+}
+}
+public class My_class2 {
+public static void main(String args[])
+{
+Outer_Demo outer = new Outer_Demo();
+Outer_Demo.Inner_Demo inner = outer.new Inner_Demo();
+System.out.println(inner.getNum());
+}
+}
+
+Output
+
+This is the get num method of the inner class: 175
+-----------------------------------------------------------------------------------------------------------------
+class Outer {
+// Method defined inside outer class
+void outerMethod(){
+System.out.println("inside outerMethod");
+}
+class Inner {
+public static void main(String[] args)
+{
+// Display message for better readability
+System.out.println("inside inner class Method");
+}
+}
+}
+---------------------------------------------------------------------------------------------------------
+
+public class EnumerationExample {
+   enum Enum {
+     sony,korem 
+   }
+   public static void main(String args[]) {
+      Enum constants[] = Enum.values();
+      System.out.println("Value of constants: ");  
+      for(Enum d: constants) {
+         System.out.println(d);
+      }
+   }
+}
+Output:
+Value of constants:
+sony
+korem
