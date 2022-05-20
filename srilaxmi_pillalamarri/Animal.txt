@@ -1,0 +1,24 @@
+class Animal{
+void Eatsomething(){
+	System.out.println("eating something");
+ }
+}
+
+class Dog extends Animal{
+@Override
+void Eatsomething(){
+	System.out.println("eating foods");
+	}//should be something
+}
+
+
+class TestAnnotation{
+public static void main(String args[]){
+Animal a= new Dog();
+a.Eatsomething();
+}
+}
+
+=============
+output:
+eating foods
