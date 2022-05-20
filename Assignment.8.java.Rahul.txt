@@ -1,0 +1,174 @@
+1.
+class A{  
+void m(){System.out.println("Rahul");}  
+  
+@Deprecated  
+void n(){System.out.println("Paul");}  
+}  
+public class AnnoDeprecated {
+	public static void main(String args[]){  
+		  
+		A a=new A();  
+		a.n();  
+	}
+}
+
+/*
+Output:
+	Paul
+
+
+
+2
+##@SuppressWarnings
+import java.util.*;  
+public class AnnotationSupress {
+	@SuppressWarnings("unchecked")  
+	public static void main(String args[]){  
+	ArrayList list=new ArrayList();  
+	list.add("Rahul");  
+	list.add("Paul");  
+	list.add("Madasu");  
+
+	for(Object obj:list)  
+	System.out.println(obj);  
+
+	}
+}
+
+
+/*
+Output:
+	Rahul
+	Paul
+	Madasu
+
+3.
+public class EnumEx {
+	public enum season {RAHUL, PAUL, MADASU}  // defining enum
+	public static void main(String args[]) {
+		//traversing
+		for(season s:season.values()) 
+			System.out.println(s);
+	}
+
+}
+
+
+/*
+Output:
+RAHUL
+PAUL
+MADASU
+
+4.
+##Inner interface
+interface Eatable{  
+	 void eat();  
+}  
+public class InnerInterface {
+	public static void main(String args[]){  
+		 Eatable e=new Eatable(){  
+			 public void eat(){
+				 System.out.println("Rahul Paul");
+		  	 }  
+		 };  
+		 e.eat();  
+	}
+}
+
+
+
+/*
+Output:
+	Rahul Paul
+
+
+5.
+
+##public class LocalInner {
+	private int data=30;//instance variable  
+	 void display(){  
+	  class Local{  
+	   void msg(){System.out.println(data);}  
+	  }  
+	  Local l=new Local();  
+	  l.msg();  
+	 }  
+	 public static void main(String args[]){  
+		 LocalInner obj=new LocalInner();  
+		 obj.display();  
+	 }  
+}
+
+
+
+Output:
+	30
+
+6.
+##Nested Interface
+interface Showable{  
+	void show();  
+		interface Message{  
+		void msg();  
+	 }  
+}  
+public class NestedInterface implements Showable.Message{
+	public void msg(){
+		System.out.println("Hello nested interface");
+	}  
+	public static void main(String args[]){  
+		Showable.Message message=new NestedInterface();//upcasting here  
+		message.msg();  
+	 }  
+}
+
+
+Output:
+	Hello nested interface
+
+7.
+
+Rahul Paul Madasu
+##Inner class
+import java.io.PrintStream;
+public class InnerClass {
+private int data=30;
+class Inner{
+void msg(){System.out.println("data is "+data);}
+}
+public static void main(String args[]){
+TestMemberOuter1 obj=new TestMemberOuter1();
+TestMemberOuter1.Inner in=obj.new Inner();
+in.msg();
+}
+}
+
+
+8.
+
+##TestAnonymous Inner
+abstract class Person{  
+	  abstract void eat();  
+}  
+public class TestAnonymousinner {
+	public static void main(String args[]){  
+		  Person p=new Person(){  
+			  void eat(){
+				  System.out.println("Rahul Paul");
+			  }  
+		  };  
+		  p.eat();  
+	}  
+}
+
+
+
+
+Output:
+	Rahul Paul
+
+
+
+
