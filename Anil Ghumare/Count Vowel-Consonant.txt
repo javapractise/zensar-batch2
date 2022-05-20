@@ -1,0 +1,28 @@
+public class CountVowelConsonant {    
+    public static void main(String[] args) {    
+            
+        //Counter variable to store the count of vowels and consonant    
+        int vowelCount = 0, consonantCount = 0;    
+            
+        //Declare a string    
+        String text = "I am going to school";    
+            
+        //Converting entire string to lower case to reduce the comparisons    
+        text = text.toLowerCase();    
+            
+        for(int i = 0; i < text.length(); i++) {    
+            //Checks whether a character is a vowel    
+            if(text.charAt(i) == 'a' || text.charAt(i) == 'e' || text.charAt(i) == 'i' || text.charAt(i) == 'o' || text.charAt(i) == 'u') {    
+                //Increments the vowel counter    
+                vowelCount++;    
+            }    
+            //Checks whether a character is a consonant    
+            else if(text.charAt(i) >= 'a' && text.charAt(i)<='z') {      
+                //Increments the consonant counter    
+                consonantCount++;    
+            }    
+        }    
+        System.out.println("Number of vowels: " + vowelCount);    
+        System.out.println("Number of consonants: " + consonantCount);    
+    }    
+}       
