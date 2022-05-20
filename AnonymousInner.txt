@@ -1,0 +1,15 @@
+//Anonymous Inner Class Example By Pavan Butke
+
+
+
+abstract class Person{  
+  abstract void eat();  
+}  
+class TestAnonymousInner{  
+ public static void main(String args[]){  
+  Person x=new Person(){  
+  void eat(){System.out.println("Have a Lunch !");}  
+  };  
+  x.eat();  
+ }  
+}  

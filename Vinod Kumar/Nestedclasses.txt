@@ -1,0 +1,105 @@
+package NestedClasses;
+
+public class OuterMember
+{  
+		 private int data=30;  
+		 class Inner
+		 {  
+		  void msg(){System.out.println("data is "+data);
+		  }  
+		 } 
+		 public static void main(String args[])
+		 {  
+		  OuterMember obj=new OuterMember();  
+		  OuterMember.Inner in =obj.new Inner();  
+		  in.msg();  
+		 }  
+}  
+
+
+-----------------------
+output:
+
+data is 30
+
+
+--------------------------------------------
+
+
+abstract class Person{
+  abstract void eat();
+}
+
+class TestAnnonymousInner{
+ public static void main(String args[]){
+  Person p=new Person(){
+  void eat(){System.out.println("nice fruits");}
+  };
+
+  p.eat();
+ }
+}
+
+
+--------------------
+
+output:
+
+nice fruits
+
+
+
+
+---------------------------------------
+
+
+
+package NestedClasses;
+
+public class LocalInner {
+	  
+		 private int data=30;//instance variable  
+		 void display(){  
+		  class Local{  
+		   void msg(){System.out.println(data);}  
+		  }  
+		  Local l=new Local();  
+		  l.msg();  
+		 }  
+		 public static void main(String args[]){  
+		  LocalInner obj=new LocalInner();  
+		  obj.display();  
+		 }  
+		}  
+
+
+
+
+-----------------------
+output:
+
+30
+
+-----------------------------------------------
+
+
+interface Showable{  
+	void show();  
+		interface Message{  
+		void msg();  
+	 }  
+}  
+public class NestedInterface implements Showable.Message{
+	public void msg(){
+		System.out.println("Hello nested interface");
+	}  
+	public static void main(String args[]){  
+		Showable.Message message=new NestedInterface();//upcasting here  
+		message.msg();  
+	 }  
+}
+-----------------------
+
+Output:Hello nested interface
+
+

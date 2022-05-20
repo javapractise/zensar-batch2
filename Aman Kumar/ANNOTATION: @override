@@ -1,0 +1,23 @@
+class Animal{
+	void eatsomething(){
+		System.out.println("eating something");
+	}
+}
+class Dog extends Animal{
+	@override
+	void eatsomething(){
+		System.out.println("eating foods");}//should be something
+	}
+class TestAnnotation1{
+	public static void main(String[] args) {
+		Object a= new Dog();
+		a.eatsomething();
+	}
+}
+
+
+/*
+
+Output: compile time Error
+
+*/

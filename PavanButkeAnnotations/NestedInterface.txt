@@ -1,0 +1,22 @@
+//Nested Interface Example by Pavan Butke
+
+package zensar;
+
+
+void show();  
+  interface Message{  
+   void msg();  
+  }  
+}  
+class TestNestedInterface1 implements Showable.Message{  
+ public void msg(){System.out.println("We are in a Nested Interface");}  
+  
+ public static void main(String args[]){  
+  Showable.Message message=new TestNestedInterface1();//upcasting here  
+  message.msg();  
+ }  
+}  
+
+
+o/p:
+We are in a Nested Interface

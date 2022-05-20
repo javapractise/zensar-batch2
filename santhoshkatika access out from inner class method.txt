@@ -1,0 +1,15 @@
+public class OuterClassStaticExampleController {
+   public static String str1;  
+   public OuterClassStaticExampleController() {
+      str11 = 'string1';
+   }
+   public void doneInvokedByCommandButton() {
+       String str2 = str1;  
+   }   
+   public class InnerClass {
+      public String str3;
+      public InnerClass() {
+         str3 = str1; 
+      }
+   }
+}
