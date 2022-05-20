@@ -1,0 +1,283 @@
+COUNTCHARS
+------------
+public class CountChars {
+public static void main(String args[]) {
+String str = "I am learning Java";
+int len = str.length();
+int count =0;
+for(int i=0;i<len;i++) {
+if(str.charAt(i)!= ' ') {
+count++;}
+}
+System.out.println("Total no. of characters in string : "+count);
+}
+}
+
+
+Output:
+Total no. of characters in string : 15
+
+--------------------------------------------------------------------------------------------------------------------
+COUNTCHARS
+----------
+public class CountChars {
+public static void main(String args[]) {
+String str = "Iam learning Java";
+String str1 = "Iam learned SQL, MongoDB and git";
+String str2 = str+str1;
+int len = str2.length();
+int count =0;
+for(int i=0;i<len;i++) {
+if(str2.charAt(i)!= ' ') {
+count++
+}
+}
+System.out.println("Total no. of characters in combined string : "+count);
+}
+}
+
+
+
+Output:
+Total no. of characters in combined string : 42
+
+-----------------------------------------------------------------------------------------------
+
+COUNTPUNCTCHARS:
+----------------
+
+//COUNTCHARS:
+
+
+public class CountPunctChars {
+public static void main(String args[]) {
+String str = "Korem, sony.";
+int len = str.length();
+int count =0;
+for(int i=0;i<len;i++) {
+if(str.charAt(i)== '!' ||str.charAt(i)==','||str.charAt(i)== '.' ||str.charAt(i)== '\''||str.charAt(i)== '-'|| str.charAt(i) == '\"' ||str.charAt(i)== '?'||str.charAt(i)==';') {
+count++;
+}
+}
+System.out.println("Total no. of punctuated characters in  string : "+count);
+}
+}
+
+
+
+
+Output:
+	Total no. of punctuated characters in  string : 2
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+VOWEL CONSONANTS COUNT:
+--------------------
+
+public class VowelConsonantsCount {
+public static void main(String args[]) {
+String str = "This is Java program";
+int len = str.length();
+int count1 = 0,count2 =0;
+for(int i=0;i<len;i++) {
+if((str.charAt(i)>='A' && str.charAt(i)<='Z') ||(str.charAt(i)>='a' && str.charAt(i)<='z')) {
+if(str.charAt(i)== 'a' ||str.charAt(i)=='e'||str.charAt(i)== 'i' ||str.charAt(i)== 'o'||str.charAt(i)== 'u'|| str.charAt(i) == 'A' ||str.charAt(i)== 'E'||str.charAt(i)=='I'||str.charAt(i)=='O'||str.charAt(i)=='U') {
+count1++
+else {
+count2++;
+}
+}             
+}
+System.out.println("Total no. of vowels in  string : "+count1);
+ System.out.println("Total no. of consonants in  string : "+count2);
+
+}
+}
+
+
+
+Output:
+	Total no. of vowels in  string : 6
+	Total no. of consonants in  string : 11
+-------------------------------------------------------------------------------------------------------------------
+Anagram:
+---------
+import java.util.Arrays;
+public class AnagramString 
+public static void main(String args[]) {
+String str1 = "secure";
+String str2 = "rescue";
+int len1 = str1.length();
+int len2 = str2.length();
+if(len1!=len2) {
+System.out.println("The two strings are not anagram");
+return;
+}
+char[] s1 = str1.toCharArray();
+char[] s2 = str2.toCharArray();
+Arrays.sort(s1);
+Arrays.sort(s2);
+if(Arrays.equals(s1,s2)) {
+System.out.println("The two strings are  anagram");
+}
+else {
+System.out.println("The two strings are not anagram");
+}      
+}
+}
+
+Output:
+	The two strings are  anagram
+-------------------------------------------------------------------------------------------------------------------------
+Divide string:
+--------------
+public class DivideString {
+public static void main(String args[]) {
+String s = "divmuladd";
+int n = 3;
+int len = s.length();
+int charsnum = len/n;	
+String[] str = new String[n];
+int pos = 0;
+if((len%n) != 0) {
+System.out.println("The string can't be divided");
+}
+else {
+for(int i=0;i<len;i=i+charsnum) {
+str[pos++] = s.substring(i,i+charsnum);
+}
+}
+System.out.println("The "+n+" equal parts of string are :");
+for(int i=0;i<pos;i++) {
+System.out.println(" "+str[i]);
+}
+}
+}
+
+
+Output:
+The 3 equal parts of string are :
+div
+mul
+add
+--------------------------------------------------------------------------------------------------------
+Subset of string:
+-----------------
+
+public class Main
+{
+public static void main (String[]args)
+{
+String str = "Sony";
+int len = str.length ();
+int temp = 0;
+String arr[] = new String[len * (len + 1) / 2];
+
+for (int i = 0; i < len; i++)
+  {
+for (int j = i; j < len; j++)
+ {
+arr[temp] = str.substring (i, j + 1);
+temp++;
+
+} 
+} 
+
+System.out.println ("All subsets for given string are: ");
+for (int i = 0; i < arr.length; i++)
+ {
+System.out.println (arr[i]);
+} 
+} 
+}
+
+Output:
+All subsets for given string are: 
+S
+So
+Son
+Sony
+o
+on
+ony
+n
+ny
+y
+-----------------------------------------------------------------------------------------------------------
+Longest Repeating:
+----------------
+public class LongestRepeatingSequence {  
+    public static String lcp(String s, String t){  
+        int n = Math.min(s.length(),t.length());  
+        for(int i = 0; i < n; i++){  
+            if(s.charAt(i) != t.charAt(i)){  
+                return s.substring(0,i);  
+            }  
+        }  
+        return s.substring(0,n);  
+    }  
+
+    public static void main(String[] args) {  
+        String str = "abcdefgabcd";  
+        String lrs="";  
+        int n = str.length();  
+        for(int i = 0; i < n; i++){  
+            for(int j = i+1; j < n; j++){    
+                String x = lcp(str.substring(i,n),str.substring(j,n));  
+                if(x.length() > lrs.length()) lrs=x;  
+            }  
+        }  
+        System.out.println("Longest repeating sequence: "+lrs);  
+    }  
+}  
+
+Output:
+------
+Longest repeating sequence: abcd
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+Permutations:
+-------------
+public class Main {
+static void printPermutn(String str, String ans)
+{
+if (str.length() == 0) {
+System.out.print(ans + " ");
+return;
+}
+for (int i = 0; i < str.length(); i++) {
+char ch = str.charAt(i);
+String ros = str.substring(0, i) +
+str.substring(i + 1);
+printPermutn(ros, ans + ch);
+}
+}
+public static void main(String[] args)
+{
+String s = "sony";
+printPermutn(s, "");
+}
+}
+Output:
+sony soyn snoy snyo syon syno osny osyn onsy onys oysn oyns nsoy nsyo nosy noys nyso nyos yson ysno yosn yons ynso ynos 
+----------------------------------------------------------------------------------------------------------------------
+Spaces:
+-------
+public class RemoveAllSpace {  
+public static void main(String[] args) {  
+String str = "Sony   reddy   korem";    
+System.out.println(noSpaceStr);   
+char[] strArray = str.toCharArray();  
+StringBuffer stringBuffer = new StringBuffer();  
+for (int i = 0; i < strArray.length; i++) {  
+if ((strArray[i] != ' ') && (strArray[i] != '\t')) {  
+stringBuffer.append(strArray[i]);  
+}  
+}  
+String noSpaceStr2 = stringBuffer.toString();  
+System.out.println(noSpaceStr2);  
+}  
+}  
