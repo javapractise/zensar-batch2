@@ -1,0 +1,95 @@
+
+1.PROGRAM FOR STATIC INNER CLASS :-
+==================================
+
+//outer class
+public class TestTraining {
+    static int value = 105;
+    //Inner class 
+    static class Print{
+        static void msg()
+        {
+            System.out.println("value is " + value);
+        }
+    }
+        public static void main(String[] args)
+        {
+            TestTraining.Print.msg();
+        }
+    }
+
+Output :-
+--------
+
+	value is 105
+
+2.PROGRAM FOR PRIVATE INNER CLASS :-
+====================================
+
+class Outer_Demo {
+   private int num = 175;  
+   public class Inner_Demo {
+      public int getNum() {
+         System.out.println("This is the getnum method of the inner class");
+         return num;
+      }
+   }
+}
+
+public class My_class2 {
+
+   public static void main(String args[]) {
+      Outer_Demo outer = new Outer_Demo();
+      
+      // Instantiating the inner class
+      Outer_Demo.Inner_Demo inner = outer.new Inner_Demo();
+      System.out.println(inner.getNum());
+   }
+}
+
+Output :-
+---------
+	This is the getnum method of the inner class 175
+
+3.PROGRAM TO ACCESS OUT FROM INNER CLASS METHOD :-
+================================================== 
+
+class Outer {
+    class Inner {
+        public void show()
+        {
+            System.out.println("Java Learning");
+        }
+    }
+}
+
+class Main {
+    public static void main(String[] args)
+    {
+        Outer.Inner in = new Outer().new Inner();
+        in.show();
+    }
+}
+	Output :-
+	--------
+	Java Learning
+
+4. Define inside class by using enum :-
+   ====================================
+
+	public class Test {
+	enum Color {
+		RED,
+		GREEN,
+		BLUE;
+	}
+	public static void main(String[] args)
+	{
+		Color c1 = Color.GREEN;
+		System.out.println(c1);
+	}
+}
+
+	oUTPUT :-
+	----------
+	GREEN
