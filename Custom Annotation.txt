@@ -1,0 +1,36 @@
+custum Annotation
+: @interface myAnnotation{}
+ 
+types of Annotation
+1.marker Annotation
+2.single-value Annotation
+@interface myannotation{
+int value();
+}
+
+
+default
+@interface MyAnnotation{
+int value() default0;
+}
+
+
+@MyAnnotation(value=10)
+
+
+ingle type of object in generic
+List list=new Arraylist();
+list.add(10);
+list.add("10");
+with Generics,it is requried to specify the type of we need to store.
+list<integer>list=new ArrayList,<integer>();
+list.add(10);
+list.add("10");//complier-time error
+
+*2.type casting isnot requried
+*3.complie time checking
+
+syntax:list<?extends Number>
+? : is a wildcard character
+extennds,is a keyword
+number, is clas present in java.lang package
