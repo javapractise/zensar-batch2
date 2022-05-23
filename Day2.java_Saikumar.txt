@@ -1,0 +1,14 @@
+
+
+create table ssinfo(id int,name varchar(20),salary varchar(20));
+
+insert into ssinfo values(1,"sai",100);
+insert into ssinfo values(2,"vinod",200);
+insert into ssinfo values(3,"jagadeesh",300);
+
+select * from ssinfo;
+
+
+1|sai|100
+2|vinod|200
+3|jagadeesh|300
