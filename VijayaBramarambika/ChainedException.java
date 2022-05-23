@@ -30,3 +30,10 @@ public class ChainedException {
 		}
 	}
 }
+
+/*
+Output:
+	java.lang.ArithmeticException: / by zero
+	Example for Chained Exception
+*/
+
