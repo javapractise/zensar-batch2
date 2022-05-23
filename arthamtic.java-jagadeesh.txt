@@ -1,0 +1,31 @@
+package addtwonumbers;
+
+public class sumoftwo {
+
+	public static void main(String[] args) {
+		int n1=20,n2=35,add,sub,div,mul,rem;
+		
+		add=n1+n2;
+		sub=n1-n2;
+		div=n1/n2;
+		mul=n1*n2;
+		rem=n1|n2;
+		
+		
+		System.out.println("add of these numbers:"+add);
+		System.out.println("sub of these numbers:"+sub);
+		System.out.println("div of these numbers:"+div);
+		System.out.println("mul of these numbers:"+mul);
+		System.out.println("rem of these numbers:"+rem);
+
+	}
+
+}
+
+
+
+add of these numbers:55
+sub of these numbers:-15
+div of these numbers:0
+mul of these numbers:700
+rem of these numbers:55
