@@ -1,8 +1,13 @@
-   class ExceptionTest
+Q1. Write a Java program to use the try and catch and finally block.
+
+Ans:
+package Jayshri;
+
+public class ExceptionTest
 {
         public static void main(String[] args)
         {
-                int a = 60, b = 4, c = 4;
+                int a = 40, b = 4, c = 4;
                 int result;
                 try
                 {
@@ -20,3 +25,8 @@
                 System.out.println("Result: "+result);
         }
 }
+
+output:
+Cannot divided by zero.java.lang.ArithmeticException: / by zero
+finally block
+Result: 5

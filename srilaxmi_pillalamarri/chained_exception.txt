@@ -1,0 +1,36 @@
+4.Program for chained exception:
+-------------------------------------------------
+
+public class ExceptionHandling
+{
+    public static void main(String[] args)
+    {
+        try
+        {
+            // Creating an exception
+            NumberFormatException ex =
+                       new NumberFormatException("Exception");
+
+
+            ex.initCause(new NullPointerException(
+                      "This is actual cause of the exception"));
+
+
+            throw ex;
+        }
+
+        catch(NumberFormatException ex)
+        {
+            // displaying the exception
+            System.out.println(ex);
+
+
+            System.out.println(ex.getCause());
+        }
+    }
+}
+-----------
+Output:
+
+java.lang.NumberFormatException: Exception
+java.lang.NullPointerException: This is actual cause of the exception

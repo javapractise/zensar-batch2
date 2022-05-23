@@ -1,8 +1,10 @@
-   class ExceptionTest
+//01
+
+class ExceptionTest
 {
         public static void main(String[] args)
         {
-                int a = 60, b = 4, c = 4;
+                int a = 40, b = 4, c = 4;
                 int result;
                 try
                 {
@@ -20,3 +22,5 @@
                 System.out.println("Result: "+result);
         }
 }
+
+------------------------------------------------------------------------------------

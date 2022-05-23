@@ -1,0 +1,85 @@
+1) program with try catch and finally block
+class TestFinallyBlock {    
+  public static void main(String args[]){    
+  try{    
+   int data=25/5;    
+   System.out.println(data);    
+  }    
+  catch(NullPointerException e){  
+System.out.println(e);  
+}    
+ finally {  
+System.out.println("finally block is always executed");  
+}  
+System.out.println("rest of phe code...");    
+  }    
+}  
+
+program for multiple catch with single try
+public class MultipleCatchBlock1 {  
+    public static void main(String[] args) {  
+           try{    
+                int a[]=new int[5];    
+                a[5]=30/0;    
+               }    
+               catch(ArithmeticException e)  
+                  {  
+                   System.out.println("Arithmetic Exception occurs");  
+                  }    
+               catch(ArrayIndexOutOfBoundsException e)  
+                  {  
+                   System.out.println("ArrayIndexOutOfBounds Exception occurs");  
+                  }    
+               catch(Exception e)  
+                  {  
+                   System.out.println("Parent Exception occurs");  
+                  }             
+               System.out.println("rest of the code");    
+    }  
+}  
+program illustrating throws keyword
+import java.io.*;  
+class M{  
+ void method()throws IOException{  
+  System.out.println("device operation performed");  
+ }  
+}  
+class Testthrows3{  
+   public static void main(String args[])throws IOException{
+     M m=new M();  
+     m.method();  
+  
+    System.out.println("normal flow...");  
+  }  
+}
+program for chained exception
+public class ExceptionHandling
+{
+    public static void main(String[] args)
+    {
+        try
+        {
+            NumberFormatException ex =
+                       new NumberFormatException("Exception");
+              ex.initCause(new NullPointerException(
+                      "This is actual cause of the exception"));
+
+            throw ex;
+        }
+  
+        catch(NumberFormatException ex)
+        {
+            System.out.println(ex);
+            System.out.println(ex.getCause());
+        }
+    }
+}
+
+program to create custom exception
+public class WrongFileNameException extends Exception {  
+    public WrongFileNameException(String errorMessage) {  
+    super(errorMessage);  
+    }  
+}  
+
+ 

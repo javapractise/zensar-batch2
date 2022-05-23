@@ -1,0 +1,174 @@
+1. Program with Try and Catch & Finally Block :-
+=============================================
+==========>
+
+class Test {
+    public static void main(String[] args)
+    {
+        try {
+            int value = 40/0 ;
+            System.out.println(value);
+        }
+        catch (NullPointerException e)
+        {
+            System.out.println(e);
+        }
+        finally 
+        {
+            System.out.println("The block is excecuted");
+        }
+        
+    }
+}
+OUTPUT :
+-------
+	The block is excecuted
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at Test.main(source.java:5)
+
+Process Finished with exit code 1.
+
+=======>
+class Teja {
+    public static void main(String[] args)
+    {
+        try{
+            int i = 56/8 ;
+            System.out.println(i);
+        }
+        catch(Exception e){
+            System.out.println("Catch blockException");//here catch block doesn't excecute because there is no exceptin in try block
+        }
+        finally
+        {
+            System.out.println("Finally block is irrespective of Try and catch block");
+        }
+    }
+}
+
+Output: -
+----------
+7
+Finally block is irrespective of Try and catch block
+
+2. PROGRAM FOR MULTIPLE CATCH WITH SINGLE TRY :-
+==================================================
+class TestMultiple {
+    public static void main(String[] args)
+    {
+        try{
+            System.out.println(45/0);
+        }
+        catch(ArithmeticException ae)
+        {
+            System.out.println("From ae");
+        }
+        catch(RuntimeException re)
+        {
+            System.out.println("From re");
+        }
+        catch(Exception e)
+        {
+            System.out.println("Fron e");
+        }
+    }
+}
+
+Output :-
+---------
+	From ae
+
+3. Program Illustrating throws Keyword :-
+========================================
+
+// Java program to demonstrate working of throws
+class ThrowsExecption
+{
+	static void box() throws IllegalAccessException
+	{
+		System.out.println("Inside box(). ");
+		throw new IllegalAccessException("nill");
+	}
+	public static void main(String args[])
+	{
+		try
+		{
+			box();
+		}
+		catch(IllegalAccessException e)
+		{
+			System.out.println("Pack of cards are present..");
+		}
+	}
+}
+
+Output :-
+--------
+
+Inside box(). 
+Pack of cards are present..
+
+4.Program for ChainedException :-
+==================================
+
+public class Learn {
+    public static void main(String[] args) throws Exception {
+        int n = 60, result = 0;
+        try {
+            result = n/0;
+            System.out.println("The result is " +result);
+        }
+        catch(ArithmeticException ae)
+        {
+            System.out.println("An ArithmeticException Occured " +ae);
+        }
+        try
+        {
+            int data = 50/0;
+        }
+        catch(ArithmeticException e)
+        {
+            System.out.println("End of Session");
+        }
+        
+    }
+}
+
+Output :-
+---------
+
+An ArithmeticException Occured java.lang.ArithmeticException: / by zero
+End of Session
+
+5.Program to create custom exception :-
+=======================================
+
+class JavaLearningException extends Exception  
+{  
+    
+}   
+public class TestLearningException2  
+{    
+    public static void main(String args[])  
+    {  
+        try  
+        {   
+            throw new JavaLearningException();  
+        }  
+        catch (JavaLearningException ex)  
+        {  
+            System.out.println("Session is Completed");  
+            System.out.println(ex.getMessage());  
+        }  
+  
+        System.out.println("Practise the Programs.");    
+    }  
+}  
+
+Output :-
+---------
+Session is Completed
+null
+Practise the Programs.
+
+
