@@ -1,0 +1,152 @@
+
+1.
+    
+    interface Bank{  
+	void money();  
+}  
+interface Loan{  
+	void interest();  
+}  
+  
+class Main implements Bank,Loan{  
+	public void money(){
+		System.out.println("Money");
+	}
+	public void interest(){
+		System.out.println("Interest");
+	}
+	public static void main(String args[]){  
+		Main M = new Main();  
+		M.money();
+		M.interest();
+	 }  
+}
+
+
+OutPut
+
+Money 
+Interest
+
+
+2.
+interface Shop11
+{  
+	void items();  
+}  
+interface Shop22{  
+	void products();  
+}  
+  
+class Main implements Shop11,Shop22{  
+	public void items (){
+		System.out.println("chocolate");
+	}
+	public void products(){
+		System.out.println("cycle");
+	}
+	public static void main(String args[]){  
+		Main s = new Main();  
+		s.items();
+		s.products();
+	 }  
+}
+
+
+OutPut 
+chocolate 
+cycle
+
+
+3.
+   interface Ciniplex
+{  
+	void movietheater ();  
+}  
+interface Games
+{  
+	void cricket ();  
+}  
+class Theater implements Ciniplex , Games{  
+	public void movietheater (){
+		System.out.println("movie is good");
+	}  
+	public void cricket(){
+		System.out.println("Sachin hit a six");
+	}
+}
+class Sports implements Games{  
+	public void cricket(){
+		System.out.println("Sachin hit a six");
+	} 
+}
+
+class Main{
+	public static void main(String args[]){  
+		Theater T = new Theater();  
+		T.movietheater();  
+		T.cricket(); 
+	
+	}	 
+}  
+
+OutPut
+movie is good 
+Sachin hit a six
+
+
+ 4.
+
+    interface Foodcourt{  
+	void menu();  
+}  
+interface NonVegAndveg extends Foodcourt{  
+	void items();  
+}  
+
+class nonveg implements NonVegAndveg {  
+	public void items(){
+		System.out.println("veg biryani ordered");
+	}
+	 public void menu (){
+		 System.out.println("veg item");
+	}	 
+}
+
+class Main {
+	public static void main(String args[]){  
+		NonVegAndveg N = new nonveg();  
+		N.menu();  
+		N.items(); 
+	}	 
+}  
+
+
+OutPut
+veg item
+veg biryani ordered
+
+
+
+5)
+
+interface In1
+{
+	final int a = 10;
+	static void display()
+	{
+		System.out.println("hello everyone");
+	}
+}
+
+class TestClass implements In1
+{
+
+	public static void main (String[] args)
+	{
+		In1.display();
+	}
+}
+
+OutPut
+hello everyone
