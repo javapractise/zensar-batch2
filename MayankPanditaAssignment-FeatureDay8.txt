@@ -1,0 +1,177 @@
+1)
+
+enum Color {
+	RED,
+	GREEN,
+	BLUE;
+}
+
+public class Test {
+	// Driver method
+	public static void main(String[] args)
+	{
+		Color c2 = Color.GREEN;
+		System.out.println(c2);
+	}
+}
+
+OUTPUT
+
+GREEN
+
+2)
+
+class Outer {
+
+		class Inner {
+
+		public void show()
+		{
+			System.out.println("In a nested class method");
+		}
+	}
+}
+class Main {
+
+	public static void main(String[] args)
+	{
+
+		Outer.Inner in = new Outer().new Inner();
+
+		in.show();
+	}
+}
+
+
+OUTPUT
+
+In a nested class method
+
+
+
+3)
+
+class TestOuter1{  
+  static int data=30;  
+  static class Inner{  
+   void msg(){System.out.println("data is "+data);}  
+  }  
+  public static void main(String args[]){  
+  TestOuter1.Inner obj=new TestOuter1.Inner();  
+  obj.msg();  
+  }  
+}  
+
+
+OUTPUT
+
+data is 30
+
+
+4)
+
+@Deprecated
+
+class A{  
+void m(){System.out.println("hello m");}  
+  
+@Deprecated  
+void n(){System.out.println("hello n");}  
+}  
+  
+class TestAnnotation3{  
+public static void main(String args[]){  
+  
+A a=new A();  
+a.m();  
+}}  
+
+OutPut
+hello m
+
+
+5)
+
+@SuppressWarnings
+
+package programe11;{
+import java.util.*;
+class TestAnnotation2{
+@SuppressWarnings("unchecked")
+public static void main(String args[]){
+
+ArrayList<String> list=new ArrayList<String>();
+list.add("Rajeev");
+list.add("Sarath");
+list.add("Arjun");
+
+for(Object obj:list)
+System.out.println(obj);
+
+}}
+}
+
+
+OutPut
+Rajeev
+Sarath
+Arjun
+
+
+6)
+
+
+@Override
+
+
+class Animal{
+void eatSomething(){System.out.println("eating something");}
+}
+
+class Dog extends Animal{
+@Override
+void eatsomething(){System.out.println("eating foods");}//should be eatSomething
+}
+
+class TestAnnotation1{
+public static void main(String args[]){
+Animal a=new Dog();
+a.eatSomething();
+}}
+
+
+OutPut
+Comple Time Error
+
+
+7)
+
+class Outer_Demo {
+  
+   private int num = 175;  
+   
+   
+   public class Inner_Demo {
+      public int getNum() {
+         System.out.println("This is the getnum method of the inner class");
+         return num;
+      }
+   }
+}
+
+public class My_class2 {
+
+   public static void main(String args[]) {
+      
+      Outer_Demo outer = new Outer_Demo();
+      
+      
+      Outer_Demo.Inner_Demo inner = outer.new Inner_Demo();
+      System.out.println(inner.getNum());
+   }
+}
+
+
+OutPut
+
+This is the getnum method of the inner class: 175
