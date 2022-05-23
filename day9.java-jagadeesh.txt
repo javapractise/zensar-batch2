@@ -1,0 +1,178 @@
+ThrowsExample:
+
+import java.io.IOException;
+ class Test{
+	void run() throws IOException {
+		throw new IOException("Device error");
+	}
+	void fast() throws IOException {
+		run();
+	}
+	void start() throws IOException {
+		try {
+			fast();
+		}
+		catch(IOException e) {
+			System.out.println(e);
+		}
+		finally {
+			System.out.println("Exception handling using throws");
+		}
+	}
+}
+public class ThrowsExample {
+	public static void main(String args[]) throws IOException {
+			Test obj = new Test();
+			obj.start();
+	}
+
+}
+
+Output:
+	java.io.IOException: Device error
+	Exception handling using throws
+
+-----------------------------------------------------------------------------------------
+MultipleCatch:
+
+public class MultipleCatch {
+	public static void main(String[] args) {
+		try {
+			int n = 50/0;
+			System.out.println("Exception not handled");
+		}
+		catch(ArithmeticException e) {
+			System.out.println(e);
+		}
+		catch(NullPointerException e) {
+			System.out.println(e);
+		}
+		catch(NumberFormatException e) {
+			System.out.println(e);
+		}
+		catch(IndexOutOfBoundsException e) {
+			System.out.println(e);
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+		finally {
+			System.out.println("Arithmetic Exception has to be handled");
+		}
+		System.out.println("This is program with 1 try block and multiple catch blocks");
+	}
+}
+
+
+
+
+
+Output:
+	java.lang.ArithmeticException: / by zero
+	Arithmetic Exception has to be handled
+	This is program with 1 try block and multiple catch blocks
+
+-----------------------------------------------------------------------------------------------------------
+ExceptionExample:
+
+public class ExceptionExamp {
+	public static void main(String args[]) {
+		try {
+			int a = 100/0;
+			System.out.println("Exception not handled");
+		}
+		catch(ArithmeticException e) {
+			System.out.println(e);
+			System.out.println("Exception handled");
+		}
+		finally {
+			System.out.println("Finally block executed");
+		}
+		
+		System.out.println("Rest of code");
+
+	}
+
+}
+
+
+
+ Output:
+	java.lang.ArithmeticException: / by zero
+	Exception handled
+	Finally block executed
+	Rest of code
+
+-----------------------------------------------------------------------------------------
+CustomException:
+
+class InvalidMarksException extends Exception {
+	public InvalidMarksException(String e) {
+		super(e);
+	}
+	
+}
+public class CustomException {
+	public static void promote(int marks) throws Exception {
+		if(marks<35) {
+			throw new InvalidMarksException("Not eligible to promote");
+		}
+		else {
+			System.out.println("Promoted");
+		}
+	}
+ 	public static void main(String args[]) throws Exception {
+		try {
+			promote(29);
+		}
+		catch(InvalidMarksException e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+}
+
+
+
+Output:
+	Not eligible to promote
+
+-------------------------------------------------------------------------------------------
+ChainedException:
+
+
+class ApplicationException extends Exception{
+	ApplicationException(Exception e) {
+		super(e);
+	}
+	
+}
+public class ChainedException {
+	public static void test() throws ApplicationException {
+		try {
+			int a=10;
+			int b=0;
+			int c = a/b;
+		}
+		catch(Exception e) {
+			throw new ApplicationException(e);
+		}
+	}
+	public static void  main(String args[]) {
+		try {
+			test();
+		}
+		catch(ApplicationException e) {
+			System.out.println(e.getMessage());
+			
+		}
+		finally {
+			System.out.println("Example for Chained Exception");
+		}
+	}
+}
+
+
+Output:
+	java.lang.ArithmeticException: / by zero
+	Example for Chained Exception
