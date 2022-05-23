@@ -1,0 +1,177 @@
+1. Program with try and catch & finally block
+
+package day9;
+
+public class TryCatchFinally
+{
+	
+	    public static void main (String args[])
+	    {
+	         
+	        try
+	        {
+	            System.out.println ("This is Try Block:");
+	            int a = 125 / 0;
+	            System.out.println ("The Result of try block is:" + a);
+	        } 
+	        
+	        catch (ArithmeticException e)
+	        {
+	            System.out.println ("Catch Block Handle Exception:");
+	            System.out.println (e);
+	        } 
+	        
+	        finally
+	        {
+	            System.out.println ("Finally Block always Executes ");
+	        } 
+	        System.out.println ("rest of the code...");
+	    } 
+	}
+
+output:
+This is Try Block:
+java.lang.ArithmeticException: / by zero
+Finally Block always Executes 
+rest of the code...
+
+--->
+
+2. Program for multiple catch with single try
+
+package day9;
+
+public class MCST {
+		  
+	    public static void main(String[] args)
+	    {  
+	          
+	           try{    
+	                int a[]=new int[5];    
+	                //a[5]=30/0; 
+	                System.out.println(a[10]);
+	               }
+	           
+				   catch(ArithmeticException e)
+	           		 {
+					 System.out.println("Arithmetic Exception occurs"); }
+					 
+	               catch(ArrayIndexOutOfBoundsException e)  
+	                  {  
+	                   System.out.println("ArrayIndexOutOfBounds Exception occurs");  
+	                  }         
+	               System.out.println("rest of the code");    
+	    }  
+} 
+
+
+output:
+
+ArrayIndexOutOfBounds Exception occurs
+rest of the code
+
+--->
+3. Program illustrating throws keyword
+
+package day9;
+import java.io.*;
+
+class M
+	  {  
+		void method()throws IOException
+		{  
+			throw new IOException("device error");  
+		}  
+	  }  
+public class Throws 
+{ 
+	   public static void main(String args[])
+	   {  
+	    try
+	    {  
+	    	M m=new M();  
+	    	m.method();  
+	    }
+	    catch(Exception e)
+	    {
+	    	System.out.println("exception handled");
+	    }     
+	  
+	    System.out.println("normal flow...");  
+	  }  
+	}  
+
+
+output:
+
+exception handled
+normal flow...
+--->
+
+4. Program for chained exception
+
+package day9;
+
+public class Chained {
+ 
+  public static void main(String[] args) 
+  { 
+    try
+    { 
+
+      NumberFormatException a = new NumberFormatException("====> Exception"); 
+
+      a.initCause(new NullPointerException("====> Actual cause of the exception")); 
+
+      throw a; 
+    } 
+
+    catch(NumberFormatException a) 
+    { 
+
+      System.out.println(a); 
+      System.out.println(a.getCause()); 
+    } 
+  } 
+}
+
+
+output:
+
+java.lang.NumberFormatException: ====> Exception
+java.lang.NullPointerException: ====> Actual cause of the exception
+
+--->
+
+5. Program to create custom exception
+
+package day9;
+
+	class MyCustomException extends Exception  
+	{  
+	    
+	}  
+	    
+	public class Custom {  
+	   
+	    public static void main(String args[])  
+	    {  
+	        try  
+	        {  
+	             
+	            throw new MyCustomException();  
+	        }  
+	        catch (MyCustomException ex)  
+	        {  
+	            System.out.println("Caught the exception");  
+	            System.out.println(ex.getMessage());  
+	        }  
+	  
+	        System.out.println("rest of the code...");    
+	    }  
+	}  
+
+output:
+Caught the exception
+null
+rest of the code...

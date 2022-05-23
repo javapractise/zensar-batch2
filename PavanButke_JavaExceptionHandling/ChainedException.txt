@@ -1,0 +1,37 @@
+package core_javaBeginner;
+
+class ExceptionAppln extends Exception{
+	ExceptionAppln(Exception e) {
+		super(e);
+	}
+	
+}
+public class ChainedExc {
+	public static void test() throws ExceptionAppln {
+		try {
+			int a=70;
+			int b=0;
+			int c = a/b;
+		}
+		catch(Exception e) {
+			throw new ExceptionAppln(e);
+		}
+	}
+	public static void  main(String args[]) {
+		try {
+			test();
+		}
+		catch(ExceptionAppln e) {
+			System.out.println(e.getMessage());
+			
+		}
+		finally {
+			System.out.println("Hey , you can see Chained Exc ");
+		}
+	}
+	}
+		
+
+o/p==>
+java.lang.ArithmeticException: / by zero
+Hey , you can see Chained Exc 

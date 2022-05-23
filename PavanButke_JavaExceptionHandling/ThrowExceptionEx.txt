@@ -1,0 +1,50 @@
+package core_javaBeginner;
+
+public class ThrowException {
+	
+
+		public static void validVoter(int age){
+			if(age<18)
+	            try{
+	                throw new Exception();
+	            }catch(Exception e){
+	                System.out.println("Too young to Vote! ");
+	            }
+			else
+			   System.out.println("Do your Duty , Vote  Everytime! ");
+		}
+		public static void main (String[] args) {
+			validVoter(20);
+			validVoter(10);
+		}
+	}
+
+
+o/p:->
+Do your Duty , Vote  Everytime! 
+Too young to Vote! 
+
+
+Example2
+
+public class ThrowException2 {
+	static void func(int a) throws Exception{
+		   System.out.println(10/a);  
+	}
+	public static void main (String[] args) {
+		try{
+		    func(10);
+		    func(0);
+		}catch(Exception e){
+		   System.out.println("can't divide by zero");
+		}
+	
+	}
+}
+
+0/p-->
+
+1
+can't divide by zero
+
+

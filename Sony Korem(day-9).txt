@@ -1,0 +1,153 @@
+Try and catch & finally block
+--------------------------------
+public class FinallyBlock {
+public static void main(String[] args) {
+try{
+int data=30/5;
+System.out.println(data);
+}
+catch(NullPointerException e){
+System.out.println(e);
+}
+finally {
+System.out.println("finally block is always executed");
+}
+System.out.println("rest of phe code...");
+}
+}
+
+Output:
+6
+finally block is always executed
+rest of phe code...
+-----------------------------------------------------------------------------------------------------------------------------
+
+Multiple catch with single try:
+-------------------------------
+
+public class MultiCatch {
+public static void main(String[] args) {
+try{
+int a[]=new int[5];
+a[5]=30/0;
+}catch(ArithmeticException e)
+{
+System.out.println("Arithmetic Exception occurs");
+}
+catch(ArrayIndexOutOfBoundsException e)
+{
+System.out.println("ArrayIndexOutOfBounds Exception occurs");
+}
+catch(Exception e)
+{
+System.out.println("Parent Exception occurs"}
+System.out.println("rest of the code");
+}
+}
+
+Output:
+Arithmetic Exception occurs
+rest of the code
+---------------------------------------------------------------------------------------------------------------------------
+Throws keyword:
+----------------
+
+import java.io.*;  
+class M{  
+void method()throws IOException{  
+throw new IOException("device error");  
+}  
+}  
+public class Testthrows2{  
+public static void main(String args[]){  
+try{  
+M m=new M();  
+m.method();  
+}catch(Exception e){System.out.println("exception handled");}     
+System.out.println("normal flow");  
+}  
+
+Output:
+exception handled
+normal flow
+-----------------------------------------------------------------------------------------------------------------------
+Chained exception:
+-------------------
+public class ExceptionHandling
+{
+public static void main(String[] args)
+{
+try
+{
+// Creating an exception
+NumberFormatException ex =
+new NumberFormatException("Exception");
+ex.initCause(new NullPointerException(
+"This is actual cause of the exception"));
+throw ex;
+}
+catch(NumberFormatException ex)
+{
+// displaying the exception
+System.out.println(ex);
+System.out.println(ex.getCause());
+}
+}
+}
+
+output:
+java.lang.NumberFormatException: Exception
+java.lang.NullPointerException: This is actual cause of the exception
+--------------------------------------------------------------------------------------------------------------------------
+Custom exception:
+-------------------
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+// create a checked exception class
+class CustomException extends Exception {
+  public CustomException(String message) {
+    // call the constructor of Exception class
+    super(message);
+  }
+}
+
+class Main {
+
+  ArrayList<String> languages = new ArrayList<>(Arrays.asList("Java", "Python", "JavaScript"));
+
+  // check the exception condition
+  public void checkLanguage(String language) throws CustomException {
+
+    // throw exception if language already present in ArrayList
+    if(languages.contains(language)) {
+      throw new CustomException(language + " already exists");
+    }
+    else {
+      // insert language to ArrayList
+      languages.add(language);
+      System.out.println(language + " is added to the ArrayList");
+    }
+  }
+
+  public static void main(String[] args) {
+
+    // create object of Main class
+    Main obj = new Main();
+
+    // exception is handled using try...catch
+    try {
+      obj.checkLanguage("Swift");
+      obj.checkLanguage("Java");
+    }
+
+    catch(CustomException e) {
+      System.out.println("[" + e + "] Exception Occured");
+    }
+  }
+}
+
+Output:
+Swift is added to the ArrayList[CustomException: Java already exists] Exception Occured
+
