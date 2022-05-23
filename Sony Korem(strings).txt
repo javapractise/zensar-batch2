@@ -1,0 +1,57 @@
+public class CountChars {
+public static void main(String args[]) {
+String str = "Iam eating mango";
+String str1 = "I ate rice and cake";
+String str2 = str+str1;
+int len = str2.length();
+int count =0;
+for(int i=0;i<len;i++) {
+if(str2.charAt(i)!= ' ') {
+count++;
+}
+}
+System.out.println("Total no. of characters in combined string : "+count);
+}
+}
+
+Output:
+Total no. of characters in combined string : 30
+------------------------------------------------------------------------------------------------------
+public class CountChars {
+	public static void main(String args[]) {
+		String str = "Iam eating mango";
+		int len = str.length();
+		int count =0;
+		for(int i=0;i<len;i++) {
+			if(str.charAt(i)!= ' ') {
+				count++;
+			}
+		}
+		System.out.println("Total no. of characters in string : "+count);
+
+	}
+}
+
+Output:
+Total no. of characters in string : 15
+
+---------------------------------------------------------------------------------------------------------
+public class CountPunctChars {
+        public static void main(String args[]) {
+                String str = "shiva!";
+                int len = str.length();
+                int count =0;
+                for(int i=0;i<len;i++) {
+                        if(str.charAt(i)== '!' ||str.charAt(i)==','||str.charAt(i)== '.' ||str.charAt(i)== '\''||str.charAt(i)== '-'|| str.charAt(i) == '\"' ||str.charAt(i)== '?'||str.charAt(i)==';') {
+                                count++;
+                        }
+                }
+                System.out.println("Total no. of punctuated characters in  string : "+count);
+
+        }
+}
+
+
+
+Output:
+Total no. of punctuated characters in  string : 1

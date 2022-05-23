@@ -1,0 +1,119 @@
+JAVA PROGRAM TO COPY ALL ELEMENTS OF ONE ARRAY INTO ANOTHER ARRAY :-
+====================================================================
+public class Test {
+    public static void main(String[] args)
+    {
+        int a[] = { 1, 4, 6};
+        int b[] = new int[a.length];
+        
+        b = a;
+        
+        b[0]++;
+        
+        System.out.println("Values of a[] ");
+        for (int i =0;i <a.length; i++)
+        {
+            System.out.print(a[i] + " ");
+            
+        }
+         System.out.println("\n\nValues of b[] ");
+        for (int i =0;i <b.length; i++)
+        {
+            System.out.print(b[i] + " ");
+            
+        }    
+    }
+}
+
+OUTPUT :-
+--------
+
+Values of a[] 
+2 4 6 
+
+Values of b[] 
+2 4 6 
+
+JAVA PROGRAM TO FIND THE FREQUENCY OF EACH ELEMENT IN THE ARRAY :-
+=================================================================
+public class Test {
+    public static void main(String[] args)
+    {
+        int freq[] = new int[100];
+        int a[] = { 1,4,4,6,4,6,7,3,7,4};
+        int i,j,c;
+        for(i=0;i<a.length;i++)
+        {
+            freq[i]=-1;
+        }
+        for(i=0;i<a.length;i++)
+        {
+            c=1;
+            for(j=i+1;j<a.length;j++)
+            {
+                if(a[i]==a[j])
+                {
+                    c++;
+                    freq[j]=0;
+                }
+            }
+            if(freq[i]!=0)
+            {
+                freq[i]=c;
+            }
+        }
+        System.out.println("frequency of all elements are : ");
+        for(i=0;i<a.length;i++)
+        {
+            if(freq[i]!=0)
+            {
+                System.out.println(a[i]+" -> "+freq[i]);
+            }
+        }
+        
+    }
+}
+
+OUTPUT :-
+---------
+
+frequency of all elements are : 
+1 -> 1
+4 -> 4
+6 -> 2
+7 -> 2
+3 -> 1
+
+JAVA PROGRAM TO LEFT ROTATE THE ELEMENTS OF AN ARRAY :-
+=======================================================
+
+public class Test {
+    public static void main(String[] args)
+    {
+        int a[] = { 1,2,3,4,5};
+        int i,k=3;
+        System.out.println("The array is : ");
+        for(i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+        System.out.println("\nRotated array is : ");
+        for(i=k;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+        for(i=0;i<k;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+    }
+}
+
+Output :-
+----------
+
+The array is : 
+1 2 3 4 5 
+Rotated array is : 
+4 5 1 2 3 
+

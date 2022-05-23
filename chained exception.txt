@@ -1,0 +1,12 @@
+public class MyChainedException {
+
+    public void main(String[] args) {
+        try {
+            throw new ArithmeticException("High Level Exception.")
+              .initCause(new IOException("I5 cause."));
+        } catch(ArithmeticException ae) {
+            System.out.println("Caught : " + bf);
+            System.out.println("Actual cause: "+ bf.getCause());
+        }
+    }    
+}

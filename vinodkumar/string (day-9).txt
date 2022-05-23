@@ -1,0 +1,83 @@
+Java String Programs
+1) Java Program to count the total number of characters in a string
+
+package day9;
+
+public class String1 {
+	public static void main (String args[] ) {
+
+ String s= "Zensar Training";
+ String s1= " string two count ";
+ 
+ System.out.println("The total count of string :" + s.length());
+ //System.out.println("The total count of string2 :" + s1.length());
+ 
+}
+}
+
+---------------------
+
+output:
+The total count of string :15
+
+
+----------------------------------------------------------
+
+ 
+2) Java Program to count the total number of characters in a string 2
+
+package day9;
+
+public class String1 {
+	public static void main (String args[] ) {
+
+ String s= "Zensar Training";
+ String s1= " string two count ";
+ String s3=s+s1;
+ 
+ System.out.println("The total count of string :" + s.length());
+ System.out.println("The total count of string2 :" + s3.length());
+ 
+}
+}
+
+---------------------
+
+output:
+The total count of string :15
+The total count of string2 :33
+
+----------------------------------------------------------------------
+ 
+3) Java Program to count the total number of punctuation characters exists in a String
+
+package day9;
+
+public class punch 
+{
+
+	public static void main(String[] args)
+	{
+		
+		int punchmark=0;
+		
+		String s="!hi hlo;how+%are?.,you;";
+		
+		for(int i =0; i<s.length(); i++)
+		{
+			
+			if(s.charAt(i) == '!' || s.charAt(i) == ',' || s.charAt(i) == ';' || s.charAt(i) == '.' ||     s.charAt(i) == '?' ||   
+                      s.charAt(i) == '\"' || s.charAt(i) == '+' || s.charAt(i) == ':')
+			{  
+				punchmark++;  
+            }  
+		}
+		System.out.println("the punchmarks are:" + punchmark);
+}
+}
+
+-------------------
+
+output:
+the punchmarks are:7
+

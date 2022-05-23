@@ -1,0 +1,176 @@
+
+//////////////////Exception Handling/////////// 
+
+1.Program with try and catch & finally block
+   
+public class Main{    
+      public static void main(String args[]){   
+  
+      try {    
+  
+        System.out.println("Inside try block");  
+  
+        //below code throws divide by zero exception  
+       int data=30/5;    
+       System.out.println(data);    
+      }   
+  
+      //handles the Arithmetic Exception / Divide by zero exception  
+      catch(ArithmeticException e){  
+        System.out.println("Exception handled");  
+        System.out.println(e);  
+      }   
+  
+      //executes regardless of exception occured or not   
+      finally {  
+        System.out.println("finally block is always executed");  
+      }    
+  
+      System.out.println("rest of the code...");    
+      }    
+    }  
+
+
+Output:
+       Inside try block
+        6
+      finally block is always executed
+      rest of the code...
+
+
+2.Program for multiple catch with single try
+
+
+public class Main{  
+  
+    public static void main(String[] args) {  
+          
+           try{    
+                int a[]=new int[5];    
+                a[5]=30/0;    
+                System.out.println(a[10]);  
+               }    
+               catch(ArithmeticException e)  
+                  {  
+                   System.out.println("Arithmetic Exception occurs");  
+                  }    
+               catch(ArrayIndexOutOfBoundsException e)  
+                  {  
+                   System.out.println("ArrayIndexOutOfBounds Exception occurs");  
+                  }    
+               catch(Exception e)  
+                  {  
+                   System.out.println("Parent Exception occurs");  
+                  }             
+               System.out.println("rest of the code");    
+    }  
+}  
+
+output:
+       Arithmetic Exception occurs
+       rest of the code
+
+
+
+3.Program illustrating throws keyword
+    
+import java.io.IOException;  
+class Main{  
+  void m()throws IOException{  
+    throw new IOException("device error");//checked exception  
+  }  
+  void n()throws IOException{  
+    m();  
+  }  
+  void p(){  
+   try{  
+    n();  
+   }catch(Exception e){System.out.println("exception handled");}  
+  }  
+  public static void main(String args[]){  
+  Main obj=new Main();  
+   obj.p();  
+   System.out.println("normal flow...");  
+  }  
+}  
+
+Output:
+       exception handled
+       normal flow...
+
+
+4.Program for chained exception
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        try
+        {
+            // Creating an exception
+            NumberFormatException ex =
+                       new NumberFormatException("Exception");
+  
+            // Setting a cause of the exception
+            ex.initCause(new NullPointerException(
+                      "This is actual cause of the exception"));
+  
+            // Throwing an exception with cause.
+            throw ex;
+        }
+  
+        catch(NumberFormatException ex)
+        {
+            // displaying the exception
+            System.out.println(ex);
+  
+            // Getting the actual cause of the exception
+            System.out.println(ex.getCause());
+        }
+    }
+}
+
+
+Output:
+      java.lang.NumberFormatException: Exception
+      java.lang.NullPointerException: This is actual cause of the exception
+
+5.Program to create custom exception
+
+
+class MyCustomException extends Exception  
+{  
+    
+}  
+    
+// class that uses custom exception MyCustomException  
+public class Main  
+{  
+    // main method  
+    public static void main(String args[])  
+    {  
+        try  
+        {  
+            // throw an object of user defined exception  
+            throw new MyCustomException();  
+        }  
+        catch (MyCustomException ex)  
+        {  
+            System.out.println("Caught the exception");  
+            System.out.println(ex.getMessage());  
+        }  
+  
+        System.out.println("rest of the code...");    
+    }  
+}  
+
+Output:
+       Caught the exception
+       null
+       rest of the code...
+
+
+
+
+
+       
