@@ -1,0 +1,21 @@
+//05
+
+public class CustomDemo
+{
+      public static void main(String args[]) throws Exception
+      {
+           CustomDemo custom = new CustomDemo();
+           custom.display();
+      }
+      public void display() throws CustomException
+      {
+           for(int i=3;i<30;i=i+3)
+           {
+                 System.out.println("i= "+i);
+                 if(i==8) 
+                 {
+                       throw new CustomException("My Exception Occurred");
+                 }
+           }
+      }
+}
