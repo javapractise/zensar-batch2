@@ -1,0 +1,15 @@
+SIMPLE ENUM EG:
+class EnumExample1{
+//defining the enum inside the class
+public enum season{WINTER,SPRING,SUMMER,FALL}
+//main method
+public static voidmain (string[] args){
+//traversing the enum
+for (season s: Season.values())
+system.out.println(s);
+}}
+
+output;
+SUMMER
+WINTER 
+SPRING FALL
