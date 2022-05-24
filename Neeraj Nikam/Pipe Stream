@@ -1,0 +1,43 @@
+import java.io.pipedReader,
+import java.io.PipedWriter;
+
+
+public class PipeReaderExample2{
+public static  void main(string[] args){
+try{
+
+
+final PipedReader read = new PipedReader();
+final PipedWriter write = new PipedWriter(read);
+
+Thread readerThread=new Thread(new runnable(){
+public void run(){
+try{
+ 
+int data= read.read();
+while (data!=-1){
+ system.out.println((char)data);
+ data=read.read()
+}
+}catch (Exception ex){
+}
+}
+}};
+
+Thread writerThread=new Thread(new  Runnable(){
+publlic void run(){
+try {
+write.write("I love my country\n".toCharArray());
+}catch(Exception ex){
+}
+}};
+readThread.start();
+writerThread.start();
+
+}catch(Exception ex){
+system.out.println(ex.getMessage());
+}
+}
+------------------------------------------------------------------------
+
+output:i love mmy country

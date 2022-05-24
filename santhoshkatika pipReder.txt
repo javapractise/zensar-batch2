@@ -1,0 +1,35 @@
+ 1.pipReader code
+
+
+public classPipeReaderExample2{
+publicstatic void main(string[] args){
+try{
+final PipedReaderread = new PipedReader();
+final PipedWriterwrite = new PipedWriter(read);
+ThreadreaderThread=new Thread(new runnable(){
+public voidrun(){
+try{
+int data=read.read();
+while (data!=-1){
+ system.out.println((char)data);
+ data=read.read()
+}
+}catch (Exceptionex){
+}
+}
+}};
+ThreadwriterThread=new Thread(new Runnable(){
+publlic voidrun(){
+try {
+write.write("Ilove my country\n".toCharArray());
+}catch(Exceptionex){
+}
+}};
+readThread.start();
+writerThread.start();
+}catch(Exceptionex){
+system.out.println(ex.getMessage());
+}
+}
+output:I love mmy country
+
