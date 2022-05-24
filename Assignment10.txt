@@ -1,0 +1,202 @@
+import java.io.PipedReader;  
+import java.io.PipedWriter;  
+  
+public class Main {  
+    public static void main(String[] args) {  
+        try {  
+  
+////////////////////// Assignment10/////////////////
+
+ 1. PipedReader
+
+
+
+            PipedReader read = new PipedReader();  
+             PipedWriter write = new PipedWriter(read);  
+  
+            Thread readerThread = new Thread(new Runnable() {  
+                public void run() {  
+                    try {  
+                        int data = read.read();  
+                        while (data != -1) {  
+                            System.out.print((char) data);  
+                            data = read.read();  
+                        }  
+                    } catch (Exception ex) {  
+                    }  
+                }  
+            });  
+  
+            Thread writerThread = new Thread(new Runnable() {  
+                public void run() {  
+                    try {  
+                        write.write("I love myself\n".toCharArray());  
+                    } catch (Exception ex) {  
+                    }  
+                }  
+            });  
+  
+            readerThread.start();  
+            writerThread.start();  
+  
+        } catch (Exception ex) {  
+            System.out.println(ex.getMessage());  
+        }  
+  
+    }  
+}  
+
+Output:
+       I love myself
+
+
+2. PipedWriter
+
+
+    import java.io.PipedReader;  
+import java.io.PipedWriter;  
+  
+public class Main {  
+    public static void main(String[] args) {  
+        try {  
+  
+             PipedReader read = new PipedReader();  
+             PipedWriter write = new PipedWriter(read);  
+  
+            Thread readerThread = new Thread(new Runnable() {  
+                public void run() {  
+                    try {  
+                        int data = read.read();  
+                        while (data != 1) {  
+                            System.out.print((char) data);  
+                            data = read.read();  
+                        }  
+                    } catch (Exception ex) {  
+                    }  
+                }  
+            });  
+  
+            Thread writerThread = new Thread(new Runnable() {  
+                public void run() {  
+                    try {  
+                        write.write("I love my mom\n".toCharArray());  
+                    } catch (Exception ex) {  
+                    }  
+                }  
+            });  
+  
+            readerThread.start();  
+            writerThread.start();  
+  
+        } catch (Exception ex) {  
+            System.out.println(ex.getMessage());  
+        }  
+  
+    }  
+}  
+        
+Output:
+       I love my mom
+
+3.
+
+import java.io.*; 
+
+	public class Main 
+	{    
+	  public static void main(String args[])throws Exception
+	  {    
+		  		FileInputStream input1=new FileInputStream("C:\\Users\\vm67964\\Desktop\\practice");    
+		  		FileInputStream input2=new FileInputStream("C:\\Users\\vm67964\\Desktop\\practice");    
+		  		SequenceInputStream inst=new SequenceInputStream(input1, input2);    
+	   int j;    
+	   while((j=inst.read())!=-1)
+	   {    
+	    System.out.print((char)j);    
+	   }    
+	   inst.close();    
+	   input1.close();    
+	   input2.close();    
+	  }    
+	} 
+
+    Output:
+     hi how are you 
+     i am fine 
+
+4.RandomAccessFile
+    
+
+import java.io.IOException;  
+import java.io.RandomAccessFile;  
+  
+public class Main{  
+    static final String FILEPATH ="myFile.TXT";  
+    public static void main(String[] args) {  
+        try {  
+            System.out.println(new String(readFromFile(FILEPATH, 0, 18)));  
+            writeToFile(FILEPATH, "I love my country and my people", 31);  
+        } catch (IOException e) {  
+            e.printStackTrace();  
+        }  
+    }  
+    private static byte[] readFromFile(String filePath, int position, int size)  
+            throws IOException {  
+        RandomAccessFile file = new RandomAccessFile(filePath, "r");  
+        file.seek(position);  
+        byte[] bytes = new byte[size];  
+        file.read(bytes);  
+        file.close();  
+        return bytes;  
+    }  
+    private static void writeToFile(String filePath, String data, int position)  
+            throws IOException {  
+        RandomAccessFile file = new RandomAccessFile(filePath, "rw");  
+        file.seek(position);  
+        file.write(data.getBytes());  
+        file.close();  
+    }  
+}  
+
+
+5.
+  
+package today1;
+class Multi extends Thread
+{  
+		public void run()
+		{  
+		System.out.println("thread is running");  
+		}  
+		public static void main(String args[])
+		{  
+		Multi t1=new Multi();  
+		t1.start();  
+		 }  
+		}  
+
+Output:
+        thread is running by using runnable
+
+
+6.
+
+   class Multi extends Thread
+{  
+		public void run()
+		{  
+		System.out.println("thread is running");  
+		}  
+		public static void main(String args[])
+		{  
+		Multi t1=new Multi();  
+		t1.start();  
+		 }  
+		} 
+
+output:
+        thread is running
+
+  
+
+   
