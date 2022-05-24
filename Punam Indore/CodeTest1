@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Test1 {
 	public static void main(String args[]) {
 	 	   	Scanner sc = new Scanner(System.in);
-	 	   	System.out.println("Enter adjacent student's word :");
+	 	   	System.out.println("adjacent student's word :");
 	 	   	String sWord = sc.nextLine();
-	 	   	System.out.println("Enter Rahul's word :");
+	 	   	System.out.println("Rahul's word :");
 	 	    String rWord = sc.nextLine();
 	        int len1 = sWord.length();
 	        int len2 = rWord.length();
