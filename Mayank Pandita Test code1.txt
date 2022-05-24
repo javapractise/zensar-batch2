@@ -1,0 +1,55 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class Main
+{
+  public static void main (String[]args)
+  {
+    Scanner sc = new Scanner (System.in);
+    
+    // Creating Object of Scanner Class
+      System.out.println ("Please enter 1st student's Paragraph");
+    String s1 = sc.next ();
+      System.out.println ("Please enter 2nd student's Paragraph");
+    String s2 = sc.next ();
+    
+    // Converting String into Lower Case
+      s1 = s1.toUpperCase ();
+      s2 = s2.toUpperCase ();
+    
+    // Converting String into Lower Case and sorting the Array element
+    char arr1[] = s1.toCharArray ();
+      Arrays.sort (arr1);
+    char arr2[] = s2.toCharArray ();
+      Arrays.sort (arr2);
+    
+    //Creating string from array
+    String res1 = new String (arr1);
+    String res2 = new String (arr2);
+    if (res1.equals (res2))
+        System.out.println ("1");
+    else
+        System.out.println ("0");
+  }
+}
+
+
+OutPut
+
+Please enter 1st student's Paragraph
+cat
+Please enter 2nd student's Paragraph
+CAT
+1
+
+Please enter 1st student's Paragraph
+HI
+Please enter 2nd student's Paragraph
+hi
+1
+
+Please enter 1st student's Paragraph
+Cat
+Please enter 2nd student's Paragraph
+acr
+0
+
