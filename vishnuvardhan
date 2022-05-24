@@ -1,1 +1,72 @@
+Q1)
+Problem Statement – Rahul copies in the exam from his adjacent students.
+But he doesn’t want to be caught, so he changes words keeping the letter constant.
+That means he interchanges the positions of letters in words. You are the examiner 
+and you have to find if he has copied a certain word from the one adjacent student who is giving the same exam, 
+and give Rahul the markings he deserves.
 
+
+Note that: Uppercase and lowercase are the  same.
+Input Format:
+First line with the adjacent student’s word
+Second line with Rahul’s word
+Output Format:
+0 if not copied
+1 if copied
+Constraints:
+1<=Length of string<=10^6
+Sample Input:
+CAR
+Acr
+Sample Output:
+1
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+A)
+package Zensardemo;
+
+import java.util.Arrays;
+import java.util.Scanner;
+public class Codetest
+{
+	public static void main(String args[]) {
+	 	   	Scanner sc = new Scanner(System.in);
+	 	   	System.out.println("Enter adjacent student's word :");
+	 	   	String sWord = sc.nextLine();
+	 	   	System.out.println("Enter Rahul's copied word :");
+	 	    String rWord = sc.nextLine();
+	        int len1 = sWord.length();
+	        int len2 = rWord.length();
+	        if(len1!=len2) 
+	        {
+	        	System.out.println(0);
+	        }
+	        sWord = sWord.toLowerCase();
+	        rWord = rWord.toLowerCase();
+	        char[] s1 = sWord.toCharArray();
+	        char[] s2 = rWord.toCharArray();
+	        Arrays.sort(s1);
+	        Arrays.sort(s2);
+	        if(Arrays.equals(s1,s2)) 
+	        {
+	             	System.out.println(1);
+	        }
+	        else 
+	        {
+	            	System.out.println(0);
+	        }      
+
+	}
+
+}
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Output:
+Enter adjacent student's word :
+Vishnu
+Enter Rahul's copied word :
+Pokala
+0
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
