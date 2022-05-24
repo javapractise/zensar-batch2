@@ -1,0 +1,23 @@
+public class ThreadExample1 extends Thread {  
+     // run() method to perform action for thread.   
+     public void run()  
+     {    
+        int a= 1;  
+        int b=2;  
+        int result = a+b;  
+        System.out.println("shiva..");  
+        System.out.println("Sum of two numbers is: "+ result);  
+     }  
+     public static void main( String args[] )  
+     {  
+      // Creating instance of the class extend Thread class  
+        ThreadExample1 t1 = new  ThreadExample1();  
+        //calling start method to execute the run() method of the Thread class  
+        t1.start();  
+     }  
+}
+
+
+out put:
+shiva..
+Sum of two numbers is: 3
