@@ -47,3 +47,25 @@ Output:
 I love indian army
 #####################################################################################################################################
 #####################################################################################################################################
+
+
+package Zensardemo;
+import java.io.*;
+public class inputstream
+{    
+  public static void main(String args[])throws Exception{    
+   FileInputStream input1=new FileInputStream("D:\\testin.txt");    
+   FileInputStream input2=new FileInputStream("D:\\testout.txt");    
+   SequenceInputStream inst=new SequenceInputStream(input1, input2);    
+   int v;    
+   while((v=inst.read())!=-1){    
+    System.out.print((char)v);    
+   }    
+   inst.close();    
+   input1.close();    
+   input2.close();    
+  }    
+}    
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Output:
