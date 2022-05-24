@@ -35,9 +35,11 @@ System.out.println("0");
       }
   }
 
-output:
+input:
 
  
 CAR
  
 Acr
+output:
+1
