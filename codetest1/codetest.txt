@@ -1,0 +1,43 @@
+
+
+    import java.util.*;
+import java.io.*;
+    public class Class {
+
+
+        public static void main(String[] args)
+        {
+            Scanner sc = new Scanner(System.in);
+
+
+            System.out.print("Entered the string1 : " );
+            String a1 = sc.next();
+
+            a1 = a1.toUpperCase();
+
+
+            System.out.print("Entered the second string2 : " );
+            String a2 = sc.next();
+            a2 = a2.toUpperCase();
+            char arr1[] = a1.toCharArray();
+            Arrays.sort(arr1);
+
+            char arr2[] = a2.toCharArray();
+            Arrays.sort(arr2);
+
+            String res1 = new String(arr1);
+
+            String res2 = new String(arr2);
+
+            if(res1.equals(res2))
+                System.out.println("\n 1");
+            else
+                System.out.println("\n 0");
+        }
+    }
+
+output:-
+
+entered the string1:-CAR
+entered the second string2:-Acr
+1
