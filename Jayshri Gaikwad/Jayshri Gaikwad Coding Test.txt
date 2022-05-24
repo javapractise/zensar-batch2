@@ -23,6 +23,7 @@ sc.close();
 
 
 Output:
+
 java -cp /tmp/Y2o4ux52T3 CopyCat
 Enter rahul words :Jayshri
 Enter adjacent students words
