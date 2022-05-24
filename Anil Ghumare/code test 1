@@ -1,0 +1,39 @@
+import java.util.Arrays;
+import java.util.Scanner;
+public class Main {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Adjacent student's word :");
+		String text1 = sc.nextLine();
+		System.out.println("Rahul's word :");
+		String text2 = sc.nextLine();
+		int len1 = text1.length();
+		int len2 = text2.length();
+		if(len1!=len2) {
+			System.out.println(0); 	
+		}
+		text1 = text2.toLowerCase();
+		text2 = text2.toLowerCase();
+		char[] s1 = text1.toCharArray();
+		char[] s2 = text2.toCharArray();
+		Arrays.sort(s1);
+		Arrays.sort(s2);
+		if(Arrays.equals(s1,s2)) {
+			System.out.println(1);
+		}
+		else {
+			System.out.println(0);
+		}      
+
+	}
+
+}
+
+
+/* Output
+   Adjacent Student's word:
+   CAR
+   Rahul's word:
+   Acr
+   1
+*/
