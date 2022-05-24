@@ -1,0 +1,41 @@
+importjava.io.*;
+class input1{
+public staticvoid(string args[])throws Exception{
+FileinputStreamfin1=newFileInputStream("D:\\testin1.txt");
+Fileinputstreamfin2=newFileinputStream("D:\\testin2.txt");
+Fileoutputstreamfout=newFileInputstream("D:\\testout.txt");
+sequcenceinputStreamsis=newSequcenceInputStream(fin1,fin2);
+int i;
+while((i=sis.read())!=-1)
+{
+fout.write(i);
+}
+sis.close();
+fout.close();
+fin1.close();
+fin2.close();
+system.out.priintln("success..");
+}
+}
+
+output : success
+------------------------------------------------------------------------------------------------------------------------
+public class MyThread1 implements Runnable  
+{    
+public void run()  
+{    
+System.out.println("Now the thread is running ...");    
+}     
+public static void main(String argvs[])  
+{    
+Runnable r1 = new MyThread2();    
+Thread th1 = new Thread(r1, "My new thread");     
+th1.start();   
+String str = th1.getName();  
+System.out.println(str);  
+}    
+}    
+
+Output:
+My new thread
+Now the thread is running ...
