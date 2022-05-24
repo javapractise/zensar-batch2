@@ -1,0 +1,23 @@
+import java.io.*;
+public class NewClass
+{
+    public static void main(String[] args) throws IOException
+    {
+        PipedReader geek_reader = new PipedReader();
+        PipedWriter geek_writer = new PipedWriter();
+          
+            geek_reader.connect(geek_writer);
+  
+            geek_writer.write(71);
+            System.out.println("using read() : " + (char)geek_reader.read());
+            geek_writer.write(69);
+            System.out.println("using read() : " + (char)geek_reader.read());
+            geek_writer.write(75);
+            System.out.println("using read() : " + (char)geek_reader.read());        
+    }
+}
+Output :
+
+using read() : G
+using read() : E
+using read() : K
