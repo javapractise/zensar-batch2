@@ -34,3 +34,11 @@ else
 System.out.println("0");
       }
   }
+
+
+
+Input:
+CAR
+Acr
+
+Output:1
