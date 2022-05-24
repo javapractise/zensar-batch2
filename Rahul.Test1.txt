@@ -1,0 +1,41 @@
+package Test;
+import java.util.*;
+public class Exam
+{
+	public static void main(String args[]) {
+	 	   	Scanner s = new Scanner(System.in);
+	 	   	String old = s.nextLine();
+	 	    String neW = s.nextLine();
+	        int length1 = old.length();
+	        int length2 = neW.length();
+	        if(length1!=length2) 
+	        {
+	        	System.out.println(0);
+	        }
+	        old = old.toLowerCase();
+	        neW = neW.toLowerCase();
+	        char[] s1 = old.toCharArray();
+	        char[] s2 = neW.toCharArray();
+	        Arrays.sort(s1);
+	        Arrays.sort(s2);
+	        if(Arrays.equals(s1,s2)) 
+	        {
+	             	System.out.println(1);
+	        }
+	        else 
+	        {
+	            	System.out.println(0);
+	        }      
+
+	}
+
+}
+
+____________________________________________________________
+
+/*
+Output:
+Car
+Acr
+1
+*/
