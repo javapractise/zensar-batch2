@@ -14,17 +14,21 @@ Arrays.sort(arr2);
 String res1=new String(arr1);
 String res2=new String(arr2);
 if(res1.equals(res2))
-System.out.println("2");
-else
 System.out.println("1");
+else
+System.out.println("0");
 sc.close();
 }
 }
 
-output:java -cp /tmp/IqsKeZcB9M Exam
-vani
-VANI
-2
+input:
+
+CAR
+Acr
+
+ouput:
+
+1
 
 
 
