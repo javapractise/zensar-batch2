@@ -8,7 +8,9 @@ public class ExamCopies {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		System.out.println("Copied word 1");
 		String s1 = sc.next();
+		System.out.println("Copied word 2");
 		String s2 = sc.next();
 		
 		s1 = s1.toUpperCase();
