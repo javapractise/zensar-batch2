@@ -1,0 +1,44 @@
+import java.io.pipedReader;
+import java.io.PipedWriter;
+
+public class PipeReaderTeja{
+    public static void main(String[] args)
+    {
+        try{
+            final PipeReader read = new PipedReader();
+            final PipedWriter write = new PipedWriter(read);
+
+            Thread readerThread = new Thread(new runnable()){
+                public void run(){
+                    try{
+                        int data = read.read();
+                        while (data!=-1){
+                            System.out.println((char)data);
+                            data = read.read();
+                        }
+                    }catch(Exception ex){
+
+                    }
+                }
+            };
+        }
+        Thread writerThread = new Thread(new Runnable()){
+            public void run(){
+                try{
+                    write.write("I Love India\n".toCharArray());
+                }catch(Exception ex){
+
+                }
+            }
+        };
+        readThread.start();
+        writerThread.start();
+    }
+    catch (Exception ex){
+        System.out.println(ex.getMessage());
+    }
+}
+
+Output :-
+--------- 
+	I Love India

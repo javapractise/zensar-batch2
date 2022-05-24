@@ -1,0 +1,24 @@
+
+import java.io.*;
+class Java implements Runnable {
+	public static void main(String args[])
+	{
+
+		Java Teja = new Java();
+
+
+		Thread t = new Thread(Teja, "Java");
+		t.start();
+
+
+		System.out.println(t.getName());
+	}
+	@Override public void run()
+	{
+		System.out.println("Inside run method");
+	}
+}
+Output :-
+---------
+Java
+Inside run method
