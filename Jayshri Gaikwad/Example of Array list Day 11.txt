@@ -1,0 +1,16 @@
+class TestJavaCollection1{
+ public static void main(string args[]){
+ ArrayList<string> list=new ArrayList<string>();//creating arraylist
+ list.add("Jayshri");//Adding object in arraylist
+ list.add("Vani");
+ list.add("Shivani");
+ list.add("jay");
+//Travesing list through iterator
+iterator itr=list.iterator();
+while(itr.hasNext()){
+system.out.println(itr.next());
+
+}
+}
+
+out puts : Jayshri,Vani,Shivani,Jay
