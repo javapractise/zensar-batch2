@@ -68,8 +68,41 @@ public class Collections {
 		queue.poll();  
 		System.out.println("after removing two elements:");  
 		Iterator<String> itr2=queue.iterator();  
-		while(itr2.hasNext()){  
+		while(itr2.hasNext())
+		{  
 		System.out.println(itr2.next());  
+		}
+		
+		//Deque
+		Deque<String> deque = new ArrayDeque<String>();  
+		deque.add("Gautam");  
+		deque.add("Karan");  
+		deque.add("Ajay");  
+		//Traversing elements  
+		for (String str : deque) {  
+		System.out.println(str);  
+		}
+		
+		//Creating HashSet and adding elements  
+		HashSet<String> set=new HashSet<String>();  
+		set.add("Ravi");  
+		set.add("Vijay");  
+		set.add("Ravi");  
+		set.add("Ajay");  
+		//Traversing elements  
+		Iterator<String> iii=set.iterator();  
+		while(iii.hasNext()){  
+		System.out.println(iii.next());  
+		}
+		
+		LinkedHashSet<String> set=new LinkedHashSet<String>();  
+		set.add("Ravi");  
+		set.add("Vijay");  
+		set.add("Ravi");  
+		set.add("Ajay");  
+		Iterator<String> itr=set.iterator();  
+		while(itr.hasNext()){  
+		System.out.println(itr.next());  
 		}  
 	}
 
@@ -106,4 +139,13 @@ Vijay Raj
 after removing two elements:
 Raj
 Vijay Raj
+Gautam
+Karan
+Ajay
+Vijay
+Ravi
+Ajay
+Vijay
+Ravi
+Ajay
 **/
