@@ -1,0 +1,19 @@
+
+public class Arraydeque{
+	public static void main (String args[]){
+		Deque<String>deque=new ArrayDeque<String>();
+		deque.add("vicky");
+		deque.add("vinay");
+		deque.add("vamsi");
+		for (String str:deque){
+			System.out.println(str);
+		}
+	}
+}
+
+
+
+Ouput:
+	vicky
+        vinay
+        vamsi

@@ -1,0 +1,27 @@
+//daemon thread
+
+public class Thread1 extends Thread{
+    public void run(){
+        if (Thread.currentThread().isDaemon()){
+            System.out.println("daemon thread1 work");
+        }
+        else{
+            System.out.println("user thread1 work");
+        }
+    }
+
+    public static void main(String[] args) {
+        Thread1 a1=new Thread1();
+        Thread1 a2=new Thread1();
+        Thread1 a3=new Thread1();
+        a1.setDaemon(true);
+        a1.start();
+        a2.start();
+        a3.start();
+    }
+}
+
+output:-
+daemon thread1 work
+user thread1 work
+user thread1 work
