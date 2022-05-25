@@ -1,0 +1,22 @@
+import java.util.*;  
+public class TreeMapExa{  
+ public static void main(String args[]){  
+   TreeMap<Integer,String> map=new TreeMap<Integer,String>();    
+      map.put(100,"Sahil");    
+      map.put(102,"Soham");    
+      map.put(101,"Shreyas");    
+      map.put(103,"Kiran");    
+
+      for(Map.Entry m:map.entrySet()){    
+       System.out.println(m.getKey()+" "+m.getValue());    
+      }    
+ }  
+}  
+
+----------------------------------------------------------------
+Output:
+	100 Sahil
+	101 Soham
+	102 Shreyas
+	103 Kiran
+----------------------------------------------------------------
