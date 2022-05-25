@@ -1,0 +1,14 @@
+import java.util.*;  
+ public class ArrayListExample1{  
+ public static void main(String args[]){  
+  ArrayList<String> list=new ArrayList<String>();    
+      list.add("RAGHAV");   
+      list.add("GOUD");    
+      list.add("REBEL");    
+      list.add("BATTULA");    
+         
+      System.out.println(list);  
+ }  
+}  
+
+OUTPUT::[RAGHAV, GOUD, REBEL, BATTULA]
