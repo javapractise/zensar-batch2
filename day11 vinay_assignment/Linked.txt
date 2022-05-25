@@ -1,0 +1,19 @@
+public class Linked{
+	public static void main(String args[]){
+		LinkedList<String>al=new LinkedList<String>();
+		al.add("Vicky");
+		al.add("Nikhil");
+		al.add("Ravi");
+		Iterator<String>itr=al.iterator();
+		while(itr.hasNext()){
+			System.out.println(itr.next());
+		}
+	}
+}
+
+
+
+Output:
+Vicky
+nikhil
+ravi

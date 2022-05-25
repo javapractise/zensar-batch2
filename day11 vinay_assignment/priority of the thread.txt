@@ -1,0 +1,41 @@
+package partice;
+
+import static java.lang.System.*;
+
+public class Threadpriority extends Thread{
+    public void run(){
+        System.out.println("inside the run() method");
+    }
+
+    public static void main(String[] args) {
+        Threadpriority t1=new Threadpriority();
+        Threadpriority t2=new Threadpriority();
+        Threadpriority t3=new Threadpriority();
+        System.out.println("priority of the thread t1 is:"+ t1.getPriority());
+        System.out.println("priority of the thread t2 is:"+ t2.getPriority());
+        System.out.println("priority of the thread t3 is:"+ t3.getPriority());
+        t1.setPriority(1);
+        t2.setPriority(2);
+        t3.setPriority(3);
+        out.println("Priority of the thread t1 is:"+t1.getPriority());
+        System.out.println("priority of the thread t2 is:"+ t2.getPriority());
+        System.out.println("priority of the thread t3 is:"+ t3.getPriority());
+        out.println("Currently executing thread is:"+Thread.currentThread().getName() );
+        out.println("Priority of the main thread is:"+Thread.currentThread().getPriority() );
+
+        out.println("Priority of the main thread is:"+Thread.currentThread().getPriority() );
+
+    }
+}
+
+output:-
+
+priority of the thread t1 is:5
+priority of the thread t2 is:5
+priority of the thread t3 is:5
+Priority of the thread t1 is:1
+priority of the thread t2 is:2
+priority of the thread t3 is:3
+Currently executing thread is:main
+Priority of the main thread is:5
+Priority of the main thread is:5
