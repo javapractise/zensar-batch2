@@ -1,0 +1,208 @@
+1)
+
+Java Program to count the total number of characters in a string
+
+public class CountCharacter    
+{    
+    public static void main(String[] args) {    
+        String string = "The best of both worlds";    
+        int count = 0;    
+            
+        //Counts each character except space    
+        for(int i = 0; i < string.length(); i++) {    
+            if(string.charAt(i) != ' ')    
+                count++;    
+        }    
+            
+        //Displays the total number of characters present in the given string    
+        System.out.println("Total number of characters in a string: " + count);    
+    }    
+}     
+
+Output:
+
+Total number of characters in a string: 19
+
+2)
+
+Java Program to count the total number of characters in a string 2
+
+
+public class Main    
+{    
+    public static void main(String[] args) {    
+        String string = "Shera Shera Naushera";    
+        int count = 0;    
+            
+        //Counts each character except space    
+        for(int i = 0; i < string.length(); i++) {    
+            if(string.charAt(i) != ' ')    
+                count++;    
+        }    
+            
+        //Displays the total number of characters present in the given string    
+        System.out.println("Total number of characters in a string: " + count);    
+    }    
+}  
+
+
+
+OutPut:
+Total number of characters in a string: 18
+
+
+3)
+
+Java Program to Count the Total Number of Punctuation Characters Exists in a String
+
+public class CountPunctuation   
+{    
+public static void main (String args[])   
+{    
+//Stores the count of punctuation marks    
+int count = 0;    
+String str = "He said, 'The mailman loves you.' I heard it with my own ears.";    
+for (int i = 0; i < str.length(); i++)   
+{    
+//Checks whether given character is punctuation mark    
+if(str.charAt(i) == '!' || str.charAt(i) == ',' || str.charAt(i) == ';' || str.charAt(i) == '.' ||  str.charAt(i) == '?' || str.charAt(i) == '-' ||    
+str.charAt(i) == '\'' || str.charAt(i) == '\"' || str.charAt(i) == ':')   
+{    
+count++;    
+}    
+}    
+System.out.println("The number of punctuations exists in the string is: " +count);    
+}    
+}    
+Output:
+
+The number of punctuations exists in the string is: 5
+
+
+
+4)
+
+Java Program to copy all elements of one array into another array
+
+public class CopyArray {    
+    public static void main(String[] args) {        
+             //Initialize array     
+        int [] arr1 = new int [] {1, 2, 3, 4, 5};     
+         //Create another array arr2 with size of arr1    
+        int arr2[] = new int[arr1.length];    
+        //Copying all elements of one array into another    
+        for (int i = 0; i < arr1.length; i++) {     
+            arr2[i] = arr1[i];     
+        }      
+         //Displaying elements of array arr1     
+        System.out.println("Elements of original array: ");    
+        for (int i = 0; i < arr1.length; i++) {     
+           System.out.print(arr1[i] + " ");    
+        }     
+            
+        System.out.println();    
+            
+        //Displaying elements of array arr2     
+        System.out.println("Elements of new array: ");    
+        for (int i = 0; i < arr2.length; i++) {     
+           System.out.print(arr2[i] + " ");    
+        }     
+    }    
+}    
+Output:
+
+ Elements of original array
+1 2 3 4 5
+Elements of new array:
+1 2 3 4 5
+
+
+5)
+
+Java Program to find the frequency of each element in the array
+
+public class Frequency {  
+    public static void main(String[] args) {  
+        //Initialize array  
+        int [] arr = new int [] {1, 2, 8, 3, 2, 2, 2, 5, 1};  
+        //Array fr will store frequencies of element  
+        int [] fr = new int [arr.length];  
+        int visited = -1;  
+        for(int i = 0; i < arr.length; i++){  
+            int count = 1;  
+            for(int j = i+1; j < arr.length; j++){  
+                if(arr[i] == arr[j]){  
+                    count++;  
+                    //To avoid counting same element again  
+                    fr[j] = visited;  
+                }  
+            }  
+            if(fr[i] != visited)  
+                fr[i] = count;  
+        }  
+  
+        //Displays the frequency of each element present in array  
+        System.out.println("---------------------------------------");  
+        System.out.println(" Element | Frequency");  
+        System.out.println("---------------------------------------");  
+        for(int i = 0; i < fr.length; i++){  
+            if(fr[i] != visited)  
+                System.out.println("    " + arr[i] + "    |    " + fr[i]);  
+        }  
+        System.out.println("----------------------------------------");  
+    }}  
+Output:
+
+ ----------------------------------------
+Element | Frequency
+----------------------------------------
+1           |         2
+2           |         4
+8           |         1
+3           |         1
+5           |         1
+----------------------------------------
+
+
+
+6)
+
+Java Program to left rotate the elements of an array
+
+class RotateLeft {  
+    public static void main(String[] args) {  
+        //Initialize array  
+        int [] arr = new int [] {1, 2, 3, 4, 5};  
+        //n determine the number of times an array should be rotated  
+        int n = 3;  
+        //Displays original array  
+        System.out.println("Original array: ");  
+        for (int i = 0; i < arr.length; i++) {  
+            System.out.print(arr[i] + " ");  
+        }  
+        //Rotate the given array by n times toward left  
+        for(int i = 0; i < n; i++){  
+            int j, first;  
+            //Stores the first element of the array  
+            first = arr[0];  
+            for(j = 0; j < arr.length-1; j++){  
+                //Shift element of array by one  
+                arr[j] = arr[j+1];  
+            }  
+            //First element of array will be added to the end  
+            arr[j] = first;  
+        }  
+        System.out.println();  
+        //Displays resulting array after rotation  
+        System.out.println("Array after left rotation: ");  
+        for(int i = 0; i< arr.length; i++){  
+            System.out.print(arr[i] + " ");  
+        }  
+    }  
+}  
+Output:
+
+ Original Array:
+1   2   3   4   5
+Array after left rotation:
+4   5   1   2   3
