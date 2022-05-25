@@ -1,0 +1,25 @@
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class LinkedListExa{
+	public static void main(String args[]){
+		LinkedList<String>al=new LinkedList<String>();
+		al.add("Rahul");
+		al.add("Neeraj");
+		al.add("Atul");
+		al.add("Kuldip");
+		Iterator<String>itr=al.iterator();
+		while(itr.hasNext()){
+			System.out.println(itr.next());
+		}
+	}
+}
+
+
+-------------------------------------------------
+Output:
+Rahul
+Neeraj
+Atul
+Kuldip
+---------------------------------------------------
