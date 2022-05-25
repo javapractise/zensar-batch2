@@ -1,0 +1,22 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+public class ArrayDequeExa{
+	public static void main (String[]args){
+		//creating Deque and adding elements
+		Deque<String>deque=new ArrayDeque<String>();
+		deque.add("Rohit");
+		deque.add("Virat");
+		deque.add("Gautam");
+		//Traversing elements
+		for (String str:deque){
+			System.out.println(str);
+		}
+	}
+}
+
+----------------------------------------------------------------------
+Ouput:
+  Rohit
+	Virat
+	Gautam
+----------------------------------------------------------------------
