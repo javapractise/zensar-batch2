@@ -218,3 +218,267 @@ gayi
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 6)
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class LinkedExample{
+	public static void main(String args[]){
+		LinkedList<String>al=new LinkedList<String>();
+		al.add("Vishnu");
+		al.add("Nikhil");
+		al.add("Sai");
+		al.add("Gayi");
+		Iterator<String>itr=al.iterator();
+		while(itr.hasNext()){
+			System.out.println(itr.next());
+		}
+	}
+}
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Output:
+Vishnu
+Nikhil
+Sai
+Gayi
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+7)
+import java.util.ArrayDeque;
+import java.util.Deque;
+public class ArrayDequeEx{
+	public static void main (String args[]){
+		//creating Deque and adding elements
+		Deque<String>deque=new ArrayDeque<String>();
+		deque.add("vishnu");
+		deque.add("gayi");
+		deque.add("nikhil");
+		//Traversing elements
+		for (String str:deque){
+			System.out.println(str);
+		}
+	}
+}
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Ouput:
+vishnu
+gayi
+nikhil
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+8)
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class ArrayListEx{
+	 public static void main(String args[]){
+		 ArrayList<String> list=new ArrayList<String>();//creating arraylist
+		 list.add("vishnu"); //Adding object in arraylist
+		 list.add("Nikhil");
+		 list.add("gayi");
+		 list.add("sai");
+	//Travesing list through iterator
+		 Iterator itr=list.iterator();
+		 while(itr.hasNext()){
+			 System.out.println(itr.next());
+
+		 }
+	 }
+}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+output:
+vishnu
+Nikhil
+gayi
+sai
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+9)
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapEx {
+	public static void main(String args[]){
+		HashMap<Integer,String>map=new HashMap<Integer,String>();//creating HasMap
+		map.put(1,"Mango");//put elements in map
+		map.put(2,"Apple");
+		map.put(3,"Banana");
+		map.put(4,"Grapes");
+		System.out.println("iterating Hashmap...");
+		for(Map.Entry m:map.entrySet()){
+		System.out.println(m.getKey()+""+m.getValue());
+		}
+	}
+}
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Ouput:
+iterating Hashmap...
+1Mango
+2Apple
+3Banana
+4Grapes
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10)
+import java.util.*;  
+public class HashsetEx{  
+	public static void main(String args[]){  
+		//Creating HashSet and adding elements  
+		HashSet<String> set=new HashSet<String>();  
+		set.add("nikhil");  
+		set.add("Vishnu");  
+		set.add("nikhil");  
+		set.add("gayi");  
+		//Traversing elements  
+		Iterator<String> itr=set.iterator();  
+		while(itr.hasNext()){  
+			System.out.println(itr.next());  
+		}  
+	}  
+}  
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Output:
+Vishnu
+nikhil
+gayi
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+11)
+
+import java.util.*;  
+public class TreeMap1{  
+ public static void main(String args[]){  
+   TreeMap<Integer,String> map=new TreeMap<Integer,String>();    
+      map.put(100,"nikhil");    
+      map.put(102,"sai");    
+      map.put(101,"Vishnu");    
+      map.put(103,"gayi");    
+        
+      for(Map.Entry m:map.entrySet()){    
+       System.out.println(m.getKey()+" "+m.getValue());    
+      }    
+ }  
+}  
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Output:
+	100 nikhil
+	101 Vishnu
+	102 sai
+	103 gayi
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+12)
+
+
+import java.util.*;  
+public class TreeMap2 {  
+   public static void main(String args[]) {  
+	   TreeMap<Integer,String> map=new TreeMap<Integer,String>();    
+	   map.put(100,"vishnu");    
+	   map.put(102,"sai");    
+	   map.put(101,"nikhil");    
+	   map.put(103,"gayi");    
+      	System.out.println("Before invoking remove() method");  
+      	for(Map.Entry m:map.entrySet())  
+      	{  
+          System.out.println(m.getKey()+" "+m.getValue());      
+      	}  
+      	map.remove(102);      
+      	System.out.println("After invoking remove() method");  
+      	for(Map.Entry m:map.entrySet())  
+      	{  
+      		System.out.println(m.getKey()+" "+m.getValue());      
+      	}  
+     }  
+}
+
+.....................................................................................................................................................................
+.....................................................................................................................................................................
+Output:
+	Before invoking remove() method
+	100 vishnu
+	101 nikhil
+	102 sai
+	103 gayi
+	After invoking remove() method
+	100 vishnu
+	101 nikhil
+	103 gayi
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+13)
+
+import java.util.*;  
+public class TreeMapNavigable{  
+	public static void main(String args[]){  
+		NavigableMap<Integer,String> map=new TreeMap<Integer,String>();    
+		map.put(100,"vishnu");    
+		map.put(102,"sai");    
+		map.put(101,"gayi");    
+		map.put(103,"nikhil");    
+		//Maintains descending order  
+		System.out.println("descendingMap: "+map.descendingMap());  
+		//Returns key-value pairs whose keys are less than or equal to the specified key.  
+		System.out.println("headMap: "+map.headMap(102,true));  
+		//Returns key-value pairs whose keys are greater than or equal to the specified key.  
+		System.out.println("tailMap: "+map.tailMap(102,true));  
+		//Returns key-value pairs exists in between the specified key.  
+		System.out.println("subMap: "+map.subMap(100, false, 102, true));   
+	}  
+} 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Output:
+descendingMap: {103=nikhil, 102=sai, 101=gayi, 100=vishnu}
+headMap: {100=vishnu, 101=gayi, 102=sai}
+tailMap: {102=sai, 103=nilhil}
+subMap: {101=gayi, 102=sai}
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+14)
+
+import java.util.*;  
+public class TreeMapSorted{  
+	public static void main(String args[]){  
+		SortedMap<Integer,String> map=new TreeMap<Integer,String>();    
+		map.put(100,"vishnu");    
+		map.put(102,"sai");    
+		map.put(101,"gayi");    
+		map.put(103,"nikhil");    
+		//Returns key-value pairs whose keys are less than the specified key.  
+		System.out.println("headMap: "+map.headMap(102));  
+		//Returns key-value pairs whose keys are greater than or equal to the specified key.  
+		System.out.println("tailMap: "+map.tailMap(102));  
+		//Returns key-value pairs exists in between the specified key.  
+		System.out.println("subMap: "+map.subMap(100, 102));    
+	}  
+}  
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Output:
+headMap: {100=vishnu, 101=gayi}
+tailMap: {102=sai, 103=nikhil}
+subMap: {100=vishnu, 101=gayi}
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
