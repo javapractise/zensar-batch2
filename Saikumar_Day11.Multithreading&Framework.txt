@@ -1,0 +1,338 @@
+#1 VectorExa:
+
+import java.util.Iterator;
+import java.util.Vector;
+public class VectorExa{
+	public static void main(String args[]){
+		Vector<String>v= new Vector<String>();
+		v.add("Sai");
+		v.add("Vamsi");
+		v.add("Praveen");
+		v.add("Pramod");
+		Iterator<String>itr=v.iterator();
+		while(itr.hasNext()){
+			System.out.println(itr.next());
+		}
+	}
+}
+
+Output:
+
+Sai
+Vamsi
+Praveen
+Pramod
+
+-----------------------------------
+#2 TreeMapSorted:
+
+import java.util.*;  
+public class TreeMapSorted{  
+	public static void main(String args[]){  
+		SortedMap<Integer,String> map=new TreeMap<Integer,String>();    
+		map.put(100,"Amit");    
+		map.put(102,"Ravi");    
+		map.put(101,"Vijay");    
+		map.put(103,"Rahul");    
+		//Returns key-value pairs whose keys are less than the specified key.  
+		System.out.println("headMap: "+map.headMap(102));  
+		//Returns key-value pairs whose keys are greater than or equal to the specified key.  
+		System.out.println("tailMap: "+map.tailMap(102));  
+		//Returns key-value pairs exists in between the specified key.  
+		System.out.println("subMap: "+map.subMap(100, 102));    
+	}  
+}  
+
+Output:
+headMap: {100=Amit, 101=Vijay}
+tailMap: {102=Ravi, 103=Rahul}
+subMap: {100=Amit, 101=Vijay}
+
+-------------------------------------
+#3 TreeMapNavigable:
+
+import java.util.*;  
+public class TreeMapNavigable{  
+	public static void main(String args[]){  
+		NavigableMap<Integer,String> map=new TreeMap<Integer,String>();    
+		map.put(100,"Amit");    
+		map.put(102,"Ravi");    
+		map.put(101,"Vijay");    
+		map.put(103,"Rahul");    
+		//Maintains descending order  
+		System.out.println("descendingMap: "+map.descendingMap());  
+		//Returns key-value pairs whose keys are less than or equal to the specified key.  
+		System.out.println("headMap: "+map.headMap(102,true));  
+		//Returns key-value pairs whose keys are greater than or equal to the specified key.  
+		System.out.println("tailMap: "+map.tailMap(102,true));  
+		//Returns key-value pairs exists in between the specified key.  
+		System.out.println("subMap: "+map.subMap(100, false, 102, true));   
+	}  
+} 
+
+Output:
+descendingMap: {103=Rahul, 102=Ravi, 101=Vijay, 100=Amit}
+headMap: {100=Amit, 101=Vijay, 102=Ravi}
+tailMap: {102=Ravi, 103=Rahul}
+subMap: {101=Vijay, 102=Ravi}
+
+--------------------------------------
+#4 ThreadPriority:
+
+
+public class ThreadPriority extends Thread   
+{  
+
+public void run()  
+{  
+ 
+System.out.println("Inside the run() method");  
+}  
+  
+  
+public static void main(String argvs[])  
+{  
+  
+ThreadPriority th1 = new ThreadPriority();  
+ThreadPriority th2 = new ThreadPriority();  
+ThreadPriority th3 = new ThreadPriority();  
+ 
+System.out.println("Priority of the thread th1 is : " + th1.getPriority());  
+  
+System.out.println("Priority of the thread th2 is : " + th2.getPriority());  
+  
+System.out.println("Priority of the thread th2 is : " + th2.getPriority());  
+
+th1.setPriority(6);  
+th2.setPriority(3);  
+th3.setPriority(9);  
+   
+System.out.println("Priority of the thread th1 is : " + th1.getPriority());  
+  
+System.out.println("Priority of the thread th2 is : " + th2.getPriority());  
+   
+System.out.println("Priority of the thread th3 is : " + th3.getPriority());   
+   
+System.out.println("Currently Executing The Thread : " + Thread.currentThread().getName());  
+  
+System.out.println("Priority of the main thread is : " + Thread.currentThread().getPriority());  
+  
+ 
+Thread.currentThread().setPriority(10);  
+  
+System.out.println("Priority of the main thread is : " + Thread.currentThread().getPriority());  
+}  
+}  
+
+Output:
+	Priority of the thread th1 is : 5
+	Priority of the thread th2 is : 5
+	Priority of the thread th2 is : 5
+	Priority of the thread th1 is : 6
+	Priority of the thread th2 is : 3
+	Priority of the thread th3 is : 9
+	Currently Executing The Thread : main
+	Priority of the main thread is : 5
+	Priority of the main thread is : 10
+
+----------------------------------------
+#5 StatckExa:
+
+import java.util.Iterator;
+import java.util.Stack;
+
+public class StatckExa{
+	public static void main(String args[]){
+		Stack<String>stack=new Stack<String>();
+		stack.push("Neeha");
+		stack.push("Niharika");
+		stack.pop();
+		Iterator<String> itr=stack.iterator();
+		while(itr.hasNext()){
+			System.out.println(itr.next());
+		}
+	}
+}
+
+Output:
+	Neeha
+
+--------------------------------
+#6 LinkedListExa:
+
+import java.util.Iterator;
+
+import java.util.LinkedList;
+
+public class LinkedListExa{
+	public static void main(String args[]){
+		LinkedList<String>al=new LinkedList<String>();
+		al.add("Neeha");
+		al.add("Niharika");
+		al.add("Ravi");
+		al.add("Ajay");
+		Iterator<String>itr=al.iterator();
+		while(itr.hasNext()){
+			System.out.println(itr.next());
+		}
+	}
+}
+
+Output:
+Neeha
+Niharika
+Ravi
+Ajay
+
+-------------------------------------
+#7 InterThreadCommunication:
+
+
+class Customer{    
+	int amount=10000;    
+    synchronized void withdraw(int amount){    
+		System.out.println("going to withdraw...");    
+		if(this.amount<amount){    
+			System.out.println("Less balance; waiting for deposit...");    
+			try{wait();}catch(Exception e){}    
+		}    
+		this.amount-=amount;    
+		System.out.println("withdraw completed...");    
+    }    
+    synchronized void deposit(int amount){    
+		System.out.println("going to deposit...");    
+		this.amount+=amount;    
+		System.out.println("deposit completed... ");    
+		notify();    
+	}    
+}    
+    
+public class InterThreadCommunication{    
+	public static void main(String args[]){    
+		final Customer c=new Customer();    
+		new Thread(){    
+			public void run(){c.withdraw(15000);}    
+		}.start();    
+		new Thread(){    
+			public void run(){c.deposit(10000);}    
+		}.start();    
+    
+	}
+}    
+
+Output:
+	going to withdraw...
+	Less balance; waiting for deposit...
+	going to deposit...
+	deposit completed... 
+	withdraw completed...
+
+------------------------------------------
+#8 HashMapExa:
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapExa {
+	public static void main(String args[]){
+		HashMap<Integer,String>map=new HashMap<Integer,String>();//creating HasMap
+		map.put(1,"Mango");//put elements in map
+		map.put(2,"Apple");
+		map.put(3,"Banana");
+		map.put(4,"Grapes");
+		System.out.println("iterating Hashmap...");
+		for(Map.Entry m:map.entrySet()){
+		System.out.println(m.getKey()+""+m.getValue());
+		}
+	}
+}
+
+Ouput:
+iterating Hashmap...
+1Mango
+2Apple
+3Banana
+4Grapes
+
+---------------------------------
+#9 DaemonThread:
+
+public class DaemonThread extends Thread{
+	public void run(){
+		if(Thread.currentThread().isDaemon()){//checking for daemon thread
+			System.out.println("daemon thread work");
+		}
+		else{
+			System.out.println("user thread work");
+		}
+	}
+	public static void main(String[]args){
+		DaemonThread t1=new DaemonThread();//creating thread
+		DaemonThread t2=new DaemonThread();
+		DaemonThread t3=new DaemonThread();
+
+
+		t1.setDaemon(true);//now t1 is daemon thread
+
+		t1.start();//starting threads
+		t2.start();
+		t3.start();
+	}
+}
+
+Output:
+	daemon thread work
+	user thread work
+	user thread work
+
+---------------------------------------
+#10 ArrayListExa:
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class ArrayListExa{
+	 public static void main(String args[]){
+		 ArrayList<String> list=new ArrayList<String>();//creating arraylist
+		 list.add("Neeha"); //Adding object in arraylist
+		 list.add("Niharika");
+		 list.add("Ravi");
+		 list.add("Ajay");
+	//Travesing list through iterator
+		 Iterator itr=list.iterator();
+		 while(itr.hasNext()){
+			 System.out.println(itr.next());
+
+		 }
+	 }
+}
+
+Output:
+	Neeha
+	Niharika
+	Ravi
+	Ajay
+
+-----------------------------------
+#11 ArrayDequeExa:
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+public class ArrayDequeExa{
+	public static void main (String[]args){
+		//creating Deque and adding elements
+		Deque<String>deque=new ArrayDeque<String>();
+		deque.add("kiran");
+		deque.add("Gowtham");
+		deque.add("Ajay");
+		//Traversing elements
+		for (String str:deque){
+			System.out.println(str);
+		}
+	}
+}
+
+Ouput:
+	kiran
+	Gowtham
+	Ajay
