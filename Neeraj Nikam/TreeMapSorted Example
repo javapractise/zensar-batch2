@@ -1,0 +1,23 @@
+import java.util.*;  
+public class TreeMapSorted{  
+	public static void main(String args[]){  
+		SortedMap<Integer,String> map=new TreeMap<Integer,String>();    
+		map.put(100,"Neeraj");    
+		map.put(102,"Atul");    
+		map.put(101,"Abhi");    
+		map.put(103,"Sai");    
+		//Returns key-value pairs whose keys are less than the specified key.  
+		System.out.println("headMap: "+map.headMap(102));  
+		//Returns key-value pairs whose keys are greater than or equal to the specified key.  
+		System.out.println("tailMap: "+map.tailMap(102));  
+		//Returns key-value pairs exists in between the specified key.  
+		System.out.println("subMap: "+map.subMap(100, 102));    
+	}  
+}  
+
+-------------------------------------------------------------------------------------------------------
+Output:
+headMap: {100=Neeraj, 101=Abhi}
+tailMap: {102=Atul, 103=Sai}
+subMap: {100=Neeraj, 101=Abhi}
+-------------------------------------------------------------------------------------------------------
