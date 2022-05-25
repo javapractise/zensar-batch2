@@ -1,0 +1,14 @@
+public class TestJavaCollection3{
+public static void main(string args[]){
+vector<string>v= new vector <string>();
+v.ad("gattu");
+v.add("pavan");
+v.add("chandu");
+v.add("santu");
+iterator<string>itr=v.iterator();
+while(itr.has.Next()){
+system.out.println(itr.next());
+}
+}
+
+output: gattu,pavan,chandu,santu
