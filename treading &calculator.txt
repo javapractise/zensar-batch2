@@ -1,0 +1,29 @@
+package zensar;
+import java.util.*;
+
+public class TreeMap101 {
+	
+
+		 public static void main(String args[]){  
+	
+		   TreeMap<Integer,String> map=new TreeMap<Integer,String>();    
+		      map.put(79,"Cool drinks");    
+		      map.put(54,"Lays");    
+		      map.put(89,"Banana Chips");    
+		      map.put(11,"Bingo");    
+		        
+		      for(Map.Entry m:map.entrySet()){    
+		       System.out.println(m.getKey()+" "+m.getValue());    
+		       
+		 }  
+		} 
+
+}
+
+
+/*o/p:
+11 Bingo
+54 Lays
+79 Cool drinks
+89 Banana Chips
+*/
