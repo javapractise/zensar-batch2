@@ -1,0 +1,459 @@
+1.DAEMON THREAD :-
+=================
+i).
+
+public class TestDaemonThread extends Thread {
+    public void run()
+    {
+        if(Thread.currentThread().isDaemon())
+        {
+            System.out.println("Daemon Thread is Working");
+        }
+        else
+        {
+            System.out.println("user thread works");
+        }
+    }
+    public static void main(String[] args)
+    {
+        TestDaemonThread t1 = new TestDaemonThread();
+        TestDaemonThread t2 = new TestDaemonThread();
+        TestDaemonThread t3 = new TestDaemonThread();
+        
+        t1.setDaemon(true);
+        
+        t1.start();
+        t2.start();
+        t3.start();
+        
+    }
+}
+
+OUTPUT :-
+---------
+
+Daemon Thread is Working
+user thread works
+user thread works
+
+ii)
+  class TestDaemonThread2 extends Thread{  
+ public void run(){  
+  System.out.println("Name: "+Thread.currentThread().getName());  
+  System.out.println("Daemon: "+Thread.currentThread().isDaemon());  
+ }  
+  
+ public static void main(String[] args){  
+  TestDaemonThread2 t1=new TestDaemonThread2();  
+  TestDaemonThread2 t2=new TestDaemonThread2();  
+  t1.start();  
+  t1.setDaemon(true);//will throw exception here  
+  t2.start();  
+ }  
+}  
+
+Output :-
+---------
+Name: Thread-0
+Daemon: false
+Exception in thread "main" java.lang.IllegalThreadStateException
+	at java.base/java.lang.Thread.setDaemon(Thread.java:1410)
+
+2.PRIORITY OF A THREAD :-
+==========================
+import java.lang.*;
+public class ThreadPriorityEx extends Thread
+{
+public void run()
+{
+System.out.println("Inside the run() method");
+}
+public static void main(String[] args)
+{
+ThreadPriorityEx th1 = new ThreadPriorityEx();
+ThreadPriorityEx th2 = new ThreadPriorityEx();
+ThreadPriorityEx th3 = new ThreadPriorityEx();
+
+System.out.println("Priority of thread t1 is : " + th1.getPriority());
+
+System.out.println("Priority of the Thread th2 is : " + th2.getPriority());
+
+System.out.println("Priority of the Thread th3 is : " + th3.getPriority());
+
+th1.setPriority(6);
+th2.setPriority(4);
+th3.setPriority(9);
+
+System.out.println("Priority of thread t1 is : " + th1.getPriority());
+
+System.out.println("Priority of thread t1 is : " + th1.getPriority());
+
+System.out.println("Priority of thread t1 is : " + th1.getPriority());
+
+System.out.println("Currently Executing The Thread : " + Thread.currentThread().getName());
+
+System.out.println("Priority of The main Thread : " + Thread.currentThread().getPriority());
+
+Thread.currentThread().setPriority(10);
+
+System.out.println("Priority of The main Thread : " + Thread.currentThread().getPriority());
+
+}
+}
+
+
+Output :-
+----------
+Priority of thread t1 is : 5
+Priority of the Thread th2 is : 5
+Priority of the Thread th3 is : 5
+Priority of thread t1 is : 6
+Priority of thread t1 is : 6
+Priority of thread t1 is : 6
+Currently Executing The Thread : main
+Priority of The main Thread : 5
+Priority of The main Thread : 10
+
+2.Inter Thread Communication :-
+==============================
+class Customer{    
+int amount=10000;    
+    
+synchronized void withdraw(int amount){    
+System.out.println("going to withdraw...");    
+    
+if(this.amount<amount){    
+System.out.println("Less balance; waiting for deposit...");    
+try{wait();}catch(Exception e){}    
+}    
+this.amount-=amount;    
+System.out.println("withdraw completed...");    
+}    
+    
+synchronized void deposit(int amount){    
+System.out.println("going to deposit...");    
+this.amount+=amount;    
+System.out.println("deposit completed... ");    
+notify();    
+}    
+}    
+    
+class Test{    
+public static void main(String args[]){    
+final Customer c=new Customer();    
+new Thread(){    
+public void run(){c.withdraw(15000);}    
+}.start();    
+new Thread(){    
+public void run(){c.deposit(10000);}    
+}.start();    
+    
+}
+}    
+
+Output :-
+---------
+going to withdraw...
+Less balance; waiting for deposit...
+going to deposit...
+deposit completed... 
+withdraw completed...
+
+3.ArryList :-
+=============
+import java.util.*;
+public class TestjavaCollection{
+    public static void main(String[] args)
+    {
+        ArrayList<String> list = new ArrayList<String>();
+        list.add("Tejasai");
+        list.add("Karthik");
+        list.add("Mohan");
+        list.add("Jagan");
+        
+        Iterator itr = list.iterator();
+        while(itr.hasNext())
+        {
+            System.out.println(itr.next());
+        }
+            
+    }
+}
+
+Output :-
+---------
+Tejasai
+Karthik
+Mohan
+Jagan
+
+4.LINKED
+=========
+import java.util.*;  
+public class LinkedListTej{  
+ public static void main(String args[]){  
+  
+  LinkedList<String> al=new LinkedList<String>();  
+  al.add("Ravi");  
+  al.add("Ajay");  
+  al.add("Mohan");  
+  al.add("jay");  
+  
+  Iterator<String> itr=al.iterator();  
+  while(itr.hasNext()){  
+   System.out.println(itr.next());  
+  }  
+ }  
+}  
+
+OUTPUT :-
+-----------
+
+Ravi
+Ajay
+Mohan
+jay
+
+5.VECTOR :
+===========
+import java.util.*;
+public class VectorTej
+{
+    public static void main(String[] args)
+    {
+        Vector<String> v = new Vector<String>();
+        v.add("Prem");
+        v.add("john");
+        v.add("july");
+        Iterator<String> itr = v.iterator();
+        while(itr.hasNext())
+        {
+            System.out.println(itr.next());
+        }
+    }
+}
+
+Output :-
+---------
+Prem
+john
+july
+
+Stack :-
+========
+
+import java.io.*;
+import java.util.*;
+
+class StackDemo {
+	public static void main(String[] args)
+	{
+
+
+		Stack stack1 = new Stack();
+		Stack<String> stack2 = new Stack<String>();
+		stack1.push(4);
+		stack1.push("Welcome");
+		stack1.push("Techs");
+
+		stack2.push("All");
+		stack2.push("Silver");
+		stack2.push("TeaCups");
+
+
+		System.out.println(stack1);
+		System.out.println(stack2);
+	}
+}
+
+Output :-
+=========
+[4, Welcome, Techs]
+[All, Silver, TeaCups]
+
+5.PRIORITY QUEUE :-
+==================
+import java.util.*;
+class PriorityQueueKrish {
+    public static void main(String[] args)
+    {
+        PriorityQueue<Integer> pQueue = new PriorityQueue<Integer>();
+        pQueue.add(10);
+        pQueue.add(20);
+        pQueue.add(15);
+        
+        System.out.println(pQueue.peek());
+        
+        System.out.println(pQueue.poll());
+        
+        System.out.println(pQueue.peek());
+    }
+}
+OUTPUT :-
+========
+10
+10
+15
+
+ArrayDeque :-
+=============
+import java.io.*;
+import java.util.*;
+public class DequeTej
+{
+    public static void main(String[] args)
+    {
+    ArrayDeque <String> deque = new ArrayDeque<String>();
+    deque.add("welcome");
+    deque.add("to");
+    deque.add("freshers");
+    
+     System.out.println("ArrayDeque: " + deque);
+ 
+        System.out.println("The first element is: "
+                           + deque.getFirst());
+ 
+        System.out.println("The last element is: "
+                           + deque.getLast());
+}
+}
+
+OUTPUT :-
+=========
+ArrayDeque: [welcome, to, freshers]
+The first element is: welcome
+The last element is: freshers
+
+6.HASHSET :-
+===========
+import java.util.*;
+class HashsetTej
+{
+    public static void main(String[] args)
+    {
+        HashSet<String> set = new HashSet();
+        set.add("Ravi");
+        set.add("Tarun");
+        set.add("Pavan");
+        set.add("Kiran");
+        
+        Iterator<String> i = set.iterator();
+        while(i.hasNext())
+        {
+            System.out.println(i.next());
+        }
+    }
+}
+
+OUTPUT :-
+--------
+
+Tarun
+Kiran
+Ravi
+Pavan
+
+7.HASHMAP :-
+============
+import java.util.*;  
+public class HashMapTej{  
+ public static void main(String args[]){  
+   HashMap<Integer,String> map=new HashMap<Integer,String>();  
+   map.put(1,"Sweets");  
+   map.put(2,"Fastfoods");    
+   map.put(3,"Banana");   
+   map.put(4,"Grapes");   
+       
+   System.out.println("Iterating Hashmap...");  
+   for(Map.Entry m : map.entrySet()){    
+    System.out.println(m.getKey()+" "+m.getValue());    
+   }  
+}  
+}  
+
+Output :-
+---------
+Iterating Hashmap...
+1 Sweets
+2 Fastfoods
+3 Banana
+4 Grapes
+
+8.TREEMAP :-
+============
+import java.util.*;
+import java.util.concurrent.*;
+public class Training {
+	static void Example4thConstructor()
+	{
+		SortedMap<Integer, String> sorted_map
+			= new ConcurrentSkipListMap<Integer, String>();
+		sorted_map.put(10, "acids");
+		sorted_map.put(15, "4");
+		sorted_map.put(20, "Acids");
+		sorted_map.put(25, "are");
+		sorted_map.put(30, "Dangerous");
+		TreeMap<Integer, String> tree_map
+			= new TreeMap<Integer, String>(sorted_map);
+
+		System.out.println("TreeMap: " + tree_map);
+	}
+
+	
+	public static void main(String[] args)
+	{
+
+		System.out.println("TreeMap using "
+						+ "TreeMap(SortedMap)"
+						+ " constructor:\n");
+
+		Example4thConstructor();
+	}
+}
+
+OUTPUT :-
+--------
+
+TreeMap using TreeMap(SortedMap) constructor:
+
+TreeMap: {10=acids, 15=4, 20=Acids, 25=are, 30=Dangerous}
+
+10.SORTED MAP :-
+================
+
+import java.util.*;
+
+public class Map_Demo {
+	public static void main(String[] args)
+	{
+
+		SortedMap<String, Integer> map
+			= new TreeMap<String, Integer>();
+
+		map.put("Tejasai", 10);
+		map.put("join", 15);
+		map.put("in", 20);
+		map.put("Zensar", 25);
+		map.put("Hyd", 30);
+
+		System.out.println(
+			"Initial Mappings are: "
+			+ map);
+		System.out.println(
+			"The Value is: "
+			+ map.get("Tejasai"));
+		System.out.println(
+			"The Value is: "
+			+ map.get("in"));
+	}
+}
+
+
+OUTPUT :-
+--------
+Initial Mappings are: {Hyd=30, Tejasai=10, Zensar=25, in=20, join=15}
+The Value is: 10
+The Value is: 20
+
+
+
