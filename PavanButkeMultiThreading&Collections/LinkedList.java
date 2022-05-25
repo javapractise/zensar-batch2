@@ -25,6 +25,7 @@ public class LinkedList1 {
 
 
 /*o/p:
+HR
 Sales
 Tech
 Finance
