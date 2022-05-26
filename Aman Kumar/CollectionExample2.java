@@ -1,0 +1,27 @@
+package day12;
+
+import java.util.*;
+
+public class CollectionExample2 {
+	public static void main(String a[]) {
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		list.add(46);
+		list.add(67);
+		list.add(24);
+		list.add(16);
+		list.add(8);
+		list.add(12);
+		System.out.println("Value of maximum elements from the collection:" + Collections.max(list));
+
+	}
+
+}
+
+
+
+/*
+
+Output:
+Value of maximum elements from the collection:67
+
+*/
