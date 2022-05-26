@@ -1,0 +1,24 @@
+package May26;
+import java.util.*;
+
+	public class ExCollection1{
+		
+	public static void main(String a[]){
+	List<String> list=new ArrayList<String>();
+	
+	list.add("Hi");
+	list.add("I am Pavan");
+	list.add("I am From Pune");
+	System.out.println("Initial Collection Value:"+list);
+	Collections.addAll(list,"I play Soccer","I play Cricket");
+	System.out.println("After adding elements collection value:"+list);
+	String[] strArr={"Live ","Love", "Life"};
+	Collections.addAll(list,strArr);
+	System.out.println("After adding array collection value:"+list);
+	}
+	}
+
+
+/*o/p-nitial Collection Value:[Hi, I am Pavan, I am From Pune]
+After adding elements collection value:[Hi, I am Pavan, I am From Pune, I play Soccer, I play Cricket]
+After adding array collection value:[Hi, I am Pavan, I am From Pune, I play Soccer, I play Cricket, Live , Love, Life]*/
