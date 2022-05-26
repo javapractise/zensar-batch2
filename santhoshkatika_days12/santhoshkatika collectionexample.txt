@@ -1,0 +1,19 @@
+import java.util.*;
+public class TestJavaCollection1{
+public static void main(String args[]){
+Vector<String> v=new Vector<String>();
+v.add("RAGHAV");
+v.add("SIVA");
+v.add("HARESH");
+v.add("SANTHOSH");
+Iterator<String> itr=v.iterator();
+while(itr.hasNext()){
+System.out.println(itr.next());
+}
+}
+}OUTPUT::RAGHAV
+SIVA
+HARESH
+SANTHOSH
+
+
