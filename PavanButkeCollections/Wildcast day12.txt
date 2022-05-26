@@ -1,0 +1,37 @@
+package Zensar;
+import java.util.*;
+
+ 
+	abstract class Dish{  
+	abstract void eat();  
+	}  
+	class Food extends Dish{  
+	void eat(){System.out.println("Eating Food");}  
+	}  
+	class Meals extends Dish{  
+	void eat(){System.out.println("Eating Meals");}  
+	}  
+	class WildCard1 { 
+	  
+	public static void eatFood(List<? extends Dish> lists){  
+	for(Dish s:lists){  
+	s.eat();
+	}  
+	}  
+	public static void main(String args[]){  
+	List<Food> list1=new ArrayList<Food>();  
+	list1.add(new Food());  
+	  
+	List<Meals> list2=new ArrayList<Meals>();  
+	list2.add(new Meals());  
+	list2.add(new Meals());  
+	  
+	eatFood(list1);  
+	eatFood(list2);  
+	}}
+
+/* o/p-->
+Eating Food
+Eating Meals
+Eating Meals
+*/
