@@ -365,3 +365,82 @@ Two
 Three
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+12)
+
+package Zensardemo;
+import java.util.concurrent.ConcurrentHashMap;   
+import java.util.Iterator;   
+public class FailSafeEx1 {   
+    public static void main(String[] args)   
+    {   
+        // Initializing a ConcurrentHashMap   
+        ConcurrentHashMap<String, Integer> m   
+            = new ConcurrentHashMap<String, Integer>();   
+        m.put("ONE", 1); //Adding values  
+        m.put("SEVEN", 7);   
+        m.put("FIVE", 5);   
+        m.put("EIGHT", 8);   
+        // Getting an iterator using map  
+        Iterator it = m.keySet().iterator();   
+        while (it.hasNext()) {   
+            String key = (String)it.next();   
+            System.out.println(key + " : " + m.get(key));   
+            // This will reflect in iterator.   
+            // This means it has not created separate copy of objects  
+            m.put("NINE", 9);   
+        }   
+    }   
+} 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Output:
+EIGHT : 8
+FIVE : 5
+NINE : 9
+ONE : 1
+SEVEN : 7
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+13)
+package Zensardemo;
+
+	import java.util.ArrayList;
+
+
+	public class UpperWildCard{
+
+	private static Double add(ArrayList<?extends Number> num){
+
+	double sum=0.0;
+	 for (Number n:num)
+
+	{
+	sum=sum+n.doubleValue();
+	}
+	return sum;
+	}
+	public static void main(String[] args){
+
+	ArrayList<Integer>l1=new ArrayList<Integer>();
+	l1.add(10);
+	l1.add(20);
+	System.out.println("displaying the sum="+add(l1));
+
+
+
+	ArrayList<Double>l2=new ArrayList<Double>();
+	l2.add(30.0);
+	l2.add(40.0);
+	System.out.println("displaying the sum="+add(l2));
+
+	}
+	}
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Output:
+displaying the sum=30.0
+displaying the sum=70.0
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+	
