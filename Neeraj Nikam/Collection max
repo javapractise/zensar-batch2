@@ -1,0 +1,19 @@
+import java.util.*;
+public class CollectionExampleMax{
+	public static void main(String a[]){
+		List<Integer> list=new ArrayList<Integer>();
+		list.add(45);
+		list.add(100);
+		list.add(24);
+		list.add(18);
+		list.add(9);
+		list.add(22);
+		System.out.println("Value of maximum elements from the collection:"+Collections.max(list));
+
+	}
+}
+
+------------------------------------------------------------------------------------------------
+Output:
+	Value of maximum elements from the collection:100
+------------------------------------------------------------------------------------------------
