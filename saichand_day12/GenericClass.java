@@ -1,0 +1,31 @@
+package saichand_day12;
+
+
+	import java.util.*;
+	import java.util.Iterator;
+	class GenericClass{
+	public static void main(String args[]){
+	ArrayList<String> list=new ArrayList<String>();
+	list.add("saichand");
+	list.add("kadiyala");
+	//list.add(32);//Compile time error
+
+
+
+	String s=list.get(1);//type casting is  not required
+	System.out.println("element is:"+s);
+
+
+	Iterator<String> itr=list.iterator();
+	while(itr.hasNext()){
+	System.out.println(itr.next());
+	}
+	}
+
+}
+	/* output:
+	 * 
+	element is:kadiyala
+	saichand
+	kadiyala
+*/
