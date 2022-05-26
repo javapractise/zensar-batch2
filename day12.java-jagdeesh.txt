@@ -1,0 +1,291 @@
+WrapperClassObject:
+
+import java.util.*;
+public class WrapperClassObject{
+	public static  void main(String args[]){
+		ArrayList al=new ArrayList();
+		al.add(Integer.valueOf(201));
+		al.add(Integer.valueOf(101));
+		al.add(230);//internally will be converted into object as integer.valueOf(230)
+		Collections.sort(al);
+		Iterator itr=al.iterator();
+		while(itr.hasNext()){
+			System.out.println(itr.next());
+		}
+	}
+}
+
+
+Output:
+	101
+	201
+	230
+
+-------------------------------------------------------------------------------------------------------
+WildCards:
+
+import java.util.*;
+abstract class shape{
+abstract void draw();
+}
+class Rectangle extends shape{
+	void draw() {System.out.println("drawing rectangle");}
+}
+class Circle extends shape{
+	void draw()	{System.out.println("drawing circle");}
+}
+public class WildCards{
+//creating a method that accepts only child class of shape
+	public static void drawShape(List<?extends shape>lists){
+		for (shape s:lists){
+			s.draw();//calling method of shape class by child class instance
+		}
+	}
+	public static void main(String args[]){
+		List<Rectangle>list1=new ArrayList<Rectangle>();
+		list1.add(new Rectangle());
+		List<Circle>list2=new ArrayList<Circle>();
+		list2.add(new Circle());
+		list2.add(new Circle());
+		drawShape(list1);
+		drawShape(list2);
+	}
+}
+
+
+
+
+Output:
+drawing rectangle
+drawing circle
+drawing circle
+
+----------------------------------------------------------------------------------------------------
+UserDefinedSort:
+
+
+import java.util.*;  
+
+class Student implements Comparable<Student> {  
+    public String name;  
+    public Student(String name) {  
+    	this.name = name;  
+    }  
+    public int compareTo(Student person) {  
+    	return name.compareTo(person.name);    
+    }   
+}  
+public class UserDefinedSort {  
+	public static void main(String[] args) {  
+		ArrayList<Student> al=new ArrayList<Student>();  
+		al.add(new Student("Viru"));  
+		al.add(new Student("Saurav"));  
+		al.add(new Student("Mukesh"));  
+		al.add(new Student("Tahir"));    
+		Collections.sort(al);  
+		for (Student s : al) {  
+			System.out.println(s.name);  
+		}  
+	}  
+}  
+
+
+Output:
+Mukesh
+Saurav
+Tahir
+Viru
+
+-----------------------------------------------------------------------------------------
+UpperBoundWildCard:
+
+import java.util.ArrayList;
+public class UpperBoundWildCard{
+	private static Double add(ArrayList<?extends Number> nnum){
+		double sum=0.0;
+		for (Number n:nnum)
+		{
+			sum=sum+n.doubleValue();
+		}
+		return sum;
+	}
+	public static void main(String[] args){
+		ArrayList<Integer>l1=new ArrayList<Integer>();
+		l1.add(10);
+		l1.add(20);
+		System.out.println("displaying the sum="+add(l1));
+		ArrayList<Double>l2=new ArrayList<Double>();
+		l2.add(30.0);
+		l2.add(40.0);
+		System.out.println("displaying the sum="+add(l2));
+	}
+}
+
+
+Output:
+	displaying the sum=30.0
+	displaying the sum=70.0
+
+-----------------------------------------------------------------------------------------
+SortStringObject:
+
+import java.util.*;
+public class SortStringObject{
+	public static void main(String args[]){
+		ArrayList<String> al=new ArrayList<String>();
+		al.add("Viru");
+		al.add("saurav");
+		al.add("Mukesh");
+		al.add("Thair");
+		Collections.sort(al); 
+		Iterator itr=al.iterator();
+		while(itr.hasNext()){
+			System.out.println(itr.next());
+		}
+	}
+}
+
+Output:
+	Mukesh
+	Thair
+	Viru
+	saurav
+
+-----------------------------------------------------------------------------------------
+SortObjectReverse:
+
+import java.util.*;
+public class SortObjectReverse {
+	public static void main(String args[]){
+		ArrayList<String> al=new ArrayList<String>();
+		al.add("viru");
+		al.add ("Saurav");
+		al.add("Mukesh");
+		al.add("Tahir");
+		Collections.sort(al,Collections.reverseOrder());
+		Iterator i=al.iterator();
+		while(i.hasNext())
+		{
+			System.out.println(i.next());
+		}
+	}
+}
+
+
+
+Output:
+viru
+Tahir
+Saurav
+Mukesh
+
+------------------------------------------------------------------------------------------
+LowerBoundWildCards:
+
+import java.util.Arrays;
+import java.util.List;
+public class LowerBoundWildCards{
+
+	public static void addNumber(List<?super Integer>list) {
+		for(Object n:list)
+		{
+			System.out.println(n);
+		}
+	}
+	public static void main(String[] args){
+		List<Integer>l1=Arrays.asList(1,2,3);
+		System.out.println("displaying the integer values");
+		addNumber(l1);
+		List<Number>l2=Arrays.asList(1.0,2.0,3.0);
+		System.out.println("displaying the Number values");
+		addNumber(l2);
+	}
+}
+
+
+Output:
+displaying the integer values
+1
+2
+3
+displaying the Number values
+1.0
+2.0
+3.0
+
+--------------------------------------------------------------------------------------------
+GenericsExa:
+
+import java.util.*;
+public class GenericsExa{
+	public static void main(String args[]){
+		ArrayList<String> list=new ArrayList<String>();
+		list.add("rahul");
+		list.add("jai");
+		//list.add(32);//Compile time error
+		String s=list.get(1);//type casting is  not required
+		System.out.println("elemnt is:"+s);
+		Iterator<String> itr=list.iterator();
+		while(itr.hasNext()){
+			System.out.println(itr.next());
+		}	
+	}
+}
+
+
+
+Ouput:
+elemnt is:jai
+rahul
+jai
+
+----------------------------------------------------------------------------
+FailSafeDemo:
+
+import java.util.concurrent.CopyOnWriteArrayList;   
+import java.util.Iterator;   
+class FailSafeDemo {   
+    public static void main(String args[])   
+    {   
+        CopyOnWriteArrayList<Integer> list   
+            = new CopyOnWriteArrayList<Integer>(new Integer[] { 1, 7, 9, 11 });   
+        Iterator itr = list.iterator();   
+        while (itr.hasNext()) {   
+            Integer i = (Integer)itr.next();   
+            System.out.println(i);   
+            if (i == 7)   
+                list.add(15); // It will not be printed  
+            //This means it has created a separate copy of the collection  
+        }   
+    }   
+}   
+
+
+
+Output:
+1
+7
+9
+11
+
+---------------------------------------------------------------------------------------------
+CollectionExampleMax:
+
+import java.util.*;
+public class CollectionExampleMax{
+	public static void main(String a[]){
+		List<Integer> list=new ArrayList<Integer>();
+		list.add(46);
+		list.add(67);
+		list.add(24);
+		list.add(16);
+		list.add(8);
+		list.add(12);
+		System.out.println("Value of maximum elements from the collection:"+Collections.max(list));
+
+	}
+}
+
+
+Output:
+	Value of maximum elements from the collection:67	

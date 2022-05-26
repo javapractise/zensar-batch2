@@ -1,0 +1,30 @@
+import java.util.*;  
+
+class Student implements Comparable<Student> {  
+    public String name;  
+    public Student(String name) {  
+    	this.name = name;  
+    }  
+    public int compareTo(Student person) {  
+    	return name.compareTo(person.name);    
+    }   
+}  
+public class UserDefinedSort {  
+	public static void main(String[] args) {  
+		ArrayList<Student> al=new ArrayList<Student>();  
+		al.add(new Student("sai"));  
+		al.add(new Student("ram"));  
+		al.add(new Student("Mohan"));  
+		al.add(new Student("ssam"));    
+		Collections.sort(al);  
+		for (Student s : al) {  
+			System.out.println(s.name);  
+		}  
+	}  
+}  
+
+Output:
+sai
+ram
+mohan
+ssam

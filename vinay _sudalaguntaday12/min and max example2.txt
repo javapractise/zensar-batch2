@@ -1,0 +1,69 @@
+min number:-
+
+import java.util.*;
+public class CollectionEx2{
+public static void main(String args[]){
+	List<Integer> list=new ArrayList<Integer>();
+	list.add(12);
+	list.add(15);
+	list.add(22);
+	list.add(45);
+	list.add(80);
+	list.add(120);
+System.out.println("Value of minimum eelements from the collection:"+Collections.min(list));
+
+	}
+
+
+}
+
+output:-
+
+Value of minimum eelements from the collection:12
+
+
+example2:-maximum number
+
+import java.util.*;
+public class CollectionEx2{
+public static void main(String args[]){
+	List<Integer> list=new ArrayList<Integer>();
+	list.add(12);
+	list.add(15);
+	list.add(22);
+	list.add(45);
+	list.add(80);
+	list.add(120);
+System.out.println("Value of maximum elements from the collection:"+Collections.max(list));
+
+	}
+
+
+}
+
+output:-
+Value of minimum eelements from the collection:12
+
+example3:-
+
+import java.util.*;
+public class CollectionEx2{
+public static void main(String args[]){
+	List<Integer> list=new ArrayList<Integer>();
+	list.add(12);
+	list.add(15);
+	list.add(22);
+	list.add(45);
+	list.add(80);
+	list.add(120);
+System.out.println("Value of maximum elements from the collection:"+Collections.max(list));
+System.out.println("Value of minimum elements from the collection:"+Collections.min(list));
+
+	}
+
+
+}
+
+output:-
+Value of maximum elements from the collection:120
+Value of minimum elements from the collection:12

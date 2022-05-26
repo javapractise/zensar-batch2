@@ -1,0 +1,255 @@
+1)
+import java.util.*;
+public class CollectionExa{
+public static void main(String args[]){
+List<String> list=new ArrayList<String>();
+list.add("c");
+list.add("Core Java");
+list.add("Advance Java");
+System.out.println("Initial Collection Value:"+list);
+Collections.addAll(list,"servelt","Jsp");
+System.out.println("After adding elements collection value:"+list);
+String[] strArr={"C#",".Net"};
+Collections.addAll(list,strArr);
+System.out.println("After adding array collection value:"+list);
+}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Output:
+Initial Collection Value:[c, Core Java, Advance Java]
+After adding elements collection value:[c, Core Java, Advance Java, servelt, Jsp]
+After adding array collection value:[c, Core Java, Advance Java, servelt, Jsp, C#, .Net]
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+package zensardemo;
+
+import java.util.*;
+public class CollectionEx2{
+public static void main(String args[]){
+	List<Integer> list=new ArrayList<Integer>();
+	list.add(46);
+	list.add(67);
+	list.add(24);
+	list.add(16);
+	list.add(8);
+	list.add(12);
+System.out.println("Value of maximum eelements from the collection:"+Collections.max(list));
+
+	}
+
+
+}
+
+
+*********************************************************************************************************************************************************************
+*********************************************************************************************************************************************************************
+outpt:
+Value of maximum eelements from the collection:67
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+package zensardemo;
+
+import java.util.*;
+class TestSort{
+public static void main(String args[]){
+
+	ArrayList<String> al=new ArrayList<String>();
+	al.add("vishnu");
+	al.add("sai");
+	al.add("nikhil");
+	al.add("gayi");
+
+
+
+	Collections.sort(al); 
+	Iterator itr=al.iterator();
+	while(itr.hasNext()){
+	System.out.println(itr.next());
+	}
+	}
+	}
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Output:
+ 
+nikhil
+gayi
+vishnu
+sai
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ package Zensardemo;
+
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+public class failfast {
+public static  void main(String[] args)
+{
+Map<String,String>empName=new HashMap<String,String>();
+empName.put("sachin","India");
+empName.put("djbravo","westindies");
+empName.put("patcuminis","Australia");
+Iterator itr=empName.keySet().iterator();
+while (itr.hasNext()){
+
+	System.out.println(empName.get(itr.next()));
+//adding an element to map
+//exception will be thrown on next call
+//of next()method.
+
+empName.put("Istanbul","Turkey");
+
+}
+}
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Output:
+
+India
+Exception in thread "main" java.util.ConcurrentModificationException
+	at java.base/java.util.HashMap$HashIterator.nextNode(HashMap.java:1597)
+	at java.base/java.util.HashMap$KeyIterator.next(HashMap.java:1620)
+	at Zensardemo.failfast.main(failfast.java:17)
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+package Zensardemo;
+import java.util.concurrent.CopyOnWriteArrayList;   
+import java.util.Iterator;   
+public class FailSafeDemo {   
+    public static void main(String args[])   
+    {   
+        CopyOnWriteArrayList<Integer> list   
+            = new CopyOnWriteArrayList<Integer>(new Integer[] { 2, 4, 6, 8, 10, 12 });   
+        Iterator itr = list.iterator();   
+        while (itr.hasNext()) {   
+            Integer i = (Integer)itr.next();   
+            System.out.println(i);   
+            if (i == 7)   
+                list.add(15); // It will not be printed  
+            //This means it has created a separate copy of the collection  
+        }   
+    }   
+}   
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Output:
+2
+4
+6
+8
+10
+12
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+package Zensardemo;
+
+import java.util.*;
+import java.util.Collections;
+public class Reverseorder{
+public static void main(String args[]){
+  
+
+ArrayList<String> a1=new ArrayList<String>();
+  	a1.add("vishnu");
+	a1.add ("Sai");
+	a1.add("nikhil");
+	a1.add("gayi");
+
+Collections.sort(a1,Collections.reverseOrder());
+	Iterator itr=a1.iterator();
+	while(itr.hasNext()) {
+	System.out.println(itr.next());
+}
+}
+}
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Output:
+vishnu
+nikhil
+gayi
+Sai
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+package Zensardemo;
+
+	import java.util.*;  
+
+	class Student implements Comparable<Student> {  
+	    public String name;  
+	  public Student(String name) {  
+	    this.name = name;  
+	  }  
+	  public int compareTo(Student person) {  
+	    return name.compareTo(person.name);  
+	      
+	  }   
+	}  
+	public class UserDefinedClass {  
+	  public static void main(String[] args) {  
+	      ArrayList<Student> al=new ArrayList<Student>();  
+	      al.add(new Student("Vishnu"));  
+	      al.add(new Student("Sai"));  
+	      al.add(new Student("nikhil"));  
+	      al.add(new Student("gayi"));  
+	      
+	    Collections.sort(al);  
+	    for (Student s : al) {  
+	      System.out.println(s.name);  
+	    }  
+	  }  
+	}  
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Output:
+
+Sai
+Vishnu
+gayi
+nikhil
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+package Zensardemo;
+
+import java.util.*;
+public class wrapper {
+public static void main(String args[]){
+
+
+ArrayList a1=new ArrayList();
+	a1.add(Integer.valueOf(643));
+	a1.add(Integer.valueOf(277));
+	a1.add(574);//internally will be converted into object aas integer.valueOf(230)
+
+Collections.sort(a1);
+
+
+	Iterator itr=a1.iterator();
+	while(itr.hasNext()){
+	System.out.println(itr.next());
+	}
+    }
+}
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Output:
+277
+574
+643
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+

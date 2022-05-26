@@ -1,0 +1,23 @@
+import java.util.*;
+public class SortStringObject{
+	public static void main(String args[]){
+		ArrayList<String> al=new ArrayList<String>();
+		al.add("Soham");
+		al.add("Sai");
+		al.add("Neeraj");
+		al.add("Rahul");
+		Collections.sort(al); 
+		Iterator itr=al.iterator();
+		while(itr.hasNext()){
+			System.out.println(itr.next());
+		}
+	}
+}
+
+---------------------------------------------------------------------
+Output:
+	Neeraj
+  Rhaul
+	Soham
+	Sai
+---------------------------------------------------------------------

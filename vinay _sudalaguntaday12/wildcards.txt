@@ -1,0 +1,32 @@
+import java.util.*;
+abstract class shape{
+abstract void draw();
+}
+class Rectangle extends shape{
+	void draw() {System.out.println("drawing rectangle");}
+}
+class Circle extends shape{
+	void draw()	{System.out.println("drawing circle");}
+}
+public class WildCards{
+
+	public static void drawShape(List<?extends shape>lists){
+		for (shape s:lists){
+			s.draw();
+		}
+	}
+	public static void main(String args[]){
+		List<Rectangle>list1=new ArrayList<Rectangle>();
+		list1.add(new Triangle());
+		List<Circle>list2=new ArrayList<Circle>();
+		list2.add(new Shape());
+		list2.add(new Shape());
+		drawShape(list1);
+		drawShape(list2);
+	}
+}
+
+output:-
+drawing:-rectangle
+shape
+shape
