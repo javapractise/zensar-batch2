@@ -122,4 +122,134 @@ Exception in thread "main" java.util.ConcurrentModificationException
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+package Zensardemo;
+import java.util.concurrent.CopyOnWriteArrayList;   
+import java.util.Iterator;   
+public class FailSafeDemo {   
+    public static void main(String args[])   
+    {   
+        CopyOnWriteArrayList<Integer> list   
+            = new CopyOnWriteArrayList<Integer>(new Integer[] { 2, 4, 6, 8, 10, 12 });   
+        Iterator itr = list.iterator();   
+        while (itr.hasNext()) {   
+            Integer i = (Integer)itr.next();   
+            System.out.println(i);   
+            if (i == 7)   
+                list.add(15); // It will not be printed  
+            //This means it has created a separate copy of the collection  
+        }   
+    }   
+}   
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Output:
+2
+4
+6
+8
+10
+12
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+package Zensardemo;
+
+import java.util.*;
+import java.util.Collections;
+public class Reverseorder{
+public static void main(String args[]){
+  
+
+ArrayList<String> a1=new ArrayList<String>();
+  	a1.add("vishnu");
+	a1.add ("Sai");
+	a1.add("nikhil");
+	a1.add("gayi");
+
+Collections.sort(a1,Collections.reverseOrder());
+	Iterator itr=a1.iterator();
+	while(itr.hasNext()) {
+	System.out.println(itr.next());
+}
+}
+}
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Output:
+vishnu
+nikhil
+gayi
+Sai
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+package Zensardemo;
+
+	import java.util.*;  
+
+	class Student implements Comparable<Student> {  
+	    public String name;  
+	  public Student(String name) {  
+	    this.name = name;  
+	  }  
+	  public int compareTo(Student person) {  
+	    return name.compareTo(person.name);  
+	      
+	  }   
+	}  
+	public class UserDefinedClass {  
+	  public static void main(String[] args) {  
+	      ArrayList<Student> al=new ArrayList<Student>();  
+	      al.add(new Student("Vishnu"));  
+	      al.add(new Student("Sai"));  
+	      al.add(new Student("nikhil"));  
+	      al.add(new Student("gayi"));  
+	      
+	    Collections.sort(al);  
+	    for (Student s : al) {  
+	      System.out.println(s.name);  
+	    }  
+	  }  
+	}  
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Output:
+
+Sai
+Vishnu
+gayi
+nikhil
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+package Zensardemo;
+
+import java.util.*;
+public class wrapper {
+public static void main(String args[]){
+
+
+ArrayList a1=new ArrayList();
+	a1.add(Integer.valueOf(643));
+	a1.add(Integer.valueOf(277));
+	a1.add(574);//internally will be converted into object aas integer.valueOf(230)
+
+Collections.sort(a1);
+
+
+	Iterator itr=a1.iterator();
+	while(itr.hasNext()){
+	System.out.println(itr.next());
+	}
+    }
+}
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Output:
+277
+574
+643
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
 
