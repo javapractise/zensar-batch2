@@ -1,0 +1,20 @@
+import java.util.*;  
+public class CollectionsReverseOrderExample1 {  
+    public static void main(String[] args) {                 
+        
+          LinkedList<Integer> list = new LinkedList<Integer>();  
+           
+          list.add(10);  
+          list.add(-20);  
+          list.add(50);  
+          list.add(90);  
+          list.add(-15);  
+           
+          Collections.sort(list, Collections.reverseOrder());    
+          System.out.println("List sorted in ReverseOrder: ");  
+          System.out.println(list);  
+          }  
+}  
+
+OUTPUT::List sorted in ReverseOrder: 
+[90, 50, 10, -15, -20]

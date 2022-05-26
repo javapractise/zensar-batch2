@@ -1,0 +1,24 @@
+import java.util.HashMap;   
+    import java.util.Iterator;   
+    import java.util.Map;   
+public class FailFastDemo {  
+        public static void main(String[] args)   
+        {   
+            Map<String, String> empName = new HashMap<String, String>();   
+            empName.put("Sam Hanks", "New york");   
+            empName.put("Will Smith", "LA");   
+            empName.put("Scarlett", "Chicago");   
+            Iterator iterator = empName.keySet().iterator();   
+            while (iterator.hasNext()) {   
+                System.out.println(empName.get(iterator.next()));   
+              
+                empName.put("Istanbul", "Turkey");   
+            }   
+        }   
+    }   
+
+output::LA
+Exception in thread "main" java.util.ConcurrentModificationException
+	at java.base/java.util.HashMap$HashIterator.nextNode(HashMap.java:1493)
+	at java.base/java.util.HashMap$KeyIterator.next(HashMap.java:1516)
+	at FailFastDemo.main(source.java:13)
