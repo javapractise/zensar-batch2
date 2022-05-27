@@ -1,0 +1,197 @@
+JDBC SELECT QUERY :-
+===============
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+
+ class SelectApp1 {
+
+	public static void main(String[] args) throws Exception{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+		
+		Statement st = con.createStatement();
+		
+		ResultSet rs = st.executeQuery("select * from student");
+		
+		while(rs.next())
+		{
+			System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+		}
+		
+		rs.close();
+		st.close();
+		con.close();
+		
+				
+				
+
+	}
+
+}
+
+OUTPUT :-
+========
+
+101 Raja hyd
+102 karthik vsp
+103 Teja Akp
+101 raja hyd
+101 Raja Akp
+
+PREPARED STATEMENT :-
+==================
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+
+
+
+public class InsertApp {
+	public static void main(String[] args) throws Exception 
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the student No : ");
+		int no = sc.nextInt();
+		
+		System.out.println("Enter the student Name: ");
+		String name = sc.next();
+		
+		System.out.println("Enter the student Address: ");
+		String add = sc.next();
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+		
+		String qry = "insert into student values(?,?,?)";
+		
+		PreparedStatement ps = con.prepareStatement(qry);
+		
+		ps.setInt(1, no);
+		ps.setString(2, name);
+		ps.setString(3, add);
+		
+		int result=ps.executeUpdate();
+		
+		if(result==0)
+			System.out.println("No Record Inserted");
+		else
+			System.out.println(result+ " Record Inserted");
+		
+		ps.close();
+		con.close();
+	}
+
+}
+
+
+
+OUTPUT :-
+-----------
+Enter the student No : 
+109
+Enter the student Name: 
+Garg
+Enter the student Address: 
+Usa
+1 Record Inserted
+
+
+
+       SNO SNAME      SADD
+---------- ---------- ------------
+       101 Raja       hyd
+       102 karthik    vsp
+       103 Teja       Akp
+       101 raja       hyd
+       101 Raja       Akp
+       101 Raja       Anakapalli
+
+3.CALLABLE STATEMENT :-
+=================
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+
+
+
+public class Proc {
+
+	public static void main(String[] args) throws Exception {
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","admin");
+		
+		CallableStatement stmt = con.prepareCall("{call insert Student(?,?)}");
+		
+		stmt.setInt(1, 101);
+		
+		stmt.setString(2,  "Amit");
+		
+		stmt.execute();
+		
+		System.out.println("Record Succesfully");
+		
+		
+		
+
+	}
+
+}
+
+OUTPUT :-
+=======
+
+Record Succesfully
+
+4.FUNCTIONAL INTERFACE :-
+==================
+
+		interface sayable{  
+		    void say(String msg);  
+		}  
+		public class FunctionalInterface1 implements sayable{  
+		    public void say(String msg){  
+		        System.out.println(msg);  
+		    }  
+		    public static void main(String[] args) {  
+		        FunctionalInterface1 fie = new FunctionalInterface1();  
+		        fie.say("Hello Java Training is Going on");  
+		    }  
+		 
+
+	}
+
+OUTPUT :-
+======
+
+Hello Java Training is Going on
+
+5.INVALID FUNCTIONAL INTERFACE :-
+========================
+
+interface sayable{  
+    void say(String msg);   // abstract method  
+}  
+@FunctionalInterface  
+interface Doable extends sayable{  
+    void doIt();  
+}  
+
+OUTPUT :-
+=======
+compile - time error
+
+
+
+
+
