@@ -1,0 +1,26 @@
+import java.util.*;
+import java.util.Collections;
+class ReverseOrder{
+public static void main(String args[]){
+
+
+ArrayList<String> a1=new ArrayList<String>();
+  	a1.add("Anu");
+	a1.add ("Mina");
+	a1.add("Riya");
+	a1.add("Tina");
+
+Collections.sort(a1,Collections.reverseOrder());
+	Iterator itr=a1.iterator();
+	while(itr.hasNext()) {
+	System.out.println(itr.next());
+}
+}
+}
+
+Output:
+java -cp /tmp/sWi069PFAt ReverseOrder
+Anu
+Tina
+Mina
+Riya
