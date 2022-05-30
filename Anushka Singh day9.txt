@@ -1,0 +1,139 @@
+Program with try and catch & finally block
+
+class TestFinallyBlock {    
+  public static void main(String args[]){    
+  try{    
+//below code do not throw any exception  
+   int data=25/5;    
+   System.out.println(data);    
+  }    
+//catch won't be executed  
+  catch(NullPointerException e){  
+System.out.println(e);  
+}    
+//executed regardless of exception occurred or not  
+ finally {  
+System.out.println("finally block is always executed");  
+}    
+
+System.out.println("rest of phe code...");    
+  }    
+}    
+
+OutPut
+5
+finally block is always executed
+rest of phe code...
+
+
+2)
+
+Program for multiple catch with single try
+
+
+class MultipleCatchBlock5{  
+  public static void main(String args[]){  
+   try{  
+    int a[]=new int[5];  
+    a[5]=30/0;  
+   }  
+   catch(Exception e){System.out.println("common task completed");}  
+   catch(ArithmeticException e){System.out.println("task1 is completed");}  
+   catch(ArrayIndexOutOfBoundsException e){System.out.println("task 2 completed");}  
+   System.out.println("rest of the code...");  
+ }  
+} 
+
+
+OutPut
+Compile-time error
+
+3)
+
+Program illustrating throws keyword
+
+import java.io.*;
+class M{
+ void method()throws IOException{
+  throw new IOException("device error");
+ }
+}
+
+
+public class Testthrows2{
+   public static void main(String args[]){
+    try{
+          M m=new M();
+          m.method();
+
+    }catch(Exception e){System.out.println("exception handled");}   
+
+    System.out.println("normal flow...");
+  }
+}
+
+OutPut
+exception handled
+       normal flow...
+
+
+4)
+
+Program for chained exception
+
+public class Tester {
+   public static void main(String[] args) {
+      try {
+         test();
+      }catch(ApplicationException e){ 
+         System.out.println(e.getMessage());
+      }
+   } 
+
+   public static void test() throws ApplicationException{
+      try{
+         int a = 0;
+         int b = 1;
+         System.out.println(b/a);
+      }catch(Exception e){
+         throw new ApplicationException(e);
+      }
+   }
+}
+
+class ApplicationException extends Exception {
+   public ApplicationException(Exception e) {   
+      super(e);
+   }
+}
+
+OutPut
+java.lang.ArithmeticException: / by zero
+
+
+5)
+
+Program to create custom exception
+
+class CustomException extends Exception {
+   String message;
+   CustomException(String str) {
+      message = str;
+   }
+   public String toString() {
+      return ("Custom Exception Occurred : " + message);
+   }
+}
+public class MainException {
+   public static void main(String args[]) {
+      try {
+         throw new CustomException("This is a custom message");
+      } catch(CustomException e) {
+         System.out.println(e);
+      }
+   }
+}
+
+OutPut
+
+Custom Exception Occurred : This is a custom message
