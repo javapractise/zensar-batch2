@@ -1,0 +1,23 @@
+interface Doable{
+default voiddoIt(){
+System.out.println("Do it now");
+}
+}
+@FunctionalInterface
+interface Sayable extends Doable{
+void say(Stringmsg); // abstract method
+}
+public class FunctionalInterfaceExample3 implementsSayable{
+public void say(Stringmsg){
+System.out.println(msg);
+}
+public static voidmain(String[] args) {
+FunctionalInterfaceExample3fie = new FunctionalInterfaceExample3();
+fie.say("Hello there");
+fie.doIt();
+}
+}
+
+Output:
+Hello there
+Do it now
