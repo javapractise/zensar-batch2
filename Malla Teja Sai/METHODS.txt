@@ -1,0 +1,181 @@
+STATIC METHOD:-
+==============
+interface Sayable 
+{
+    void say();
+    
+}
+public class MethodReference
+{
+    public static void saySomething()
+    {
+        System.out.println("Hello,this is static method");
+    }
+    public static void main(String[] args)
+    {
+        Sayable sayable = MethodReference::saySomething;
+        
+        sayable.say();
+    }
+}
+OUTPUT:-
+-------
+Hello,this is static method
+
+BIFUNCTION METHOD:-
+=================
+import java.util.function.BiFunction;
+class Arithmetic
+{
+    public static int add(int a,int b)
+    {
+        return a+b;
+    }
+}
+public class MethodReference3
+{
+    public static void main(String[] args)
+    {
+        BiFunction<Integer,Integer,Integer>adder = Arithmetic::add;
+        int result = adder.apply(10,40);
+        
+        System.out.println(result);
+    }
+}
+OUTPUT:
+-------
+50
+
+OVERRIDE STATIC METHOD:-
+========================
+import java.util.function.BiFunction;
+class Arithmetic
+{
+    public static int add(int a,int b)
+    {
+        return a+b;
+    }
+    public static float add(int a,float b)
+    {
+        return a+b;
+    }
+    public static float add(float a, float b)
+    {
+        return a+b;
+    }
+}
+public class MethodReference4
+{
+    public static void main(String[] args)
+    {
+        BiFunction<Integer,Integer,Integer>adder1 = Arithmetic::add;
+        BiFunction<Integer,Float,Float>adder2 = Arithmetic::add;
+        BiFunction<Float,Float,Float>adder3 = Arithmetic::add;
+        int result1 = adder1.apply(23,47);
+        float result2 = adder2.apply(14,16.0f);
+        float result3 = adder3.apply(32.0f,18.0f);
+        
+        System.out.println(result1);
+        
+        System.out.println(result2);
+        
+        System.out.println(result3);
+    }
+}
+
+OUTPUT :-
+--------
+70
+30.0
+50.0
+
+REFERENCE TO INSTANCE METHOD:-
+==============================
+interface Sayable{  
+    void say();  
+}  
+public class InstanceMethodReference {  
+    public void saySomething(){  
+        System.out.println("Hello, this is non-static method.");  
+    }  
+    public static void main(String[] args) {  
+        InstanceMethodReference methodReference = new InstanceMethodReference();  
+        
+            Sayable sayable = methodReference::saySomething;  
+       
+            sayable.say();  
+             
+            Sayable sayable2 = new InstanceMethodReference()::saySomething;   
+            
+            sayable2.say();  
+    }  
+}  
+
+OUTPUT:-
+--------
+
+Hello, this is non-static method.
+Hello, this is non-static method.
+
+============>
+
+ii)
+
+public class InstanceMethodReference2 {  
+    public void printnMsg(){  
+        System.out.println("Hello, this is instance method");  
+    }  
+    public static void main(String[] args) {  
+    Thread t2=new Thread(new InstanceMethodReference2()::printnMsg);  
+        t2.start();       
+    }  
+}  
+
+OUTPUT:-
+-------
+Hello, this is instance method
+
+BI FUNCTION INTERFACE:-
+========================
+import java.util.function.BiFunction;  
+class Arithmetic{  
+public int add(int a, int b){  
+return a+b;  
+}  
+}  
+public class InstanceMethodReference3 {  
+public static void main(String[] args) {  
+BiFunction<Integer, Integer, Integer>adder = new Arithmetic()::add;  
+int result = adder.apply(30, 20);  
+System.out.println(result);  
+}  
+}  
+
+OUTPUT:-
+--------
+50
+
+REFERENCE TO A CONSTRUCTOR:-
+============================
+
+interface Messageable{  
+    Message getMessage(String msg);  
+}  
+class Message{  
+    Message(String msg){  
+        System.out.print(msg);  
+    }  
+}  
+public class ConstructorReference {  
+    public static void main(String[] args) {  
+        Messageable hello = Message::new;  
+        hello.getMessage("Hello");  
+    }  
+}  
+
+OUTPUT :-
+---------
+
+Hello
+
+
