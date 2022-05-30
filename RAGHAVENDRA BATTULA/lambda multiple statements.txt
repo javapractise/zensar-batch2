@@ -1,0 +1,19 @@
+@FunctionalInterface  
+interface Sayable{  
+    String say(String message);  
+}  
+  
+public class LambdaExpressionExample8{  
+    public static void main(String[] args) {  
+  
+        Sayable person = (message)-> {  
+            String str1 = "When two hearts are pure, ";  
+            String str2 = str1 + message;   
+            return str2;  
+        };  
+            System.out.println(person.say("distance doesn't matter."));  
+    }  
+}  
+
+output::When two hearts are pure, distance doesn't matter.
+
