@@ -1,0 +1,16 @@
+import java.util.function.Function;  
+public class FunctionEx1 {  
+    static String show(String message){  
+        return "Hello "+message;  
+    }  
+    public static void main(String[] args) {  
+        // Function interface referring to a method  
+        Function<String, String> fun = FunctionEx1::show;  
+        // Calling Function interface method  
+        System.out.println(fun.apply("Peter"));  
+    }  
+}  
+
+Output:
+java -cp /tmp/6v49K3IC5w FunctionEx1
+Hello Peter
