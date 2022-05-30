@@ -1,0 +1,269 @@
+import java.util.*;  
+public class Foreachloop{  
+    public static void main(String[] args) {  
+          
+        List<String> list=new ArrayList<String>();  
+        list.add("mina");  
+        list.add("sita");  
+        list.add("riya");  
+        list.add("anu");  
+          
+        list.forEach(  
+            (n)->System.out.println(n)  
+        );  
+    }  
+}  
+
+Output:
+java -cp /tmp/r0sPMGjxde Foreachloop
+mina
+sita
+riya
+anu
+
+
+//single parameter
+
+interface Says{
+public String say(String name);
+}
+public class SingleParameter{
+public static void main(String[] args){
+
+
+//Lambda expression with single parameter.
+Says s1=(name)->{
+return "Hello ,"+name;
+};
+System.out.println(s1.say("sonoo"));
+//you can omit function parentheses
+Says s2=(name)->{
+return "Hello,"+name;
+};
+System.out.println(s2.say("sonoo"));
+}
+}
+
+
+Output:
+java -cp /tmp/r0sPMGjxde SingleParameter
+Hello ,sonoo
+Hello,sonoo
+
+
+
+//multiple paramters:
+interface Addable{
+int add(int a,int b);
+}
+
+public class MultipleParameter{
+public static void main(String[] args){
+
+//multiple paramters in lambda expression
+
+Addable ad1=(a,b)->(a+b);
+System.out.println(ad1.add(90,20));
+
+//multiple parameters with data type inlambda expression
+Addable ad2=(int a,int b)->(a+b);
+System.out.println(ad2.add(100,00));
+}
+}
+
+
+
+out put:
+110
+100
+
+public String say();
+}
+public class NoParameter{
+public static void main(String[] args){
+sayable s=()->{
+return "Anushka.";
+};
+System.out.println(s.say());
+}
+}
+
+
+out put:
+Anushka.
+
+@FunctionalInterface//it is optional
+interface Drawable{
+public void draw();
+}
+public class LambdaExpressionEx1{
+public static void main(String[] args){
+int width=88;
+
+//with lambda
+Drawable d2=()->{
+System.out.println("Drawing ="+width);
+};
+d2.draw();
+}
+}
+
+
+
+
+
+
+/*
+ output:
+Drawing =88
+*/
+
+
+public class Keyword {  
+    public static void main(String[] args) {  
+          
+        // Lambda expression without return keyword.  
+        Addable ad1=(a,b)->(a+b);  
+        System.out.println(ad1.add(10,20));  
+          
+        // Lambda expression with return keyword.    
+        Addable ad2=(int a,int b)->{  
+                            return (a+b);   
+                            };  
+        System.out.println(ad2.add(100,200));  
+    }  
+} 
+
+Output:
+java -cp /tmp/r0sPMGjxde Keyword
+30
+300
+
+
+public class Creatingthread{  
+    public static void main(String[] args) {  
+      
+        //Thread Example without lambda  
+        Runnable r1=new Runnable(){  
+            public void run(){  
+                System.out.println("Thread1 is running...");  
+            }  
+        };  
+        Thread t1=new Thread(r1);  
+        t1.start();  
+        //Thread Example with lambda  
+        Runnable r2=()->{  
+                System.out.println("Thread2 is running...");  
+        };  
+        Thread t2=new Thread(r2);  
+        t2.start();  
+    }  
+}  
+
+
+Output:
+java -cp /tmp/r0sPMGjxde Creatingthread
+Thread1 is running...
+Thread2 is running...
+
+import java.util.function.Consumer;  
+public class ConsumerEx1 {  
+    static void printMessage(String name){  
+        System.out.println("Hello "+name);  
+    }  
+    static void printValue(int val){  
+        System.out.println(val);  
+    }  
+    public static void main(String[] args) {  
+        // Referring method to String type Consumer interface   
+        Consumer<String> consumer1 = ConsumerEx1::printMessage;  
+        consumer1.accept("Anu");   // Calling Consumer method  
+        // Referring method to Integer type Consumer interface  
+        Consumer<Integer> consumer2 = ConsumerEx1::printValue;  
+        consumer2.accept(12);   // Calling Consumer method  
+    }  
+}  
+
+Output:
+java -cp /tmp/6v49K3IC5w ConsumerEx1
+Hello Anu
+12
+
+
+import java.util.ArrayList;  
+import java.util.List;  
+import java.util.function.Consumer;  
+public class ConsumerEx2 {  
+    static void addList(List<Integer> list){  
+        // Return sum of list values  
+        int result = list.stream()  
+                   .mapToInt(Integer::intValue)  
+                   .sum();  
+        System.out.println("Sum of list values: "+result);  
+    }  
+    public static void main(String[] args) {  
+        // Creating a list and adding values  
+                List<Integer> list = new ArrayList<Integer>();  
+                list.add(10);  
+                list.add(20);  
+                list.add(30);  
+                list.add(40);  
+        // Referring method to String type Consumer interface   
+        Consumer<List<Integer>> consumer = ConsumerEx2::addList;  
+        consumer.accept(list);  // Calling Consumer method  
+          
+    }  
+}  
+
+Output:
+java -cp /tmp/6v49K3IC5w ConsumerEx2
+Sum of list values: 100
+
+
+import java.util.ArrayList;  
+import java.util.Collections;  
+import java.util.List;  
+class Product{  
+    int id;  
+    String name;  
+    float price;  
+    public Product(int id, String name, float price) {  
+        super();  
+        this.id = id;  
+        this.name = name;  
+        this.price = price;  
+    }  
+}
+
+  
+public class Comparator{  
+    public static void main(String[] args) {  
+        List<Product> list=new ArrayList<Product>();  
+          
+        //Adding Products  
+        list.add(new Product(1,"HP Laptop",25000f));  
+        list.add(new Product(3,"Keyboard",300f));  
+        list.add(new Product(2,"Dell Mouse",150f));  
+          
+        System.out.println("Sorting on the basis of name...");  
+  
+        // implementing lambda expression  
+        Collections.sort(list,(p1,p2)->{  
+        return p1.name.compareTo(p2.name);  
+        });  
+        for(Product p:list){  
+            System.out.println(p.id+" "+p.name+" "+p.price);  
+        }  
+  
+    }  
+}  
+
+
+output:
+Sorting on the basis of name...
+2 Dell Mouse 150.0
+1 HP Laptop 25000.0
+3 Keyboard 300.0
+
+
+
