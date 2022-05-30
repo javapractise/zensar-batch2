@@ -1,0 +1,108 @@
+Implementing Runnable using Lambda expression :-
+================================================
+
+public class RunnableLambdatest
+{
+    public static void main(String[] args)
+    {
+        Runnable r1 = new Runnable(){
+        
+        public void run(){
+        System.out.println("Hello Everyone");
+        
+    }
+};
+Runnable r2 = () -> 
+{
+    System.out.println(" Please be careful ");
+};
+        
+       new Thread(r1).start();
+        new Thread(r2).start();
+        
+    }
+}
+
+OUTPUT :-
+---------
+Hello Everyone
+ Please be careful 
+
+
+2.Using Lambda expression and Functional interface Predicate :-
+===============================================================
+
+import java.util.function.Predicate;
+
+public class PredicateInterfaceDemo
+{  
+    static Boolean checkAge(int age)
+    {  
+        if(age>17)  
+            return true;  
+        else
+            return false;  
+    }  
+    public static void main(String[] args)
+    {  
+      
+        Predicate<Integer> predicate =  PredicateInterfaceDemo::checkAge;  
+        
+        boolean result = predicate.test(25);  
+        System.out.println(result);  
+    }  
+}  
+
+OUTPUT:-
+-------
+
+true
+
+3.How to combine Predicate in Lambda Expressions :-
+===================================================
+
+
+public class Test
+{
+	
+	interface FuncInter1
+	{
+		int operation(int a, int b);
+	}
+
+	interface FuncInter2
+	{
+		void sayMessage(String message);
+	}
+
+	private int operate(int a, int b, FuncInter1 fobj)
+	{
+		return fobj.operation(a, b);
+	}
+
+	public static void main(String args[])
+	{
+		
+		FuncInter1 add = (int x, int y) -> x + y;
+
+		FuncInter1 multiply = (int x, int y) -> x * y;
+        
+		Test tobj = new Test();
+
+		System.out.println("Addition is " + tobj.operate(13, 17, add));
+
+		System.out.println("Multiplication is " + tobj.operate(10, 13, multiply));
+
+		FuncInter2 fobj = message ->System.out.println("Hello " + message);
+        
+		fobj.sayMessage("Training is going on");
+	}
+}
+
+
+OUTPUT :-
+---------
+
+Addition is 30
+Multiplication is 130
+Hello Training is going on
