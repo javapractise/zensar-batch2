@@ -1,0 +1,11 @@
+interface sayable{
+  public String say();
+}
+public class NoParameter{
+  public static void main(String[] args){
+  sayable s=()->{
+  return "good evening to all";
+};
+  System.out.println(s.say());
+   }
+}
