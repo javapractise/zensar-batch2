@@ -1,0 +1,376 @@
+WITHOUT LAMBDA EXPRESSION :-
+==========================
+interface Drawable{  
+    public void draw();  
+}  
+public class LambdaExpressionExample {  
+    public static void main(String[] args) {  
+        int width=10;  
+  
+        //without lambda, Drawable implementation using anonymous class  
+        Drawable d=new Drawable(){  
+            public void draw(){System.out.println("Drawing "+width);}  
+        };  
+        d.draw();  
+    }  
+}  
+
+OUTPUT :-
+---------
+Drawing 56
+
+SINGLE PARAMETER:-
+===================
+
+interface Sayable{
+    public String say(String name);   
+}
+public class LambdaExpressionTej
+{
+    public static void main(String[] args)
+    {
+        Sayable s1 = (name)->{
+            return "Hello,"+name;
+        };
+        System.out.println(s1.say("Tejasai"));
+        
+        Sayable s2 = name -> {
+            return "Hello,"+name;
+        };
+        System.out.println(s2.say("Karthik"));
+    }
+}
+
+OUTPUT :-
+---------
+
+Hello,Tejasai
+Hello,Karthik
+
+MULTIPLE PARAMETER :-
+====================
+interface Addable
+{
+    int add(int a,int b);
+}
+public class LambdaExpressionTraining
+{
+    public static void main(String[] args)
+    {
+        Addable ad1 = (a,b)->(a+b);
+        System.out.println(ad1.add(19,34));
+        
+        Addable ad2 =(int a,int b)->(a+b);
+        
+        System.out.println(ad2.add(123,987));
+    }
+}
+
+OUTPUT :-
+---------
+
+53
+1110
+
+WITH OR WITHOUT RETURN KEYWORD :-
+=================================
+interface Addable
+{
+    int add(int a,int b);
+}
+public class LambdaExpressionTej
+{
+    public static void main(String[] args)
+    {
+        Addable ad1 = (a,b)->(a+b);
+        System.out.println(ad1.add(34,42));
+        
+        Addable ad2=(int a,int b)->
+        {
+            return(a+b);
+        };
+        
+        System.out.println(ad2.add(102,18));
+    }
+}
+
+OUTPUT :-
+========
+76
+120
+
+FOR EACH LOOP :-
+===============
+
+import java.util.*;  
+public class LambdaExpressionExample7{  
+    public static void main(String[] args) {  
+          
+        List<String> list=new ArrayList<String>();  
+        list.add("ankit");  
+        list.add("mayank");  
+        list.add("irfan");  
+        list.add("Teja");  
+          
+        list.forEach(  
+            (n)->System.out.println(n)  
+        );  
+    }  
+}  
+
+OUTPUT :-
+---------
+ankit
+mayank
+irfan
+Teja
+
+MULTIPLE STATEMENTS:-
+====================
+interface Sayable 
+{
+    String say(String message);
+}
+
+public class LambdaExpressionTraining
+{
+    public static void main(String[] args)
+    {
+        Sayable person = (message)->
+        {
+            String str1 = "I want to see ";
+            String str2 = str1 + message;
+            return str2;
+        };
+        System.out.println(person.say("Beautiful Places"));
+    }
+}
+
+OUTPUT :-
+---------
+
+I want to see Beautiful Places
+
+CREATING THREAD :-
+==================
+public class LambdaExpressionTrain
+{
+    public static void main(String[] args)
+    {
+        Runnable r1 = new Runnable()
+        {
+            public void run()
+            {
+                System.out.println("Thread1 is running....");
+            }
+        };
+        Thread t1 = new Thread(r1);
+        t1.start();
+        
+        Runnable r2=()->
+        {
+            System.out.println("Thread2 is running...");
+        };
+        Thread t2 = new Thread(r2);
+        t2.start();
+    }
+}
+
+OUTPUT :-
+---------
+
+Thread1 is running....
+Thread2 is running...
+
+COMPARATOR :-
+=============
+import java.util.ArrayList;  
+import java.util.Collections;  
+import java.util.List;  
+class Product{  
+    int id;  
+    String name;  
+    float price;  
+    public Product(int id, String name, float price) {  
+        super();  
+        this.id = id;  
+        this.name = name;  
+        this.price = price;  
+    }  
+}  
+public class LambdaExpressionElectronics{  
+    public static void main(String[] args) {  
+        List<Product> list=new ArrayList<Product>();  
+        list.add(new Product(1,"HP Laptop",25000f));  
+        list.add(new Product(3,"Acer Keyboard",300f));  
+        list.add(new Product(2,"Dell Mouse",150f));  
+          
+        System.out.println("Sorting on the basis of name...");  
+  
+        Collections.sort(list,(p1,p2)->{  
+        return p1.name.compareTo(p2.name);  
+        });  
+        for(Product p:list){  
+            System.out.println(p.id+" "+p.name+" "+p.price);  
+        }  
+  
+    }  
+}  
+
+OUTPUT :-
+--------
+
+Sorting on the basis of name...
+3 Acer Keyboard 300.0
+2 Dell Mouse 150.0
+1 HP Laptop 25000.0
+
+FILTER COLLECTION DATA :-
+=========================
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
+class Product
+{
+    int id;
+    String name;
+    float price;
+    public Product(int id, String name,float price)
+    {
+        super();
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
+}
+public class LambdaExpressionGadjets
+{
+    public static void main(String[] args)
+    {
+        List<Product> list = new ArrayList<Product>();
+        
+        list.add(new Product(1,"Samsung A5",18000f));
+        list.add(new Product(2,"Oppo",200001f));
+        list.add(new Product(3,"Redmi",23000f));
+        list.add(new Product(4,"Realme",25000f));
+         list.add(new Product(5,"Xperia",28000f));
+        
+        Stream<Product> filtered_data = list.stream().filter(p -> p.price > 20000);
+        
+        filtered_data.forEach(
+        product -> System.out.println(product.name+": "+product.price)
+        );
+    }
+}
+
+OUTPUT :-
+---------
+
+Oppo: 200001.0
+Redmi: 23000.0
+Realme: 25000.0
+Xperia: 28000.0
+
+EVENT LISTENER :-
+================
+import javax.swing.JButton;  
+import javax.swing.JFrame;  
+import javax.swing.JTextField;  
+public class LambdaEventListenerTeja {  
+    public static void main(String[] args) {  
+        JTextField tf=new JTextField();  
+        tf.setBounds(50, 50,150,20);  
+        JButton b=new JButton("click");  
+        b.setBounds(80,100,70,30);  
+          
+     
+        b.addActionListener(e-> {tf.setText("hello swing");});  
+          
+        JFrame f=new JFrame();  
+        f.add(tf);f.add(b);  
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        f.setLayout(null);  
+        f.setSize(300, 200);  
+        f.setVisible(true);  
+  
+    }  
+  
+}  
+
+OUTPUT :-
+---------
+Exception in thread "main" java.awt.HeadlessException: 
+No X11 DISPLAY variable was set, but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:208)
+	at java.desktop/java.awt.Window.<init>(Window.java:548)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:423)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:388)
+	at java.desktop/javax.swing.JFrame.<init>(JFrame.java:180)
+	at LambdaEventListenerTeja.main(source.java:14)
+
+Functional Interface:-
+=======================interface Sayable 
+{
+    void say(String msg);
+}
+public class FunctionalInterfaceTej implements Sayable
+{
+public void say(String msg)
+{
+System.out.println(msg);
+}
+public static void main(String[] args)
+{
+FunctionalInterfaceTej fit = new FunctionalInterfaceTej();
+
+fit.say("Hello Everyone");
+}
+}
+
+OUTPUT :-
+========
+Hello Everyone
+
+INVALID FUNCTIONAL INTERFACE :-
+==============================
+interface sayable{  
+    void say(String msg);   // abstract method  
+}  
+@FunctionalInterface  
+interface Doable extends sayable{  
+    // Invalid '@FunctionalInterface' annotation; Doable is not a functional interface  
+    void doIt();  
+}  
+
+OUTPUT :-
+---------
+
+compile-time error
+
+NON FUNCTIONAL INTERFACE:-
+==========================
+interface Doable{  
+    default void doIt(){  
+        System.out.println("Do it now");  
+    }  
+}  
+@FunctionalInterface  
+interface Sayable extends Doable{  
+    void say(String msg);   
+}  
+public class FunctionalInterfaceExample3 implements Sayable{  
+    public void say(String msg){  
+        System.out.println(msg);  
+    }  
+    public static void main(String[] args) {  
+        FunctionalInterfaceExample3 fie = new FunctionalInterfaceExample3();  
+        fie.say("Hello there");  
+        fie.doIt();  
+    }  
+}  
+
+OUTPUT :-
+-------
+Hello there
+Do it now
+
