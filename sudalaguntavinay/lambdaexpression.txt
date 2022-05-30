@@ -1,0 +1,20 @@
+public class LambdaRunnable {
+    public static void main(String[] args) {
+        Runnable a1=new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Runnable with lambda expression");
+            }
+
+        };
+        Runnable a2 = () -> {
+            System.out.println("Runnable without Lambda Expression");
+        };
+        new Thread(a1).start();
+        new Thread(a2).start();
+    }
+}
+
+output:-
+Runnable with lambda expression
+Runnable without lambda expression
