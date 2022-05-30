@@ -1,3 +1,4 @@
+1)
 package Zensardemo;
 
 public class LambdaExpressionEx1 {interface Drawable{
@@ -19,7 +20,7 @@ Drawing =45
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+2)
 package Zensardemo;
 
 public class singleparameter {
@@ -47,6 +48,7 @@ Hello ,vishnu
 Hello,vishnuvardhan
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+3)
 package Zensardemo;
 
 interface sayable{
@@ -65,6 +67,7 @@ Output:
 nothing have a blast...
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+4)
 package Zensardemo;
 
 interface Addable{
@@ -91,6 +94,7 @@ Output:
 -100
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+5)
 package Zensardemo;
 
 import java.util.*;  
@@ -116,5 +120,504 @@ nikhil
 sai
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+6)
+package Zensardemo;
+interface Say{  
+    String say(String message);  
+}  
+  
+public class Multiplestatements{  
+    public static void main(String[] args) {  
+      
+        // You can pass multiple statements in lambda expression  
+        Say person = (message)-> {  
+            String str1 = "I would like to say, ";  
+            String str2 = str1 + message;   
+            return str2;  
+        };  
+            System.out.println(person.say("i love indian army"));  
+    }  
+}  
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Output:
+I would like to say, i love indian army
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+7)
+package Zensardemo;
 
-	
+
+
+import java.util.ArrayList;  
+import java.util.Collections;  
+import java.util.List;  
+class Product{  
+    int id;  
+    String name;  
+    float price;  
+    public Product(int id, String name, float price) {  
+        super();  
+        this.id = id;  
+        this.name = name;  
+        this.price = price;  
+    }  
+}
+
+  
+public class Comparator{  
+    public static void main(String[] args) {  
+        List<Product> list=new ArrayList<Product>();  
+          
+        //Adding Products  
+        list.add(new Product(1,"HP Laptop",25000f));  
+        list.add(new Product(3,"Keyboard",300f));  
+        list.add(new Product(2,"Dell Mouse",150f));  
+          
+        System.out.println("Sorting on the basis of name...");  
+  
+        // implementing lambda expression  
+        Collections.sort(list,(p1,p2)->{  
+        return p1.name.compareTo(p2.name);  
+        });  
+        for(Product p:list){  
+            System.out.println(p.id+" "+p.name+" "+p.price);  
+        }  
+  
+    }  
+}  
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Output:
+Sorting on the basis of name...
+2 Dell Mouse 150.0
+1 HP Laptop 25000.0
+3 Keyboard 300.0
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+8)
+package Zensardemo;
+
+public class Creatingthread{  
+    public static void main(String[] args) {  
+      
+        //Thread Example without lambda  
+        Runnable r1=new Runnable(){  
+            public void run(){  
+                System.out.println("Thread1 is running...");  
+            }  
+        };  
+        Thread t1=new Thread(r1);  
+        t1.start();  
+        //Thread Example with lambda  
+        Runnable r2=()->{  
+                System.out.println("Thread2 is running...");  
+        };  
+        Thread t2=new Thread(r2);  
+        t2.start();  
+    }  
+}  
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Output:
+Thread1 is running...
+Thread2 is running...
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+.....................................................................................................................................................................
+9)
+package Zensardemo;
+import java.util.ArrayList;  
+import java.util.List;  
+import java.util.stream.Stream;   
+class Product{  
+    int id;  
+    String name;  
+    float price;  
+    public Product(int id, String name, float price) {  
+        super();  
+        this.id = id;  
+        this.name = name;  
+        this.price = price;  
+    }  
+}  
+
+
+
+public class FilterCollectionData{  
+    public static void main(String[] args) {  
+        List<Product> list=new ArrayList<Product>();  
+        list.add(new Product(1,"Samsung A5",17000f));  
+        list.add(new Product(3,"Iphone 6S",65000f));  
+        list.add(new Product(2,"Sony Xperia",25000f));  
+        list.add(new Product(4,"Nokia Lumia",15000f));  
+        list.add(new Product(5,"Redmi4 ",26000f));  
+        list.add(new Product(6,"Lenevo Vibe",19000f));  
+          
+        // using lambda to filter data  
+        Stream<Product> filtered_data = list.stream().filter(p -> p.price > 20000);  
+          
+        // using lambda to iterate through collection  
+        filtered_data.forEach(  
+                product -> System.out.println(product.name+": "+product.price)  
+        );  
+    }  
+}  
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+output:
+
+Iphone 6S: 65000.0
+Sony Xperia: 25000.0
+Redmi4 : 26000.0
+
+***********************************************************************************************************************************************************************
+***********************************************************************************************************************************************************************
+10)
+package Zensardemo;
+interface sa{  
+    void say(String msg);   // abstract method  
+    // It can contain any number of Object class methods.  
+    int hashCode();  
+    String toString();  
+    boolean equals(Object obj);  
+}  
+public class FunctionalInterfaceExample1 implements sayable{  
+    public void say(String msg){  
+        System.out.println(msg);  
+    }  
+    public static void main(String[] args) {  
+        FunctionalInterfaceExample1 fie = new FunctionalInterfaceExample1();  
+        fie.say("Hello there");  
+    }  
+}  
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Output:
+
+Hello there
+Invalid Functional Interface
+A functional interface can extends another interface only when it does not have any abstract method.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+11)
+package Zensardemo;
+interface Doable{  
+    default void doIt(){  
+        System.out.println("Do it now");  
+    }  
+}    
+interface Sees extends Doable{  
+    void say(String msg);   // abstract method  
+}  
+public class FunctionalInterfaceExample2 implements Sees{  
+    public void say(String msg){  
+        System.out.println(msg);  
+    }  
+    public static void main(String[] args) {  
+        FunctionalInterfaceExample2 fie = new FunctionalInterfaceExample2();  
+        fie.say("Hello there");  
+        fie.doIt();  
+    }  
+}  
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Output:
+
+Hello there
+Do it now
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+12)
+package Zensardemo;
+import java.util.function.Consumer;  
+public class ConsumerEx1 {  
+    static void printMessage(String name){  
+        System.out.println("Hello "+name);  
+    }  
+    static void printValue(int val){  
+        System.out.println(val);  
+    }  
+    public static void main(String[] args) {  
+        // Referring method to String type Consumer interface   
+        Consumer<String> consumer1 = ConsumerEx1::printMessage;  
+        consumer1.accept("John");   // Calling Consumer method  
+        // Referring method to Integer type Consumer interface  
+        Consumer<Integer> consumer2 = ConsumerEx1::printValue;  
+        consumer2.accept(12);   // Calling Consumer method  
+    }  
+}  
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Output:
+
+Hello John
+12
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>	
+13)
+import java.util.ArrayList;  
+import java.util.List;  
+import java.util.function.Consumer;  
+public class ConsumerEx2 {  
+    static void addList(List<Integer> list){  
+        // Return sum of list values  
+        int result = list.stream()  
+                   .mapToInt(Integer::intValue)  
+                   .sum();  
+        System.out.println("Sum of list values: "+result);  
+    }  
+    public static void main(String[] args) {  
+        // Creating a list and adding values  
+                List<Integer> list = new ArrayList<Integer>();  
+                list.add(10);  
+                list.add(20);  
+                list.add(30);  
+                list.add(40);  
+        // Referring method to String type Consumer interface   
+        Consumer<List<Integer>> consumer = ConsumerEx2::addList;  
+        consumer.accept(list);  // Calling Consumer method  
+          
+    }  
+}  
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ output:
+ 
+ Sum of list values: 100
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+14)
+package Zensardemo;
+import javax.swing.JButton;  
+import javax.swing.JFrame;  
+import javax.swing.JTextField;  
+public class EventListener {  
+    public static void main(String[] args) {  
+        JTextField tf=new JTextField();  
+        tf.setBounds(50, 50,150,20);  
+        JButton b=new JButton("click");  
+        b.setBounds(80,100,70,30);  
+          
+        // lambda expression implementing here.  
+        b.addActionListener(e-> {tf.setText("hello swing");});  
+          
+        JFrame f=new JFrame();  
+        f.add(tf);f.add(b);  
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        f.setLayout(null);  
+        f.setSize(300, 200);  
+        f.setVisible(true);  
+  
+    }  
+  
+}
+.....................................................................................................................................................................
+.....................................................................................................................................................................
+15)
+package Zensardemo;
+
+
+import java.util.function.Function;  
+public class FunctionEx1 {  
+    static String show(String message){  
+        return "Hello "+message;  
+    }  
+    public static void main(String[] args) {  
+        // Function interface referring to a method  
+        Function<String, String> fun = FunctionEx1::show;  
+        // Calling Function interface method  
+        System.out.println(fun.apply("Vishnu"));  
+    }  
+}  
+.....................................................................................................................................................................
+Output:
+Hello Vishnu
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+16)
+package Zensardemo;
+import java.util.function.Function;  
+import java.util.List;  
+import java.util.ArrayList;  
+public class FunctionEx2 {  
+    static Integer addList(List<Integer> list){  
+        return list.stream()  
+                   .mapToInt(Integer::intValue)  
+                   .sum();  
+    }  
+    public static void main(String[] args) {  
+        // Creating a list and adding values  
+        List<Integer> list = new ArrayList<Integer>();  
+        list.add(10);  
+        list.add(20);  
+        list.add(30);  
+        list.add(40);  
+        // Referring addList() method  
+        Function<List<Integer>, Integer> fun = FunctionEx2::addList;  
+        // Calling Function interface method  
+        int result = fun.apply(list);  
+        System.out.println("Sum of list values: "+result);  
+    }  
+}  
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Output:
+Sum of list values: 100
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+17)
+package Zensardemo;
+
+import java.util.function.Predicate;  
+public class PredicateEx1 {  
+    public static void main(String[] args) {  
+        Predicate<Integer> pr = a -> (a > 18); // Creating predicate  
+        System.out.println(pr.test(10));    // Calling Predicate method    
+    }  
+}  
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Output:
+false
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+18)
+package Zensardemo;
+import java.util.function.Predicate;  
+public class PredicateEx2 {  
+    static Boolean checkAge(int age){  
+        if(age>17)  
+            return true;  
+        else return false;  
+    }  
+    public static void main(String[] args){  
+        // Using Predicate interface  
+        Predicate<Integer> predicate =  PredicateEx2::checkAge;  
+        // Calling Predicate method  
+        boolean result = predicate.test(25);  
+        System.out.println(result);  
+    }  
+}  
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Output:
+true
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+19)
+package Zensardemo;
+interface Addable{  
+    int add(int a,int b);  
+}  
+  
+public class Keyword {  
+    public static void main(String[] args) {  
+          
+        // Lambda expression without return keyword.  
+        Addable ad1=(a,b)->(a+b);  
+        System.out.println(ad1.add(10,20));  
+          
+        // Lambda expression with return keyword.    
+        Addable ad2=(int a,int b)->{  
+                            return (a+b);   
+                            };  
+        System.out.println(ad2.add(100,200));  
+    }  
+} 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+output:
+
+30
+300
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+20)
+package Zensardemo;
+interface Sayless{  
+    void say();  
+}  
+public class StaticMethodEx{  
+    public static void saySomething(){  
+        System.out.println("Hello, this is static method.");  
+    }  
+    public static void main(String[] args) {  
+        // Referring static method  
+        Sayless sayless = StaticMethodEx::saySomething;  
+        // Calling interface method  
+        sayless.say();  
+    }  
+}  
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Output:
+Hello, this is static method.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+21)
+package Zensardemo;
+interface Sayable1{  
+    void say();  
+}  
+public class InstanceMethodReference {  
+    public void saySomething(){  
+        System.out.println("Hello, this is non-static method.");  
+    }  
+    public static void main(String[] args) {  
+        InstanceMethodReference methodReference = new InstanceMethodReference(); // Creating object  
+        // Referring non-static method using reference  
+            Sayable1 sayable1 = methodReference::saySomething;  
+        // Calling interface method  
+            sayable1.say();  
+            // Referring non-static method using anonymous object  
+            Sayable1 sayable2 = new InstanceMethodReference()::saySomething; // You can use anonymous object also  
+            // Calling interface method  
+            sayable2.say();  
+    }  
+}  
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+ 
+ Output:
+          Hello, this is non-static method.
+
+          Hello, this is non-static method. 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+22)
+package Zensardemo;
+public class InstanceMethodReference2 {  
+    public void printnMsg(){  
+        System.out.println("Hello, this is instance method");  
+    }  
+    public static void main(String[] args) {  
+    Thread t2=new Thread(new InstanceMethodReference2()::printnMsg);  
+        t2.start();       
+    }  
+}  
+
+ 
+ 
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Output:
+  
+         Hello, this is instance method
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+23)
+package Zensardemo;
+import java.util.function.BiFunction;  
+class Arithmetic{  
+public int add(int a, int b){  
+return a+b;  
+}  
+}  
+public class Instancemethodreference3 {  
+public static void main(String[] args) {  
+BiFunction<Integer, Integer, Integer>adder = new Arithmetic()::add;  
+int result = adder.apply(10, 20);  
+System.out.println(result);  
+}  
+}  
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Output:
+30
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+

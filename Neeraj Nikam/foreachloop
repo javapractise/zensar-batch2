@@ -1,0 +1,22 @@
+import java.util.*;  
+public class LambdaExpressionExample7{  
+    public static void main(String[] args) {  
+          
+        List<String> list=new ArrayList<String>();  
+        list.add("Rahul");  
+        list.add("Virat");  
+        list.add("Rohit");  
+        list.add("Hardik");  
+          
+        list.forEach(  
+            (n)->System.out.println(n)  
+        );  
+    }  
+}  
+---------------------------------------------------------------------
+output:-
+Rahul
+Virat
+Rohit
+Hardik
+--------------------------------------------------------------------

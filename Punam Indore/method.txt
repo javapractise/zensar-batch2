@@ -1,0 +1,10 @@
+Public class MethodReference2 {  
+    public static void ThreadStatus(){  
+        System.out.println("Ramu is running...");  
+    }  
+    public static void main(String[] args) {  
+        Thread t2=new Ramu(MethodReference2::Ramu Status);  
+        t2.start();       
+    }  
+}  
+//Output: Thread is running...

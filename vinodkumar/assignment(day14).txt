@@ -1,0 +1,563 @@
+package Day14;
+@FunctionalInterface
+	interface Drawable{
+	public void draw();
+	}
+	public class Lambda {
+	public static void main(String[] args){
+	int width=10;
+
+	//with lambda
+	Drawable d2=() ->{
+		 System.out.println("Drawing "+width); 
+	};
+	d2.draw();
+	}
+	}
+
+
+output:
+Drawing 10
+
+
+--------------------------------------------------------------------
+package Day14;
+
+
+	interface Sayable{  
+	    public String say();  
+	}  
+	public class LambdaNoParameter
+	{  
+	public static void main(String[] args)
+	{  
+	    Sayable s=()->{  
+	        return "I have nothing to say.";  
+	    };  
+	    System.out.println(s.say());  
+	}  
+	}  
+
+output:
+I have nothing to say.
+
+---------------------------------------------------------
+package Day14;
+
+interface Sayable1
+{  
+    public String say(String name);  
+}  
+  
+public class LambdaOneParameter
+{  
+    public static void main(String[] args)
+    {  
+      
+        // Lambda expression with single parameter.  
+        Sayable1 s1=(name)->{  
+            return "Hello, "+name;  
+        };  
+        System.out.println(s1.say("Vinod"));  
+          
+    }  
+}  
+
+
+output:
+
+Hello, Vinod
+
+-------------------------------------------
+
+package Day14;
+
+interface Addable{  
+    int add(int a,int b);  
+}  
+  
+public class LambdaTwoParameters 
+{ 
+    public static void main(String[] args) {  
+          
+        // Multiple parameters in lambda expression  
+        Addable ad1=(a,b)->(a+b);  
+        System.out.println(ad1.add(10,20));  
+          
+        // Multiple parameters with data type in lambda expression  
+        Addable ad2=(int a,int b)->(a*b);  
+        System.out.println(ad2.add(100,200));
+        
+     // Multiple parameters with data type in lambda expression  
+        Addable ad3=(int a,int b)->(a-b);  
+        System.out.println(ad3.add(1000,200));
+    }  
+}  
+
+
+output:
+
+30
+20000
+800
+
+
+---------------------------------------------------------------
+
+package Day14;
+
+
+	interface Addable1
+	{  
+	    int add(int a,int b);  
+	}  
+	  
+	public class LambdaWandWo { 
+	    public static void main(String[] args) 
+	    {  
+	          
+	        // Lambda expression without return keyword.  
+	        Addable1 ad1=(a,b)->(a+b);  
+	        System.out.println(ad1.add(10,20));  
+	          
+	        // Lambda expression with return keyword.    
+	        Addable1 ad2=(int a,int b)->
+	        {  
+	                     return (a+b);   
+	           };  
+	        System.out.println(ad2.add(100,200));  
+	    }  
+	}  
+
+
+
+output:
+
+30
+300
+
+-----------------------------------------------------
+package Day14;
+import java.util.*;  
+public class LambdaForloop
+{ 
+    public static void main(String[] args)
+    {  
+          
+        List<String> list=new ArrayList<String>();  
+        list.add("ankit");  
+        list.add("mayank");  
+        list.add("irfan");  
+        list.add("jai");  
+          
+        list.forEach((i)->System.out.println(i));  
+    }  
+}  
+
+
+output:
+
+ankit
+mayank
+irfan
+jai
+
+
+------------------------------------------------------------------
+
+package Day14;
+
+@FunctionalInterface  
+interface Sayable4{  
+    String say(String message);  
+}  
+  
+public class Multistatements { 
+    public static void main(String[] args) {  
+      
+        // You can pass multiple statements in lambda expression  
+        Sayable4 person = (message)-> {  
+            String str1 = "I would like to say, ";  
+            String str2 = str1 + message;   
+            return str2;  
+        };  
+            System.out.println(person.say("time is precious."));  
+    }  
+}  
+
+
+ouput:
+
+I would like to say, time is precious.
+
+
+--------------------------------------------------------------------------
+package Day14;
+
+public class LambdaThread {
+	  
+	    public static void main(String[] args) {  
+	      
+	        //Thread Example without lambda  
+	        Runnable r1=new Runnable()
+	        {  
+	            public void run()
+	            {  
+	                System.out.println("Thread1 is running...");  
+	            }  
+	        };
+	        
+	        Thread t1=new Thread(r1);  
+	        t1.start();
+	        
+	        //Thread Example with lambda  
+	        Runnable r2=()->{  
+	                System.out.println("Thread2 is running...");  
+	        };  
+	        Thread t2=new Thread(r2);  
+	        t2.start();  
+	    }  
+	} 
+
+
+output:
+
+Thread1 is running...
+Thread2 is running...
+
+
+-------------------------------------------------------------------
+
+package Day14;
+
+
+	import java.util.ArrayList;  
+	import java.util.List;  
+	import java.util.stream.Stream;   
+	class Product1{  
+	    int id;  
+	    String name;  
+	    float price;  
+	    public Product1(int id, String name, float price) {  
+	        super();  
+	        this.id = id;  
+	        this.name = name;  
+	        this.price = price;  
+	    }  
+	}  
+	public class Collectiondata { 
+	    public static void main(String[] args) {  
+	        List<Product> list=new ArrayList<Product>();  
+	        list.add(new Product(1,"Samsung A5",17000f));  
+	        list.add(new Product(3,"Iphone 6S",65000f));  
+	        list.add(new Product(2,"Sony Xperia",25000f));  
+	        list.add(new Product(4,"Nokia Lumia",15000f));  
+	        list.add(new Product(5,"Redmi4 ",26000f));  
+	        list.add(new Product(6,"Lenevo Vibe",19000f));  
+	          
+	        // using lambda to filter data  
+	        Stream<Product> filtered_data = list.stream().filter(p -> p.price > 10000);  
+	          
+	        // using lambda to iterate through collection  
+	        filtered_data.forEach(  
+	                product -> System.out.println(product.name+": "+product.price)  
+	        );  
+	    }  
+	}  
+
+
+
+output:
+
+Samsung A5: 17000.0
+Iphone 6S: 65000.0
+Sony Xperia: 25000.0
+Nokia Lumia: 15000.0
+Redmi4 : 26000.0
+Lenevo Vibe: 19000.0
+
+
+------------------------------------------------------------------------
+
+package Day14;
+
+import java.util.ArrayList;  
+import java.util.Collections;  
+import java.util.List;  
+
+class Product
+{  
+	    int id;  
+	    String name;  
+	    float price;  
+	    public Product(int id, String name, float price) 
+	    {  
+	        //super();  
+	        this.id = id;  
+	        this.name = name;  
+	        this.price = price;  
+	    }  
+}  
+	public class Comparator 
+	{ 
+	    public static void main(String[] args)
+	    {  
+	        List<Product> list=new ArrayList<Product>();  
+	          
+	        //Adding Products  
+	        list.add(new Product(1,"HP Laptop",25000f));  
+	        list.add(new Product(3,"Keyboard",300f));  
+	        list.add(new Product(2,"Dell Mouse",150f));  
+	          
+	        System.out.println("Sorting on the basis of name...");  
+	  
+	        // implementing lambda expression  
+	        Collections.sort(list,(p1,p2)->{  
+	        return p1.name.compareTo(p2.name);  
+	        });  
+	        for(Product p:list){  
+	            System.out.println(p.id+" "+p.name+" "+p.price);  
+	        }  
+	  
+	    }  
+	}  
+
+
+
+output:
+Sorting on the basis of name...
+2 Dell Mouse 150.0
+1 HP Laptop 25000.0
+3 Keyboard 300.0
+
+
+-----------------------------------------------------------------
+
+package Day14;
+
+
+	import javax.swing.JButton;  
+	import javax.swing.JFrame;  
+	import javax.swing.JTextField;  
+	public class EventListner
+	{  
+	    public static void main(String[] args)
+	    {  
+	        JTextField tf=new JTextField();  
+	        tf.setBounds(50, 50,150,20);  
+	        JButton b=new JButton("click");  
+	        b.setBounds(90,100,70,30);  
+	          
+	        // lambda expression implementing here.  
+	        b.addActionListener(e-> {tf.setText("hello swing");});  
+	          
+	        JFrame f=new JFrame();  
+	        f.add(tf);f.add(b);  
+	        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+	        f.setLayout(null);  
+	        f.setSize(300, 200);  
+	        f.setVisible(true);  
+	  
+	    }  
+	  
+	}  
+
+
+
+output:
+hello 
+
+hello swing
+
+
+------------------------------------------------------------------------
+
+package Day14.FI;
+
+@FunctionalInterface  
+interface sayable{  
+    void say(String msg);  
+}  
+public class FI implements sayable{  
+    public void say(String msg){  
+        System.out.println(msg);  
+    }  
+    public static void main(String[] args) {  
+        FI fie = new FI();  
+        fie.say("Hello there");  
+    }  
+}  
+
+
+output:
+Hello there
+
+-----------------------------------------------------------------
+
+package Day14.FI;
+
+@FunctionalInterface  
+interface sayable1{  
+    void say(String msg);   // abstract method  
+    // It can contain any number of Object class methods.  
+    int hashCode();  
+    String toString();  
+    boolean equals(Object obj);  
+}  
+public class FIObjectClass  implements sayable{  
+    public void say(String msg){  
+        System.out.println(msg);  
+    }  
+    public static void main(String[] args) {  
+    	FIObjectClass  fie = new FIObjectClass();  
+        fie.say("Hello there");  
+    }  
+}  
+
+output:
+
+Hello there
+
+
+-------------------------------------------------------
+package Day14.FI;
+
+public class InvalidFI {
+	interface sayable{  
+	    void say(String msg);   // abstract method  
+	}  
+	@FunctionalInterface  
+	interface Doable extends sayable{  
+	    // Invalid '@FunctionalInterface' annotation; Doable is not a functional interface  
+	    void doIt();  
+	} 
+}
+
+
+output:
+compile time 
+
+------------------------------------------------------
+package Day14.FI;
+import java.util.function.Consumer;
+public class consumer_interface {
+	  
+	  
+	    static void printMessage(String name){  
+	        System.out.println("Hello "+name);  
+	    }  
+	    static void printValue(int val){  
+	        System.out.println(val);  
+	    }  
+	    public static void main(String[] args) {  
+	        // Referring method to String type Consumer interface   
+	        Consumer<String> consumer1 = consumer_interface::printMessage;  
+	        consumer1.accept("saichand");   // Calling Consumer method  
+	        // Referring method to Integer type Consumer interface  
+	        Consumer<Integer> consumer2 = consumer_interface::printValue;  
+	        consumer2.accept(12);   // Calling Consumer method  
+	    }  
+}
+
+output:
+
+Hello hi
+10
+
+
+-----------------------------------------------------------------
+package Day14;
+
+
+interface Sayable9{  
+    void say();  
+}  
+ public class Static {
+  
+    public static void saySomething(){  
+        System.out.println("Hello, this is static method.");  
+    }  
+    public static void main(String[] args) {  
+        // Referring static method  
+        Sayable9 sayable = Static::saySomething;  
+        // Calling interface method  
+        sayable.say();  
+    }  
+}  
+
+output:
+
+Hello, this is static method.
+
+--------------------------------------------------------------
+package Day14;
+
+
+interface Sayable5{  
+    void say();  
+}  
+public class ReferenceIM {  
+    public void saySomething(){  
+        System.out.println("Hello, this is non-static method.");  
+    }  
+    public static void main(String[] args) {  
+    	ReferenceIM methodReference = new ReferenceIM(); // Creating object  
+        // Referring non-static method using reference  
+            Sayable5 sayable = methodReference::saySomething;  
+        // Calling interface method  
+            sayable.say();  
+            // Referring non-static method using anonymous object  
+            Sayable5 sayable2 = new ReferenceIM()::saySomething; // You can use anonymous object also  
+            // Calling interface method  
+            sayable2.say();  
+    }  
+}
+
+
+output:
+
+Hello, this is non-static method.
+Hello, this is non-static method.
+
+
+-------------------------------------------------------------------------------------------
+package Day14;
+
+
+import java.util.*;  
+import java.util.stream.Collectors;  
+class Product1{  
+    int id;  
+    String name;  
+    float price;  
+    public Product1(int id, String name, float price) {  
+        this.id = id;  
+        this.name = name;  
+        this.price = price;  
+    }  
+}  
+public class Streams { 
+    public static void main(String[] args) {  
+        List<Product> productsList = new ArrayList<Product>();  
+        //Adding Products  
+        productsList.add(new Product(1,"HP Laptop",25000f));  
+        productsList.add(new Product(2,"Dell Laptop",30000f));  
+        productsList.add(new Product(3,"Lenevo Laptop",28000f));  
+        productsList.add(new Product(4,"Sony Laptop",28000f));  
+        productsList.add(new Product(5,"Apple Laptop",90000f));  
+        List<Float> productPriceList2 =productsList.stream()  
+                                     .filter(p -> p.price > 10000)// filtering data  
+                                     .map(p->p.price)        // fetching price  
+                                     .collect(Collectors.toList()); // collecting as list  
+        System.out.println(productPriceList2);  
+    }  
+}  
+
+output:
+
+[25000.0, 30000.0, 28000.0, 28000.0, 90000.0]
+
+
+----------------------------------------------------------------------------
+
+
