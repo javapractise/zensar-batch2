@@ -1,0 +1,20 @@
+public class LambdaExpressionExample9{  
+    public static void main(String[] args) {  
+  
+        Runnable r1=new Runnable(){  
+            public void run(){  
+                System.out.println("Your hardwork depends upon...");  
+            }  
+        };  
+        Thread t1=new Thread(r1);  
+        t1.start();  
+        Runnable r2=()->{  
+                System.out.println("What's your goal...");  
+        };  
+        Thread t2=new Thread(r2);  
+        t2.start();  
+    }  
+}  
+
+output::Your hardwork depends upon...
+What's your goal...
