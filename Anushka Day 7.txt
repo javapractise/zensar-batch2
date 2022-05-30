@@ -1,0 +1,24 @@
+import java.util.*;
+class Main {
+ static void splitString(String text1, int n) {
+  int text_size = text1.length();
+  int part_size;
+  if (text_size % n != 0) {
+   System.out.println("The size of the given string is not divisible by " + n);
+   return;
+  } else {
+   System.out.println("The given string is: " + text1);
+   System.out.println("The string divided into " + n + " parts and they are: ");
+   part_size = text_size / n;
+   for (int i = 0; i < text_size; i++) {
+    if (i % part_size == 0) System.out.println();
+    System.out.print(text1.charAt(i));
+   }
+  }
+ }
+ public static void main(String[] args) {
+  String text1 = "idfiuhsehiiosdfohdue";
+  int split_number = 5;
+  splitString(text1, split_number);
+ }
+}
