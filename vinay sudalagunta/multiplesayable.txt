@@ -1,0 +1,18 @@
+interface Sayable{  
+    String say(String message);  
+}  
+  
+public class LambdaExpressionExample8{  
+    public static void main(String[] args) {  
+        Sayable person = (message)-> {  
+            String str1 = "my name is vinay, ";  
+            String str2 = str1 + message;   
+            return str2;  
+        };  
+            System.out.println(person.say("money is precious."));  
+    }  
+}  
+
+output:-
+my name is vinay
+money is precious
