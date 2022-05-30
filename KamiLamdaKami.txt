@@ -1,0 +1,23 @@
+package M30;
+
+interface Fruit{
+	public String NameOfFruit();
+}
+
+public class LambdaKami{
+
+	public static void main(String[] args) {
+		
+		Fruit f=()->{
+			return "Apple";
+		};
+		
+		System.out.println(f.NameOfFruit());
+	}
+	
+	
+}
+
+/*o/p-->
+Apple
+*/
