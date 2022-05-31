@@ -17,7 +17,7 @@ public class ParallelStreamsExample1{
 
 
 		//creating a file object
-		File FileName = new File("C:\\Users\\vk67972\\Desktop\\file1.txt");
+		File FileName = new File("C:\\Users\\vk67213\\Desktop\\file1.txt");
 
 
 
