@@ -1,0 +1,14 @@
+import java.time.LocalDate;
+public class LeapYearExample{
+	public static void main(String[] args){
+	LocalDate date1= LocalDate.of(2021,11,28);
+	System.out.println(date1.isLeapYear());
+	LocalDate date2=LocalDate.of(2018,9,10);
+	System.out.println(date2.isLeapYear());
+	}
+}
+
+output:-
+false
+false
+
