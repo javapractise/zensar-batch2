@@ -1,0 +1,139 @@
+DATE FORMAT :-
+==============
+import java.text.DateFormat;  
+import java.util.Date;  
+public class DateFormatExample1 
+{  
+    public static void main(String[] args) 
+    {  
+        Date currentDate = new Date();  
+        System.out.println("Current Date: "+currentDate);  
+        String dateToStr = DateFormat.getInstance().format(currentDate);  
+        System.out.println("Date Format using getInstance(): "+dateToStr);  
+    }  
+}  
+OUTPUT :-
+---------
+Current Date: Tue May 31 07:53:49 EDT 2022
+Date Format using getInstance(): 5/31/22, 7:53 AM
+
+GET TIME INSTANCE :-
+====================
+
+import java.util.Date;  
+import java.util.Locale;  
+import java.text.DateFormat;  
+  
+  
+  
+public class GetTimeInstanceExample  
+{  
+public static void main(String args[]) throws Exception   
+{  
+   
+Locale lcl = Locale.FRENCH;  
+  
+Date d = new Date();  
+  
+DateFormat dFormat = DateFormat.getTimeInstance(DateFormat.SHORT, lcl);  
+  
+String str = dFormat.format(d);  
+System.out.println(str);  
+}  
+}  
+
+OUTPUT :-
+----------
+07:58
+
+SIMPLE DATE FORMAT:-
+===================
+import java.text.ParseException;  
+import java.text.SimpleDateFormat;  
+import java.util.Date;  
+public class SimpleDateFormatExample3
+{  
+public static void main(String[] args) 
+{  
+    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
+    try 
+    {  
+        Date date = formatter.parse("31/05/2022");  
+        System.out.println("Given Date is: "+date);  
+    } catch (ParseException e)
+    {e.printStackTrace();}  
+}  
+}  
+
+OUTPUT :-
+--------
+Given Date is: Tue May 31 00:00:00 EDT 2022
+
+JAVA TIME ZONE :-
+=================
+import java.util.*;
+public class SetIDExample
+{
+    public static void main(String[] args)
+    {
+        TimeZone tz = TimeZone.getDefault();
+        
+        tz.setID("GMT + 09:01");
+        
+        System.out.println("The Time zone ID is: "+ tz.getID());
+    }
+}
+
+OUTPUT :-
+---------
+The Time zone ID is: GMT + 09:01
+
+JAVA TIMEZONE getDefault():-
+============================
+import java.util.*;
+public class GetDefaultTej
+{
+    public static void main(String[] args)
+    {
+        TimeZone zone = TimeZone.getDefault();
+        System.out.println("The ID of the default TimeZone is:" + zone.getID());
+    }
+}
+OUTPUT :-
+=========
+The ID of the default TimeZone is:US/Eastern
+
+OFFSET TIME ZONE :-
+===================
+import java.util.*;  
+public class TimeZoneTraining
+{  
+   public static void main( String args[] )
+   {      
+   TimeZone zone = TimeZone.getTimeZone("Asia/Kolkata");  
+       
+   System.out.println("The Offset value of TimeZone: " +   zone.getOffset(Calendar.ZONE_OFFSET));  
+   }      
+}  
+
+OUTPUT:-
+---------
+The Offset value of TimeZone: 19800000
+
+ii)--------->
+
+import java.util.*;  
+public class TimeZoneCoach
+{  
+   public static void main( String args[] )
+   {  
+   TimeZone zone = TimeZone.getDefault();  
+   String name = zone.getDisplayName();         
+   System.out.println("Display name for default time zone: "+ name);  
+   }      
+}  
+
+OUTPUT :-
+-----------
+
+Display name for default time zone: Eastern Standard Time
