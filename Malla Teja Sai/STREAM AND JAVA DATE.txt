@@ -1,0 +1,450 @@
+PARALLEL STREAMS :-
+==================
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.util.stream.Stream;
+
+public class Tej
+{
+    public static void main(String[] args) throws IOException
+    {
+        File fileName = new File("M:\\Documents\\Textfile.txt");
+        
+        Stream<String> text = Files.lines(fileName.toPath());
+        
+        text.parallel().forEach(System.out::println);
+        
+        text.close();
+    }
+}
+
+2.
+
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.util.*;
+
+public class Tej {
+
+	public static void main(String[] args)
+		throws IOException
+	{
+
+		File fileName
+			= new File("M:\\Documents\\List_Textfile.txt");
+
+		List<String> text
+			= Files.readAllLines(fileName.toPath());
+
+		text.parallelStream().forEach(System.out::println);
+	}
+}
+
+OUTPUT :-
+---------
+9
+4
+4
+7
+9
+13
+
+LOCAL DATE-TIME :-
+==================
+
+import java.time.LocalDate;
+public class LocalDateTeja
+{
+    public static void main(String[] args)
+    {
+        LocalDate date = LocalDate.now();
+        
+        LocalDate yesterday = date.minusDays(1);
+        
+        LocalDate tomorrow = yesterday.plusDays(2);
+        
+        System.out.println("Today date: "+date);
+        
+        System.out.println("Yesterday date: "+yesterday);
+        
+        System.out.println("Tomorrow date: "+tomorrow);
+    }
+}
+
+OUTPUT :-
+=========
+
+Today date: 2022-05-31
+Yesterday date: 2022-05-30
+Tomorrow date: 2022-06-01
+
+LEAP YEAR METHOD:-
+===================
+
+import java.time.LocalDate;
+public class LocalDateTeja
+{
+    public static void main(String[] args)
+    {
+        LocalDate date1 = LocalDate.of(2020,2,24);
+        
+        System.out.println(date1.isLeapYear());
+        
+        LocalDate date2 = LocalDate.of(2021,5,8);
+        
+        System.out.println(date2.isLeapYear());
+        
+    }
+}
+
+OUTPUT :-
+---------
+true
+false
+
+Program to demonstrate atTime() method of LocalDate class:-
+===========================================================
+
+import java.time.*;  
+public class LocalDateTeja
+{  
+  public static void main(String[] args)
+  {  
+    LocalDate date = LocalDate.of(2022, 5, 31 ); 
+      
+    LocalDateTime datetime = date.atTime( 3,24,9); 
+      
+    System.out.println(datetime);   
+  }  
+}  
+OUTPUT :-
+==========
+2022-05-31T03:24:09
+
+format()method of LocalDate class:-
+===================================
+
+import java.time.LocalDate;  
+import java.time.format.DateTimeFormatter;  
+public class LocalDateTej 
+{  
+    public static void main(String ar[])  
+    {  
+
+        LocalDate d1 = LocalDate.now();  
+        String d1Str = d1.format(DateTimeFormatter.ISO_DATE);  
+        System.out.println("Date1 in string :  " + d1Str);  
+          
+        LocalDate d2 = LocalDate.of(2003, 05, 01);  
+        String d2Str = d2.format(DateTimeFormatter.ISO_DATE);  
+        System.out.println("Date2 in string :  " + d2Str);  
+    
+        LocalDate d3 = LocalDate.of(2015, 10, 21);  
+        String d3Str = d3.format(DateTimeFormatter.ISO_DATE);  
+        System.out.println("Date3 in string :  " + d3Str);  
+    }  
+}  
+
+OUTPUT :-
+---------
+Date1 in string :  2022-05-31
+Date2 in string :  2003-05-01
+Date3 in string :  2015-10-21
+
+LOCAL TIME :-
+============
+
+
+import java.time.LocalTime;
+public class localTimeExampleTej
+{
+    public static void main(String[] args)
+    {
+        LocalTime time = LocalTime.now();
+        
+        System.out.println(time);
+    }
+}
+
+OUTPUT :-
+---------
+
+06:02:07.185886
+
+LOCAL TIME.of():-
+=================
+
+
+import java.time.LocalTime;
+public class localTimeExampleTej
+{
+    public static void main(String[] args)
+    {
+        LocalTime time = LocalTime.of(15,35,47);
+        
+        System.out.println(time);
+    }
+}
+
+OUTPUT :-
+--------
+15:35:47
+
+Java LocalTime Example: minusHours() and minusMinutes():-
+=========================================================
+
+
+import java.time.LocalTime;
+public class localTimeExampleTej
+{
+    public static void main(String[] args)
+    {
+       LocalTime time1 = LocalTime.of(18,39,50);
+        System.out.println(time1);
+        
+        LocalTime time2 = time1.minusHours(3);
+        
+        LocalTime time3 = time2.minusMinutes(12);
+        
+        System.out.println(time3);
+    }
+}
+
+OUTPUT :-
+---------
+18:39:50
+15:27:50
+
+Java LocalTime Example: plusHours() and plusMinutes():-
+========================================================
+
+
+import java.time.LocalTime;
+public class localTimeExampleTej
+{
+    public static void main(String[] args)
+    {
+       LocalTime time1 = LocalTime.of(12,20,50);
+        System.out.println(time1);
+        
+        LocalTime time2 = time1.plusHours(3);
+        
+        LocalTime time3 = time2.plusMinutes(22);
+        
+        System.out.println(time3);
+    }
+}
+
+OUTPUT :-
+---------
+12:20:50
+15:42:50
+
+Java LocalTime Example :-
+=========================
+import java.time.*;  
+import java.time.temporal.ChronoUnit;  
+public class LocalTimeExample5 
+{  
+  public static void main(String... args)
+ {  
+    ZoneId zone1 = ZoneId.of("Asia/Kolkata");  
+    ZoneId zone2 = ZoneId.of("Asia/Tokyo");  
+    LocalTime time1 = LocalTime.now(zone1);  
+    System.out.println("India Time Zone: "+time1);  
+    LocalTime time2 = LocalTime.now(zone2);  
+    System.out.println("England Time Zone: "+time2);  
+    long hours = ChronoUnit.HOURS.between(time1, time2);  
+    System.out.println("Hours between two Time Zone: "+hours);  
+    long minutes = ChronoUnit.MINUTES.between(time1, time2);  
+    System.out.println("Minutes between two time zone: "+minutes);  
+  }  
+}  
+
+OUTPUT :-
+---------
+India Time Zone: 15:56:20.708
+England Time Zone: 19:26:20.709
+Hours between two Time Zone: 3
+Minutes between two time zone: 210
+
+Java LocalDateTime Example :-
+=============================
+import java.time.LocalDateTime;  
+
+import java.time.format.DateTimeFormatter;  
+
+public class LocalDateTimeTraining
+    
+{  
+    public static void main(String[] args)
+    {  
+        LocalDateTime now = LocalDateTime.now();  
+        
+        System.out.println("Before Formatting: " + now); 
+        
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");  
+        
+        String formatDateTime = now.format(format);  
+        
+        System.out.println("After Formatting: " + formatDateTime);  
+    }  
+}  
+
+OUTPUT :-
+--------
+Before Formatting: 2022-05-31T06:29:45.634089
+After Formatting: 31-05-2022 06:29:45
+
+now() :-
+========
+import java.time.LocalDateTime;  
+
+import java.time.format.DateTimeFormatter;  
+
+public class LocalDateTimeTraining
+    
+{  
+    public static void main(String[] args)
+    {  
+        LocalDateTime datetime1 = LocalDateTime.now();  
+        
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");  
+        
+        String formatDateTime = datetime1.format(format);  
+        
+        System.out.println(formatDateTime);  
+    }  
+}  
+
+OUTPUT :-
+---------
+31-05-2022 16:03:49
+
+Java LocalDateTime Example: get() :-
+====================================
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoField;
+public class LocalDateTimeFinding
+{
+    public static void main(String[] args)
+    {
+        LocalDateTime a = LocalDateTime.of(2022,5,31,16,9);
+        
+        System.out.println(a.get(ChronoField.DAY_OF_WEEK));
+        
+        System.out.println(a.get(ChronoField.DAY_OF_YEAR));
+        
+        System.out.println(a.get(ChronoField.DAY_OF_MONTH));
+        
+         System.out.println(a.get(ChronoField.HOUR_OF_DAY));
+        
+         System.out.println(a.get(ChronoField.MINUTE_OF_DAY));
+        
+    }
+}
+OUTPUT:-
+--------
+2
+151
+31
+16
+969
+
+Java LocalDateTime Example: minusDays():-
+=========================================
+
+import java.time.LocalDateTime;  
+import java.time.format.DateTimeFormatter;  
+public class LocalDateTimeExample4 
+{  
+public static void main(String[] args)
+{  
+  LocalDateTime datetime1 = LocalDateTime.of(2022, 10, 31, 16, 18); 
+    
+  LocalDateTime datetime2 = datetime1.minusDays(100); 
+    
+  System.out.println("Before Formatting: " + datetime2);
+    
+  DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm"); 
+    
+  String formatDateTime = datetime2.format(format);   
+    
+  System.out.println("After Formatting: " + formatDateTime );  
+}  
+}  
+
+OUTPUT :-
+----------
+
+Before Formatting: 2022-07-23T16:18
+After Formatting: 23-07-2022 16:18
+
+Java LocalDateTime Example: plusDays() :-
+=========================================
+
+import java.time.LocalDateTime;  
+import java.time.format.DateTimeFormatter;  
+public class LocalDateTimeExample4 
+{  
+public static void main(String[] args)
+{  
+  LocalDateTime datetime1 = LocalDateTime.of(2022, 04, 30, 11, 28); 
+    
+  LocalDateTime datetime2 = datetime1.plusDays(96); 
+    
+  System.out.println("Before Formatting: " + datetime2);
+    
+  DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm"); 
+    
+  String formatDateTime = datetime2.format(format);   
+    
+  System.out.println("After Formatting: " + formatDateTime );  
+}  
+}  
+
+OUTPUT ;-
+---------
+
+Before Formatting: 2022-08-04T11:28
+After Formatting: 04-08-2022 11:28
+
+TEMPORAL ADJUSTERS :-
+=====================
+import java.time.LocalDate;
+import java.time.temporal.TemporalAdjusters;
+import java.time.DayOfWeek;
+
+public class Java8Tester {
+   public static void main(String args[]) {
+      Java8Tester java8tester = new Java8Tester();
+      java8tester.testAdjusters(); 	  
+   }
+
+   public void testAdjusters() {
+  
+      LocalDate date1 = LocalDate.now();
+      System.out.println("Current date: " + date1);	  
+
+      LocalDate nextTuesday = date1.with(TemporalAdjusters.next(DayOfWeek.TUESDAY));
+      System.out.println("Next Tuesday on : " + nextTuesday);
+       
+      LocalDate firstInYear = LocalDate.of(date1.getYear(),date1.getMonth(), 1);
+
+      LocalDate secondSaturday = firstInYear.with(
+         TemporalAdjusters.nextOrSame(DayOfWeek.SATURDAY)).with(
+         TemporalAdjusters.next(DayOfWeek.SATURDAY));
+      System.out.println("Second saturday on : " + secondSaturday);	   
+   }	
+}
+
+OUTPUT:-
+--------
+
+Current date: 2022-05-31
+Next Tuesday on : 2022-06-07
+Second saturday on : 2022-05-14
+
