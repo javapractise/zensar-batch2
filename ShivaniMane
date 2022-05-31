@@ -1,0 +1,158 @@
+##Assignment Day-14
+
+
+
+package ZensarTraining;
+
+
+
+public class LambdaExpressionEx1 {interface Drawable{
+public void draw();
+}
+public static void main(String[] args){
+int width=45;
+
+
+
+//with lambda
+Drawable d2=()->{
+System.out.println("Drawing ="+width);
+};
+d2.draw();
+}
+}
+
+Output:
+Drawing =45
+
+
+
+##
+package ZensarTraining;
+
+
+
+public class singleparameter {
+interface Says{
+public String say(String name);
+}
+public static void main(String[] args){
+
+
+
+
+//Lambda expression with single parameter.
+Says s1=(name)->{
+return "Hello ,"+name;
+};
+System.out.println(s1.say("Jayshri"));
+//you can omit function parentheses
+Says s2=(name)->{
+return "Hello,"+name;
+};
+System.out.println(s2.say("Jayshree"));
+}
+}
+
+
+
+Output:
+Hello ,Jayshri
+Hello,Jayshree
+
+
+
+##
+package ZensarTraining;
+
+
+
+interface sayable{
+public String say();
+}
+public class NoParameter{
+public static void main(String[] args){
+sayable s=()->{
+return "nothing have a blast...";
+};
+System.out.println(s.say());
+}
+}
+
+
+
+Output:
+nothing have a blast...
+
+
+
+
+
+##
+package ZensarTraining;
+
+
+
+interface Addable{
+int add(int a,int b);
+}
+
+
+
+public class MultipleParameter{
+public static void main(String[] args){
+
+
+
+//multiple paramters in lambda expression
+
+
+
+Addable ad1=(a,b)->(a*b);
+System.out.println(ad1.add(10,20));
+
+
+
+//multiple parameters with data type inlambda expression
+Addable ad2=(int a,int b)->(a-b);
+System.out.println(ad2.add(100,200));
+}
+}
+
+
+
+Output:
+200
+-100
+
+
+
+
+###
+package ZensarTraining;
+
+
+
+import java.util.*;
+public class Foreachloop{
+public static void main(String[] args) {
+
+List<String> list=new ArrayList<String>();
+list.add("Jayshri");
+list.add("vani");
+list.add("shivani");
+list.add("Jayshree");
+
+list.forEach(
+(n)->System.out.println(n)
+);
+}
+}
+
+
+
+Output:
+Jayshri
+vani
+shivani
+Jayshree
