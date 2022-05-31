@@ -1,0 +1,561 @@
+///////////////////////// Assignment 15///////////////////////
+
+1.Numeric stream
+
+
+
+import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.OptionalDouble;
+class Employee {
+ private int id;
+ private String firstName;
+ private String lastName;
+ private int age;
+ private String city;
+ private double salary;
+
+ public Employee(int id, String firstName, String lastName, int age,
+   String city, double salary) {
+  super();
+  this.id = id;
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.age = age;
+  this.city = city;
+  this.salary = salary;
+ }
+
+ public int getId() {
+  return id;
+ }
+
+ public void setId(int id) {
+  this.id = id;
+ }
+
+ public String getFirstName() {
+  return firstName;
+ }
+
+ public void setFirstName(String firstName) {
+  this.firstName = firstName;
+ }
+
+ public String getLastName() {
+  return lastName;
+ }
+
+ public void setLastName(String lastName) {
+  this.lastName = lastName;
+ }
+
+ public int getAge() {
+  return age;
+ }
+
+ public void setAge(int age) {
+  this.age = age;
+ }
+
+ public String getCity() {
+  return city;
+ }
+
+ public void setCity(String city) {
+  this.city = city;
+ }
+
+ public double getSalary() {
+  return salary;
+ }
+
+ public void setSalary(double salary) {
+  this.salary = salary;
+ }
+
+ @Override
+ public boolean equals(Object employee) {
+  if (Objects.isNull(employee))
+   return false;
+
+  if (!(employee instanceof Employee))
+   return false;
+
+  Employee emp = (Employee) employee;
+
+  return id == emp.id;
+ }
+
+ @Override
+ public int hashCode() {
+  return Objects.hash(id, firstName, lastName, age);
+ }
+
+ @Override
+ public String toString() {
+  return String.format("%s(%s,%d,%f)", firstName, city, age, salary);
+ }
+
+}
+public class Main {
+ public static List<Employee> getEmployees() {
+  Employee emp1 = new Employee(1, "srilaxmi", "Gurram", 26,
+    "Bangalore", 50000);
+  Employee emp2 = new Employee(2, "Naresh", "Chelli", 27, "Hyderabad",
+    60000);
+  Employee emp3 = new Employee(3, "Kalavathi", "Kummary", 28, "Chennai",
+    45000);
+  Employee emp4 = new Employee(4, "Karthik", "Raghuram", 27, "Chennai",
+    86000);
+  Employee emp5 = new Employee(5, "Sudheer", "Ganji", 27, "Bangalore",
+    100000);
+  Employee emp6 = new Employee(6, "Rama Krishna", "Gurram", 27,
+    "Bangalore", 56700);
+  Employee emp7 = new Employee(7, "PTR", "PTR", 27, "Hyderabad", 123456);
+  Employee emp8 = new Employee(8, "Siva krishna", "Ponnam", 28,
+    "Hyderabad", 98765);
+  Employee emp9 = new Employee(9, "Raju", "Antony", 40, "Trivendram",
+    198765);
+
+  Employee emp10 = new Employee(10, "Brijesh", "Krishnan", 34,
+    "Trivendram", 100000);
+  Employee emp11 = new Employee(9, "Raju", "Antony", 40, "Trivendram",
+    198765);
+
+  Employee emp12 = new Employee(10, "Brijesh", "Krishnan", 34,
+    "Trivendram", 100000);
+
+  List<Employee> employees = new ArrayList<>();
+
+  employees.add(emp1);
+  employees.add(emp2);
+  employees.add(emp3);
+  employees.add(emp4);
+  employees.add(emp5);
+  employees.add(emp6);
+  employees.add(emp7);
+  employees.add(emp8);
+  employees.add(emp9);
+  employees.add(emp10);
+  employees.add(emp11);
+  employees.add(emp12);
+
+  return employees;
+ }
+
+ public static void main(String args[]) {
+  List<Employee> employees = getEmployees();
+
+  /* Get sum of all employee salaries */
+  double totalSalary = employees.stream()
+    .mapToDouble(Employee::getSalary).sum();
+
+  /* Minimum salary */
+  OptionalDouble minSalary = employees.stream()
+    .mapToDouble(Employee::getSalary).min();
+
+  /* Maximum salary */
+  OptionalDouble maxSalary = employees.stream()
+    .mapToDouble(Employee::getSalary).max();
+
+  /* Average salary */
+  OptionalDouble avgSalary = employees.stream()
+    .mapToDouble(Employee::getSalary).average();
+
+  System.out.println("Total Salary : " + totalSalary);
+  System.out.println("Minimum Salary : " + minSalary.getAsDouble());
+  System.out.println("Maximum Salary : " + maxSalary.getAsDouble());
+  System.out.println("Average Salary : " + avgSalary.getAsDouble());
+ }
+}
+
+
+Output:
+        Total Salary : 1217451.0
+         Minimum Salary : 45000.0
+         Maximum Salary : 198765.0
+         Average Salary : 101454.25
+
+
+
+2.Java Parallel Streams
+
+Using parallel()method on streams
+
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.util.stream.Stream;
+
+
+//Main class
+//parallelShttps://learn.onlinegdb.com/treamTest
+public class Main{
+
+	//Main driver method
+	public static  void main(String[] args)throws IOException{
+	
+
+
+		//creating a file object
+		File FileName = new File("C:\\Users\\sp67975\\Desktop\\file1.txt");
+
+
+
+		//creating a stream of string type
+		//using the lines()method to
+		//read one line at a time from the text file
+		Stream<String>text =Files.lines(FileName.toPath());
+
+		
+		//creatiing parallel stream using parallel()method
+		//later using forEach() to print on console
+		text.parallel().forEach(System.out::println);
+
+
+		//Closing the stream
+		//using close ()method
+		text.close();
+	}
+}
+
+
+output:
+       
+
+3. Using parallel stream () on a collection.
+
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.util.*;
+  
+// Main class
+// ParallelStreamsTest
+public class Main {
+  
+    // Main driver method
+    public static void main(String[] args)
+        throws IOException
+    {
+  
+        // Creating a File object
+        File fileName
+            = new File("M:\\Documents\\List_Textfile.txt");
+  
+        // Reading the lines of the text file by
+        // create a List using readAllLines() method
+        List<String> text
+            = Files.readAllLines(fileName.toPath());
+  
+        // Creating parallel streams by creating a List
+        //  using readAllLines() method
+        text.parallelStream().forEach(System.out::println);
+    }
+}
+
+
+
+4.LocalDate Example
+
+
+import java.time.LocalDate;  
+// String to LocalDate in java 8  
+public class Main  
+{  
+    public static void main(String ar[])   
+    {  
+        // Example 1  
+        String dInStr = "1999-09-08";  
+        LocalDate d1 = LocalDate.parse(dInStr);  
+        System.out.println("String to LocalDate : " + d1);  
+        // Example 2  
+        String dInStr2 = "28-02-2008";  
+        LocalDate d2 = LocalDate.parse(dInStr2);  
+        System.out.println("String to LocalDate : " + d2);  
+    }  
+}  
+
+
+output: 
+        String to LocalDate : 1999-09-08
+        Exception in thread "main" java.time.format.DateTimeParseException: Text '28-02-2008' could not be parsed at index 0
+	
+
+
+5.LocalTime
+
+import java.time.*;  
+import java.time.temporal.ChronoUnit;  
+public class Main {  
+  public static void main(String... args) {  
+    ZoneId zone1 = ZoneId.of("Asia/Kolkata");  
+    ZoneId zone2 = ZoneId.of("Asia/Tokyo");  
+    LocalTime time1 = LocalTime.now(zone1);  
+    System.out.println("India Time Zone: "+time1);  
+    LocalTime time2 = LocalTime.now(zone2);  
+    System.out.println("Japan Time Zone: "+time2);  
+    long hours = ChronoUnit.HOURS.between(time1, time2);  
+    System.out.println("Hours between two Time Zone: "+hours);  
+    long minutes = ChronoUnit.MINUTES.between(time1, time2);  
+    System.out.println("Minutes between two time zone: "+minutes);  
+  }  
+}  
+
+
+Output:
+       India Time Zone: 16:50:45.164987
+       Japan Time Zone: 20:20:45.193029
+         Hours between two Time Zone: 3
+        Minutes between two time zone: 210
+
+6. Example2
+
+import java.time.LocalTime;  
+public class Main {  
+  public static void main(String[] args) { 
+	  //time 16:45:55:222222146
+	  LocalTime localTime = LocalTime.of(16, 45, 55, 222222146);
+	  System.out.println("Given Time: "+localTime);
+	  
+	  //minusHours() method subtracts the specified hours from the given time
+	  LocalTime localTime2 = localTime.minusHours(3);
+	  System.out.println("Subtracting 3 hours from the given time: "+ localTime2);
+	  
+	  //minusMinutes() method subtracts the specified minutes from the given time
+	  LocalTime localTime3 = localTime.minusMinutes(5);
+	  System.out.println("Subtracting 5 minutes from the given time: "+localTime3);
+	  
+	  //minusSeconds() method subtracts the specified seconds from the given time
+	  LocalTime localTime4 = localTime.minusSeconds(10);
+	  System.out.println("Subtracting 10 seconds from the given time : "+localTime4);
+	  
+	  //minusNanos() method subtracts the specified nanoseconds from the given time
+	  LocalTime localTime5 = localTime.minusNanos(16);
+	  System.out.println("Subtracting 16 nanoseconds from the given time: "+localTime5);
+  }  
+}
+
+
+Output: 
+        Given Time: 16:45:55.222222146
+Subtracting 3 hours from the given time: 13:45:55.222222146
+Subtracting 5 minutes from the given time: 16:40:55.222222146
+Subtracting 10 seconds from the given time : 16:45:45.222222146
+Subtracting 16 nanoseconds from the given time: 16:45:55.222222130
+
+
+
+7.LocalDateTime 
+
+
+import java.time.LocalDateTime;   
+public class Main {  
+    public static void main(String[] args) {  
+    	/* given date time info is passed in of() method
+    	 * the sequence of parameters are: Year, Month, Day, Hour
+    	 * , Minutes, Seconds, NanoSeconds
+    	 */
+    	LocalDateTime localDateTime =
+    		    LocalDateTime.of(2017, 10, 21, 11, 32, 55);
+    	System.out.println("Given Date Time: "+localDateTime); 
+    
+        System.out.println("getYear(): "+localDateTime.getYear());  
+        System.out.println("getDayOfYear(): "+localDateTime.getDayOfYear());
+        System.out.println("getMonth(): "+localDateTime.getMonth());
+        System.out.println("getDayOfMonth(): "+localDateTime.getDayOfMonth());
+        System.out.println("getDayOfWeek(): "+localDateTime.getDayOfWeek());
+        System.out.println("getHour(): "+localDateTime.getHour());
+        System.out.println("getMinute(): "+localDateTime.getMinute());
+        System.out.println("getSecond(): "+localDateTime.getSecond());
+        
+    }  
+}
+
+
+Output:
+        Given Date Time: 2017-10-21T11:32:55
+       getYear(): 2017
+       getDayOfYear(): 294
+       getMonth(): OCTOBER
+       getDayOfMonth(): 21
+       getDayOfWeek(): SATURDAY
+       getHour(): 11
+       getMinute(): 32
+       getSecond(): 55
+
+
+8.Temporal Adjuster
+
+
+import java.time.LocalDate;
+import java.time.temporal.TemporalAdjusters;
+import java.time.DayOfWeek;
+
+public class Main {
+   public static void main(String args[]) {
+      Main M1 = new Main();
+      M1.testAdjusters(); 	  
+   }
+
+   public void testAdjusters() {
+      //Get the current date
+      LocalDate date1 = LocalDate.now();
+      System.out.println("Current date: " + date1);	  
+
+      //get the next tuesday
+      LocalDate nextTuesday = date1.with(TemporalAdjusters.next(DayOfWeek.TUESDAY));
+      System.out.println("Next Tuesday on : " + nextTuesday);
+
+      //get the second saturday of next month
+      LocalDate firstInYear = LocalDate.of(date1.getYear(),date1.getMonth(), 1);
+
+      LocalDate secondSaturday = firstInYear.with(
+         TemporalAdjusters.nextOrSame(DayOfWeek.SATURDAY)).with(
+         TemporalAdjusters.next(DayOfWeek.SATURDAY));
+      System.out.println("Second saturday on : " + secondSaturday);	   
+   }	
+}
+
+
+Output:
+       Current date: 2022-05-31
+Next Tuesday on : 2022-06-07
+Second saturday on : 2022-05-14
+
+
+9.GetTimeInstance(int style, Locale locale)
+
+
+
+import java.util.Date;  
+import java.util.Locale;  
+import java.text.DateFormat;  
+  
+public class Main
+{  
+// main method       
+public static void main(String argvs[]) throws Exception   
+{  
+  
+// locale is French here.  
+Locale lcl = Locale.FRENCH;  
+  
+// creating an object of the class Date  
+Date d = new Date();  
+  
+// getting the instance by invoking the getTimeInstance(int, Locale) method  
+DateFormat dFormat = DateFormat.getTimeInstance(DateFormat.SHORT, lcl);  
+  
+String str = dFormat.format(d);  
+System.out.println(str);  
+}  
+}  
+
+Output:
+        12:03
+
+
+
+10.SimpleDateFormat
+
+import java.text.ParseException;  
+import java.text.SimpleDateFormat;  
+import java.util.Date;  
+public class Main {  
+public static void main(String[] args) {  
+    SimpleDateFormat formatter = new SimpleDateFormat("YYYY/MM/DD");  
+    try {  
+        Date date = formatter.parse("1999/09/08");  
+        System.out.println("Date is: "+date);  
+    } catch (ParseException e) {e.printStackTrace();}  
+}  
+}  
+
+
+Output:
+       Date is: Sun Dec 27 00:00:00 GMT 1998
+
+
+11.TimeZone class Example: getOffset()
+
+
+import java.util.*;  
+public class Main {  
+   public static void main( String args[] ){      
+   TimeZone zone = TimeZone.getTimeZone("Asia/Hyderabad");   
+   System.out.println("The Offset value of TimeZone: " +  zone.getOffset(Calendar.ZONE_OFFSET));  
+   }      
+}  
+
+
+Output:
+       The Offset value of TimeZone: 0
+
+
+12.TimeZone class Example: getID()
+
+
+import java.util.*;  
+public class Main {  
+   public static void main( String args[] ){  
+   TimeZone timezone = TimeZone.getTimeZone("Asia/Chennai");      
+   System.out.println("Value of ID is: " + timezone.getID());  
+   }      
+}  
+
+Output:
+       Value of ID is: GMT
+
+
+13.TimeZone class Example: getDefault()
+
+import java.util.*;  
+  
+public class Main  
+{  
+// main method  
+public static void main(String[] argvs)  
+{  
+// invoking the getDefault() Method  
+TimeZone zone = TimeZone.getDefault();     
+System.out.println("The ID of the default TimeZone is: " + zone.getID());    
+   
+}  
+}  
+
+output:
+        The ID of the default TimeZone is: GMT
+
+
+14.TimeZone class Example: setID()
+
+import java.util.*;  
+  
+public class Main
+{  
+     
+// main method  
+public static void main( String argvs[] )   
+{  
+  
+// creating an object of the class TimeZone   
+TimeZone tz = TimeZone.getDefault();  
+  
+// setting the time zone ID  
+tz.setID("GMT + 01:33");  
+  
+// checking for the time zone ID  
+System.out.println("The Time zone ID is: " + tz.getID());  
+}      
+}  
+
+
+Output:
+        The Time zone ID is: GMT + 01:33
+
+
