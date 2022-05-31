@@ -1,0 +1,15 @@
+import java.time.LocalDate;
+
+public classs LocalDateExample1(){
+ public static void  main(String[] args){
+ LocalDate date =LocalDate.now();
+ LOcalDate yesterday=date.minuDays(1);
+ LocalDate tomorrow =yesterday.plusDays(2;)
+ system.out.println("Today date:"+date);
+ system.outprintln("yesterday date:"+yesterday);
+ system.out.println("Tomorrow date:"+tomorrow);
+	}
+}
+---------------------------------------------------------------------------
+output : yy-mm-dd
+---------------------------------------------------------------------------
