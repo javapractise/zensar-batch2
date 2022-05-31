@@ -1,0 +1,331 @@
+package Day15;
+
+
+	// Java Program to Illustrate Parallel Streams
+	// Using parallel() method on a Stream
+
+	// Importing required classes
+	import java.io.File;
+	import java.io.IOException;
+	import java.nio.file.Files;
+	import java.util.stream.Stream;
+
+	// Main class
+	// ParallelStreamTest
+	public class OnStream {
+
+		// Main driver method
+		public static void main(String[] args) throws IOException {
+
+			// Creating a File object
+			File fileName = new File("C:\\Users\\vm67964\\Desktop\\practice\\Textin.txt");
+
+			// Create a Stream of string type
+			// using the lines() method to
+			// read one line at a time from the text file
+			Stream<String> text = Files.lines(fileName.toPath());
+
+			// Creating parallel streams using parallel() method
+			// later using forEach() to print on console
+			text.parallel().forEach(System.out::println);
+
+			// Closing the Stream
+			// using close() method
+			text.close();
+		}
+	}
+
+
+output:
+
+hi how are you
+
+
+
+--------------------------------------------------------
+
+package Day15;
+
+
+	// Java Program to Illustrate Parallel Streams
+	// using parallelStream() method on a Stream
+
+	// Importing required classes
+	import java.io.File;
+	import java.io.IOException;
+	import java.nio.file.Files;
+	import java.util.*;
+
+	// Main class
+	// ParallelStreamsTest
+	public class OnCollection {
+
+		// Main driver method
+		public static void main(String[] args)
+			throws IOException
+		{
+
+			// Creating a File object
+			File fileName
+				= new File("C:\\Users\\vm67964\\Desktop\\practice\\testout.txt");
+
+			// Reading the lines of the text file by
+			// create a List using readAllLines() method
+			List<String> text
+				= Files.readAllLines(fileName.toPath());
+
+			// Creating parallel streams by creating a List
+			// using readAllLines() method
+			text.parallelStream().forEach(System.out::println);
+		}
+	}
+
+
+output:
+
+today day 15 
+example ofparallel stream using collection
+i am fine
+
+------------------------------------------------------------------------
+package Day15;
+
+import java.time.LocalDate;    
+	public class LocalDate1
+	{    
+	  public static void main(String[] args)
+	  {    
+	    LocalDate date = LocalDate.now();    
+	    LocalDate yesterday = date.minusDays(1);    
+	    LocalDate tomorrow = yesterday.plusDays(2);    
+	    System.out.println("Today date: "+date);    
+	    System.out.println("Yesterday date: "+yesterday);    
+	    System.out.println("Tomorrow date: "+tomorrow);    
+	  }    
+	}    
+
+output:
+
+Today date: 2022-05-31
+Yesterday date: 2022-05-30
+Tomorrow date: 2022-06-01
+
+------------------------------------------------------------------------------
+
+package Day15;
+import java.time.LocalDate;    
+
+public class Leap
+{    
+	  public static void main(String[] args)
+	  {    
+	    LocalDate date1 = LocalDate.of(2019, 6, 13);    
+	    System.out.println(date1.isLeapYear());    
+	      
+	  }    
+	}    
+
+output:
+false
+
+-----------------------------------------------------------
+
+package Day15;
+	import java.time.LocalTime;  
+	public class TodayTime 
+	{  
+	  public static void main(String[] args)
+	  {  
+	    LocalTime time = LocalTime.now();  
+	    System.out.println("Today time:"+time);  
+	  }  
+	}  
+
+output:Today time:11:51:29.898921600
+
+---------------------------------------------------------------
+package Day15;
+import java.time.LocalTime;  
+	public class TimeOf
+	{  
+	  public static void main(String[] args)
+	  {  
+	    LocalTime time = LocalTime.of(10,43,12);  
+	    System.out.println(time);  
+	  }  
+	} 
+
+output:
+10:43:12
+
+---------------------------------------------------------------------
+package Day15;
+
+import java.time.LocalDateTime;  
+import java.time.format.DateTimeFormatter;  
+
+public class Localdatetime
+{  
+	    public static void main(String[] args)
+	    {  
+	        LocalDateTime now = LocalDateTime.now();  
+	        System.out.println("Before Formatting: " + now);  
+	        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");  
+	        String formatDateTime = now.format(format);  
+	        System.out.println("After Formatting: " + formatDateTime);  
+	    }  
+	}  
+
+
+output:
+Before Formatting: 2022-05-31T11:58:56.516411800
+After Formatting: 31-05-2022 11:58:56
+
+
+----------------------------------------------------------------------
+
+package Day15;
+
+import java.time.LocalDateTime;  
+import java.time.format.DateTimeFormatter;  
+
+public class Presentdateformat
+{  
+  public static void main(String[] args)
+  {  
+    LocalDateTime datetime1 = LocalDateTime.now();  
+    DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy mm:HH:ss");  
+    String formatDateTime = datetime1.format(format);   
+    System.out.println(formatDateTime);    
+  }  
+}  
+
+
+output:
+
+31-05-2022 02:12:56
+
+
+---------------------------------------------------------------------------
+package Day15;
+
+import java.time.*;  
+import java.time.temporal.Temporal;  
+	public class Periodexample 
+	{ 
+	  public static void main(String[] args)
+	  {  
+	    Period period = Period.ofDays(28);  
+	    Temporal temp = period.addTo(LocalDate.now());  
+	    System.out.println(temp);  
+	  }  
+	}  
+
+
+output:
+
+2022-06-28
+
+
+------------------------------------------------------------------------
+
+package Day15;
+
+import java.time.*;  
+import java.time.temporal.ChronoUnit;  
+public class Durationexample 
+{ 
+  public static void main(String[] args) 
+  {  
+    Duration d = Duration.between(LocalTime.NOON,LocalTime.MAX);  
+    System.out.println(d.get(ChronoUnit.SECONDS));    
+  }  
+}  
+
+
+
+output:
+
+43199
+
+-----------------------------------------------------------------------------------
+package Day15;
+
+import java.text.DateFormat;  
+import java.util.Date;  
+public class Format
+{ 
+    public static void main(String[] args)
+    {  
+        Date currentDate = new Date();  
+        System.out.println("Current Date: "+currentDate);  
+        String dateToStr = DateFormat.getInstance().format(currentDate);  
+        System.out.println("Date Format using getInstance(): "+dateToStr);  
+    }  
+}  
+
+
+
+output:
+
+Current Date: Tue May 31 12:47:55 IST 2022
+Date Format using getInstance(): 5/31/22, 12:47 PM
+
+
+---------------------------------------------------------------------
+package Day15;
+
+
+import java.text.DateFormat;  
+import java.util.Date;  
+public class Stringtodate
+{ 
+    public static void main(String[] args)throws Exception
+    {  
+        Date d = DateFormat.getDateInstance().parse("31 Mar, 2015");  
+        System.out.println("Date is: "+d);  
+    }  
+}  
+
+
+output:
+
+Date is: Tue Mar 31 00:00:00 IST 2015
+
+--------------------------------------------------
+
+package Day15;
+
+
+import java.util.*;  
+public class Timezoneoffset 
+{ 
+   public static void main( String args[] )
+   {      
+   TimeZone zone = TimeZone.getTimeZone("Asia/Kolkata");   
+   System.out.println("The Offset value of TimeZone: " +   
+   zone.getOffset(Calendar.ZONE_OFFSET));  
+   }      
+} 
+
+
+
+output:
+
+The Offset value of TimeZone: 19800000
+------------------------------------------------------------
+
+package Day15;
+import java.util.*;  
+	public class Timebyid 
+	{  
+	   public static void main( String args[] )
+	   {  
+	   TimeZone timezone = TimeZone.getTimeZone("Asia/Kolkata");       
+	   System.out.println("Value of ID is: " + timezone.getID());  
+	   }      
+	}  
+
+output:
+
+Value of ID is: Asia/Kolkata
