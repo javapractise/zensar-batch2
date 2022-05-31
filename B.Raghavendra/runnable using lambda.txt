@@ -1,0 +1,33 @@
+public class LambdaThreadTest {
+   public static void main(String args[]) {
+      
+      new Thread(() -> { 
+         for(int i=1; i <= 5; i++) {
+            System.out.println("Child Thread: "+ i);
+            try {
+               Thread.sleep(500);
+            } catch(Exception e) {
+               e.printStackTrace();
+            }
+         }
+      }).start();
+      for(int j=1; j < 5; j++) {
+         System.out.println("Main Thread: "+ j);
+         try {
+            Thread.sleep(500);
+         } catch(Exception e) {
+            e.printStackTrace();
+         }
+      }
+   }
+}
+
+output::Child Thread: 1
+Main Thread: 1
+Child Thread: 2
+Main Thread: 2
+Child Thread: 3
+Main Thread: 3
+Child Thread: 4
+Main Thread: 4
+Child Thread: 5

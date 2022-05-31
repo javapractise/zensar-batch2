@@ -1,0 +1,264 @@
+bit function method reference
+==============================
+import java.util.function.BiFunction;
+class Arithmetic{
+public static int add(int a, int b){
+return a+b;
+}
+}
+public class BifunctionMethodReference{
+public static void main(String[] args){
+BiFunction <Integer,Integer,Integer>adder=Arithmetic::add;
+int result = adder.apply(10,20);
+System.out.println("The Addition is: "+result);
+}
+}
+
+Output:
+  The Addition is: 30
+-----------------------------------------------------------------------------------------
+constructor method interface:
+=============================
+interface Messageable{  
+    Message getMessage(String msg);  
+}  
+class Message{  
+    Message(String msg){  
+        System.out.print(msg);  
+    }  
+}  
+public class ConstructorMethodReference {  
+    public static void main(String[] args) {  
+        Messageable hello = Message::new;  
+        hello.getMessage("Hello");  
+    }  
+}  
+
+
+Output:
+Hello
+---------------------------------------------------------
+consumer interface:
+===================
+import java.util.function.Consumer;  
+public class ConsumerInterfaceExample {  
+    static void printMessage(String name){  
+        System.out.println("Hello "+name);  
+    }  
+    static void printValue(int val){  
+        System.out.println(val);  
+    }  
+    public static void main(String[] args) {  
+        // Referring method to String type Consumer interface   
+        Consumer<String> consumer1 = ConsumerInterfaceExample::printMessage;  
+        consumer1.accept("John");   // Calling Consumer method  
+        // Referring method to Integer type Consumer interface  
+        Consumer<Integer> consumer2 = ConsumerInterfaceExample::printValue;  
+        consumer2.accept(12);   // Calling Consumer method  
+    }  
+}  
+
+/*
+Output:
+	Hello John
+	12
+---------------------------------------------------------------------------------
+function interface:
+===================
+import java.util.function.Function;  
+public class FunctionInterfaceExample1 {  
+ static String show(String message){  
+     return "Hello "+message;  
+ }  
+ public static void main(String[] args) {  
+     // Function interface referring to a method  
+     Function<String, String> fun = FunctionInterfaceExample1::show;  
+     // Calling Function interface method  
+     System.out.println(fun.apply("Peter"));  
+ }  
+}
+
+/*
+Output:
+Hello Peter
+-----------------------------------------------------------------------
+functional inteface:
+=====================
+interface sayable{  
+    void say(String msg);   // abstract method  
+    // It can contain any number of Object class methods.  
+    int hashCode();  
+    String toString();  
+    boolean equals(Object obj);  
+}  
+public class FunctionalInterfaceExample1 implements sayable{  
+    public void say(String msg){  
+        System.out.println(msg);  
+    }  
+    public static void main(String[] args) {  
+        FunctionalInterfaceExample1 fie = new FunctionalInterfaceExample1();  
+        fie.say("Hello there");  
+    }  
+}  
+
+/*
+Output:
+	Hello there
+-------------------------------------------------------------------------------
+instance method:
+=================
+public class InstanceMethodReference2 {  
+    public void printnMsg(){  
+        System.out.println("Hello, this is instance method");  
+    }  
+    public static void main(String[] args) {  
+    Thread t2=new Thread(new InstanceMethodReference2()::printnMsg);  
+        t2.start();       
+    }  
+}
+
+/*
+Output:
+Hello, this is instance method
+------------------------------------------------------------------------------
+lambda expression multiple statements:
+=========================================
+interface MultipleStmt{
+	public String Stmt(String msg1,String msg2);
+}
+public class LambdaExpreMultipleStmts {
+	public static void main(String args[]) {
+		MultipleStmt ms = (msg1,msg2)->{
+			String stmt1 = msg1+" "+msg2;
+			String stmt2 = "This is " + stmt1;
+			return stmt2;
+		};
+		System.out.println(ms.Stmt("Multiple","Lambda Expression Statement"));
+	}
+}
+
+
+/*
+Output:
+This is Multiple Lambda Expression Statement
+------------------------------------------------------------------------------------------------
+lambda expression comparator:
+===============================
+import java.util.ArrayList;  
+import java.util.Collections;  
+import java.util.List;  
+class Product{  
+    int id;  
+    String name;  
+    float price;  
+    public Product(int id, String name, float price) {  
+        super();  
+        this.id = id;  
+        this.name = name;  
+        this.price = price;  
+    }  
+}
+
+
+public class LambdaExpressionComparator{  
+    public static void main(String[] args) {  
+        List<Product> list=new ArrayList<Product>();  
+
+        //Adding Products  
+        list.add(new Product(1,"HP Laptop",25000f));  
+        list.add(new Product(3,"Keyboard",300f));  
+        list.add(new Product(2,"Dell Mouse",150f));  
+
+        System.out.println("Sorting on the basis of name...");  
+
+        // implementing lambda expression  
+        Collections.sort(list,(p1,p2)->{  
+        return p1.name.compareTo(p2.name);  
+        });  
+        for(Product p:list){  
+            System.out.println(p.id+" "+p.name+" "+p.price);  
+        }  
+
+    }  
+}  
+
+
+/*
+Output:
+Sorting on the basis of name...
+2 Dell Mouse 150.0
+1 HP Laptop 25000.0
+3 Keyboard 300.0
+----------------------------------------------------------------------------
+lambda expression filtercollection:
+====================================
+import java.util.ArrayList;  
+import java.util.List;  
+import java.util.stream.Stream;   
+class Product1{  
+    int id;  
+    String name;  
+    float price;  
+    public Product1(int id, String name, float price) {  
+        super();  
+        this.id = id;  
+        this.name = name;  
+        this.price = price;  
+    }  
+}  
+
+
+
+public class LambdaExpressionFilterCollection{  
+    public static void main(String[] args) {  
+        List<Product1> list=new ArrayList<Product1>();  
+        list.add(new Product1(1,"Samsung A5",17000f));  
+        list.add(new Product1(3,"Iphone 6S",65000f));  
+        list.add(new Product1(2,"Sony Xperia",25000f));  
+        list.add(new Product1(4,"Nokia Lumia",15000f));  
+        list.add(new Product1(5,"Redmi4 ",26000f));  
+        list.add(new Product1(6,"Lenevo Vibe",19000f));  
+        System.out.println("The products having cost greater than or equal to 20000 ");
+        // using lambda to filter data  
+        Stream<Product1> filtered_data = list.stream().filter(p -> p.price > 20000);  
+
+        // using lambda to iterate through collection  
+        filtered_data.forEach(  
+                product -> System.out.println(product.name+": "+product.price)  
+        );  
+    }  
+}  
+
+
+/*
+Output:
+The products having cost greater than or equal to 20000 
+Iphone 6S: 65000.0
+Sony Xperia: 25000.0
+Redmi4 : 26000.0
+----------------------------------------------------------------------------------------------------
+lambda expression for loop:
+===========================
+import java.util.*;
+public class LambdaExpressionForLoop {
+
+	public static void main(String[] args) {
+		List<String> ls = new ArrayList<String>();
+		ls.add("Ambika");
+		ls.add("Yamini");
+		ls.add("Jyothsna");
+		ls.add("Srija");
+		ls.forEach((n)->System.out.println(n));
+
+	}
+
+}
+
+/*
+ Output:
+ Ambika
+ Yamini
+ Jyothsna
+ Srija
+
+-------------------------------------------------------

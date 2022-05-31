@@ -1,0 +1,420 @@
+//////////////  Assignment 14///////////
+ 
+1.Without Lambda Expression
+
+interface Drawable{  
+    public void draw();  
+}  
+public class Main {  
+    public static void main(String[] args) {  
+        int Diameter=27;  
+  
+        //without lambda, Drawable implementation using anonymous class  
+        Drawable d=new Drawable(){  
+            public void draw(){System.out.println("Drawing "+Diameter);}  
+        };  
+        d.draw();  
+    }  
+}  
+
+Output:
+        Drawing 27
+
+
+2.Java Lambda Expression Example
+
+interface Drawable{  
+    public void draw();  
+}  
+  
+public class Main {  
+    public static void main(String[] args) {  
+        int Length=13;  
+          
+        //with lambda  
+        Drawable d=()->{  
+            System.out.println("Drawing "+Length);  
+        };  
+        d.draw();  
+    }  
+}  
+
+Output:
+        Drawing 13
+
+
+3.No Parameter
+
+interface Sayable{  
+    public String say();  
+}  
+public class Main{  
+public static void main(String[] args) {  
+    Sayable s=()->{  
+        return "The World is colourful";  
+    };  
+    System.out.println(s.say());  
+}  
+}  
+
+Output: 
+       The World is colourful
+
+
+4.Single Parameter
+
+interface Wonderful{  
+    public String say(String name);  
+}  
+  
+public class Main{  
+    public static void main(String[] args) {  
+      
+        // Lambda expression with single parameter.  
+        Wonderful W1=(name)->{  
+            return " Nature, "+name;  
+        };  
+        System.out.println(W1.say("colourful"));  
+          
+        // You can omit function parentheses    
+        Wonderful W2= name ->{  
+            return " Peaceful, "+name;  
+        };  
+        System.out.println(W2.say("precious"));  
+    }  
+}  
+
+Output:
+         Nature, colourful
+ Peaceful, precious
+
+
+5.Multiple Parameters
+
+interface Sub{  
+    int add(int a,int b);  
+}  
+  
+public class Main{  
+    public static void main(String[] args) {  
+          
+        // Multiple parameters in lambda expression  
+        Sub ad1=(a,b)->(a-b);  
+        System.out.println(ad1.add(70,37));  
+          
+        // Multiple parameters with data type in lambda expression  
+        Sub ad2=(int a,int b)->(a-b);  
+        System.out.println(ad2.add(777,555));  
+    }  
+}  
+
+Output:
+        33
+        222
+
+6.with or without return keyword
+
+interface Multiple{  
+    int add(int a,int b);  
+}  
+  
+public class Main {  
+    public static void main(String[] args) {  
+          
+        // Lambda expression without return keyword.  
+        Multiple M1=(a,b)->(a*b);  
+        System.out.println(M1.add(27,17));  
+          
+        // Lambda expression with return keyword.    
+        Multiple M2=(int a,int b)->{  
+                            return (a*b);   
+                            };  
+        System.out.println(M2.add(117,222));  
+    }  
+}  
+
+output: 
+        459
+        25974
+
+7.Foreach Loop
+
+import java.util.*;  
+public class Main{  
+    public static void main(String[] args) {  
+          
+        List<String> list=new ArrayList<String>();  
+        list.add("Jyothi");  
+        list.add("mayank");  
+        list.add("Azeem");  
+        list.add("Sri");  
+          
+        list.forEach(  
+            (n)->System.out.println(n)  
+         );  
+    }  
+}  
+ 
+Output: 
+        Jyothi
+        mayank
+        Azeem
+        Sri
+
+8.Multiple Statements
+
+interface Texting{  
+    String say(String message);  
+}  
+  
+public class Main{  
+    public static void main(String[] args) {  
+      
+        // You can pass multiple statements in lambda expression  
+        Texting person = (message)-> {  
+            String str1 = " The People are great,";  
+            String str2 = str1 + message;   
+            return str2;  
+        };  
+            System.out.println(person.say("time is precious."));  
+    }  
+}  
+
+output:
+         The People are great,time is precious.
+
+
+9.Creating Thread
+
+public class Main{  
+    public static void main(String[] args) {  
+      
+        //Thread Example without lambda  
+        Runnable r1=new Runnable(){  
+            public void run(){  
+                System.out.println("Thread1 is running...");  
+            }  
+        };  
+        Thread t1=new Thread(r1);  
+        t1.start();  
+        //Thread Example with lambda  
+        Runnable r2=()->{  
+                System.out.println("Thread2 is Running Great");  
+        };  
+        Thread t2=new Thread(r2);  
+        t2.start();  
+    }  
+}  
+
+output:
+       Thread1 is running...
+Thread2 is Running Great
+
+
+10.Comparator
+ 
+import java.util.ArrayList;  
+import java.util.Collections;  
+import java.util.List;  
+class Product{  
+    int id;  
+    String name;  
+    float price;  
+    public Product(int id, String name, int price) {  
+        super();  
+        this.id = id;  
+        this.name = name;  
+        this.price = price;  
+    }  
+}  
+public class Main{  
+    public static void main(String[] args) {  
+        List<Product> list=new ArrayList<Product>();  
+          
+        //Adding Products  
+        list.add(new Product(1,"Milkybar",25));  
+        list.add(new Product(3,"Munch",30));  
+        list.add(new Product(2,"5star",15));  
+          
+        System.out.println("Sorting on the basis of name...");  
+  
+        // implementing lambda expression  
+        Collections.sort(list,(p1,p2)->{  
+        return p1.name.compareTo(p2.name);  
+        });  
+        for(Product p:list){  
+            System.out.println(p.id+" "+p.name+" "+p.price);  
+        }  
+  
+    }  
+}  
+
+Output:
+        Sorting on the basis of name...
+2 5star 15.0
+1 Milkybar 25.0
+3 Munch 30.0
+
+
+11.Filter Collection Data
+
+import java.util.ArrayList;  
+import java.util.List;  
+import java.util.stream.Stream;   
+class Product{  
+    int id;  
+    String name;  
+    float price;  
+    public Product(int id, String name, float price) {  
+        super();  
+        this.id = id;  
+        this.name = name;  
+        this.price = price;  
+    }  
+}  
+public class Main{  
+    public static void main(String[] args) {  
+        List<Product> list=new ArrayList<Product>();  
+        list.add(new Product(1,"Samsung A5",17000f));  
+        list.add(new Product(3,"Iphone 6S",65000f));  
+        list.add(new Product(2,"Sony Xperia",25000f));  
+        list.add(new Product(4,"Nokia Lumia",15000f));  
+        list.add(new Product(5,"Redmi4 ",26000f));  
+        list.add(new Product(6,"Lenevo Vibe",19000f));  
+          
+        // using lambda to filter data  
+        Stream<Product> filtered_data = list.stream().filter(p -> p.price > 60000);  
+          
+        // using lambda to iterate through collection  
+        filtered_data.forEach(  
+                product -> System.out.println(product.name+": "+product.price)  
+        );  
+    }  
+}  
+
+Output:
+        Iphone 6S: 65000.0
+
+        
+12.Functional Interfaces
+
+
+interface Behaviouring{  
+    default void behav(){  
+        System.out.println("talk in normal way");  
+    }  
+}  
+@FunctionalInterface  
+interface Talking extends Behaviouring{  
+    void say(String msg);   // abstract method  
+}  
+public class Main implements Talking{  
+    public void say(String msg){  
+        System.out.println(msg);  
+    }  
+    public static void main(String[] args) {  
+        Main fie = new Main();  
+        fie.say("Hello there");  
+        fie.behav();  
+    }  
+}  
+
+Output: 
+        Hello there
+talk in normal way
+
+
+13.Consumer Interface
+
+import java.util.ArrayList;  
+import java.util.List;  
+import java.util.function.Consumer;  
+public class Main {  
+    static void addList(List<Integer> list){  
+        // Return sum of list values  
+        int result = list.stream()  
+                   .mapToInt(Integer::intValue)  
+                   .sum();  
+        System.out.println("Sum of list values: "+result);  
+    }  
+    public static void main(String[] args) {  
+        // Creating a list and adding values  
+                List<Integer> list = new ArrayList<Integer>();  
+                list.add(11);  
+                list.add(22);  
+                list.add(47);  
+                list.add(51);  
+        // Referring method to String type Consumer interface   
+        Consumer<List<Integer>> consumer = Main::addList;  
+        consumer.accept(list);  // Calling Consumer method  
+          
+    }  
+}  
+
+
+output:
+
+        Sum of list values: 131
+
+
+
+14.Function Interface
+
+
+import java.util.function.Function;  
+import java.util.List;  
+import java.util.ArrayList;  
+public class Main {  
+    static Integer addList(List<Integer> list){  
+        return list.stream()  
+                   .mapToInt(Integer::intValue)  
+                   .sum();  
+    }  
+    public static void main(String[] args) {  
+        // Creating a list and adding values  
+        List<Integer> list = new ArrayList<Integer>();  
+        list.add(21);  
+        list.add(35);  
+        list.add(47);  
+        list.add(57);  
+        // Referring addList() method  
+        Function<List<Integer>, Integer> fun = Main::addList;  
+        // Calling Function interface method  
+        int result = fun.apply(list);  
+        System.out.println("Sum of list values: "+result);  
+    }  
+}  
+
+output:
+
+      Sum of list values: 160
+
+15.Predicate Interface
+
+
+import java.util.function.Predicate;  
+public class Main {  
+    static Boolean checkAge(int age){  
+        if(age>23)  
+            return false;  
+        else return true;  
+    }  
+    public static void main(String[] args){  
+        // Using Predicate interface  
+        Predicate<Integer> predicate =  Main::checkAge;  
+        // Calling Predicate method  
+        boolean result = predicate.test(30);  
+        System.out.println(result);  
+    }  
+}     
+
+
+output:
+       false
+
+
+16.Reference to a Static Method
+
+ 
+
+     

@@ -1,0 +1,65 @@
+
+1.implementing Runnable using Lambda expression
+
+package Day14.FI;
+
+public class LambdaRun {
+	 
+	    public static void main(String[] args) {  
+	        Runnable r2 = null;
+			Thread t1=new Thread(r2);  
+	        t1.start();  
+	        //Thread Example with lambda  
+	        Runnable r21=()->{  
+	                System.out.println("Thread1 is running...");  
+	        };  
+	        Thread t2=new Thread(r21);  
+	        t2.start();  
+	    }  
+	} 
+
+output:Thread1 is running...
+ 
+
+
+2.Using Lambda expression and Functional interface Predicate
+
+package Day14.FI;
+import java.util.function.Predicate;  
+	public class Predi 
+	{  
+	    public static void main(String[] args) 
+	    {  
+	        Predicate<Integer> pr = a -> (a > 6);  
+	        System.out.println(pr.test(10));        
+	    }  
+	}  
+
+
+
+output:true
+
+
+3.How to combine Predicate in Lambda Expressions
+
+import java.util.function.Predicate;
+public class PredicateInterfaceExample {
+    public static void main(String[] args)
+    {
+        Predicate<Integer> greaterThanTen = (i) -> i > 10;
+
+        // Creating predicate
+        Predicate<Integer> lowerThanTwenty = (i) -> i < 20; 
+        boolean result = greaterThanTen.and(lowerThanTwenty).test(15);
+        System.out.println(result);
+
+        // Calling Predicate method
+        boolean result2 = greaterThanTen.and(lowerThanTwenty).negate().test(15);
+        System.out.println(result2);
+    }
+}
+
+output:
+ 
+true
+false

@@ -1,0 +1,64 @@
+import java.util.function.Predicate;  
+public class PredicateInterfaceExample1 {  
+    public static void main(String[] args) {  
+        Predicate<Integer> pr = a -> (a > 18); // Creating predicate  
+        System.out.println(pr.test(10));    // Calling Predicate method    
+    }  
+} 
+
+
+/*
+Output:
+false
+*/
+
+public class RunnableLambdaTest {
+   public static void main(String[] args) {
+      Runnable r1 = new Runnable() {
+         @Override
+         public void run() { // anonymous class
+            System.out.println("Runnable with Anonymous Class");
+         }
+      };
+      Runnable r2 = () -> {   // lambda expression
+         System.out.println("Runnable with Lambda Expression");
+      };
+      new Thread(r1).start();
+      new Thread(r2).start();
+   }
+}
+
+
+output
+Runnable with Anonymous Class
+Runnable with Lambda Expression
+
+//How to combine Predicate in Lambda Expressions
+
+
+import java.util.function.Predicate;
+public class PredicateInterfaceExample {
+    public static void main(String[] args)
+    {
+        Predicate<Integer> greaterThanTen = (i) -> i > 10;
+  
+        // Creating predicate
+        Predicate<Integer> lowerThanTwenty = (i) -> i < 20; 
+        boolean result = greaterThanTen.and(lowerThanTwenty).test(15);
+        System.out.println(result);
+  
+        // Calling Predicate method
+        boolean result2 = greaterThanTen.and(lowerThanTwenty).negate().test(15);
+        System.out.println(result2);
+    }
+}
+
+
+/*
+ 
+ 
+ output:
+ 
+true
+false
+*/

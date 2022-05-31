@@ -1,0 +1,18 @@
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class PredicateComposition {
+    public static void main(String[] args) {
+        final var items = List.of("Groovy", "Gradle", "Grails", "Micronaut", "Java", "Kotlin");
+
+        final List<String> gr8Stuff =items.stream()
+                     .filter(s -> s.startsWith("Gr") || s.startsWith("M"))
+                     .collect(Collectors.toUnmodifiableList());
+
+        assert gr8Stuff.size() == 4 : "gr8Stuff contains 4 items";
+        assert gr8Stuff.contains("Groovy");
+        assert gr8Stuff.contains("Gradle");
+        assert gr8Stuff.contains("Grails");
+        assert gr8Stuff.contains("Micronaut");
+    }
+}
