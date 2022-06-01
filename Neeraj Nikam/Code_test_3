@@ -1,0 +1,58 @@
+package code_test_3;
+
+import java.util.Scanner;
+
+public class ArrayMultiplicationSign {
+	public static void main(String args[]) {
+		Scanner Sc = new Scanner(System.in);
+		
+		System.out.println("Enter the Elements:--> ");// Enter the Elements
+		
+		int x = Sc.nextInt();
+		int[] array = new int[x];
+		System.out.println("Enter "+ x +" Elements : ");
+		
+		for(int i=0;i<x;i++) {
+			array[i] = Sc.nextInt();
+		}
+		boolean Zero = false;
+		int negativeCount = 0;
+		for(int i=0;i<x;i++) {
+			if(array[i] == 0) {
+				Zero = true;
+				break;
+			}
+			else if(array[i]<0) {
+				negativeCount++;
+			}
+		}
+		int sign;
+		if(Zero) {
+			sign = 0;
+		}
+		else if(negativeCount%2 == 0) {
+			sign = 1;
+		}
+		else {
+			sign = -1;
+		}
+		System.out.println(sign);
+
+	}
+}
+
+
+/*
+Output:1
+Enter the Elements:-->   4
+Enter 4 elements : 1 -2 -3 5
+1
+Output:2
+Enter no. of elements : 4
+Enter 4 elements : 1 2 3 -5
+-1
+Output:3
+Enter no. of elements : 4
+Enter 4 elements : 1 2 0 -5
+0
+*/
