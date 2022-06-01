@@ -1,3 +1,5 @@
+/* do not type comma(,) while entering the values use spaces or tabs (1,2,-3,5 this is wrong  , 1 2 -3 5 is a correct way to pass values) */
+
 package May31;
 
 import java.util.*;
@@ -61,8 +63,17 @@ public class PbTest3{
 
 
 /*o/p:
-Result arr having values 1,-2,-3, 5 whose multiplication = 30 is --> 1
-Result arr1 having values 1,-2, 3,-5 whose multiplication =-30 is --> -1
-Result arr2 having values 1,-2,-3, 5  whose multiplication =0 is --> 0
+Kindly Enter values in arr 
+
+1 -2 -3 5
+Kindly Enter values in arr1 
+
+1 2 3 -5
+Kindly Enter values in arr2 
+1 2 0 -5
+Result of arr having values 1,-2,-3, 5 whose multiplication = 30 is --> 1
+Result of arr1 having values 1,-2, 3,-5 whose multiplication =-30 is --> -1
+Result of arr2 having values 1,-2,-3, 5  whose multiplication =0 is --> 0
+
 */
 
