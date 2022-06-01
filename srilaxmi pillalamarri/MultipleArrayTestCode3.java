@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MultipleArrayCode3 {
+public class MultipleArrayTestCode3 {
 
 	public static void main(String[] args) {
 
