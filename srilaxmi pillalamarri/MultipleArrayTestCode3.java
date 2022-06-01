@@ -1,64 +1,84 @@
+import java.util.ArrayList;
 import java.util.Scanner;
-public class MultipleArrayTestCode3 {
-	public static void main(String args[]) {
+
+public class MultipleArrayCode3 {
+
+	public static void main(String[] args) {
+
+		ArrayList<Integer> arr = new ArrayList<Integer>();
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter number of elements : ");
-		int N = sc.nextInt();
-		int[] array = new int[N];
-		System.out.println("Enter "+N+" elements : ");
-		for(int i=0;i<N;i++) {
-			array[i] = sc.nextInt();
+		System.out.print("Enter length of the array: ");
+		int lenarr = sc.nextInt();
+		
+		System.out.println("Enter the elements: ");
+		for(int i = 0; i<lenarr; i++ ) {
+			arr.add(i, sc.nextInt());;
 		}
-		boolean isZero = false;
-		int negativeCount = 0;
-		for(int i=0;i<N;i++) {
-			if(array[i] == 0) {
-				isZero = true;
-				break;
-			}
-			else if(array[i]<0) {
-				negativeCount++;
-			}
+		
+		sc.close();
+		
+		System.out.println("Array elements are: ");
+		System.out.print(arr);
+		int result = 1;
+		
+		for(Integer a: arr) {
+			result = result * a;
 		}
-		int sign;
-		if(isZero) {
-			sign = 0;
+		
+		System.out.println();
+		
+		if(result > 0) {
+			System.out.println("1");
+		}else if(result < 0) {
+			System.out.println("-1");
+		}else {
+			System.out.println("0");
 		}
-		else if(negativeCount%2 == 0) {
-			sign = 1;
-		}
-		else {
-			sign = -1;
-		}
-		System.out.println(sign);
 
 	}
+	
 }
 
 
 /*
- 
- 
-Output1:
+output:
 
-Enter no. of elements : 4
-Enter 4 elements : 1 -2 -3 5
+Test case 1:
+
+Enter length of the array: 4
+Enter the elements: 
+1
+-2
+-3
+5
+Array elements are: 
+[1, -2, -3, 5]
 1
 
+---------------------------
+Test case 2:
 
-
-Output2:
-
-Enter no. of elements : 4
-Enter 4 elements : 1 2 3 -5
+Enter length of the array: 4
+Enter the elements: 
+1
+2
+3
+-5
+Array elements are: 
+[1, 2, 3, -5]
 -1
 
+-------------------------------
+Test case 3:
 
-
-Output3:
-
-Enter no. of elements : 4
-Enter 4 elements : 1 2 0 -5
+Enter length of the array: 4
+Enter the elements: 
+1
+2
+0
+-5
+Array elements are: 
+[1, 2, 0, -5]
 0
 
 
