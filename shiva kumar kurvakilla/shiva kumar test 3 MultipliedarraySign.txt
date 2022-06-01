@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class MultipliedArraySign {
+public class shiva kumar {
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter no. of elements : ");
@@ -37,21 +37,21 @@ public class MultipliedArraySign {
 
 
 Output 1:
-java -cp /tmp/YjcrUuDh5w MultipliedArraySign
+java -cp /tmp/YjcrUuDh5w 
 Enter no. of elements : 4
 Enter 4 elements : 
 1 -2 -3 5
 1
 
 Output 2:
-java -cp /tmp/YjcrUuDh5w MultipliedArraySign
+java -cp /tmp/YjcrUuDh5w 
 Enter no. of elements : 
 4
 Enter 4 elements : 1 2 3 -5
 -1
 
 Output 3:
-java -cp /tmp/YjcrUuDh5w MultipliedArraySign
+java -cp /tmp/YjcrUuDh5w 
 Enter no. of elements : 4
 Enter 4 elements : 1 2 0 -5
 0
