@@ -1,0 +1,27 @@
+package partice;
+
+public class MultiAraayCode_test3 {
+    public static void main(String[] args) {
+        int a[] =  {1,-2,-3, 5};
+        int a1[] =  {1, 2, 3, -5};
+        int a2[] =  {1, 2, 0, -5};
+        System.out.println("[ " + solution(a) + " ]  => Needs to be 1");
+        System.out.println("[ " + solution(a1) + " ] => Needs to be  -1");
+        System.out.println("[ " + solution(a2) + " ] => Needs to be 0");
+        System.out.println("Final return should be (-1, 1, 0)");
+    }
+
+    public static int solution(int[] A) {
+        int temp = 1;
+        for (int i = 0; i < A.length; i++) {
+            temp *= A[i];
+        }
+        return temp;
+    }
+}
+
+output:-
+[ 30 ]  => Needs to be 1
+[ -30 ] => Needs to be  -1
+[ 0 ] => Needs to be 0
+Final return should be (-1, 1, 0)
