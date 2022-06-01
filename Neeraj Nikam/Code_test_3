@@ -44,15 +44,15 @@ public class ArrayMultiplicationSign {
 
 /*
 Output:1
-Enter the Elements:-->   4
+Enter the Elements:--> 4
 Enter 4 elements : 1 -2 -3 5
 1
 Output:2
-Enter no. of elements : 4
+Enter the Elements:--> 4
 Enter 4 elements : 1 2 3 -5
 -1
 Output:3
-Enter no. of elements : 4
+Enter the Elements:--> 4
 Enter 4 elements : 1 2 0 -5
 0
 */
